@@ -1,0 +1,90 @@
+﻿<div id="loaihosoCreateOrEditForm">
+    <div class="modal-header">
+        <h4 class="modal-title">
+            <span ng-if="!vm.loaihoso.id">Tạo thủ tục</span>
+            <span ng-if="vm.loaihoso.id">Sửa thủ tục</span>
+        </h4>
+    </div>
+    <div class="modal-body">
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-6">
+                    <label>Mã thủ tục</label><span><span class="font-red">*</span></span>
+                    <input class="form-control"
+                           type="text"
+                           name="Ten"
+                           ng-model="vm.loaihoso.maThuTuc"
+                           data-fv-notempty="true"
+                           data-fv-notempty-message="Không được để trống trường này"
+                           data-fv-trigger="blur" />
+                </div>
+                <div class="col-md-6">
+                    <label>Tên thủ tục</label><span><span class="font-red">*</span></span>
+                    <input class="form-control"
+                           type="text"
+                           name="Ten"
+                           ng-model="vm.loaihoso.tenThuTuc"
+                           data-fv-notempty="true"
+                           data-fv-notempty-message="Không được để trống trường này"
+                           data-fv-trigger="blur" />
+                </div>
+
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-6">
+                    <label>Loại</label><span><span class="font-red">*</span></span>
+                    <input style="width: 100%"
+                           kendo-drop-down-list
+                           ng-model="vm.loaihoso.thuTucIdEnum"
+                           k-options="vm.loaiOptions"
+                           k-auto-bind="true"
+                           class="form-control" 
+                           data-fv-notempty="true"
+                           data-fv-notempty-message="Không được để trống trường này"
+                           data-fv-trigger="blur"/>
+                </div>
+                <div class="col-md-6">
+                    <label>Kích Hoạt</label><br />
+                    <input bs-switch
+                           ng-model="vm.loaihoso.isActive"
+                           type="checkbox"
+                           switch-on-text="<i class='fa fa-check' aria-hidden='true'></i>"
+                           switch-on-color="success"
+                           switch-off-text="<i class='fa fa-times' aria-hidden='true'></i>"
+                           ng-true-value=true
+                           ng-false-value=false>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Lĩnh vực</label>
+            <textarea class="form-control"
+                      name="LinhVuc"
+                      ng-model="vm.loaihoso.linhVuc"
+                      rows="3"></textarea>
+        </div>
+        <div class="form-group">
+            <label>Cơ quan thực hiện</label>
+            <textarea class="form-control"
+                      name="CoQuanThucHien"
+                      ng-model="vm.loaihoso.coQuanThucHien"
+                      rows="2"></textarea>
+        </div>
+        <div class="form-group">
+            <label>Mô Tả</label>
+            <textarea class="form-control"
+                      name="MoTaloaihoso"
+                      ng-model="vm.loaihoso.moTa"
+                      rows="5"></textarea>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" button-busy="vm.saving" busy-text="@L("SavingWithThreeDot")" class="btn btn-primary green-meadow" ng-click="vm.save()"><i class="fa fa-save"></i> <span>@L("Save")</span></button>
+        <button ng-disabled="vm.saving" type="button" class="btn btn-default" ng-click="vm.cancel()">@L("Cancel")</button>
+    </div>
+</div>

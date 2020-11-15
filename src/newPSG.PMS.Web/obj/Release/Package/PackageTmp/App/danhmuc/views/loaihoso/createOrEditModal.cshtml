@@ -1,0 +1,127 @@
+﻿<div id="loaihosoCreateOrEditForm">
+    <div class="modal-header">
+        <h4 class="modal-title">
+            <span ng-if="!vm.loaihoso.id">Tạo Loại Hồ Sơ Mới</span>
+            <span ng-if="vm.loaihoso.id">Sửa Loại Hồ Sơ</span>
+            <button type="button" aria-hidden="true" class="close" ng-click="vm.cancel()"></button>
+        </h4>
+    </div>
+    <div class="modal-body">
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-8">
+                    <label>Tên loại hồ sơ</label><span><span class="font-red">*</span></span>
+                    <input class="form-control"
+                           type="text"
+                           name="Ten"
+                           ng-model="vm.loaihoso.tenLoaiHoSo"
+                           data-fv-notempty="true"
+                           data-fv-notempty-message="Không được để trống trường này"
+                           data-fv-trigger="blur" />
+                </div>
+                <div class="col-md-4">
+                    <label>Kích Hoạt</label><br />
+                    <input bs-switch
+                           ng-model="vm.loaihoso.isActive"
+                           type="checkbox"
+                           switch-on-text="<i class='fa fa-check' aria-hidden='true'></i>"
+                           switch-on-color="success"
+                           switch-off-text="<i class='fa fa-times' aria-hidden='true'></i>"
+                           ng-true-value=true
+                           ng-false-value=false>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Ảnh đại diện</label> <small><i>(Ảnh vuông kích cỡ tốt nhất: 100px x 100px, định dạng: png, jpg, jpeg)</i></small>
+            <input type="file" nv-file-select uploader="vm.uploader" style="margin-bottom: 10px;" />
+            <img ng-src="data:image/JPEG;base64,{{vm.loaihoso.dataImage}}" style="width: 100px; height: 100px" ng-show="vm.loaihoso.dataImage">
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-6">
+                    <label>Số ngày xử lý</label><span><span class="font-red">*</span></span>
+                    <input class="form-control"
+                           type="text"
+                           ui-number-mask="0"
+                           name="soNgayXuLy"
+                           ng-model="vm.loaihoso.soNgayXuLy"
+                           data-fv-notempty="true"
+                           data-fv-notempty-message="Không được để trống trường này"
+                           data-fv-trigger="blur" />
+                </div>
+                <div class="col-md-6">
+                    <label>Số ngày doanh nghiệp được bổ sung</label><span><span class="font-red">*</span></span>
+                    <input class="form-control"
+                           type="text"
+                           ui-number-mask="0"
+                           name="soNgaySuaDoiBoSung"
+                           ng-model="vm.loaihoso.soNgaySuaDoiBoSung"
+                           data-fv-notempty="true"
+                           data-fv-notempty-message="Không được để trống trường này"
+                           data-fv-trigger="blur" />
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-12">
+                    <label>Phí</label><span><span class="font-red">*</span></span>
+                    <input class="form-control"
+                           type="text"
+                           ui-number-mask="0"
+                           name="phi"
+                           ng-model="vm.loaihoso.phiXuLy"
+                           data-fv-notempty="true"
+                           data-fv-notempty-message="Không được để trống trường này"
+                           data-fv-trigger="blur" />
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-6">
+                    <label>Qui trình thẩm định chung</label><br />
+                    <input style="width: 100%"
+                           kendo-drop-down-list
+                           ng-model="vm.loaihoso.quiTrinhXuLy"
+                           k-options="vm.quiTrinhOptions"
+                           k-auto-bind="true"
+                           class="form-control" />
+                </div>
+                <div class="col-md-6">
+                    <label>Thủ tục áp dụng</label><br />
+                    <input style="width: 100%"
+                           kendo-drop-down-list
+                           ng-model="vm.loaihoso.thuTucId"
+                           k-options="vm.thuTucOptions"
+                           k-auto-bind="true"
+                           class="form-control" />
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Mã kết nối cục liên thông</label>
+            <input class="form-control"
+                   type="text"
+                   name="MaKetNoi"
+                   ng-model="vm.loaihoso.niisId"
+                   ui-number-mask="0" />
+        </div>
+        <div class="form-group">
+            <label>Mô Tả</label>
+            <textarea class="form-control"
+                      name="MoTaloaihoso"
+                      ng-model="vm.loaihoso.moTa"
+                      rows="5"></textarea>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" button-busy="vm.saving" busy-text="@L("SavingWithThreeDot")" class="btn btn-primary green-meadow" ng-click="vm.save()"><i class="fa fa-save"></i> <span>@L("Save")</span></button>
+        <button ng-disabled="vm.saving" type="button" class="btn red" ng-click="vm.cancel()"><i class="glyphicon glyphicon-remove"></i>@L("Cancel")</button>
+    </div>
+</div>

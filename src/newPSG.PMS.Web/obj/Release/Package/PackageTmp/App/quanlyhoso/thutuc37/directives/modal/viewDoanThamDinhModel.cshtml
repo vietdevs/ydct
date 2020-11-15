@@ -1,0 +1,49 @@
+﻿@using Abp.Authorization.Users
+<div>
+    <div class="modal-header">
+        <h4 class="modal-title text-center text-uppercase">
+            Danh sách thành viên đoàn thẩm định
+            <button type="button" class="close" ng-click="vm.cancel()" aria-hidden="true"></button>
+        </h4>
+    </div>
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="table-responsive">
+                    <table class="table table-hover table-striped table-bordered">
+                        <thead>
+                            <tr class="active">
+                                <th class="text-center" style="width:50px;">STT</th>
+                                <th class="text-center" style="width:300px;">Họ và tên</th>
+                                <th class="text-center" style="width:150px;">Chức vụ</th>
+                                <th class="text-center" style="width:150px;">Trạng thái</th>
+                                <th class="text-center" >Ý kiến</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="item in vm.listDoanThamDinh">
+                                <td class="text-center">{{$index + 1}}</td>
+                                <td class="text-center">{{item.hoTen}}</td>
+                                <td class="text-center">{{item.tenVaiTro}}</td>
+                                <td class="text-center">
+                                    <span ng-if="item.trangThaiXuLy == null" class="label label-default">Chưa xử lý</span>
+                                    <span ng-if="item.trangThaiXuLy == 1" class="label label-success">{{item.strTrangThai}}</span>
+                                    <span ng-if="item.trangThaiXuLy == 3" class="label label-danger">{{item.strTrangThai}}</span>
+                                </td>
+                                <td>{{item.noiDungYKien}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button ng-disabled="vm.saving" type="button" class="btn red" ng-click="vm.cancel()"><em class="glyphicon glyphicon-remove"></em>@L("Cancel")</button>
+    </div>
+    <style>
+        .modal-header{
+        background-color: #4c87b9;
+        }
+    </style>
+</div>

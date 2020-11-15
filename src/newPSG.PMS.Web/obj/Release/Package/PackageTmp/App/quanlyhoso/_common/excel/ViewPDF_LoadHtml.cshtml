@@ -1,0 +1,40 @@
+﻿@model newPSG.PMS.Dto.PdfDto
+<div style="width: 100%; height: calc(100% - 10px); margin-top: 10px;">
+    <div style="height: 95%">
+        <form id="viewpdf_template_form" action="@Url.Action(Model.Action, Model.Controller)" method="post" target="viewpdf_template_iframe" style="display:none">
+            @Html.AntiForgeryToken()
+            @Html.HiddenFor(m => m.HoSoId)
+            @Html.HiddenFor(m => m.NoiDungCV)
+            @Html.HiddenFor(m => m.HoSoIsDat)
+
+            @Html.HiddenFor(m => m.TinhId)
+            @Html.HiddenFor(m => m.JsonThamDinhCoSo)
+            @Html.HiddenFor(m => m.HeaderCV)
+            @Html.HiddenFor(m => m.FooterCV)
+            @Html.HiddenFor(m => m.LoaiHinhDangKyPhuHop)
+            @Html.HiddenFor(m => m.TrangThaiCV)
+            @Html.HiddenFor(m => m.TenCoSo)
+            @Html.HiddenFor(m => m.DiaChiCoSo)
+            @Html.HiddenFor(m => m.YKienBoSung)
+            @Html.HiddenFor(m => m.IsXemTruoc)
+            @Html.HiddenFor(m => m.SoCongVan)
+            @Html.HiddenFor(m => m.TenNguoiDaiDien)
+            @Html.HiddenFor(m => m.Email)
+            @Html.HiddenFor(m => m.SoDienThoai)
+            @Html.HiddenFor(m => m.NgayCongVan)
+        </form>
+        <iframe id="viewpdf_template_iframe" name="viewpdf_template_iframe" src="#zoom=100" style="height:100%; width:100%"></iframe>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        console.log($('#viewpdf_template_form').attr('action'));
+        $('#viewpdf_template_form').submit();
+
+        $('#viewpdf_template_btn_export_excel').click(function () {
+            $('#viewpdf_template_form input[name=exportExcel]').val('true');
+            $('#viewpdf_template_form').submit();
+        });
+    });
+</script>

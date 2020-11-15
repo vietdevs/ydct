@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://kpWebservices/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="kpWebservices" targetNamespace="http://kpWebservices/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://webservices.keypay.vn:80/kpWebservices?xsd=1" namespace="http://kpWebservices/" />
+    </xsd:schema>
+  </types>
+  <message name="sendOrder">
+    <part name="parameters" element="tns:sendOrder" />
+  </message>
+  <message name="sendOrderResponse">
+    <part name="parameters" element="tns:sendOrderResponse" />
+  </message>
+  <message name="QuerryBillStatus">
+    <part name="parameters" element="tns:QuerryBillStatus" />
+  </message>
+  <message name="QuerryBillStatusResponse">
+    <part name="parameters" element="tns:QuerryBillStatusResponse" />
+  </message>
+  <message name="QuerryBillStatusV2">
+    <part name="parameters" element="tns:QuerryBillStatusV2" />
+  </message>
+  <message name="QuerryBillStatusV2Response">
+    <part name="parameters" element="tns:QuerryBillStatusV2Response" />
+  </message>
+  <message name="ConfirmTransResult">
+    <part name="parameters" element="tns:ConfirmTransResult" />
+  </message>
+  <message name="ConfirmTransResultResponse">
+    <part name="parameters" element="tns:ConfirmTransResultResponse" />
+  </message>
+  <portType name="kpWebservices">
+    <operation name="sendOrder">
+      <input wsam:Action="http://kpWebservices/kpWebservices/sendOrderRequest" message="tns:sendOrder" />
+      <output wsam:Action="http://kpWebservices/kpWebservices/sendOrderResponse" message="tns:sendOrderResponse" />
+    </operation>
+    <operation name="QuerryBillStatus">
+      <input wsam:Action="http://kpWebservices/kpWebservices/QuerryBillStatusRequest" message="tns:QuerryBillStatus" />
+      <output wsam:Action="http://kpWebservices/kpWebservices/QuerryBillStatusResponse" message="tns:QuerryBillStatusResponse" />
+    </operation>
+    <operation name="QuerryBillStatusV2">
+      <input wsam:Action="http://kpWebservices/kpWebservices/QuerryBillStatusV2Request" message="tns:QuerryBillStatusV2" />
+      <output wsam:Action="http://kpWebservices/kpWebservices/QuerryBillStatusV2Response" message="tns:QuerryBillStatusV2Response" />
+    </operation>
+    <operation name="ConfirmTransResult">
+      <input wsam:Action="http://kpWebservices/kpWebservices/ConfirmTransResultRequest" message="tns:ConfirmTransResult" />
+      <output wsam:Action="http://kpWebservices/kpWebservices/ConfirmTransResultResponse" message="tns:ConfirmTransResultResponse" />
+    </operation>
+  </portType>
+  <binding name="kpWebservicesPortBinding" type="tns:kpWebservices">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="sendOrder">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="QuerryBillStatus">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="QuerryBillStatusV2">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ConfirmTransResult">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="kpWebservices">
+    <port name="kpWebservicesPort" binding="tns:kpWebservicesPortBinding">
+      <soap:address location="http://webservices.keypay.vn:80/kpWebservices" />
+    </port>
+  </service>
+</definitions>

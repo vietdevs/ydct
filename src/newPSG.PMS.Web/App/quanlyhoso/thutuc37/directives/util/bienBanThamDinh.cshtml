@@ -1,0 +1,23 @@
+﻿@using newPSG.PMS.Localization
+
+
+<div class="container-fluid">
+    <div class="form-body">
+        <div>
+            <p class="thamdinh_tit bold uppercase">Chuyên viên Thụ Lý: {{vm.nguoiDuyet.tenChuyenVienThuLy}}</p>
+        </div>
+        <div quanlyhoso.thutuc99.directives.util.tablethamdinh
+             hosoxuly="vm.hoSoXuLy"
+             itemthamdinh="vm.bienBanThamDinhCV1"
+             dataitem="vm.dataItem"
+             readonly="vm.readonly"></div>
+
+        <hr />
+        <p class="thamdinh_tit bold uppercase">Chuyên viên Phối Hợp: {{vm.nguoiDuyet.tenChuyenVienPhoiHop}}</p>
+        <div quanlyhoso.thutuc99.directives.util.tablethamdinh
+             hosoxuly="vm.hoSoXuLy"
+             dataitem="vm.dataItem"
+             itemthamdinh="vm.bienBanThamDinhCV2"
+             readonly="vm.readonly"></div>
+    </div>
+</div>

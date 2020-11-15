@@ -1,0 +1,185 @@
+﻿@using newPSG.PMS.Localization
+
+<style type="text/css">
+    #form-van-thu-duyet .custom-error-validate {
+        display: none;
+    }
+
+    .k-grid-header th.k-header {
+        background-color: #4c87b9;
+    }
+</style>
+<div class="danhsach" ng-controller="quanlyhoso.thutuc37.views.tracuuhoso.index as vm">
+    <div class="portlet light bordered" ng-show="vm.show_mode==null">
+        <div class="portlet-title">
+            <div class="caption font-blue-soft">
+                <em class="icon-list font-blue-soft"></em>
+                <span class="caption-subject bold uppercase">Cán bộ tra cứu hồ sơ đăng ký cấp chứng chỉ hành nghề - Bộ Y tế</span>
+            </div>
+        </div>
+        <div class="portlet-body">
+            <div class="container-fluid">
+
+                <div class="row form-group">
+                    <div class="col-md-4">
+                        <label class="text-bold">Tên người đăng ký</label>
+                        <input ng-model="vm.filter.HoTenNguoiDeNghi" placeholder="Nhập và ấn enter để tìm..." id="sTenChuCoSo" onfocus="onFocusElei(this)" enter-key="vm.refreshGridHS()" class="form-control" />
+                    </div>
+                    <div class="col-md-4">
+                        <label class="text-bold">Địa chỉ</label>
+                        <input ng-model="vm.filter.DiaChi" placeholder="Nhập và ấn enter để tìm..." id="sDiaChiCoSoDangKy" onfocus="onFocusElei(this)" enter-key="vm.refreshGridHS()" class="form-control" />
+                    </div>
+                    <div class="col-md-4">
+                        <label class="text-bold">Mã số thuế</label>
+                        <input ng-model="vm.filter.MaSoThue" placeholder="Nhập và ấn enter để tìm..." id="sMaSoThue" onfocus="onFocusElei(this)" enter-key="vm.refreshGridHS()" class="form-control" />
+                    </div>
+                </div>
+                <div class="collapse mbottom-20" id="nangcao">
+                    <div class="row form-group">
+                        <div class="col-md-4">
+                            <label class="text-bold">Ngày nộp hồ sơ</label>
+                            <input date-range-picker
+                                   type="text"
+                                   options="vm.ngayNopOptions"
+                                   min="vm.ngayNopOptions.min"
+                                   max="vm.ngayNopOptions.max"
+                                   class="form-control date-picker"
+                                   ng-model="vm.NgayNopModel" />
+                        </div>
+                        <div class="col-md-4">
+                            <label class="text-bold">Ngày trả kết quả</label>
+                            <input date-range-picker
+                                   type="text"
+                                   options="vm.ngayTraKetQuaOptions"
+                                   min="vm.ngayTraKetQuaOptions.min"
+                                   max="vm.ngayTraKetQuaOptions.max"
+                                   class="form-control date-picker"
+                                   ng-model="vm.NgayTraKetQuaModel" />
+                        </div>
+
+                        <div class="col-md-4">
+                            <label class="text-bold">Trạng thái xử lý hồ sơ</label>
+                            <select id="ddlTrangThaiXuLyHoSo"
+                                    style="width: 100%"
+                                    kendo-drop-down-list
+                                    k-ng-model="vm.filter.TrangThaiHoSo"
+                                    k-options="vm.trangThaiTraCuuOptions"
+                                    class="form-control"></select>
+                        </div>
+
+                    </div>
+
+                    <div class="row form-group">
+                        <div class="col-md-4">
+                            <label class="text-bold">Tỉnh/thành phố (của cơ sở đăng ký)</label>
+                            <input id="ddlTinh"
+                                   name="ddlTinh"
+                                   style="width: 100%"
+                                   kendo-drop-down-list
+                                   ng-model="vm.filter.TinhId"
+                                   k-options="vm.tinhOptions"
+                                   class="form-control" />
+                        </div>
+                        <div class="col-md-4">
+                            <label class="text-bold">Quận/huyện (của cơ sở đăng ký)</label>
+                            <input id="ddlHuyen"
+                                   style="width: 100%"
+                                   name="ddlHuyen"
+                                   kendo-drop-down-list
+                                   ng-model="vm.filter.HuyenId"
+                                   k-options="vm.huyenOptions"
+                                   k-cascade-from-field="'parentId'"
+                                   k-cascade-from="'ddlTinh'"
+                                   class="form-control" />
+                        </div>
+                        <div class="col-md-4">
+                            <label class="text-bold">Phường/xã (của cơ sở đăng ký)</label>
+                            <input id="ddlXa"
+                                   name="ddlXa"
+                                   style="width: 100%"
+                                   kendo-drop-down-list
+                                   ng-model="vm.filter.XaId"
+                                   k-options="vm.xaOptions"
+                                   k-cascade-from-field="'parentId'"
+                                   k-cascade-from="'ddlHuyen'"
+                                   class="form-control" />
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
+                        <div class="col-md-4">
+                            <label class="text-bold">Chuyên viên thẩm xét chính</label>
+                            <select id="ddlCv1"
+                                    style="width: 100%"
+                                    kendo-drop-down-list
+                                    k-ng-model="vm.filter.ChuyenVienThuLyId"
+                                    k-options="vm.cv1Options"
+                                    class="form-control"></select>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="text-bold">Trưởng phòng kết luận</label>
+                            <select id="ddlTruongPhong"
+                                    style="width: 100%"
+                                    kendo-drop-down-list
+                                    k-ng-model="vm.filter.TruongPhongId"
+                                    k-options="vm.truongPhongOptions"
+                                    class="form-control"></select>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="text-bold">Lãnh đạo duyệt</label>
+                            <select id="ddlLanhDaoCuc"
+                                    style="width: 100%"
+                                    kendo-drop-down-list
+                                    k-ng-model="vm.filter.LanhDaoCucId"
+                                    k-options="vm.lanhDaoCucOptions"
+                                    class="form-control"></select>
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
+                        <div class="col-md-4">
+                            <label class="text-bold">Văn thư đóng dấu</label>
+                            <select id="ddlVanThuDongDau"
+                                    style="width: 100%"
+                                    kendo-drop-down-list
+                                    k-ng-model="vm.filter.VanThuId"
+                                    k-options="vm.vanThuOptions"
+                                    class="form-control"></select>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="text-bold">Mã hồ sơ</label>
+                            <input ng-model="vm.filter.MaHoSo" placeholder="Nhập và ấn enter để tìm..." id="sMaHoSo" onfocus="onFocusElei(this)" enter-key="vm.refreshGridHS()" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+                <p>
+                    <span class="text-secondary" data-toggle="collapse" href="#nangcao" role="button" aria-expanded="false" aria-controls="nangcao" ng-click="vm.checkCollapse()">
+                        <b>Tra cứu nâng cao <text ng-show="vm.isCollapsed">( ấn vào để mở ) <em class="fa fa-arrow-down" style="font-size: large"></em></text> <text ng-show="!vm.isCollapsed"> ( ấn vào để đóng ) <em class="fa fa-arrow-up" style="font-size: large"></em></text></b>
+                    </span>
+                </p>
+
+                <div class="row form-group">
+                    <div class="col-md-6 text-right">
+                        <button class="btn blue-soft" ng-click="vm.refreshGridHS()"><em class="fa fa-search"></em> Tìm kiếm</button>
+                    </div>
+                    <div class="col-md-6 text-left">
+                        <button class=" btn btn-default" ng-click="vm.refreshControll()"><em class="fa fa-repeat"></em> Đặt lại</button>
+                    </div>
+                    @*<div class="actions text-right">
+                            <button class="btn green-meadow" button-busy="vm.exporting" busy-text="Đang xử lý..." ng-click="vm.xuatExel()"><em class="fa fa-file-excel-o"></em> Xuất Excel</button>
+                        </div>*@
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+
+            <div id="gridHoSo" busy-if="vm.loading"
+                 kendo-grid
+                 k-serverPaging="true"
+                 k-pageSize="10"
+                 k-pageable='{"refresh": true, "pageSizes": true, messages: {empty: "Không có dữ liệu", display: "Hiển thị từ {0} đến {1}/{2} hồ sơ",itemsPerPage: "Hồ sơ hiển thị"}}'
+                 k-options="vm.hoSoGridOptions"
+                 k-data-source='vm.gridHoSoDataSource'
+                 k-columns="vm.columnGridHoSo"></div>
+        </div>
+    </div>
+</div>

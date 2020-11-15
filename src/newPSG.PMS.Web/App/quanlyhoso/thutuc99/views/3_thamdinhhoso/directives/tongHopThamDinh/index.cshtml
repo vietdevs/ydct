@@ -1,0 +1,161 @@
+﻿<div class="portlet light">
+    <div class="portlet-title">
+        <div class="caption font-blue-steel uppercase">
+            <em class="fa fa-pencil font-blue-steel"></em>Tổng hợp thẩm định hồ sơ - {{vm.dataItem.tenSanPham}} [ {{vm.dataItem.soDangKy}} ]
+            <quanlyhoso.thutuc99.directives.util.boxngayquahan dataitem="vm.dataItem" />
+        </div>
+        <div class="tools">
+            <div class="input-group" style="float: left;margin-right: 10px;">
+                <div class="" uib-dropdown auto-close="disabled" is-open="vm.dropdownSearchIsOpen">
+                    <button id="button1" type="button" class="btn btn-sm btn-success dropdown-toggle" uib-dropdown-toggle>Xem lịch sử <em class="fa fa-sm fa-angle-down" style="font-size: 15px;font-weight: bolder; margin-left: 6px;"></em></button>
+                    <div class="dropdown-menu theme-panel pull-right dropdown-custom advance-history" uib-dropdown-menu role="menu" aria-labelledby="button1">
+                        <div class="col-md-12">
+                            <quanlyhoso.thutuc99.directives.viewhistorydrop hosoid="vm.dataItem.id" />
+                        </div>
+                    </div>
+                    <a ng-click="vm.closeModal()"><em class="glyphicon glyphicon-remove font-green-meadow"></em></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="portlet-body form">
+        <div class="row">
+            <div class="col-md-6">
+                <div>
+                    <quanlyhoso.thutuc99.directives.viewtailieu hoso="vm.dataItem" />
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div>
+                    <uib-tabset class="tab-container tabbable-custom margin-bottom-30">
+                        <uib-tab heading="Biên bản thẩm định" class="bold uppercase">
+                            <div class="row" style="margin-left: -5px;margin-right: -5px;">
+                                <div class="col-md-12 right" style="padding-top:10px; padding-bottom:10px;">
+                                    <a class="btn btn-sm btn-default" ng-click="vm.xemBienBanThamDinh()">
+                                        <em class="fa fa-eye-slash"></em>
+                                        <text>Xem biên bản thẩm định</text>
+                                    </a>
+                                </div>
+                                <div quanlyhoso.thutuc99.directives.util.bienbanthamdinh
+                                     dataItem="vm.dataItem"
+                                     readonly="true"></div>
+                            </div>
+                        </uib-tab>
+                        <uib-tab ng-click="vm.clickHoSoIsDat()" heading="Tổng hợp thẩm định" class="bold uppercase">
+                            <div class="container-fluid">
+                                <div class="form-body row" id="chuyen-tham-dinh-ho-so">
+                                    <div class="form-group col-md-12">
+                                        <div quanlyhoso.thutuc99.directives.util.ketquathamdinh dataitem="vm.dataItem" hosoxuly="vm.hoSoXuLy"></div>
+                                        <hr />
+                                        <div class="md-radio-inline">
+                                            <div class="md-radio has-success">
+                                                <input type="radio" id="hoSoIsDat_Radio4" name="hoSoIsDat_Radio4" class="md-radiobtn" ng-model="vm.duyetHoSo.hoSoIsDat" data-ng-value="true">
+                                                <label for="hoSoIsDat_Radio4">
+                                                    <span class="inc"></span>
+                                                    <span class="check"></span>
+                                                    <span class="box"></span> <strong>Hồ sơ đạt</strong>
+                                                </label>
+                                            </div>
+                                            <div class="md-radio has-error">
+                                                <input type="radio" id="hoSoIsDat_Radio5" name="hoSoIsDat_Radio5" class="md-radiobtn" ng-model="vm.duyetHoSo.hoSoIsDat" data-ng-value="false">
+                                                <label for="hoSoIsDat_Radio5">
+                                                    <span class="inc"></span>
+                                                    <span class="check"></span>
+                                                    <span class="box"></span> <strong>Hồ sơ không đạt</strong>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-md-12">
+                                        <div class="" style="padding-left: 0px;">
+                                            <button class="btn btn-sm btn-default" ng-click="vm.xemTruocCongVan()">
+                                                <em class="fa fa-eye-slash"></em>
+                                                <text ng-show="vm.duyetHoSo.hoSoIsDat">Xem trước giấy xác nhận</text>
+                                                <text ng-show="!vm.duyetHoSo.hoSoIsDat">Xem trước công văn</text>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 form-group" ng-show="!vm.duyetHoSo.hoSoIsDat">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <label class="text-bold">Nội dung công văn</label>
+                                                <span class="font-red">*</span>
+                                            </div>
+                                        </div>
+                                        <summernote id="summernote_congvan" config="vm.summernote_options" height="200" ng-model="vm.duyetHoSo.noiDungCV" name="noiDungCV" ng-disabled="vm.duyetHoSo.hoSoIsDat"></summernote>
+                                        <check-validate-empty ng-if="!vm.duyetHoSo.hoSoIsDat" datacheck="vm.duyetHoSo.noiDungCV"></check-validate-empty>
+                                    </div>
+                                    @*Chuyên viên Thụ lý*@
+                                    <div>
+                                        <div class="form-group col-md-5">
+                                            <div class="form-group">
+                                                <md-radio-group ng-model="vm.duyetHoSo.isChuyenNhanh" class="radio-center">
+                                                    <md-radio-button data-ng-value="false" class="md-primary"><text class="text-bold">Trình phó phòng</text></md-radio-button>
+                                                </md-radio-group>
+                                            </div>
+                                            <div class="form-group">
+                                                <md-radio-group ng-model="vm.duyetHoSo.isChuyenNhanh" class="radio-center">
+                                                    <md-radio-button data-ng-value="true" class="md-primary"><text class="text-bold">Trình trưởng phòng</text></md-radio-button>
+                                                </md-radio-group>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-md-7" ng-if="vm.duyetHoSo.isChuyenNhanh==false">
+                                            <label class="text-bold">Phó phòng </label> <span class="font-red">*</span>
+                                            <select style="width: 100%"
+                                                    kendo-drop-down-list
+                                                    ng-model="vm.duyetHoSo.phoPhongId"
+                                                    k-data-text-field="'name'"
+                                                    k-data-value-field="'id'"
+                                                    k-data-source="vm.listNguoiXuLy.listPhoPhong"
+                                                    class="form-control"></select>
+                                            <check-validate-empty datacheck="vm.duyetHoSo.phoPhongId"></check-validate-empty>
+                                        </div>
+                                        <div class="form-group col-md-7" ng-if="vm.duyetHoSo.isChuyenNhanh==true">
+                                            <label class="text-bold">Trưởng phòng </label> <span class="font-red">*</span>
+                                            <select style="width: 100%"
+                                                    kendo-drop-down-list
+                                                    ng-disabled="true"
+                                                    ng-model="vm.duyetHoSo.truongPhongId"
+                                                    k-data-text-field="'name'"
+                                                    k-data-value-field="'id'"
+                                                    k-data-source="vm.listNguoiXuLy.listTruongPhong"
+                                                    class="form-control"></select>
+                                            <check-validate-empty datacheck="vm.duyetHoSo.truongPhongId"></check-validate-empty>
+                                        </div>
+                                        <div class="col-md-12 form-group" ng-hide="vm.duyetHoSo.isChuyenNhanh == null">
+                                            <label ng-show="vm.duyetHoSo.isChuyenNhanh==true"> <text class="text-bold">Lý do trình trưởng phòng</text><span class="font-red">*</span></label>
+                                            <label ng-show="vm.duyetHoSo.isChuyenNhanh==false"><text class="text-bold">Ý kiến trình phó phòng</text></label>
+                                            <textarea class="form-control" rows="5" ng-model="vm.duyetHoSo.lyDoChuyenNhanh" name="lyDoChuyenNhanh"></textarea>
+                                            <check-validate-empty ng-if="vm.duyetHoSo.isChuyenNhanh==true" datacheck="vm.duyetHoSo.lyDoChuyenNhanh"></check-validate-empty>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <div class="form-actions right">
+                                            <button type="button" class="btn btn-sm green" ng-click="vm.saveThamDinhHoSo()" button-busy="vm.saving" busy-text="@L("SavingWithThreeDot")">
+                                                <em class="fa fa-save"></em>
+                                                <text>Lưu nháp</text>
+                                            </button>
+                                            <button type="button" class="btn btn-md green" ng-click="vm.chuyenThamDinhHoSo()" button-busy="vm.saving" busy-text="@L("SavingWithThreeDot")">
+                                                <em class="fa fa-arrow-up"></em>
+                                                <text>Chuyển hồ sơ</text>
+                                            </button>
+                                            <button type="button" class="btn btn-md red" ng-click="vm.closeModal()"><em class="fa fa-close"></em> Đóng</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </uib-tab>
+                    </uib-tabset>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    /*p.thamdinh_tit {
+        line-height: 30px;
+        background: #ccc;
+        color: #fff;
+        padding-left: 10px !important;
+        margin-bottom: 0;
+    }*/
+</style>

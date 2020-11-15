@@ -1,0 +1,128 @@
+﻿<div>
+    <div id="chuKyCreateOrEditForm">
+        <div class="modal-header">
+            <h4 class="modal-title">
+                <span ng-if="!vm.chuKy.id">Tạo mới {{vm.nameTile}}</span>
+                <span ng-if="vm.chuKy.id">Sửa {{vm.nameTile}}</span>
+                <button class="close" type="button" ng-click="vm.cancel()" aria-hidden="true"></button>
+            </h4>
+        </div>
+        <div class="modal-body">
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-12">
+                        <label class="text-bold">Tên {{vm.nameTile}}</label><span><span class="font-red">*</span></span>
+                        <input class="form-control"
+                               type="text"
+                               name="Ten"
+                               ng-model="vm.chuKy.tenChuKy"
+                               data-fv-notempty="true"
+                               data-fv-notempty-message="Không được để trống trường này"
+                               maxlength="250" />
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" ng-show="vm.roleLv != vm.ROLE_LEVEL.DOANH_NGHIEP">
+                <div class="row">
+                    <div class="col-md-4">
+                        <label class="text-bold">Loại chữ ký</label><span><span class="font-red">*</span></span>
+                        <input id="ddlLoaiChuKy"
+                                name="ddlLoaiChuKy"
+                                style="width: 100%"
+                                kendo-drop-down-list
+                                ng-model="vm.chuKy.loaiChuKy"
+                                data-fv-notempty="true"
+                                data-fv-notempty-message="Không được bỏ trống"
+                                data-fv-trigger="blur"
+                                k-options="vm.loaiChuKyOptions"
+                                class="form-control" />
+                    </div>
+                    <div class="col-md-3 col-md-offset-2">
+                        <label class="text-bold">Chiều rộng (pixel)</label>
+                        <input class="form-control"
+                               ui-number-mask="0"
+                               type="text"
+                               name="chieuRong"
+                               ng-model="vm.chuKy.chieuRong" />
+                    </div>
+                    <div class="col-md-3">
+                        <label class="text-bold">Chiều cao (pixel)</label>
+                        <input class="form-control"
+                               ui-number-mask="0"
+                               type="text"
+                               name="chieuCao"
+                               ng-model="vm.chuKy.chieuCao" />
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="text-bold">Hình ảnh {{vm.nameTile}} </label>
+
+                <label ng-show="vm.roleLv == vm.ROLE_LEVEL.DOANH_NGHIEP"> (<i>Tỷ lệ: 450x210 với con dấu, dung lượng tối đa 1MB, định dạng PNG</i>)</label>
+                <label ng-show="vm.roleLv != vm.ROLE_LEVEL.DOANH_NGHIEP"><i> (Tỷ lệ: 240x200 với chữ ký, 450x210 với con dấu, dung lượng tối đa 1MB, định dạng PNG)</i></label>
+             <div class="row">
+                <div class="col-md-6">
+                    <span class="help-block m-b-none"></span>
+                    <input type="file"
+                           nv-file-select
+                           uploader="vm.uploader()" />
+                </div>
+                <div class="col-md-6" style="padding-top: 15px" ng-show="vm.roleLv == vm.ROLE_LEVEL.DOANH_NGHIEP">
+                    <label class="text-bold">Con dấu mẫu</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <img ng-src="data:image/JPEG;base64,{{vm.chuKy.dataImage}}"
+                         ng-show="vm.chuKy.dataImage && !vm.uploadedFileName"
+                         width="150">
+                    <img id="ChuKyResize"
+                         src=""
+                         ng-show="vm.uploadedFileName"
+                         width="150" />
+                </div>
+                <div class="col-md-6" ng-show="vm.roleLv == vm.ROLE_LEVEL.DOANH_NGHIEP">
+                    <img src="/Temp/Downloads/dau-mau.png"
+                         width="150" />
+                </div>
+            </div>
+            </div>
+
+            <div class="form-group" ng-show="vm.roleLv != vm.ROLE_LEVEL.DOANH_NGHIEP">
+                <label class="text-bold">Chân chữ ký</label>
+                <summernote height="100"
+                            class="form-control"
+                            ng-model="vm.chuKy.chanChuKy"></summernote>
+            </div>
+            <div class="form-group">
+                <label class="text-bold">Mô Tả</label>
+                <textarea class="form-control"
+                          maxlength="1000"
+                          name="MoTa"
+                          ng-model="vm.chuKy.moTa"
+                          rows="5"></textarea>
+            </div>
+            <div class="form-group">
+                <p style="margin: 5px 0px">Mỗi tài khoản chỉ có một hình ảnh {{vm.nameTile}} đại diện</p>
+                <p style="margin: 5px 0px">Chỉ có thể ký điện tử khi có các điều kiện sau:</p>
+                <span>
+                    <i style="margin-left: 10px">- Đã có hình ảnh chữ ký đại diện trên hệ thống.</i> <br />
+                    <i style="margin-left: 10px">- Đã tải và cài bộ cài ký điện tử trên máy tính của bạn.</i> <a href="javascript:void(0)" ng-click="vm.taiBoCai()">bấm để tải bộ cài</a><br />
+                    <i style="margin-left: 10px">- USB Token có chứng thư số cắm ở máy tính của bạn.</i> <br />
+                </span>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" button-busy="vm.saving" busy-text="@L("SavingWithThreeDot")" class="btn green-meadow" ng-click="vm.save()"><i class="fa fa-save"></i> <span>@L("Save")</span></button>
+            <button ng-disabled="vm.saving" type="button" class="btn red" ng-click="vm.cancel()"><i class="glyphicon glyphicon-remove"></i>@L("Cancel")</button>
+        </div>
+    </div>
+</div>
+
+<style>
+    .note-editor.note-frame .note-editing-area .note-editable {
+        margin: 10px;
+        padding: 0px 15px;
+    }
+</style>

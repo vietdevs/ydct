@@ -1,0 +1,48 @@
+﻿@using newPSG.PMS.Localization
+<style>
+    .attp-xem-ho-so button {
+        margin-bottom: 10px;
+    }
+
+    .attp-xem-ho-so .tabbable-line > .tab-content {
+        padding-top: 10px !important;
+    }
+
+    .modal-header {
+        background-color: #4c87b9;
+    }
+</style>
+<div class="attp-xem-ho-so">
+    <div class="modal-header">
+        <h4 class="modal-title text-center text-uppercase">
+            Cập nhật kết quả trình ký
+            <button type="button" class="close" ng-click="vm.cancel()" aria-hidden="true"></button>
+        </h4>
+    </div>
+    <div id="FormLapDoanThamDinh" class="modal-body">
+        <div class="row form-group">
+            <div class="col-md-12">
+                <div class="fileinput fileinput-new" data-provides="fileinput">
+                    <label class="text-bold">Upload biên bản tổng hợp</label>
+                    <span class="btn btn-sm green btn-file" title="Uplaod biên bản tổng hợp">
+                        <span class="fileinput-new"><em class="fa fa-upload"></em> <text ng-show="!vm.bienBanTongHopUrl">Đính kèm</text> <text ng-show="vm.bienBanTongHopUrl">Thay đổi</text> </span>
+                        <span class="fileinput-exists"><em class="fa fa-upload"></em> Thay đổi </span>
+                        <input id="giayTiepNhanUpLoad" accept="" type="file" nv-file-select="" uploader="vm.uploader()" name="files[]" />
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="portlet light bordered">
+                <div class="modal-body" style="height:600px;">
+                    <iframe ng-if="vm.bienBanTongHopUrl != null || vm.bienBanTongHopUrl != ''" title="Xem tài liệu" style="width: 100%; height: 100%;border:0" ng-src="{{vm.trustSrc(vm.bienBanTongHopUrl)}}"></iframe>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button ng-disabled="vm.saving" type="button" class="btn blue" ng-click="vm.save()" style="margin-left:10px;margin-bottom:0"><em class="fa fa-save"></em>Câp nhật kết quả </button>
+        <button ng-disabled="vm.saving" type="button" class="btn red" ng-click="vm.cancel()"><em class="glyphicon glyphicon-remove"></em>@L("Cancel")</button>
+    </div>
+</div>

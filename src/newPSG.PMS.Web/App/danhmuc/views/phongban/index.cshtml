@@ -1,0 +1,72 @@
+﻿<div class="danhsach ng-scope" ng-controller="danhmuc.views.phongban.index as vm">
+    <div class="portlet light bordered ng-isolate-scope">
+        <div class="portlet-title">
+            <div class="caption font-green-meadow">
+                <i class="icon-list font-green-meadow"></i>
+                <span class="caption-subject bold uppercase">Danh sách phòng ban</span>
+            </div>
+            <div class="actions">
+                <button class="btn green-meadow" ng-click="vm.addPhongBan()"><i class="fa fa-plus"></i> Thêm phòng ban</button>
+            </div>
+        </div>
+        <div class="portlet-body">
+            <div class="row form-group">
+                <div class="col-lg-6 col-md-6 col-xs-12">
+                    <div class="input-group">
+                        <input class="form-control ng-pristine ng-valid ng-empty ng-touched" name="Keyword" ng-model="vm.filter.Filter" enter-key="vm.loadGridDataSource()" placeholder="Nhập mã phòng ban, tên phòng ban. Ấn Enter để tìm" type="text">
+                        <div id="frmSearch" class="input-group-btn dropdown" uib-dropdown="" auto-close="disabled">
+                            <button tabindex="-1" class="btn green-meadow" type="button" ng-click="vm.loadGridDataSource()"><i class="fa fa-search"></i></button>
+                            <button id="button1" type="button" class="btn green-meadow dropdown-toggle" uib-dropdown-toggle><i class="fa fa-angle-down"></i></button>
+                            <div class="dropdown-menu theme-panel pull-right dropdown-custom" uib-dropdown-menu role="menu" aria-labelledby="button1">
+                                <div class="col-md-12">
+                                    <field>
+                                        <div class="row form-group">
+                                            <div class="col-md-12">
+                                                <label>Loại hồ sơ</label>
+                                                <input style="width: 100%"
+                                                       id="ddlLoaiHoSo"
+                                                       kendo-drop-down-list
+                                                       name="ddlLoaiHoSo"
+                                                       ng-model="vm.filter.LoaiHoSoId"
+                                                       k-options="vm.loaiHoSoOptions"
+                                                       class="form-control" />
+                                            </div>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                        <div class="row form-group">
+                                            <div class="col-md-6">
+                                                <label>Kích Hoạt</label><br />
+                                                <input bs-switch
+                                                       ng-model="vm.filter.IsActive"
+                                                       type="checkbox"
+                                                       switch-on-text="<i class='fa fa-check' aria-hidden='true'></i>"
+                                                       switch-off-text="<i class='fa fa-times' aria-hidden='true'></i>"
+                                                       switch-on-color="success"
+                                                       ng-true-value=true
+                                                       ng-false-value=false>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                        <div class="form-actions text-right">
+                                            <button class="btn green-meadow btn-sm" type="button" ng-click="vm.loadGridDataSource()"><i class="fa fa-search"></i> Tìm kiếm</button>
+                                        </div>
+                                    </field>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                </div>
+            </div>
+        </div>
+        <div class="portlet-body">
+            <div busy-if="vm.loading">
+                <kendo-grid
+                     k-options="vm.gridOptions"
+                     k-data-source='vm.gridDataSource'
+                     k-columns="vm.gridColumns"></kendo-grid>
+            </div>
+        </div>
+    </div>
+</div>

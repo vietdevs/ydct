@@ -1,0 +1,32 @@
+﻿<div class="danhsach ng-scope" ng-controller="danhmuc.views.tinh.index as vm">
+    <div class="portlet light bordered ng-isolate-scope">
+        <div class="portlet-title">
+            <div class="caption font-green-meadow">
+                <i class="icon-list font-green-meadow"></i>
+                <span class="caption-subject bold uppercase">Danh sách các tỉnh thành</span>
+            </div>
+            <div class="actions">
+                <button class="btn green-meadow" ng-click="vm.taoTinh()"><i class="fa fa-plus"></i> Thêm tỉnh</button>
+            </div>
+        </div>
+        <div class="portlet-body">
+            <div class="row form-group">
+                <div class="col-lg-6 col-md-6 col-xs-12">
+                    <div class="input-group">
+                        <input class="form-control ng-pristine ng-valid ng-empty ng-touched" name="Keyword" ng-model="vm.filter.Filter" enter-key="vm.getGridData()" placeholder="Nhập tên tỉnh, mô tả. Ấn Enter để tìm kiếm" type="text">
+                        <div id="frmSearch" class="input-group-btn dropdown" uib-dropdown="" auto-close="disabled">
+                            <button tabindex="-1" class="btn green-meadow" type="button" ng-click="vm.getGridData()"><i class="fa fa-search"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                </div>
+            </div>
+        </div>
+        <div class="portlet-body">
+            <div busy-if="vm.loading">
+                <div id="gdTinh" k-serverPaging="true" k-pageSize="5" k-pageable='{"refresh": true, "pageSizes": true, messages: {empty: "Không có dữ liệu", display: "Hiển thị từ {0} đến {1}/{2} bản ghi",itemsPerPage: "Bản ghi hiển thị"}}' kendo-grid k-data-source='vm.tinhGridOptions' k-columns="vm.tinhColumns"></div>
+            </div>
+        </div>
+    </div>
+</div>

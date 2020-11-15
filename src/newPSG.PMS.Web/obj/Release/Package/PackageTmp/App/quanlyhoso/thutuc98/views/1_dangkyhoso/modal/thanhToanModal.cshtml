@@ -1,0 +1,147 @@
+﻿@using Abp.Authorization.Users
+<div>
+    <div id="kyVaThanhToanModal" novalidate class="form-validation">
+        <div class="modal-header">
+            <h4 class="modal-title">
+                Thanh toán và nộp hồ sơ
+                <button type="button" class="close" ng-click="vm.cancel()" aria-hidden="true"></button>
+            </h4>
+
+        </div>
+        <div class="modal-body">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="hoan-tat-thanh-toan">
+                        <div class="panel panel-default order-success">
+
+                            <div class="panel-body div-second">
+                                <div class="panel panel-warning customer-info">
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                            <div class="title-red">Thông tin doanh nghiệp</div>
+                                        </div>
+
+                                        <div class="col-md-12 thong-tin">
+                                            <div><span>Tên doanh nghiệp</span> <strong id="lblTenKH">: {{vm.doanhnghiep.tenDoanhNghiep}}</strong></div>
+                                        </div>
+                                        <div class="col-md-6 thong-tin">
+
+
+                                            <div><span>Mã số thuế</span> <strong id="lblCMND">: {{vm.doanhnghiep.maSoThue}}</strong></div>
+                                            <div>
+                                                <span>Số điện thoại</span> <strong>: {{vm.doanhnghiep.soDienThoai}}</strong>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="col-md-6">
+
+                                            <div class="col-md-12 thong-tin">
+
+                                                <div>
+                                                    <span>Email</span> <strong>: {{vm.doanhnghiep.emailDoanhNghiep}}</strong>
+                                                </div>
+                                                <div><span>Địa chỉ</span> <strong>: {{vm.doanhnghiep.diaChi}}</strong></div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="panel-body">
+                                <div class="title-red">Thông tin thanh toán</div>
+                                <div>
+
+                                    <table class="table table-service-info">
+                                        <thead>
+                                            <tr>
+                                                <th style="text-align:left;" width="9%">STT</th>
+                                                <th style="text-align:left;" width="30%">Tên thanh toán</th>
+                                                <th style="text-align:left;" width="30%">Mã hồ sơ</th>
+                                                <th style="text-align:right;" width="20%">Số tiền</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+                                            <tr>
+                                                <td style="text-align:left;">1</td>
+                                                <td style="text-align: left;">
+                                                    Nộp phí thẩm định hồ sơ
+                                                </td>
+                                                <td style="text-align: left;">
+                                                    {{vm.hoSo.maHoSo}}
+                                                </td>
+
+                                                <td style="text-align:right;" class="last">
+                                                    <span class="new-price">{{vm.loaiHoSo.phiXuLy | number}} VNĐ</span>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td class="last" width="7%" align="right">&nbsp;</td>
+                                                <td style="text-align: left;"></td>
+                                                <td colspan="2" width="73%" align="right">
+                                                    Tổng cộng:
+                                                    <span class="new-price">
+                                                        {{vm.loaiHoSo.phiXuLy | number}} VNĐ
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="text-align: left;"></td>
+                                                <td colspan="3" align="right">
+                                                    Thành tiền:
+                                                    <span class="new-price">
+                                                        <b class="red">
+                                                            {{vm.loaiHoSo.phiXuLy | number}} VNĐ
+                                                        </b>
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-footer pay-buttons">
+            <button button-busy="vm.saving" busy-text="@L("SavingWithThreeDot")" class="btn bg-blue-steel bg-font-blue-steel btn-lg" 
+                    ng-click="vm.chuyenKhoanModal(vm.hoSo)" ng-if="vm.loaiHoSo.phiXuLy>0">
+                <em class="fa fa-dollar"></em> <span> Chuyển khoản</span>
+            </button>
+
+            <button button-busy="vm.saving" busy-text="@L("SavingWithThreeDot")" class="btn default btn-lg" 
+                    ng-click="vm.chuyenThanhToanViettel()"  ng-if="vm.loaiHoSo.phiXuLy>0" style="display:none;">
+                <img alt="" class="img-responsive" src="~/Common/Images/viettel-pay.png" /> <span> Thanh toán Viettel</span>
+            </button>
+
+            <button button-busy="vm.saving" busy-text="@L("SavingWithThreeDot")" class="btn yellow-gold btn-lg" 
+                    ng-click="vm.chuyenThanhToanKeypay()"  ng-if="vm.loaiHoSo.phiXuLy>0">
+                <img alt="" class="img-responsive" src="~/Common/Images/keypay.png" /> <span>Thanh toán Keypay</span>
+            </button>
+
+            <button button-busy="vm.saving" busy-text="@L("SavingWithThreeDot")" class="btn blue btn-lg" 
+                    ng-click="vm.nopHoSoMoi()" ng-if="!vm.loaiHoSo.phiXuLy">
+                <span>Nộp hồ sơ</span>
+            </button>
+
+            <button ng-disabled="vm.saving" type="button" class="btn red btn-lg" ng-click="vm.cancel()"><em class="glyphicon glyphicon-remove"></em>@L("Cancel")</button>
+        </div>
+    </div>
+</div>
+
+<style>
+    .pay-buttons .btn > img{
+        width: 30px;
+        float: left;
+        margin-right: 10px;
+    }
+</style>

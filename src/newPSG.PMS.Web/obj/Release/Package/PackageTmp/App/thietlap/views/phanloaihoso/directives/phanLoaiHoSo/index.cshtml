@@ -1,0 +1,36 @@
+﻿<div>
+    <div id="createOrEditForm">
+        <div class="modal-header">
+            <div class="modal-title">
+                <h4 style="display: inline-block; margin:0;">
+                    <span ng-if="!vm.dataItem.id">Tạo mới</span>
+                    <span ng-if="vm.dataItem.id">Sửa</span>
+                </h4>
+            </div>
+        </div>
+        <div class="modal-body">
+            <div class="form-group">
+                <label>Tên loại hồ sơ</label><span><span class="font-red">*</span></span>
+                <input class="form-control"
+                       type="text"
+                       name="name"
+                       ng-model="vm.dataItem.name" />
+                <check-validate-empty datacheck="vm.dataItem.name"></check-validate-empty>
+            </div>
+            <div class="form-group">
+                <label>Thủ tục</label><span><span class="font-red">*</span></span>
+                <div app.common.filter.thutucenum selected="vm.dataItem.thuTucId"></div>
+                <check-validate-empty datacheck="vm.dataItem.thuTucId"></check-validate-empty>
+            </div>
+            <div class="form-group">
+                <label>Vai trò</label><span><span class="font-red">*</span></span>
+                <div filter.common.rolelevel id-value="vm.dataItem.roleLevel"></div>
+                <check-validate-empty datacheck="vm.dataItem.roleLevel"></check-validate-empty>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" button-busy="vm.saving" busy-text="@L("SavingWithThreeDot")" class="btn blue-steel" ng-click="vm.save()"><em class="fa fa-save"></em> <span>@L("Save")</span></button>
+            <button ng-disabled="vm.saving" type="button" class="btn btn-default" ng-click="vm.cancel()">@L("Cancel")</button>
+        </div>
+    </div>
+</div>

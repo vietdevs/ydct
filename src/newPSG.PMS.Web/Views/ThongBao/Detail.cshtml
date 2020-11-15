@@ -1,0 +1,32 @@
+﻿@model newPSG.PMS.EntityDB.ThongBao
+<section class="wf100 subheader">
+    <div class="container">
+        <ul>
+            <li> <a href="/">Trang chủ</a> </li>
+            <li> <a href="#">Chi tiết thông báo</a> </li>
+        </ul>
+    </div>
+</section>
+
+<div class="main-content">
+    @*<span style="display:none" id="tenThuTuc">@ViewBag.TenThuTucDirective</span>*@
+    <div class="events-wrapper events-listing" style="padding-bottom: 0;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="stitle text-center">
+                        @Model.TenThongBao
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="wf100 p75 recent-events events-wrapper events-listing ">
+        <div class="container">
+            <div class="row">
+                @Html.Raw(Model.ChiTiet)
+            </div>
+        </div>
+    </section>
+</div>

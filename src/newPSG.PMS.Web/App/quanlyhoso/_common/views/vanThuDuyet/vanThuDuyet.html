@@ -1,0 +1,85 @@
+﻿<style>
+    .advance-search {
+        min-width: 665px;
+    }
+
+    .label_form_case {
+        font-size: 10px !important;
+    }
+</style>
+<div class="danhsach" ng-controller="quanlyhoso.thutuccommon.views.vanthuduyet as vm">
+    <div class="portlet light bordered" ng-show="vm.formview.indexOf('danh_sach') > -1 ">
+        <div class="portlet-title">
+            <div class="caption font-green-meadow">
+                <i class="icon-list font-green-meadow"></i>
+                <span class="caption-subject bold uppercase">
+                    <span style="width:300px">DANH SÁCH VĂN BẢN CẦN DUYỆT VÀ ĐÓNG DẤU</span>
+                </span>
+            </div>
+            <div class="actions">
+            </div>
+        </div>
+        <div class="portlet-body">
+            <div class="row form-group">
+                <div class="col-lg-5 col-md-5 col-xs-12">
+                    <div class="input-group">
+                        <div class="input-group-btn" uib-dropdown auto-close="disabled" is-open="vm.dropdownSearchIsOpen">
+                            <button id="button1" type="button" class="btn green-meadow dropdown-toggle" uib-dropdown-toggle>nâng cao<i class="fa fa-angle-down"></i></button>
+                            <div class="dropdown-menu theme-panel pull-left dropdown-custom advance-search" uib-dropdown-menu role="menu" aria-labelledby="button1">
+                                <div class="col-md-12">
+                                    <field>
+                                        <div class="row form-group">
+                                            <div class="col-md-4">
+                                                <label>Ngày doanh nghiệp gửi hồ sơ</label>
+                                                <ngayguicombo ngaynophoso="vm.ngayGuiModel" />
+                                            </div>
+                                            <div class="col-md-8">
+                                                <label>Doanh nghiệp</label>
+                                                <doanhnghiepcombo doanh-nghiep-id="vm.filter.doanhNghiepId" control="vm.controlDoanhNghiepCombo" />
+                                            </div>
+                                        </div>
+                                        <div class="row form-group">
+                                            <div class="col-md-6">
+                                                <label>Tỉnh / Thành phố</label>
+                                                <tinh-combo selected-item="vm.filter.tinhId"></tinh-combo>
+                                            </div>
+                                        </div>
+                                        <div class="form-actions text-right">
+                                            <button class="btn green-meadow btn-sm" type="button" ng-click="vm.quickSearchHoSo()"><i class="fa fa-search"></i> Tìm kiếm</button>
+                                            <button class="btn default btn-sm" type="button" ng-click="vm.initGridHoSo()">Đặt lại</button>
+                                        </div>
+                                    </field>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="text" id="skeyword" class="form-control" name="Keyword" ng-model="vm.filter.keyword" enter-key="vm.quickSearchHoSo()" onfocus="onFocusElei(this)"
+                               placeholder="Nhập mã hồ sơ, số đăng ký, tên tổ chức, mã số hoặc tên sản phẩm. Ấn Enter để tìm">
+                        <div class="input-group-btn" uib-dropdown auto-close="disabled">
+                            <button tabindex="-1" class="btn green-meadow" type="button" ng-click="vm.quickSearchHoSo()"><i class="fa fa-search"></i></button>
+                            <button class="btn default" type="button" ng-click="vm.initGridHoSo()"><i class="fa fa-repeat"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7 col-md-7">
+                    <div class="attp-filter">
+                        <div class="btn-group" data-toggle="buttons">
+                            <label class="btn btn-default label_form_case" ng-repeat="item in vm.listFormCase"
+                                   ng-class="vm.filter.formCase == item.id ? 'active':''"
+                                   ng-click="vm.formCaseOnChange(item.id)">
+                                <input class="toggle" type="radio" ng-model="vm.filter.formCase" value="{{ item.id }}"> {{ item.name }}
+                                <span class="badge bg-red" ng-hide="item.totalItems == 0"> {{item.totalItems}} </span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-12">
+                    <div kendo-grid k-options="vm.hoSoGridOptions"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div ng-if="vm.formview =='van_thu_duyet'"  compile="vm.dirVanThuDuyet">
+    </div>
+</div>

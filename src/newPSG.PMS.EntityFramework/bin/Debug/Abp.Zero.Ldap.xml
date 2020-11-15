@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Abp.Zero.Ldap</name>
+    </assembly>
+    <members>
+        <member name="T:Abp.Zero.Ldap.AbpZeroLdapModule">
+            <summary>
+            This module extends module zero to add LDAP authentication.
+            </summary>
+        </member>
+        <member name="T:Abp.Zero.Ldap.Authentication.LdapAuthenticationSource`2">
+            <summary>
+            Implements <see cref="T:Abp.Authorization.Users.IExternalAuthenticationSource`2"/> to authenticate users from LDAP.
+            Extend this class using application's User and Tenant classes as type parameters.
+            Also, all needed methods can be overridden and changed upon your needs.
+            </summary>
+            <typeparam name="TTenant">Tenant type</typeparam>
+            <typeparam name="TUser">User type</typeparam>
+        </member>
+        <member name="F:Abp.Zero.Ldap.Authentication.LdapAuthenticationSource`2.SourceName">
+            <summary>
+            LDAP
+            </summary>
+        </member>
+        <member name="M:Abp.Zero.Ldap.Authentication.LdapAuthenticationSource`2.TryAuthenticateAsync(System.String,System.String,`0)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Abp.Zero.Ldap.Authentication.LdapAuthenticationSource`2.CreateUserAsync(System.String,`0)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Abp.Zero.Ldap.Configuration.ILdapSettings">
+            <summary>
+            Used to obtain current values of LDAP settings.
+            This abstraction allows to define a different source for settings than SettingManager (see default implementation: <see cref="T:Abp.Zero.Ldap.Configuration.LdapSettings"/>).
+            </summary>
+        </member>
+        <member name="T:Abp.Zero.Ldap.Configuration.LdapSettingNames">
+            <summary>
+            Contains consts for LDAP setting names.
+            </summary>
+        </member>
+        <member name="F:Abp.Zero.Ldap.Configuration.LdapSettingNames.IsEnabled">
+            <summary>
+            Abp.Zero.Ldap.IsEnabled
+            </summary>
+        </member>
+        <member name="F:Abp.Zero.Ldap.Configuration.LdapSettingNames.ContextType">
+            <summary>
+            Abp.Zero.Ldap.ContextType
+            </summary>
+        </member>
+        <member name="F:Abp.Zero.Ldap.Configuration.LdapSettingNames.Container">
+            <summary>
+            Abp.Zero.Ldap.Container
+            </summary>
+        </member>
+        <member name="F:Abp.Zero.Ldap.Configuration.LdapSettingNames.Domain">
+            <summary>
+            Abp.Zero.Ldap.Domain
+            </summary>
+        </member>
+        <member name="F:Abp.Zero.Ldap.Configuration.LdapSettingNames.UserName">
+            <summary>
+            Abp.Zero.Ldap.UserName
+            </summary>
+        </member>
+        <member name="F:Abp.Zero.Ldap.Configuration.LdapSettingNames.Password">
+            <summary>
+            Abp.Zero.Ldap.Password
+            </summary>
+        </member>
+        <member name="T:Abp.Zero.Ldap.Configuration.LdapSettingProvider">
+            <summary>
+            Defines LDAP settings.
+            </summary>
+        </member>
+        <member name="T:Abp.Zero.Ldap.Configuration.LdapSettings">
+            <summary>
+            Implements <see cref="T:Abp.Zero.Ldap.Configuration.ILdapSettings"/> to get settings from <see cref="T:Abp.Configuration.ISettingManager"/>.
+            </summary>
+        </member>
+        <member name="T:Abp.Zero.Ldap.Configuration.ModuleZeroLdapConfigurationExtensions">
+            <summary>
+            Extension methods for module zero configurations.
+            </summary>
+        </member>
+        <member name="M:Abp.Zero.Ldap.Configuration.ModuleZeroLdapConfigurationExtensions.ZeroLdap(Abp.Configuration.Startup.IModuleConfigurations)">
+            <summary>
+            Configures ABP Zero LDAP module.
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,91 @@
+﻿@using newPSG.PMS.Localization
+<style>
+    #form-chuyen-ho-so .custom-error-validate {
+        display: none;
+    }
+</style>
+<div class="danhsach" ng-controller="quanlyhoso.thutuc99.views.motcuarasoat.index as vm">
+    <div class="portlet light bordered" ng-show="vm.show_mode==null">
+        <div class="portlet-title">
+            <div class="caption font-green-meadow">
+                <i class="icon-list font-green-meadow"></i>
+                <span class="caption-subject bold uppercase">Danh sách hồ sơ cần rà soát trước khi tiếp nhận</span>
+            </div>
+            <div class="actions">
+                <button class="btn btn-primary" ng-click="vm.demo()"><i class="fa fa-question-circle"></i>  Xem video hướng dẫn</button>
+            </div>
+        </div>
+
+        <div class="portlet-body">
+            <quanlyhoso.thutuc99.directives.gridhoso form="vm.form"
+                                                     filterobj="vm.filter"
+                                                     motcuarasoat="vm.openMotCuaRaSoat"
+                                                     loadcheckall="vm.updateArrCheckbox" />
+        </div>
+    </div>
+    <!-- MODAL -->
+    <div class="portlet light" ng-show="vm.show_mode == 'mot_cua_ra_soat'">
+        <div class="portlet-title">
+            <div class="caption font-green-meadow uppercase">
+                <i class="fa fa-file-pdf-o font-green-meadow"></i> {{vm.phanCongInfo.title}}
+            </div>
+            <div class="tools">
+                <div class="input-group" style="float: left;margin-right: 10px;">
+                    <div class="" uib-dropdown auto-close="disabled" is-open="vm.dropdownSearchIsOpen">
+                        <button id="button1" type="button" class="btn btn-sm btn-success dropdown-toggle" uib-dropdown-toggle>Xem lịch sử <em class="fa fa-sm fa-angle-down" style="font-size: 15px;font-weight: bolder; margin-left: 6px;"></em></button>
+                        <div class="dropdown-menu theme-panel pull-right dropdown-custom advance-history" uib-dropdown-menu role="menu" aria-labelledby="button1">
+                            <div class="col-md-12">
+                                <quanlyhoso.thutuc99.directives.viewhistorydrop hosoid="vm.dataItem.id" />
+                            </div>
+                        </div>
+                        <a ng-click="vm.closeModal()"><em class="glyphicon glyphicon-remove font-green-meadow"></em></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="portlet-body form">
+            <div class="row">
+                <div class="col-md-7">
+                    <div ng-if="vm.show_mode == 'mot_cua_ra_soat'">
+                        <div quanlyhoso.thutuc99.directives.viewtailieu hoso="vm.dataItem"></div>
+                    </div>
+                </div>
+                <div class="row col-md-5" style="margin-top:42px">
+                    <div class="col-md-12" id="form-chuyen-ho-so">
+                        <div id="boxInfo">
+                            <div class="row">
+                                <div class="form-group col-md-12">
+                                    <label class="mt-checkbox">
+                                        <input ng-model="vm.phanCongInfo.isTuChoi" type="checkbox"> <strong>Từ chối hồ sơ</strong>
+                                        <span></span>
+                                    </label>
+                                </div>
+                                <div class="form-group col-md-12" ng-if="vm.phanCongInfo.isTuChoi">
+                                    <label><strong>Lý do từ chối</strong></label> <span class="font-red">*</span>
+                                    <div>
+                                        <summernote config="vm.summernote_options" ng-model="vm.phanCongInfo.lyDoTuChoi" height="100"></summernote>
+                                        <check-validate-empty ng-if="vm.show_mode == 'mot_cua_phan_cong'" datacheck="vm.phanCongInfo.lyDoTuChoi"></check-validate-empty>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-right">
+                            <button type="submit" button-busy="vm.savingReject" busy-text="Đang lưu..." class="btn btn-primary btn-sm green ng-isolate-scope"
+                                    ng-click="vm.tuChoiTiepNhan()"
+                                    ng-disabled="!vm.phanCongInfo.isTuChoi">
+                                <i class="fa fa-mail-forward"></i> <span>Trả lại</span>
+                            </button>
+                            <button type="submit" button-busy="vm.saving" busy-text="Đang lưu..." class="btn btn-primary btn-sm blue ng-isolate-scope"
+                                    ng-click="vm.luuMotCuaPhanCong()"
+                                    ng-disabled="vm.phanCongInfo.isTuChoi">
+                                <i class="fa fa-send"></i> <span>Chuyển doanh nghiệp</span>
+                            </button>
+                            <button type="button" class="btn btn-sm btn-default" ng-click="vm.closeModal()"><i class="fa fa-close"></i> Đóng</button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END MODAL -->
+</div>

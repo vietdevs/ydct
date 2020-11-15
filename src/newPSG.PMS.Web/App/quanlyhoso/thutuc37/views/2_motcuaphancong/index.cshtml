@@ -1,0 +1,104 @@
+﻿@using newPSG.PMS.Localization
+<style>
+    .table > thead > tr > th {
+        vertical-align: middle;
+        background-color: #4c87b9;
+        color: white;
+    }
+
+    #form-chuyen-ho-so .custom-error-validate {
+        display: none;
+    }
+</style>
+<div class="danhsach" ng-controller="quanlyhoso.thutuc37.views.motcuaphancong.index as vm">
+    <div class="portlet light bordered" ng-if="vm.show_mode == null">
+        <div class="portlet-title">
+            <div class="caption font-blue-soft">
+                <em class="icon-list font-blue-soft"></em>
+                <span class="caption-subject bold uppercase">Chức năng một cửa phân công</span>
+            </div>
+        </div>
+        <div class="portlet-body">
+            <quanlyhoso.thutuc37.directives.gridhoso form="vm.form"
+                                                     filterobj="vm.filter"
+                                                     motcuaphancong="vm.openMotCuaPhanCong"
+                                                     loadcheckall="vm.updateArrCheckbox" />
+        </div>
+    </div>
+    <!-- MODAL -->
+    <div class="portlet light" ng-if="vm.show_mode == 'mot_cua_phan_cong'">
+        <div class="portlet-title">
+            <div class="caption font-blue-soft uppercase">
+                <em class="fa fa-calendar font-blue-soft"></em>{{vm.phanCongInfo.title}}
+            </div>
+            <div class="tools">
+                <div class="input-group" style="float: left;margin-right: 10px;">
+                    <div class="" uib-dropdown auto-close="disabled" is-open="vm.dropdownSearchIsOpen">
+                        <button id="button1" type="button" class="btn btn-sm btn-success dropdown-toggle" uib-dropdown-toggle>Xem lịch sử <em class="fa fa-sm fa-angle-down" style="font-size: 15px;font-weight: bolder; margin-left: 6px;"></em></button>
+                        <div class="dropdown-menu theme-panel pull-right dropdown-custom advance-history" uib-dropdown-menu role="menu" aria-labelledby="button1">
+                            <div class="col-md-12">
+                                <quanlyhoso.thutuc37.directives.viewhistorydrop hosoid="vm.dataItem.id" />
+                            </div>
+                        </div>
+                        <a ng-click="vm.closeModal()"><em class="glyphicon glyphicon-remove font-green-meadow"></em></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="portlet-body form">
+            <div class="row">
+                <div class="col-md-7">
+                    <div quanlyhoso.thutuc37.directives.viewtailieu hoso="vm.dataItem"></div>
+                </div>
+                <div class="row col-md-5" style="margin-top:42px">
+                    <div class="col-md-12 form-group">
+                        <table class="table table-bordered" busy-if="vm.loading == true">
+                            <thead>
+                                <tr>
+                                    <th class="text-center" style="width:30px">STT</th>
+                                    <th class="text-center">Tên phòng ban</th>
+                                    <th class="text-center" style="width:100px">
+                                        Đang xử lý
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="item in vm.listThongKePhanCong">
+                                    <td class="text-center">{{$index + 1}}</td>
+                                    <td>{{item.tenPhongBan}}</td>
+                                    <td class="text-center">{{item.sumHoSoXuLy}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-md-12" id="form-chuyen-ho-so">
+                        <div id="boxInfo" class="form-group">
+                            <div>
+                                <label class="text-bold">Phòng ban xử lý</label> <span class="font-red">*</span>
+                                <select class="form-control col-md-12"
+                                        ng-options="obj.id as obj.name for obj in vm.lstPhongBan"
+                                        ng-model="vm.phanCongInfo.phongBanId">
+                                    <option value="">Chọn ...</option>
+                                </select>
+                                <check-validate-empty class="col-md-12" style="padding:0px" ng-if="vm.show_mode == 'mot_cua_phan_cong'" datacheck="vm.phanCongInfo.phongBanId"></check-validate-empty>
+                            </div>
+
+                        </div>
+                        <div class="clearfix"></div>
+                        <p class="text-right" style="margin-top: 20px;">
+                            <button type="submit" button-busy="vm.saving" busy-text="Đang lưu..." class="btn btn-primary blue ng-isolate-scope"
+                                    ng-click="vm.luuMotCuaPhanCong()"
+                                    ng-disabled="exampleForm.$invalid || vm.phanCongInfo.isTuChoi">
+                                <em class="fa fa-send"></em> <span>Phân công phòng ban</span>
+                            </button>
+                            <button type="button" class="btn red" ng-click="vm.closeModal()"><em class="fa fa-close"></em> Đóng</button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END MODAL -->
+</div>
+
+

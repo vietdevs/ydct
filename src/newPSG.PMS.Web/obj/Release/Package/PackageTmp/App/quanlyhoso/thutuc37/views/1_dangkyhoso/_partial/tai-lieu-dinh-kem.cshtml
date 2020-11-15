@@ -1,0 +1,72 @@
+﻿<style>
+    .table > tbody > tr > td {
+        vertical-align: middle;
+    }
+</style>
+<div class="portlet light bordered">
+    <div class="row">
+        <div class="col-md-12">
+            <h3 class="bold font-red">Khuyến cáo:</h3>
+            <ul style="margin-left: 20px; margin-bottom: 5px;">
+                <li style="margin-bottom: 3px;">Tất cả các loại tài liệu yêu cầu Doanh nghiệp scan màu, rõ ràng, có thể đọc được.</li>
+                <li style="margin-bottom: 3px;">Các loại tài liệu theo chuẩn sau: .pdf;</li>
+                <li style="margin-bottom: 3px;">Dung lượng đính kèm giới hạn 15M</li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <form id="uploadform" method="POST" ng-hide="vm.checked" style="margin:0px;" enctype="multipart/form-data">
+                <div class="table-scrollable">
+                    <table class="table table-striped table-bordered table-hover">
+                        <thead>
+                            <tr class="active">
+                                <th class="text-center" style="width:40px"> STT </th>
+                                <th style="width:80px"> Đã tải lên </th>
+                                <th> File PDF </th>
+                                <th> Tên tài liệu </th>
+                                <th> Đính kèm tệp <span ng-show="vm.taiLieu.length > 0" class="font-red">*</span></th>
+                                <th style="width:200px;"> Hành động </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="taiLieuItem in vm.taiLieu">
+                                <td> {{taiLieuItem.index}} </td>
+                                <td class="text-center">
+                                    <em class='fa fa-check font-blue-steel text-center' ng-show="taiLieuItem.duongDanTep != null && taiLieuItem.duongDanTep != ''"></em>
+                                    <em class='fa fa-close font-red text-center' ng-show="taiLieuItem.duongDanTep == null || taiLieuItem.duongDanTep == ''"></em>
+                                </td>
+                                <td>
+                                    {{taiLieuItem.tenTep}}
+                                    @*<input class="form-control" disabled="disabled" ng-model="taiLieuItem.tenTep" placeholder="File PDF"
+                                           data-fv-notempty="true" data-fv-notempty-message="Xin hãy chọn một tệp tin đúng định dạng cho phép"
+                                           data-fv-trigger="blur" type="text">*@
+                                </td>
+                                <td>
+                                    <input class="form-control" ng-disabled="taiLieuItem.index <= 5" ng-model="taiLieuItem.moTaTep" placeholder="Tên tài liệu" type="text">
+                                </td>
+                                <td>
+                                    <input id="tailieu_{{taiLieuItem.index}}" accept="pdf" type="file" nv-file-select="" uploader="vm.uploader({{taiLieuItem}})" name="files[]" />
+                                    <check-validate-empty datacheck="taiLieuItem.tenTep" ng-if="taiLieuItem.index > 5"></check-validate-empty>
+                                </td>
+                                <td>
+                                    <div class="btn-group">
+                                        <button type="button" ng-if="taiLieuItem.duongDanTep != null" ng-click="vm.xemTaiLieu(taiLieuItem)" class="btn btn-primary"><em class="fa fa-eye"></em> Xem</button>
+                                        <button style="margin-left:5px;" type="button" ng-click="vm.xoaUploadFile(taiLieuItem)" class="btn red" ng-if="taiLieuItem.index > 5"><em class="fa fa-times"></em> Xóa</button>
+
+                                    </div>
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+                <input name="__RequestVerificationToken" type="hidden" value="nFCIr8ZcrWXoLLBQUyCQenaDUJq8Xb3cuor_6kHhyzvRILSXbJnA02yc2p_Lnn-lBOaochUGSsg4cDjxODfy3ERt433lGJyBqBxa7PV6-lE1">
+            </form>
+            <button type="button" ng-click="vm.themUploadFile()" class="btn blue"><em class="fa fa-plus"></em> Thêm mới</button>
+        </div>
+
+    </div>
+</div>

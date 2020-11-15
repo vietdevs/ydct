@@ -1,0 +1,74 @@
+﻿<div class="modal-header">
+    <div class="modal-title">
+        <h4 class="modal-title text-center uppercase">
+            <span>
+                Thiết lập loại biên bản, số lượng thẩm định:
+                <span style="color:red"> {{vm.dataItem.name}} </span>
+            </span>
+            <button type="button" class="close" ng-click="vm.cancel()" aria-hidden="true"></button>
+        </h4>
+    </div>
+</div>
+<div class="modal-body" id="createOrEditForm">
+    <form autocomplete="off">
+        <div ng-repeat="item in vm.listSetting_LoaiHoSo_BienBan track by $index">
+            <div class="form-group row" ng-if="vm.dataItem.roleLevel == vm.ROLE_LEVEL.CHUYEN_GIA">
+                <div class="col-md-5">
+                    <label>Tiểu ban chuyên gia</label><span><span class="font-red">*</span></span>
+                    <div class="input-group">
+                        <span class="input-group-btn">
+                            <button ng-click="vm.deleteRow($index)" class="btn btn-danger" type="button" title="Xóa tiểu ban"><span class="fa fa-trash"></span></button>
+                        </span>
+                        <div filter.common.tieuban value="item.tieuBanEnum"></div>
+                    </div>
+                    <check-validate-empty datacheck="item.tieuBanEnum"></check-validate-empty>
+                </div>
+                <div class="col-md-4">
+                    <label>Loại biên bản</label><span><span class="font-red">*</span></span>
+                    <div filter.common.loaibienban value="item.loaiBienBanThamDinhId" control="vm.controlLoaiBienBan" index="$index"></div>
+                    <check-validate-empty datacheck="item.loaiBienBanThamDinhId"></check-validate-empty>
+                </div>
+                <div class="col-md-3">
+                    <label>Số lượng</label><span><span class="font-red">*</span></span>
+                    <input class="form-control"
+                           type="number"
+                           name="soLuong{{$index}}"
+                           ng-model="item.soLuong" />
+                    <check-validate-empty datacheck="item.soLuong"></check-validate-empty>
+                </div>
+            </div>
+            <div class="form-group row" ng-if="vm.dataItem.roleLevel != vm.ROLE_LEVEL.CHUYEN_GIA">
+                <div class="col-md-7">
+                    <label>Loại biên bản</label><span><span class="font-red">*</span></span>
+                    <div filter.common.loaibienban value="item.loaiBienBanThamDinhId" control="vm.controlLoaiBienBan" index="$index"></div>
+                    <check-validate-empty datacheck="item.loaiBienBanThamDinhId"></check-validate-empty>
+                </div>
+                <div class="col-md-5">
+                    <label>Số lượng</label><span><span class="font-red">*</span></span>
+                    <input class="form-control"
+                           type="number"
+                           ng-model="item.soLuong" />
+                    <check-validate-empty datacheck="item.soLuong"></check-validate-empty>
+                </div>
+            </div>
+            <div class="margin-bottom-20 margin-top-20 border-dashed"></div>
+        </div>
+    </form>
+    <div class="row">
+        <div class="col-md-6">
+            <button ng-if="vm.dataItem.roleLevel == vm.ROLE_LEVEL.CHUYEN_GIA" ng-disabled="vm.saving" type="button" class="btn btn-success" ng-click="vm.addRow()"><em class="fa fa-plus"></em> Thêm mới</button>
+        </div>
+        <div class="col-md-6">
+            <div class="modal-footer">
+                <button type="button" button-busy="vm.saving" busy-text="@L("SavingWithThreeDot")" class="btn blue" ng-click="vm.save()"><em class="fa fa-save"></em> <span>@L("Save")</span></button>
+                <button ng-disabled="vm.saving" type="button" class="btn btn-default" ng-click="vm.cancel()">@L("Cancel")</button>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    .modal-dialog {
+        width: 800px;
+    }
+</style>
+

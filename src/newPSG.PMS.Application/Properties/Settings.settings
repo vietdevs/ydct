@@ -1,0 +1,9 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="newPSG.PMS.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="newPSG_PMS_Application_vn_keypay_webservices_kpWebservices" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://webservices.keypay.vn:80/kpWebservices</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

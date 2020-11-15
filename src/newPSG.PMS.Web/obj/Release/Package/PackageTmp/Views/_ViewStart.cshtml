@@ -1,0 +1,19 @@
+﻿@{
+    var url =  Request.Url.AbsoluteUri.ToLower();
+    if (url.Contains("danang."))
+    {
+        Layout = "~/Views/Layout/DaNang/_LayoutDaNang.cshtml";
+    }
+    else if (url.Contains("bqlattp."))
+    {
+        Layout = "~/Views/Layout/HoChiMinh/_LayoutHoChiMinh.cshtml";
+    }
+    else if (url.Contains("bacninh."))
+    {
+        Layout = "~/Views/Layout/BacNinh/_LayoutBacNinh.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Layout/_Layout.cshtml";
+    }
+}

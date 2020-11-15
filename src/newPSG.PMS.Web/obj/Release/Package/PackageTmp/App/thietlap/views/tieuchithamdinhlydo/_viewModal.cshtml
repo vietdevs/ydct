@@ -1,0 +1,61 @@
+﻿<div>
+    <div id="createOrEditForm">
+        <div class="modal-header">
+            <div class="modal-title">
+                <h4 style="display: inline-block; margin:0;">
+                    Xem tiêu chí lý do
+                </h4>
+            </div>
+        </div>
+        <div class="modal-body">
+            <form autocomplete="off">
+                <div class="form-group">
+                    <div class="form-group">
+                        <label> Tiêu chi thẩm định</label>
+                        <input id="TieuChiThamDinh"
+                               name="TieuChiThamDinh"
+                               ng-disabled="true"
+                               style="width: 100%"
+                               kendo-drop-down-list
+                               k-ng-model="vm.dataItem.tieuChiThamDinhId"
+                               k-options="vm.noiDungThamDinhOptions"
+                               class="form-control" />
+                    </div>
+                    <div class="caption">
+                        <em class="fa fa-hand-rock-o font-yellow-casablanca"></em>
+                        <span class="caption-subject bold font-yellow-casablanca uppercase"> Lý do </span>
+                    </div>
+                    <div class="table-scrollable table-scrollable-borderless">
+                        <table class="table table-hover table-light">
+                            <thead>
+                                <tr class="uppercase">
+                                    <th style="width:45px;"> STT </th>
+                                    <th> Lý do </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="item in vm.dataItem.listLyDo">
+                                    <td>
+                                        {{$index + 1}}
+                                    </td>
+                                    <td>
+                                        {{item.lyDo}}
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button type="button" button-busy="vm.saving" busy-text="@L("SavingWithThreeDot")" class="btn blue-steel" ng-click="vm.save()"><em class="fa fa-save"></em> <span>@L("Save")</span></button>
+            <button ng-disabled="vm.saving" type="button" class="btn btn-default" ng-click="vm.cancel()">@L("Cancel")</button>
+        </div>
+    </div>
+</div>
+<style>
+    .modal-dialog {
+        width: 1000px;
+    }
+</style>

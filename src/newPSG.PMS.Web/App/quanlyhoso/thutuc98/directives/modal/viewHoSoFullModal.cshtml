@@ -1,0 +1,78 @@
+﻿@using newPSG.PMS.Localization
+<style>
+    .attp-xem-ho-so button {
+        margin-bottom: 10px;
+    }
+
+    .attp-xem-ho-so .tabbable-line > .tab-content {
+        padding-top: 10px !important;
+    }
+</style>
+<div class="attp-xem-ho-so">
+    <div class="modal-header">
+        <h4 class="modal-title text-center text-uppercase">
+            Xem hồ sơ
+            <button type="button" class="close" ng-click="vm.cancel()" aria-hidden="true"></button>
+        </h4>
+    </div>
+    <div class="modal-body">
+        <div class="container-fluid">
+            <div class="row">
+                <uib-tabset class="tab-container tabbable-line" active="2">
+                    <uib-tab tabindex="0" index="0" heading="Giấy chứng nhận" ng-if="vm.isShowGiayTiepNhan">
+                        <div class="portlet light bordered" style="height: 600px">
+                            <iframe title="Xem giấy chứng nhận" style="width: 100%; height: 100%;border:0" ng-src="{{vm.trustSrc(vm.giayTiepNhanUrl)}}"></iframe>
+                        </div>
+                    </uib-tab>
+                    <uib-tab tabindex="1" index="1" heading="Công văn" ng-show="vm.lstCongVan.length > 0">
+                        <div class=" right" style="padding-top: 10px;">
+                            <button ng-repeat="congvan in vm.lstCongVan" type="button" class="btn btn-xs btn-default" ng-class="congvan.active == true ? 'blue-steel' : ''" ng-click="vm.xemCongVanBoSung(congvan)">{{congvan.displayText}}</button>
+                        </div>
+                        <div class="portlet light bordered" style="height: 600px">
+                            <iframe title="Xem công văn, thông báo" style="width: 100%; height: 100%;border:0" ng-src="{{vm.trustSrc(vm.congVanUrl)}}"></iframe>
+                        </div>
+                    </uib-tab>
+                    <uib-tab tabindex="2" index="2" heading="Hồ sơ">
+                        <div class="portlet light bordered" style="height: 600px">
+                            <iframe title="Xem bản đắng ký" style="width: 100%; height: 100%;border:0" ng-src="{{vm.trustSrc(vm.dangKyHoSoUrl)}}"></iframe>
+                        </div>
+                    </uib-tab>
+
+                    <uib-tab heading="Tài liệu đính kèm">
+                        <div ng-if="vm.lstTaiLieu.length > 0">
+                            <div class="right" style="padding-top: 10px;">
+                                <button type="button" ng-class="taiLieu.active == true ? 'blue-steel' : ''"
+                                        class="btn btn-xs btn-default" ng-click="vm.xemTaiLieu(taiLieu)"
+                                        ng-repeat="taiLieu in vm.lstTaiLieu">
+                                    {{taiLieu.moTaTep}}
+                                </button>
+                            </div>
+                            <div class="portlet light bordered" style="height: 600px">
+                                <div class="portlet light bordered text-center font-grey-salsa" style="height: 600px" ng-if="vm.taiLieuDinhKemUrl == null || vm.taiLieuDinhKemUrl == ''">
+                                    <span class="k-icon k-i-warning" style="margin-top: 200px; font-size: 30px;"></span><br><br>
+                                    Không tìm thấy tệp đính kèm!
+                                </div>
+                                <iframe ng-if="vm.taiLieuDinhKemUrl != null || vm.taiLieuDinhKemUrl != ''" title="Xem tài liệu" style="width: 100%; height: 100%;border:0" ng-src="{{vm.trustSrc(vm.taiLieuDinhKemUrl)}}"></iframe>
+                            </div>
+                        </div>
+                        <div ng-if="vm.lstTaiLieu.length == 0">
+                            <div class="portlet light bordered text-center font-grey-salsa" style="height: 600px">
+                                <span class="k-icon k-i-warning" style="margin-top: 200px; font-size: 30px;"></span><br><br>
+                                Không có dữ liệu!
+                            </div>
+                        </div>
+                    </uib-tab>
+
+                    <uib-tab heading="Lịch sử hồ sơ" ng-if="vm.showLichSu">
+                        <div class="" style="height: 600px">
+                            <quanlyhoso.thutuc98.directives.viewhistorydrop hosoid="vm.dataItem.id" />
+                        </div>
+                    </uib-tab>
+                </uib-tabset>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button ng-disabled="vm.saving" type="button" class="btn red" ng-click="vm.cancel()"><em class="glyphicon glyphicon-remove"></em>@L("Cancel")</button>
+    </div>
+</div>

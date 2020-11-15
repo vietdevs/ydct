@@ -1,0 +1,90 @@
+﻿@using newPSG.PMS.Localization
+@using System.Web.Optimization
+
+<div class="danhsach" ng-controller="quanlyhoso.thutuc37.views.dangkyhoso.index as vm">
+    <div class="portlet light bordered" ng-show="vm.show_mode==null">
+        <div class="portlet-title">
+            <div class="caption font-blue-soft">
+                <em class="icon-list font-blue-soft"></em>
+                <span class="caption-subject bold uppercase">Danh sách hồ sơ</span>
+            </div>
+            <div class="actions">
+                <button class="btn bg-blue-soft bg-font-blue-soft" ng-if="false" ng-click="vm.xemHuongDanDangKyCongBo()"><em class="fa fa-question-circle"></em>  Xem video hướng dẫn</button>
+
+                <div class="btn-group">
+                    <button type="button" class="btn blue-soft" busy-text="Đang xử lý..." ng-click="vm.addHoSo()"><em class="fa fa-plus"></em> Thêm mới hồ sơ</button>
+                </div>
+
+            </div>
+        </div>
+        <div class="portlet-body">
+            <quanlyhoso.thutuc37.directives.gridhoso form="vm.form"
+                                                     filterobj="vm.filter"
+                                                     suahoso="vm.viewOrEditHoSo"
+                                                     huyhoso="vm.huyHoSo"
+                                                     nophosobitralai="vm.nopHoSoBiTraLai"
+                                                     taobansaohoso="vm.taoBanSaoHoSo"/>
+        </div>
+    </div>
+
+    <div id="HoSoCreateOrEditForm" name="hosoCreateOrEditForm" class="portlet light bordered" ng-if="vm.show_mode == 'dangkyhoso'">
+        <div class="portlet-title">
+            <div class="caption">
+                <em class="icon-list font-blue-soft"></em>
+                <a href="javascript:void(0);" class="caption-subject bold uppercase font-blue-soft" ng-click="vm.closeModal()">Danh sách hồ sơ</a> >> 
+                <span class="caption-subject uppercase bold"> Cập nhật hồ sơ </span>
+            </div>
+            <div class="actions">
+                @*<button class="btn green-turquoise" ng-click="vm.saveDraft()" ng-if="vm.hoso.trangThaiHoSo == null"
+                        button-busy="vm.saving" busy-text="@L("SavingWithThreeDot")">
+                    <em class="fa fa-file-text-o"></em>Lưu nháp
+                </button>*@
+                <button class="btn blue" ng-click="vm.save()" button-busy="vm.saving" busy-text="@L("SavingWithThreeDot")"><em class="fa fa-save"></em>Lưu hồ sơ</button>
+                <button class="btn red" ng-click="vm.closeModal()"><em class="glyphicon glyphicon-remove"></em> Đóng</button>
+            </div>
+        </div>
+        <div class="portlet-body">
+
+            <uib-tabset class="tab-container tabbable-line" active="vm.currentTab">
+
+                @*<uib-tab index="0" heading="Thông tin tổ chức">
+            @Html.Partial("~/App/quanlyhoso/thutuc37/views/1_dangkyhoso/_partial/thong-tin-doanh-nghiep.cshtml")
+        </uib-tab>*@
+
+                <uib-tab index="0" heading="Thông tin về hồ sơ">
+                    <div name="ThongTinChiTietSPForm" id="ThongTinChiTietSPForm">
+                        @Html.Partial("~/App/quanlyhoso/thutuc37/views/1_dangkyhoso/_partial/thong-tin-ho-so.cshtml")
+                    </div>
+                </uib-tab>
+                <uib-tab index="1" heading="Phạm vi hoạt động chuyên môn">
+                    <div class="portlet light bordered">
+                        <div class="table-responsive" style="height:400px; margin-top:15px;">
+                            <table class="table table-hover table-striped table-bordered">
+                                <thead>
+                                    <tr class="active">
+                                        <th class="text-center">STT</th>
+                                        <th class="text-center">Chọn</th>
+                                        <th class="text-center">Phạm vi hoạt động</th>
+                                        <th class="text-center">Thông tin chi tiết</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="item in vm.listPhamViHoatDong">
+                                        <td class="text-center">{{$index + 1}}</td>
+                                        <td><md-checkbox ng-model="item.checked" style="margin-bottom:0"></md-checkbox></td>
+                                        <td>{{item.ten}}</td>
+                                        <td>{{item.moTa}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </uib-tab>
+                <uib-tab index="2" heading="Tài liệu đính kèm">
+                    @Html.Partial("~/App/quanlyhoso/thutuc37/views/1_dangkyhoso/_partial/tai-lieu-dinh-kem.cshtml")
+                </uib-tab>
+
+            </uib-tabset>
+        </div>
+    </div>
+</div>

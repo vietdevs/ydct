@@ -1,0 +1,33 @@
+﻿<div id="FrmThongTinToChuc" name="FrmThongTinToChuc">
+    <div class="portlet light bordered">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="exampleInputName2" class="text-bold">Tên doanh nghiệp</label><span class="font-red">*</span>
+                    <input type="text"
+                           dirname="tenDoanhNghiep"
+                           maxlength="500"
+                           ng-model="vm.hoso.tenDoanhNghiep"
+                           name="tenDoanhNghiep"
+                           class="form-control"
+                           data-fv-notempty="true"
+                           data-fv-trigger="blur"
+                           data-fv-notempty-message="Không được để trống trường này"
+                           placeholder="Tên tổ chức, cá nhân">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="diaChiInput" class="text-bold">Địa chỉ doanh nghiệp</label>
+                    <input id="diaChiInput"
+                           type="text"
+                           class="form-control"
+                           ng-model="vm.hoso.diaChi"
+                           maxlength="500"
+                           placeholder="Địa chỉ">
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>

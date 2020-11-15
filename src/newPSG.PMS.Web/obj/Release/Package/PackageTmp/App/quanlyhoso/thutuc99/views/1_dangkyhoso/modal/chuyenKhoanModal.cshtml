@@ -1,0 +1,124 @@
+﻿@using Abp.Authorization.Users
+<div>
+    <div id="chuyenKhoanModal" novalidate class="form-validation">
+        <div class="modal-header">
+            <h4 class="modal-title">
+                Chuyển khoản và nộp hóa đơn
+                <button type="button" class="close" ng-click="vm.cancel()" aria-hidden="true"></button>
+            </h4>
+
+        </div>
+        <div class="modal-body">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="chuyen-khoan-thanh-toan">
+                        <div class="panel panel-default order-success">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <label>Số tiền đã nộp</label><span class="font-red">*</span>
+                                        <input type="text"
+                                               class="form-control"
+                                               name="phiDaNop"
+                                               ng-keyup="vm.initListAutoComplete()"
+                                               list="autoCompleteMain"
+                                               ng-model="vm.thanhtoan.phiDaNop"
+                                               ui-number-mask="0"
+                                               data-fv-notempty="true"
+                                               data-fv-notempty-message="Không được để trống trường này"
+                                               data-fv-trigger="blur">
+                                        <datalist id="autoCompleteMain">
+                                            <option ng-repeat="item in vm.lstautoCompleteMain track by $index" value="{{item}}">{{item | number}} VNĐ</option>
+                                        </datalist>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label>Số tài khoản nộp</label><span><span class="font-red">*</span></span>
+                                        <input class="form-control"
+                                               type="text"
+                                               name="soTaiKhoanNop"
+                                               ng-model="vm.thanhtoan.soTaiKhoanNop"
+                                               data-fv-notempty="true"
+                                               data-fv-notempty-message="Không được để trống trường này"
+                                               data-fv-trigger="blur" />
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <label>Số tài khoản hưởng</label><span class="font-red">*</span>
+                                        <input class="form-control"
+                                               type="text"
+                                               name="soTaiKhoanHuong"
+                                               ng-model="vm.thanhtoan.soTaiKhoanHuong"
+                                               data-fv-notempty="true"
+                                               data-fv-notempty-message="Không được để trống trường này"
+                                               data-fv-trigger="blur" />
+
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <label>Mã giao dịch</label>
+                                        <input class="form-control"
+                                               type="text"
+                                               name="maGiaoDich"
+                                               ng-model="vm.thanhtoan.maGiaoDich"/>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label>Mã đơn hàng</label><span class="font-red">*</span>
+                                        <input class="form-control"
+                                               type="text"
+                                               name="maDonHang"
+                                               ng-model="vm.thanhtoan.maDonHang"
+                                               data-fv-notempty="true"
+                                               data-fv-notempty-message="Không được để trống trường này"
+                                               data-fv-trigger="blur"/>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">                                    
+                                    <div class="col-md-12">
+                                        <label>Ghi chú</label>
+                                        <textarea class="form-control"
+                                                  type="text"
+                                                  name="ghiChu"
+                                                  ng-model="vm.thanhtoan.ghiChu"
+                                                  rows="3"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <label>Hóa đơn thanh toán</label><span><span class="font-red">*</span></span><br /> <small><em>(Doanh nghiệp scan bản PDF hóa đơn và upload lên hệ thống, dung lượng giới hạn 15MB)</em></small>
+                                        <input type="file" id="hoadon" nv-file-select uploader="vm.uploaderHoaDon()" style="margin-bottom: 10px;" ngf-max-size="15MB" accept="pdf" />
+                                        <div class="portlet light bordered" style="height: 350px">
+                                            <iframe title="Xem hóa đơn" style="width: 100%; height: 100%;border:0" ng-src="{{vm.trustSrc(vm.hoaDonUrl)}}"  ></iframe>
+                                        </div>
+                                    </div>                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="modal-footer pay-buttons">
+            <button type="submit" button-busy="vm.saving" busy-text="@L("SavingWithThreeDot")" class="btn blue-steel" ng-click="vm.save()"><em class="fa fa-save"></em> <span>Lưu</span></button>
+            <button ng-disabled="vm.saving" type="button" class="btn red" ng-click="vm.cancel()"><em class="glyphicon glyphicon-remove"></em>@L("Cancel")</button>
+        </div>
+    </div>
+</div>
+
+<style>
+    .pay-buttons .btn > img {
+        width: 30px;
+        float: left;
+        margin-right: 10px;
+    }
+</style>

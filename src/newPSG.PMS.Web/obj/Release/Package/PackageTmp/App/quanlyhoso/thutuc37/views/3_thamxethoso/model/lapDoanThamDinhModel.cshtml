@@ -1,0 +1,109 @@
+﻿@using newPSG.PMS.Localization
+<style>
+    .attp-xem-ho-so button {
+        margin-bottom: 10px;
+    }
+
+    .attp-xem-ho-so .tabbable-line > .tab-content {
+        padding-top: 10px !important;
+    }
+
+    .modal-header {
+        background-color: #4c87b9;
+    }
+    .modal-lg{
+        width: 50%;
+    }
+</style>
+<div class="attp-xem-ho-so">
+    <div class="modal-header">
+        <h4 class="modal-title text-center text-uppercase">
+            Lập lịch thẩm định
+            <button type="button" class="close" ng-click="vm.cancel()" aria-hidden="true"></button>
+        </h4>
+    </div>
+    <div id="FormLapDoanThamDinh" class="modal-body">
+        <div class="row">
+            <div class="col-md-12">
+                <p class="text-center" style="font-size: 25px;font-weight: bold;">Danh sách thành viên đoàn thẩm định</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="table-responsive">
+                    <table class="table table-hover table-striped table-bordered">
+                        <thead>
+                            <tr class="active">
+                                <th class="text-center">STT</th>
+                                <th class="text-center">Họ và tên</th>
+                                <th class="text-center">Chức vụ</th>
+                                <th class="text-center" style="width:120px;">Thao tác</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <tr>
+                                <td class="text-center">1</td>
+                                <td class="text-center">
+                                    <select id="dropdownlisttruongdoan"
+                                            style="width: 100%"
+                                            kendo-drop-down-list
+                                            k-options="vm.listDoanThamDinh"
+                                            ng-change="vm.onChangeTruongDoan(vm.truongDoanId)"
+                                            ng-model="vm.truongDoanId"
+                                            class="form-control"></select>
+                                    <check-validate-empty datacheck="vm.truongDoanId"></check-validate-empty>
+                                </td>
+                                <td class="text-center">Trưởng đoàn</td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">2</td>
+                                <td class="text-center">
+                                    <select id="dropdownlistthuky"
+                                            style="width: 100%"
+                                            kendo-drop-down-list
+                                            k-options="vm.listDoanThamDinh"
+                                            ng-change="vm.onChangeThuKy(vm.thuKyId)"
+                                            ng-model="vm.thuKyId"
+                                            class="form-control"></select>
+                                    <check-validate-empty datacheck="vm.thuKyId"></check-validate-empty>
+                                </td>
+                                <td class="text-center">Thư ký</td>
+                            </tr>
+                            <tr ng-repeat="thanhvien in vm.thanhVienDoanThamDinh">
+                                <td class="text-center">{{$index+3}}</td>
+                                <td class="text-center">
+                                    <select id="dropdownlistthanhvien{{$index}}"
+                                            style="width: 100%"
+                                            kendo-drop-down-list
+                                            k-options="vm.listDoanThamDinh"
+                                            ng-change="vm.onChangeThanhVien()"
+                                            ng-model="thanhvien.userId"
+                                            class="form-control thanhvien"></select>
+                                    <check-validate-empty datacheck="thanhvien.userId"></check-validate-empty>
+                                </td>
+                                <td class="text-center">
+                                    <span>Thành viên</span>
+                                </td>
+                                <td class="text-center">
+                                    <button type="button" ng-show="$index > 0" class="btn red btn-xs margin-right-20" ng-click="vm.removeThanhVienDoan($index)"><em class="fa fa-close"></em> Xóa</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4">
+                                    <button style="float:right" type="button" ng-click="vm.themThanhVien()" class="btn green btn-outline btn-xs"><em class="fa fa-plus"></em> Thêm thành viên</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <div class="modal-footer">
+        
+        <button ng-disabled="vm.saving" type="button" class="btn blue" ng-click="vm.save()" style="margin-left:10px;margin-bottom:0"><em class="fa fa-save"></em>Lập đoàn thẩm định</button>
+        <button ng-disabled="vm.saving" type="button" class="btn red" ng-click="vm.cancel()"><em class="glyphicon glyphicon-remove"></em>@L("Cancel")</button>
+    </div>
+</div>

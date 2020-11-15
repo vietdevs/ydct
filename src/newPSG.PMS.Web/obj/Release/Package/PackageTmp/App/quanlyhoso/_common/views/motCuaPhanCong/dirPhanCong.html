@@ -1,0 +1,109 @@
+﻿<div class="portlet light">
+    <div class="portlet-title">
+        <div class="caption font-green-meadow uppercase">
+            <i class="fa fa-file-pdf-o font-green-meadow"></i> {{vm.pageTitle}}
+        </div>
+        <div class="tools">
+            <a href="javascript:void(0)" title="Đóng" ng-click="vm.closeModal()"><i class="glyphicon glyphicon-remove"></i></a>
+        </div>
+    </div>
+    <div class="portlet-body form">
+        <div class="row">
+            <div class="col-md-7">
+                <uib-tabset class="tab-container tabbable-line" active="0">
+                    <uib-tab tabindex="0" heading="Đơn hàng">
+                        <div class="portlet light bordered" style="height: 600px">
+                            <iframe title="Xem bản đắng ký" style="width: 100%; height: 100%;" ng-src="{{vm.trustSrc(vm.dangKyHoSoUrl)}}" frameborder="0"></iframe>
+                        </div>
+                    </uib-tab>
+                    <uib-tab tabindex="1" heading="Tài liệu đính kèm">
+                        <div ng-if="vm.lstTaiLieu.length > 0">
+                            <div class="right" style="padding-top: 10px;">
+                                <button type="button" ng-class="taiLieu.active == true ? 'green-meadow' : ''"
+                                        class="btn btn-xs btn-default" ng-click="vm.xemTaiLieu(taiLieu)"
+                                        ng-repeat="taiLieu in vm.lstTaiLieu">
+                                    {{taiLieu.moTaTep}}
+                                </button>
+                            </div>
+                            <div class="portlet light bordered" style="height: 600px">
+                                <iframe title="Xem tài liệu" style="width: 100%; height: 100%;" ng-src="{{vm.trustSrc(vm.taiLieuDinhKemUrl)}}" frameborder="0"></iframe>
+                            </div>
+                        </div>
+                        <div ng-if="vm.lstTaiLieu.length == 0">
+                            <div class="portlet light bordered text-center font-grey-salsa" style="height: 600px">
+                                <span class="k-icon k-i-warning" style="margin-top: 200px; font-size: 30px;"></span><br><br>
+                                Không có dữ liệu!
+                            </div>
+                        </div>
+                    </uib-tab>
+                    <uib-tab tabindex="2" heading="Phiếu tiếp nhận" ng-if="vm.phanCongInfo.thuTucId==57 && vm.phanCongInfo.isThanhToan && !vm.phanCongInfo.isTuChoi">
+                        <div class="portlet light bordered" style="height: 600px">
+                            <iframe title="Xem phiếu tiếp nhận" style="width: 100%; height: 100%;" ng-src="{{vm.trustSrc(vm.giayTiepNhanUrl)}}" frameborder="0"></iframe>
+                        </div>
+                    </uib-tab>
+                </uib-tabset>
+            </div>
+            <div class="row col-md-5" style="margin-top:42px">
+                <div class="col-md-12">
+                    <table class="table table-bordered" busy-if="vm.loading == true">
+                        <thead>
+                            <tr>
+                                <th class="text-center" width="30">STT</th>
+                                <th class="text-center">Tên phòng ban</th>
+                                <th class="text-center" width="100">
+                                    Đang xử lý
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="item in vm.listThongKePhanCong">
+                                <td class="text-center">{{$index + 1}}</td>
+                                <td>{{item.tenPhongBan}}</td>
+                                <td class="text-center">{{item.sumHoSoXuLy}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-md-12" id="form-chuyen-ho-so">
+                    <div id="boxInfo">
+                        <div class="row">
+                            <div class="form-group col-md-3">
+                                <md-checkbox ng-model="vm.phanCongInfo.isTuChoi">
+                                    Từ chối hồ sơ
+                                </md-checkbox>
+                            </div>
+                            <div class="form-group col-md-9" ng-if="!vm.phanCongInfo.isTuChoi">
+                                <label>Phòng ban xử lý</label> <span class="font-red">*</span>
+                                <select class="form-control col-md-12"
+                                        ng-options="obj.id as obj.name for obj in vm.lstPhongBan"
+                                        ng-model="vm.phanCongInfo.phongBanId">
+                                    <option value="">Chọn ...</option>
+                                </select>
+                                <check-validate-empty datacheck="vm.phanCongInfo.phongBanId"></check-validate-empty>
+                            </div>
+                            <div class="form-group col-md-9" ng-if="vm.phanCongInfo.isTuChoi">
+                                <label>Lý do từ chối</label> <span class="font-red">*</span>
+                                <div>
+                                    <summernote config="vm.summernote_options" ng-model="vm.phanCongInfo.lyDoTuChoi" height="100"></summernote>
+                                    <check-validate-empty datacheck="vm.phanCongInfo.lyDoTuChoi"></check-validate-empty>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-right">
+                        <button type="submit" ng-if="vm.phanCongInfo.thuTucId!=57" button-busy="vm.savingReject" busy-text="Đang lưu..." class="btn btn-primary blue ng-isolate-scope" ng-click="vm.save()">
+                            <span ng-show="vm.phanCongInfo.isTuChoi"><i class="fa fa-mail-forward"></i> <span>Trả lại hồ sơ</span></span>
+                            <span ng-hide="vm.phanCongInfo.isTuChoi"><i class="fa fa-send"></i> <span>Chuyển hồ sơ</span></span>
+                        </button>
+                        <button type="submit" ng-if="vm.phanCongInfo.thuTucId==57" button-busy="vm.savingReject" busy-text="Đang lưu..." class="btn btn-primary blue ng-isolate-scope" ng-click="vm.save()">
+                            <span ng-show="vm.phanCongInfo.isTuChoi"><i class="fa fa-mail-forward"></i> <span>Trả lại hồ sơ</span></span>
+                            <span ng-show="!vm.phanCongInfo.isThanhToan && !vm.phanCongInfo.isTuChoi"><i class="fa fa-money"></i> <span>Yêu cầu thanh toán</span></span>
+                            <span ng-show="vm.phanCongInfo.isThanhToan && !vm.phanCongInfo.isTuChoi"><i class="fa fa-send"></i> <span>Trả giấy tiếp nhận & Chuyển hồ sơ</span></span>
+                        </button>
+                        <button type="button" class="btn btn-default" ng-click="vm.closeModal()"><i class="fa fa-close"></i> Đóng</button>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

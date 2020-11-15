@@ -1,0 +1,38 @@
+﻿@using Abp.Authorization.Users
+<style>
+    #selectProductModal p {
+        margin: 5px;
+    }
+</style>
+<div>
+    <div id="selectProductModal" novalidate class="form-validation">
+        <div class="modal-header">
+            <h4 class="modal-title text-center text-uppercase">
+                Chọn loại hồ sơ 
+                <button type="button" class="close" ng-click="vm.cancel()" aria-hidden="true"></button>
+            </h4>
+        </div>
+        <div class="modal-body">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12" ng-repeat="lhs in vm.loaiHoSo" ng-click="vm.selectNhom(lhs)">
+                        <div class=" select-sp">
+                            <div class="media-left">
+                                <img style="width: 100px; margin:auto;" ng-src="data:image/JPEG;base64,{{lhs.dataImage}}" />
+                            </div>
+                            <div class="media-body">
+                                <span class="text-bold">{{lhs.tenLoaiHoSo}}</span>
+                                <p class="">Số ngày xử lý: {{lhs.soNgayXuLy | number}} ngày (trừ ngày nghỉ, ngày lễ)</p>
+                                <p class="">Lệ phí / phí: {{lhs.phiXuLy}}</p>
+                                <p class="">Ghi chú: {{lhs.moTa}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button ng-disabled="vm.saving" type="button" class="btn btn-default" ng-click="vm.cancel()">@L("Cancel")</button>
+        </div>
+    </div>
+</div>

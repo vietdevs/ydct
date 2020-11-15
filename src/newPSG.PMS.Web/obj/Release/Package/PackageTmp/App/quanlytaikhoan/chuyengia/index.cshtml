@@ -1,0 +1,64 @@
+﻿@using newPSG.PMS.Localization
+<div ng-controller="quanlytaikhoan.chuyengia.index as vm">
+    
+    <div class="portlet light margin-bottom-0">
+        <div class="portlet-title">
+            <div class="caption font-green-meadow">
+                <em class="icon-list font-green-meadow"></em>
+                <span class="caption-subject bold uppercase">Quản lý tài khoản chuyên gia</span>
+            </div>
+            <div class="actions">
+                <button class="btn blue-steel" ng-click="vm.createUser()"><em class="fa fa-plus"></em> @L("CreateNewUser")</button>
+            </div>
+        </div>
+        <div class="portlet-body">
+            <div class="form">
+                <form class="horizontal-form">
+                    <div class="form-body" enter-key="vm.getUsers()">
+                        <div class="row margin-bottom-10">
+                            <div class="col-md-12">
+                                <div class="inputs inputs-full-width">
+                                    <div class="portlet-input">
+                                        <div class="input-group">
+                                            <input ng-model="vm.filter.filter" auto-focus class="form-control" placeholder="@L("SearchWithThreeDot")" type="text">
+                                            <span class="input-group-btn">
+                                                <button ng-click="vm.getUsers()" class="btn default" type="submit"><em class="icon-magnifier"></em></button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row margin-bottom-10" ng-if="vm.advancedFiltersAreShown">
+                            @*<div ng-class="{'col-md-6': vm.permissions.roles, 'col-md-12':!vm.permissions.roles}">
+                                <div class="form-group">
+                                    <permission-combo selected-permission="vm.requestParams.permission"></permission-combo>
+                                </div>
+                            </div>
+                            <div class="col-md-6" ng-if="vm.permissions.roles">
+                                <div class="form-group">
+                                    <role-combo selected-role="vm.requestParams.role" empty-text="@L("FilterByRole")"></role-combo>
+                                </div>
+                            </div>*@
+                        </div>
+                    </div>
+                    <div class="row margin-bottom-10" ng-if="vm.advancedFiltersAreShown">
+                        <div class="col-sm-12 text-right">
+                            <button class="btn blue" ng-click="vm.getUsers()"><em class="fa fa-refresh"></em> @L("Refresh")</button>
+                        </div>
+                    </div>
+                    <div class="row margin-bottom-10">
+                        <div class="col-sm-12">
+                            <span class="clickable-item text-muted" ng-if="!vm.advancedFiltersAreShown" ng-click="vm.advancedFiltersAreShown=!vm.advancedFiltersAreShown"><em class="fa fa-angle-down"></em> @L("ShowAdvancedFilters")</span>
+                            <span class="clickable-item text-muted" ng-if="vm.advancedFiltersAreShown" ng-click="vm.advancedFiltersAreShown=!vm.advancedFiltersAreShown"><em class="fa fa-angle-up"></em> @L("HideAdvancedFilters")</span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div busy-if="vm.loading">
+                <div id="gdUser" k-serverPaging="true" k-pageSize="10" k-pageable='{"refresh": true, "pageSizes": true, messages: {empty: "Không có dữ liệu", display: "Hiển thị từ {0} đến {1}/{2} bản ghi",itemsPerPage: "Bản ghi hiển thị"}}'
+                     kendo-grid k-data-source='vm.userGridOptions' k-columns="vm.userColumns"></div>
+            </div>
+        </div>
+    </div>
+</div>

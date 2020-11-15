@@ -1,0 +1,548 @@
+﻿@using newPSG.PMS.Localization
+@using newPSG.PMS.Web.Navigation
+@{
+    ViewBag.CurrentPageName = PageNames.Frontend.Home;
+}
+<!-- bannder area start here -->
+<div class="banner-area home-one section">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="banner-content">
+                    <div class="banner-text">
+                        <h1>Hệ thống An Toàn Thực Phẩm</h1>
+                    </div>
+                    <p>Hệ thống dịch vụ công trực tuyến của ban quản lý an toàn thực phẩm.</p>
+                    <div class="banner-btn">
+                        <a href="/Account/Login" class="btn_one">Bắt đầu</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="bannder-img">
+                    <img class="img-responsive" src="~/libs/assets/images/chi-cuc.svg" alt="banner img">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- bannder area start here -->
+<!-- services area start here -->
+<div class="service-three-area section" id="service">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-6">
+                <div class="single-service text-center">
+                    <div class="service-icon">
+                        <span class="fa fa-id-card-o"></span>
+                    </div>
+                    <div class="service-title">
+                        <h3><a href="javascript:void(0)">Đăng ký công bố</a></h3>
+                    </div>
+                    <div class="service-content">
+                        <p class="">Tổ chức, cá nhân sản xuất, cơ sở kinh doanh thực phẩm nộp hồ sơ đăng ký bản công bố sản phẩm theo Chương III, nghị định số 15/2018/NĐ-CP.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="single-service text-center">
+                    <div class="service-icon">
+                        <span class="fa fa-line-chart"></span>
+                    </div>
+                    <div class="service-title">
+                        <h3><a href="javascript:void(0)">Tự công bố</a></h3>
+                    </div>
+                    <div class="service-content">
+                        <p>Tổ chức, cá nhân sản xuất, kinh doanh thực phẩm thực hiện tự công bố thực phẩm theo Chương II, nghị định số 15/2018/NĐ-CP.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+
+                <div class="single-service text-center">
+                    <div class="service-icon">
+                        <span class="fa fa-industry"></span>
+                    </div>
+                    <div class="service-title">
+                        <h3><a href="javascript:void(0)">Cơ sở đủ điều kiện</a></h3>
+                    </div>
+                    <div class="service-content">
+                        <p class="">Tổ chức, cá nhân sản xuất, cơ sở nộp hồ sơ đăng ký chứng nhận cơ sở đủ điều kiện theo nghị định số 15/2018/NĐ-CP.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" style="margin-top: 30px;">
+            <div class="col-md-8 col-md-offset-2">
+
+                <div class="col-md-6 col-sm-6">
+                    <div class="single-service text-center">
+                        <div class="service-icon">
+                            <span class="fa fa-star"></span>
+                        </div>
+                        <div class="service-title">
+                            <h3><a href="javascript:void(0)">Nội dung quảng cáo</a></h3>
+                        </div>
+                        <div class="service-content">
+                            <p>Tổ chức, cá nhân nộp hồ sơ đăng ký xác nhận nội dung quảng cáo theo nghị định số 15/2018/NĐ-CP.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-sm-6">
+                    <div class="single-service text-center">
+                        <div class="service-icon">
+                            <span class="fa fa-paper-plane-o"></span>
+                        </div>
+                        <div class="service-title">
+                            <h3><a href="javascript:void(0)">Xác nhận kiến thức</a></h3>
+                        </div>
+                        <div class="service-content">
+                            <p>Tổ chức, cá nhân gửi hồ sơ tới đơn vị được phân công theo Điều 9 của Thông tư liên tịch số 13/201TTLT-BYT- BNNPTNT- BCT.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div class="portlet line-chart margin-top-100  single-service">
+                    <div class="portlet-title tabbable-line">
+                        <div class="caption">
+                            <span class="caption-subject font-dark bold uppercase">Thông tin chung</span>
+                        </div>
+                        <ul class="nav nav-tabs">
+                            <li class="active">
+                                <a href="#top10_sanpham" data-toggle="tab" aria-expanded="true"> Top 10 sản phẩm đã đăng ký công bố </a>
+                            </li>
+                            <li class="">
+                                <a href="#top10_sanpham_new" data-toggle="tab" aria-expanded="false"> Cơ sở đủ điều kiện mới nhất </a>
+                            </li>
+                            @*<li class="">
+                                    <a href="#top10DoanhNghiep" data-toggle="tab" aria-expanded="false"> Doanh nghiệp đăng ký mới </a>
+                                </li>*@
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="portlet-body row">
+                        <div class="col-md-4">
+                            <div class="att-element-list bg-green">
+                                <div class="att-list-container">
+                                    <ul>
+                                        <li class="att-list-item">
+                                            <div class="list-time">0</div>
+                                            <div class="list-item-content">
+                                                <h5 class="text-bold">
+                                                    Tổng số sản phẩm tự công bố
+                                                </h5>
+                                            </div>
+                                        </li>
+                                        <li class="att-list-item">
+                                            <div class="list-time"> 7917 </div>
+                                            <div class="list-item-content">
+                                                <h5 class="text-bold">
+                                                    Tổng số bản công bố sản phẩm
+                                                </h5>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="tab-content ">
+                                <div class="tab-pane active" id="top10_sanpham">
+                                    <div class="top10_sanpham ">
+                                        <div class="mt-actions top10DangKyCongBo">
+                                            <div class="mt-action ">
+                                                <div class="mt-action-img">
+                                                    <b class="">1</b>
+                                                </div>
+                                                <div class="mt-action-body">
+                                                    <div class="mt-action-row">
+                                                        <div class="mt-action-info ">
+                                                            <div class="mt-action-details ">
+                                                                <span class="mt-action-author ">CÔNG TY TNHH NAM HÀ</span>
+                                                                <p class="mt-action-desc "><b>Sản phẩm:</b> Phụ gia thực phẩm: Hương cam – Orange Flavour F1037</p>
+                                                                <p class="mt-action-desc "><b>Số giấy tiếp nhận:</b> 2988/2019/ĐKSP</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="mt-action-datetime ">
+                                                            <span class="mt-action-date ">25/03/2019</span>
+
+                                                        </div>
+                                                        <div class="mt-action-buttons ">
+                                                            <a href="javascript:;" class="btn btn-outline btn-circle btn-sm green-jungle btn_one_blue">
+                                                                Xem chi tiết
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mt-action ">
+                                                <div class="mt-action-img">
+                                                    <b class="">2</b>
+                                                </div>
+                                                <div class="mt-action-body">
+                                                    <div class="mt-action-row">
+                                                        <div class="mt-action-info ">
+                                                            <div class="mt-action-details ">
+                                                                <span class="mt-action-author ">Công ty Dược phẩm và Thương mại Thành Công - Trách nhiệm hữu hạn</span>
+                                                                <p class="mt-action-desc "><b>Sản phẩm:</b> Thực phẩm bảo vệ sức khoẻ: CureMed  M –Tonin</p>
+                                                                <p class="mt-action-desc "><b>Số giấy tiếp nhận:</b> 2978/2019/ĐKSP</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="mt-action-datetime ">
+                                                            <span class="mt-action-date ">25/03/2019</span>
+
+                                                        </div>
+                                                        <div class="mt-action-buttons ">
+                                                            <a href="javascript:;" class="btn btn-outline btn-circle btn-sm green-jungle btn_one_blue">
+                                                                Xem chi tiết
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mt-action ">
+                                                <div class="mt-action-img">
+                                                    <b class="">3</b>
+                                                </div>
+                                                <div class="mt-action-body">
+                                                    <div class="mt-action-row">
+                                                        <div class="mt-action-info ">
+                                                            <div class="mt-action-details ">
+                                                                <span class="mt-action-author ">CÔNG TY TNHH THƯƠNG MẠI DP HÀ AN</span>
+                                                                <p class="mt-action-desc "><b>Sản phẩm:</b> Thực phẩm bảo vệ sức khỏe: BIG DREAM CALCI NANO MQ7</p>
+                                                                <p class="mt-action-desc "><b>Số giấy tiếp nhận:</b> 2967/2019/ĐKSP</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="mt-action-datetime ">
+                                                            <span class="mt-action-date ">25/03/2019</span>
+
+                                                        </div>
+                                                        <div class="mt-action-buttons ">
+                                                            <a href="javascript:;" class="btn btn-outline btn-circle btn-sm green-jungle btn_one_blue">
+                                                                Xem chi tiết
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mt-action ">
+                                                <div class="mt-action-img">
+                                                    <b class="">4</b>
+                                                </div>
+                                                <div class="mt-action-body">
+                                                    <div class="mt-action-row">
+                                                        <div class="mt-action-info ">
+                                                            <div class="mt-action-details ">
+                                                                <span class="mt-action-author ">CÔNG TY TNHH HBG</span>
+                                                                <p class="mt-action-desc "><b>Sản phẩm:</b> Thực phẩm bảo vệ sức khỏe Thảo Đường Khang</p>
+                                                                <p class="mt-action-desc "><b>Số giấy tiếp nhận:</b> 2973/2019/ĐKSP</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="mt-action-datetime ">
+                                                            <span class="mt-action-date ">25/03/2019</span>
+
+                                                        </div>
+                                                        <div class="mt-action-buttons ">
+                                                            <a href="javascript:;" class="btn btn-outline btn-circle btn-sm green-jungle btn_one_blue">
+                                                                Xem chi tiết
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mt-action ">
+                                                <div class="mt-action-img">
+                                                    <b class="">5</b>
+                                                </div>
+                                                <div class="mt-action-body">
+                                                    <div class="mt-action-row">
+                                                        <div class="mt-action-info ">
+                                                            <div class="mt-action-details ">
+                                                                <span class="mt-action-author ">CÔNG TY TNHH TMDV &amp; XNK HOÀNG HẢI PHÁT</span>
+                                                                <p class="mt-action-desc "><b>Sản phẩm:</b> Thực phẩm bảo vệ sức khỏe Sắt 3 Hydroxyde Polymaltose</p>
+                                                                <p class="mt-action-desc "><b>Số giấy tiếp nhận:</b> 2974/2019/ĐKSP</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="mt-action-datetime ">
+                                                            <span class="mt-action-date ">25/03/2019</span>
+
+                                                        </div>
+                                                        <div class="mt-action-buttons ">
+                                                            <a href="javascript:;" class="btn btn-outline btn-circle btn-sm green-jungle btn_one_blue">
+                                                                Xem chi tiết
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mt-action ">
+                                                <div class="mt-action-img">
+                                                    <b class="">6</b>
+                                                </div>
+                                                <div class="mt-action-body">
+                                                    <div class="mt-action-row">
+                                                        <div class="mt-action-info ">
+                                                            <div class="mt-action-details ">
+                                                                <span class="mt-action-author ">CÔNG TY TNHH TMDV &amp; XNK HOÀNG HẢI PHÁT</span>
+                                                                <p class="mt-action-desc "><b>Sản phẩm:</b> Thực phẩm bảo vệ sức khỏe Silymarin B-complex Extra</p>
+                                                                <p class="mt-action-desc "><b>Số giấy tiếp nhận:</b> 2975/2019/ĐKSP</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="mt-action-datetime ">
+                                                            <span class="mt-action-date ">25/03/2019</span>
+
+                                                        </div>
+                                                        <div class="mt-action-buttons ">
+                                                            <a href="javascript:;" class="btn btn-outline btn-circle btn-sm green-jungle btn_one_blue">
+                                                                Xem chi tiết
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mt-action ">
+                                                <div class="mt-action-img">
+                                                    <b class="">7</b>
+                                                </div>
+                                                <div class="mt-action-body">
+                                                    <div class="mt-action-row">
+                                                        <div class="mt-action-info ">
+                                                            <div class="mt-action-details ">
+                                                                <span class="mt-action-author ">CÔNG TY TNHH CÔNG NGHỆ CAO SINH HÓA DƯỢC</span>
+                                                                <p class="mt-action-desc "><b>Sản phẩm:</b> Thực phẩm bảo vệ sức khỏe: NANO FUCOIDAN</p>
+                                                                <p class="mt-action-desc "><b>Số giấy tiếp nhận:</b> 2953/2019/ĐKSP</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="mt-action-datetime ">
+                                                            <span class="mt-action-date ">25/03/2019</span>
+
+                                                        </div>
+                                                        <div class="mt-action-buttons ">
+                                                            <a href="javascript:;" class="btn btn-outline btn-circle btn-sm green-jungle btn_one_blue">
+                                                                Xem chi tiết
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mt-action ">
+                                                <div class="mt-action-img">
+                                                    <b class="">8</b>
+                                                </div>
+                                                <div class="mt-action-body">
+                                                    <div class="mt-action-row">
+                                                        <div class="mt-action-info ">
+                                                            <div class="mt-action-details ">
+                                                                <span class="mt-action-author ">CÔNG TY CỔ PHẦN DƯỢC PHẨM QUỐC TẾ CANADA VIỆT NAM</span>
+                                                                <p class="mt-action-desc "><b>Sản phẩm:</b> Thực phẩm bảo vệ sức khỏe: 3B PLUS</p>
+                                                                <p class="mt-action-desc "><b>Số giấy tiếp nhận:</b> 2957/2019/ĐKSP</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="mt-action-datetime ">
+                                                            <span class="mt-action-date ">25/03/2019</span>
+
+                                                        </div>
+                                                        <div class="mt-action-buttons ">
+                                                            <a href="javascript:;" class="btn btn-outline btn-circle btn-sm green-jungle btn_one_blue">
+                                                                Xem chi tiết
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mt-action ">
+                                                <div class="mt-action-img">
+                                                    <b class="">9</b>
+                                                </div>
+                                                <div class="mt-action-body">
+                                                    <div class="mt-action-row">
+                                                        <div class="mt-action-info ">
+                                                            <div class="mt-action-details ">
+                                                                <span class="mt-action-author ">CÔNG TY  TNHH GOOD LIFE PHARMA VIỆT NAM</span>
+                                                                <p class="mt-action-desc "><b>Sản phẩm:</b> Thực phẩm bảo vệ sức khỏe: FABEGAST</p>
+                                                                <p class="mt-action-desc "><b>Số giấy tiếp nhận:</b> 2958/2019/ĐKSP</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="mt-action-datetime ">
+                                                            <span class="mt-action-date ">25/03/2019</span>
+
+                                                        </div>
+                                                        <div class="mt-action-buttons ">
+                                                            <a href="javascript:;" class="btn btn-outline btn-circle btn-sm green-jungle btn_one_blue">
+                                                                Xem chi tiết
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mt-action ">
+                                                <div class="mt-action-img">
+                                                    <b class="">10</b>
+                                                </div>
+                                                <div class="mt-action-body">
+                                                    <div class="mt-action-row">
+                                                        <div class="mt-action-info ">
+                                                            <div class="mt-action-details ">
+                                                                <span class="mt-action-author ">CÔNG TY  TNHH GOOD LIFE PHARMA VIỆT NAM</span>
+                                                                <p class="mt-action-desc "><b>Sản phẩm:</b> Thực phẩm bảo vệ sức khỏe: GOLD STAR</p>
+                                                                <p class="mt-action-desc "><b>Số giấy tiếp nhận:</b> 2966/2019/ĐKSP</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="mt-action-datetime ">
+                                                            <span class="mt-action-date ">25/03/2019</span>
+
+                                                        </div>
+                                                        <div class="mt-action-buttons ">
+                                                            <a href="javascript:;" class="btn btn-outline btn-circle btn-sm green-jungle btn_one_blue">
+                                                                Xem chi tiết
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane " id="top10_sanpham_new">
+                                    sasasjsa
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @*<div class="top10_sanphamtotnhat ">
+                        <div class="title_bangcongbo service-title">
+                            <h3> <a href="href=" javascript:void(0)"">Top 10 sản phẩm đã đăng ký công bố</a></h3>
+                        </div>
+
+                    </div>*@
+            </div>
+        </div>
+    </div>
+</div>
+<!-- services area end here -->
+<!-- aboutus area start here -->
+<div class="aboutus-area section">
+    <div class="container">
+        <div class="row">
+            <div class=" col-sm-12 col-xs-12">
+                <div class="section-title text-center">
+                    <h2 class="mt-12">Hướng dẫn đăng ký và nộp hồ sơ An toàn thực phẩm</h2>
+                    <p>Hướng dẫn tổ chức, cá nhân thực hiện thao tác, nộp hồ sơ và nhận kết quả ngay trên hệ thống.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-lg-offset-4 col-md-6 col-md-offset-4 col-sm-12 col-xs-12">
+                <div class="about-img">
+                    <img src="~/libs/assets/images/about/1.jpg" alt="about img">
+                    <div class="about-video">
+                        <h3>Hướng dẫn video</h3>
+                        <div class="play-btn">
+                            <a href="https://www.youtube.com/watch?v=mb1VYuJs7Zw" class="popup-youtube"><i class="fa fa-play"></i></a>
+                        </div>
+                        <p>Bấm để xem</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- aboutus area start here -->
+<!-- counter area start here -->
+<div class="counter-area section">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-md-3 text-center">
+                <div class="single-counter">
+                    <div class="icon">
+                        <span class="fa fa-briefcase"></span>
+                    </div>
+                    <h3 class="">159</h3>
+                    <div class="title">
+                        <p>Doanh nghiệp</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-3 text-center">
+                <div class="single-counter">
+                    <div class="icon">
+                        <span class="fa fa-credit-card"></span>
+                    </div>
+                    <h3 class="">618</h3>
+                    <div class="title">
+                        <p>Hồ sơ</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-3 text-center">
+                <div class="single-counter">
+                    <div class="icon">
+                        <span class="fa fa-calendar-plus-o"></span>
+                    </div>
+                    <h3 class="">55</h3>
+                    <div class="title">
+                        <p>Xác nhận kiến thức</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-3 text-center">
+                <div class="single-counter">
+                    <div class="icon">
+                        <span class="fa fa-map-o"></span>
+                    </div>
+                    <h3 class="">318</h3>
+                    <div class="title">
+                        <p>Bản công bố</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- counter area end here -->
+<!-- partner area start here -->
+@*<div class="partner-area" style="padding: 20px 0px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="slide-partner-log">
+                        <div class="single-partner text-center">
+                            <a href="#"><img src="~/Common/Images/login-logo.png" width="70" height="70" alt="partner"></a>
+                        </div>
+                        <div class="single-partner text-center">
+                            <a href="#"><img src="~/Common/Images/login-logo.png" width="70" height="70" alt="partner"></a>
+                        </div>
+                        <div class="single-partner text-center ">
+                            <a href="#"><img src="~/Common/Images/login-logo.png" width="70" height="70" alt="partner"></a>
+                        </div>
+                        <div class="single-partner text-center">
+                            <a href="#"><img src="~/Common/Images/login-logo.png" width="70" height="70" alt="partner"></a>
+                        </div>
+                        <div class="single-partner text-center">
+                            <a href="#"><img src="~/Common/Images/login-logo.png" width="70" height="70" alt="partner"></a>
+                        </div>
+                        <div class="single-partner text-center">
+                            <a href="#"><img src="~/Common/Images/login-logo.png" width="70" height="70" alt="partner"></a>
+                        </div>
+                        <div class="single-partner text-center">
+                            <a href="#"><img src="~/Common/Images/login-logo.png" width="70" height="70" alt="partner"></a>
+                        </div>
+                        <div class="single-partner text-center">
+                            <a href="#"><img src="~/Common/Images/login-logo.png" width="70" height="70" alt="partner"></a>
+                        </div>
+                        <div class="single-partner text-center ">
+                            <a href="#"><img src="~/Common/Images/login-logo.png" width="70" height="70" alt="partner"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>*@
+<!-- partner area start here -->

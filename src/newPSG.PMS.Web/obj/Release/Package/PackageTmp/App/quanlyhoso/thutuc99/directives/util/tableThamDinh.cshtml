@@ -1,0 +1,36 @@
+﻿<div>
+    <div class="col-md-12 form-group">
+        <div class="md-radio-inline">
+            <div class="md-radio has-success">
+                <input type="radio" id="hoSoIsDat_{{vm.bienBanThamDinh.id}}" ng-disabled="vm.readonly" name="hoSoIsDat_{{vm.bienBanThamDinh.id}}" class="md-radiobtn" ng-model="vm.bienBanThamDinh.isThamXetDat" data-ng-value="true">
+                <label for="hoSoIsDat_{{vm.bienBanThamDinh.id}}">
+                    <span class="inc"></span>
+                    <span class="check"></span>
+                    <span class="box"></span> <strong>Hồ sơ đạt</strong>
+                </label>
+            </div>
+            <div class="md-radio has-error">
+                <input type="radio" id="hoSoIsKhongDat_{{vm.bienBanThamDinh.id}}" ng-disabled="vm.readonly" name="hoSoIsKhongDat_{{vm.bienBanThamDinh.id}}" class="md-radiobtn" ng-model="vm.bienBanThamDinh.isThamXetDat" data-ng-value="false">
+                <label for="hoSoIsKhongDat_{{vm.bienBanThamDinh.id}}">
+                    <span class="inc"></span>
+                    <span class="check"></span>
+                    <span class="box"></span> <strong>Hồ sơ không đạt</strong>
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <div class="form-group">
+            <label class="text-bold">Ý kiến </label><span ng-show="vm.bienBanThamDinh.isThamXetDat == false" class="font-red">*</span>
+            <textarea id="diaChi"
+                      type="text"
+                      name="diaChi"
+                      ng-disabled="vm.readonly"
+                      class="form-control"
+                      ng-model="vm.bienBanThamDinh.yKienBoSung"
+                      placeholder="Địa chỉ trụ sở"
+                      rows="2"
+                      maxlength="500"></textarea>
+        </div>
+    </div>
+</div>

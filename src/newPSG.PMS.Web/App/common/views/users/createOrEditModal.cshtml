@@ -1,0 +1,258 @@
+﻿@using Abp.Authorization.Users
+<div>
+    <div name="userCreateOrEditForm" id="userCreateOrEditForm" novalidate class="form-validation">
+        <div class="modal-header">
+            <h4 class="modal-title">
+                <span ng-if="vm.user.id">@L("EditUser"): {{vm.user.userName}}</span>
+                <span ng-if="!vm.user.id">@L("CreateNewUser")</span>
+                <button type="button" aria-hidden="true" class="close" ng-click="vm.cancel()"></button>
+            </h4>
+        </div>
+        <div class="modal-body">
+            <uib-tabset class="tab-container tabbable-line">
+                <uib-tab heading="@L("UserInformations")">
+
+                    <div class="row">
+                        <div class="col-sm-4 text-center">
+                            <img ng-if="vm.profilePictureId" ng-src="@Url.Action("GetProfilePictureById", "Profile")?id={{vm.profilePictureId}}" width="128" height="128" class="img-thumbnail img-rounded user-edit-dialog-profile-image" />
+                            <img ng-if="!vm.profilePictureId" src="@Url.Content("~/Common/Images/default-profile-picture.png")" width="128" height="128" class="img-thumbnail img-rounded user-edit-dialog-profile-image" />
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="form-group form-md-line-input form-md-floating-label no-hint">
+                                <input class="form-control" type="text" name="Name" ng-class="{'edited':vm.user.name}" ng-model="vm.user.name" required maxlength="@newPSG.PMS.Authorization.Users.User.MaxNameLength">
+                                <label>@L("Name")</label>
+                            </div>
+
+                            <div class="form-group form-md-line-input form-md-floating-label no-hint">
+                                <input type="text" name="Surname" class="form-control" ng-class="{'edited':vm.user.surname}" ng-model="vm.user.surname" required maxlength="@newPSG.PMS.Authorization.Users.User.MaxSurnameLength">
+                                <label>@L("Surname")</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group form-md-line-input form-md-floating-label no-hint">
+                        <input type="email" name="EmailAddress" class="form-control" ng-class="{'edited':vm.user.emailAddress}" ng-model="vm.user.emailAddress" required maxlength="@AbpUserBase.MaxEmailAddressLength">
+                        <label>@L("EmailAddress")</label>
+                    </div>
+
+                    <div class="form-group form-md-line-input form-md-floating-label no-hint">
+                        <input type="text" name="PhoneNumber" class="form-control" ng-class="{'edited':vm.user.phoneNumber}" ng-model="vm.user.phoneNumber" maxlength="@newPSG.PMS.Authorization.Users.User.MaxPhoneNumberLength">
+                        <label>@L("PhoneNumber")</label>
+                    </div>
+
+                    <div class="form-group form-md-line-input form-md-floating-label">
+                        <input type="text" ng-disabled="!vm.canChangeUserName" ng-class="{'edited':vm.user.userName}" name="UserName" class="form-control input-ltr" ng-model="vm.user.userName" required maxlength="@AbpUserBase.MaxUserNameLength">
+                        <label>@L("UserName")</label>
+                        <span class="help-block" ng-show="!vm.canChangeUserName">@L("CanNotChangeAdminUserName")</span>
+                    </div>
+                    <div class="form-group" ng-if="vm.tenant != null">
+                        <label>Chức Vụ</label>
+                        <input style="width: 100%"
+                               id="ddlRoleLevel"
+                               kendo-drop-down-list
+                               name="ddlRoleLevel"
+                               ng-model="vm.user.roleLevel"
+                               k-options="vm.RoleLevelOptions"
+                               k-on-change="vm.changeRoleLevel()"
+                               data-fv-notempty="true" data-fv-notempty-message="Không được để trống trường này"
+                               data-fv-trigger="blur"
+                               class="form-control" />
+                    </div>
+                    <div class="form-group" ng-if="vm.tenant != null && !(vm.user.roleLevel==vm.ROLE_LEVEL.CHUYEN_GIA || vm.user.roleLevel==vm.ROLE_LEVEL.TO_TRUONG_CHUYEN_GIA)">
+                        <label>Phòng ban</label>
+                        <input style="width: 100%"
+                               id="ddlPhongBan"
+                               kendo-drop-down-list
+                               name="ddlPhongBan"
+                               ng-model="vm.user.phongBanId"
+                               k-options="vm.phongBanOptions"
+                               class="form-control" />
+                    </div>
+
+                    <div class="form-group" ng-if="vm.tenant != null && (vm.user.roleLevel==vm.ROLE_LEVEL.CHUYEN_GIA || vm.user.roleLevel==vm.ROLE_LEVEL.TO_TRUONG_CHUYEN_GIA)">
+                        <label>Tiểu ban chuyên gia</label>
+                        <input style="width: 100%"
+                               id="ddlTieuBan"
+                               kendo-drop-down-list
+                               name="ddlTieuBan"
+                               ng-model="vm.user.tieuBanId"
+                               k-options="vm.tieuBanOptions"
+                               class="form-control" />
+                    </div>
+
+                    <div class="row" ng-show="vm.user.roleLevel==vm.ROLE_LEVEL.DON_VI_TRUC_THUOC" style="background: #ccc; padding-top: 15px; margin-left:0; margin-right:0; margin-bottom:10px;">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="md-checkbox">
+                                    <input id="EditUser_IsDonViTrucThuoc" class="md-check" type="checkbox" name="IsDonViTrucThuoc" ng-model="vm.user.isDonViTrucThuoc">
+                                    <label for="EditUser_IsDonViTrucThuoc">
+                                        <span class="inc"></span>
+                                        <span class="check"></span>
+                                        <span class="box"></span>
+                                        Quản lý theo đơn vị trực thuộc
+                                    </label>
+                                </label>
+                                <select id="ddlBoNganhId"
+                                        style="width:100%;"
+                                        kendo-drop-down-list
+                                        k-ng-model="vm.user.boNganhId"
+                                        k-options="vm.boNganhIdOptions"
+                                        class="form-control" ng-show="vm.user.isDonViTrucThuoc"></select>
+
+                                <select id="ddlTinh" ng-show="1==0"
+                                        style="width:100%;"
+                                        name="tinhId"
+                                        kendo-drop-down-list
+                                        k-ng-model="vm.user.tinhId"
+                                        k-options="vm.tinhOptions"
+                                        class="form-control"></select>
+                            </div>
+                        </div>
+                        <div class="col-md-6" ng-show="vm.user.isDonViTrucThuoc && vm.user.tinhId">
+                            <div class="form-group">
+                                <label>Huyện</label>
+                                <select id="ddlHuyen"
+                                        style="width:100%;"
+                                        name="huyenId"
+                                        kendo-drop-down-list
+                                        k-ng-model="vm.user.huyenId"
+                                        k-options="vm.huyenOptions"
+                                        k-cascade-from-field="'parentId'"
+                                        k-cascade-from="'ddlTinh'"
+                                        class="form-control"></select>
+                            </div>
+                        </div>
+                        <div class="col-md-6" ng-show="vm.user.isDonViTrucThuoc && vm.user.tinhId">
+                            <div class="form-group">
+                                <label>Xã</label>
+                                <select id="ddlXa"
+                                        style="width:100%;"
+                                        name="xaId"
+                                        kendo-drop-down-list
+                                        k-ng-model="vm.user.xaId"
+                                        k-options="vm.xaOptions"
+                                        k-cascade-from-field="'parentId'"
+                                        k-cascade-from="'ddlHuyen'"
+                                        class="form-control"></select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="md-checkbox-list">
+                        <div class="md-checkbox">
+                            <input id="EditUser_SetRandomPassword" class="md-check" type="checkbox" name="SetRandomPassword" ng-model="vm.setRandomPassword">
+                            <label for="EditUser_SetRandomPassword">
+                                <span class="inc"></span>
+                                <span class="check"></span>
+                                <span class="box"></span>
+                                @L("SetRandomPassword")
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group form-md-line-input form-md-floating-label no-hint" ng-if="!vm.setRandomPassword">
+                        <input type="password" name="Password" class="form-control" ng-model="vm.user.password" ng-required="!vm.user.id && !vm.setRandomPassword" maxlength="@newPSG.PMS.Authorization.Users.User.MaxPlainPasswordLength" ng-minlength="@newPSG.PMS.Authorization.Users.User.MinPlainPasswordLength">
+                        <label>@L("Password")</label>
+                    </div>
+
+                    <div class="form-group form-md-line-input form-md-floating-label no-hint" ng-if="!vm.setRandomPassword">
+                        <input type="password" name="PasswordRepeat" class="form-control" ng-model="vm.user.passwordRepeat" ng-required="!vm.user.id && !vm.setRandomPassword" maxlength="@newPSG.PMS.Authorization.Users.User.MaxPlainPasswordLength" ui-validate=" '$value==vm.user.password' " ui-validate-watch=" 'vm.user.password' " ng-minlength="@newPSG.PMS.Authorization.Users.User.MinPlainPasswordLength">
+                        <label>@L("PasswordRepeat")</label>
+                    </div>
+
+                    <div class="md-checkbox-list">
+                        <div class="md-checkbox">
+                            <input id="EditUser_ShouldChangePasswordOnNextLogin" class="md-check" type="checkbox" name="ShouldChangePasswordOnNextLogin" ng-model="vm.user.shouldChangePasswordOnNextLogin">
+                            <label for="EditUser_ShouldChangePasswordOnNextLogin">
+                                <span class="inc"></span>
+                                <span class="check"></span>
+                                <span class="box"></span>
+                                @L("ShouldChangePasswordOnNextLogin")
+                            </label>
+                        </div>
+                        <div class="md-checkbox">
+                            <input id="EditUser_SendActivationEmail" class="md-check" type="checkbox" name="SendActivationEmail" ng-model="vm.sendActivationEmail">
+                            <label for="EditUser_SendActivationEmail">
+                                <span class="inc"></span>
+                                <span class="check"></span>
+                                <span class="box"></span>
+                                @L("SendActivationEmail")
+                            </label>
+                        </div>
+                        <div class="md-checkbox">
+                            <input id="EditUser_IsActive" class="md-check" type="checkbox" name="IsActive" ng-model="vm.user.isActive">
+                            <label for="EditUser_IsActive">
+                                <span class="inc"></span>
+                                <span class="check"></span>
+                                <span class="box"></span>
+                                @L("Active")
+                            </label>
+                        </div>
+                        <div class="md-checkbox" ng-if="vm.isTwoFactorEnabled">
+                            <input id="EditUser_IsTwoFactorEnabled" class="md-check" type="checkbox" name="IsTwoFactorEnabled" ng-model="vm.user.isTwoFactorEnabled">
+                            <label for="EditUser_IsTwoFactorEnabled">
+                                <span class="inc"></span>
+                                <span class="check"></span>
+                                <span class="box"></span>
+                                @L("IsTwoFactorEnabled")
+                            </label>
+                        </div>
+                        <div class="md-checkbox" ng-if="vm.isLockoutEnabled">
+                            <input id="EditUser_IsLockoutEnabled" class="md-check" type="checkbox" name="IsLockoutEnabled" ng-model="vm.user.isLockoutEnabled">
+                            <label for="EditUser_IsLockoutEnabled" uib-tooltip="@L("IsLockoutEnabled_Hint")">
+                                <span class="inc"></span>
+                                <span class="check"></span>
+                                <span class="box"></span>
+                                @L("IsLockoutEnabled")
+                            </label>
+                        </div>
+                    </div>
+                </uib-tab>
+                <uib-tab>
+                    <uib-tab-heading>
+                        @L("Roles") <b class="badge badge-primary">{{vm.getAssignedRoleCount()}}</b>
+                    </uib-tab-heading>
+                    <div class="md-checkbox-list">
+                        <div class="md-checkbox" ng-repeat="role in vm.roles">
+                            <input id="EditUser_{{role.roleName}}" class="md-check" type="checkbox" name="{{role.roleName}}" ng-model="role.isAssigned">
+                            <label for="EditUser_{{role.roleName}}">
+                                <span class="inc"></span>
+                                <span class="check"></span>
+                                <span class="box"></span>
+                                {{role.roleDisplayName}}
+                            </label>
+                        </div>
+                    </div>
+                </uib-tab>
+                <uib-tab>
+                    <uib-tab-heading>Chữ ký</uib-tab-heading>
+                    <div class="form-group">
+                        <label class="text-bold">Hình ảnh chữ ký </label><label><i> (Tỷ lệ: 120 x 100 với chữ ký, 100 x 100 với con dấu, dung lượng tối đa 1MB, định dạng PNG)</i></label>
+                        <span class="help-block m-b-none"></span>
+                        <input type="file"
+                               nv-file-select
+                               uploader="vm.uploader()" />
+                    </div>
+                    <img ng-src="data:image/JPEG;base64,{{vm.user.dataImage}}"
+                         ng-show="vm.user.dataImage && !vm.uploadedFileName"
+                         style="width: 100px">
+                    <img id="ChuKyResize"
+                         src=""
+                         ng-show="vm.uploadedFileName"
+                         width="100" />
+
+                    <div class="form-group">
+                        <label class="text-bold">Chân chữ ký</label>
+                        <summernote height="100"
+                                    class="form-control"
+                                    ng-model="vm.user.chanChuKyNhay"></summernote>
+                    </div>
+                </uib-tab>
+            </uib-tabset>
+        </div>
+        <div class="modal-footer">
+            <button ng-disabled="vm.saving" type="button" class="btn red" ng-click="vm.cancel()"><i class="glyphicon glyphicon-remove"></i>@L("Cancel")</button>
+            <button type="submit" button-busy="vm.saving" busy-text="@L("SavingWithThreeDot")" class="btn green-meadow" ng-click="vm.save()" ng-disabled="userCreateOrEditForm.$invalid"><i class="fa fa-save"></i> <span>@L("Save")</span></button>
+        </div>
+    </div>
+</div>

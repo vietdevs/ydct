@@ -1,0 +1,213 @@
+﻿<div class="danhsach ng-scope" ng-controller="chuyenmucbaiviet.huongdansudung.index as vm">
+    <div class="portlet light bordered ng-isolate-scope">
+        <div class="portlet-title">
+            <div class="caption font-green-meadow">
+                <i class="icon-list font-green-meadow"></i>
+                <span class="caption-subject bold uppercase">Hướng dẫn sử dụng</span>
+            </div>
+            <div class="actions" ng-if="vm.currentUser.level==vm.ROLE_LEVEL.SA">
+                <button class="btn green-meadow" ng-click="vm.taoLinkHDSD()"><i class="fa fa-plus"></i> Tạo link HDSD</button>
+            </div>
+        </div>
+        <div class="portlet-body" busy-if="vm.loading">
+            <div class="row">
+                <div class="col-md-3 col-sm-3 col-xs-12">
+                    <div class="tree-cate">
+                        <div class="cateart">
+                            <ul class="">
+                                <!-- CAP 1-->
+                                <li ng-repeat="catelv1 in vm.lstCategory">
+                                    <a ng-click="vm.showCategory(catelv1)" class="bold tree-toggler"><i class="fa fa-folder"></i>{{catelv1.title}}</a>
+                                    <a class="btndown" ng-if="catelv1.file" href="{{catelv1.file}}"><i class="fa fa-download"></i></a>
+                                    <ul class="nav-list tree" ng-if="(catelv1.items && catelv1.items.length>0) || (catelv1.arrArticles && catelv1.arrArticles.length>0)">
+                                        <!-- CAP 2-->
+                                        <li ng-repeat="art in catelv1.arrArticles">
+                                            <a ng-click="vm.showArticle(art)" class="italic"><i class="fa fa-file-text-o"></i>{{art.title}}</a>
+                                            <a class="btndown" ng-if="art.file" href="{{art.file}}"><i class="fa fa-download"></i></a>
+                                        </li>
+                                        <li ng-repeat="catelv2 in catelv1.items">
+                                            <a ng-click="vm.showCategory(catelv2)" class="tree-toggler"><i class="fa fa-folder"></i>{{catelv2.title}}</a>
+                                            <a class="btndown" ng-if="catelv2.file" href="{{catelv2.file}}"><i class="fa fa-download"></i></a>
+                                            <ul class="nav-list tree" ng-if="(catelv2.items && catelv2.items.length>0) || (catelv2.arrArticles && catelv2.arrArticles.length>0)">
+                                                <!-- CAP 3-->
+                                                <li ng-repeat="art in catelv2.arrArticles">
+                                                    <a ng-click="vm.showArticle(art)" class="italic"><i class="fa fa-file-text-o"></i>{{art.title}}</a>
+                                                    <a class="btndown" ng-if="art.file" href="{{art.file}}"><i class="fa fa-download"></i></a>
+                                                </li>
+                                                <li ng-repeat="catelv3 in catelv2.items">
+                                                    <a ng-click="vm.showCategory(catelv3)" class="tree-toggler"><i class="fa fa-folder"></i>{{catelv3.title}}</a>
+                                                    <a class="btndown" ng-if="catelv3.file" href="{{catelv3.file}}"><i class="fa fa-download"></i></a>
+                                                    <ul class="nav-list tree" ng-if="(catelv3.items && catelv3.items.length>0) || (catelv3.arrArticles && catelv3.arrArticles.length>0)">
+                                                        <!-- CAP 4-->
+                                                        <li ng-repeat="art in catelv3.arrArticles">
+                                                            <a ng-click="vm.showArticle(art)" class="italic"><i class="fa fa-file-text-o"></i>{{art.title}}</a>
+                                                            <a class="btndown" ng-if="art.file" href="{{art.file}}"><i class="fa fa-download"></i></a>
+                                                        </li>
+                                                        <li ng-repeat="catelv4 in catelv3.items">
+                                                            <a ng-click="vm.showCategory(catelv4)"><i class="fa fa-folder"></i>{{catelv4.title}}</a>
+                                                            <a class="btndown" ng-if="catelv4.file" href="{{catelv4.file}}"><i class="fa fa-download"></i></a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                    <div class="art-detail">
+                        <div class="art-head">
+                            <h1 class="clearfix">
+                                {{vm.article.title}}
+                                <a class="pull-right" ng-if="vm.article.description" target="_blank" href="/huongdansudung/{{vm.article.description}}.html"><i class="fa fa-link"></i>Chia sẻ link</a>
+                                <a class="pull-right" style="margin-right:20px" ng-if="vm.article.file" href="{{vm.article.file}}"><i class="fa fa-download"></i>Tải file</a>
+                                <a class="pull-right" ng-click="vm.openEditNhanh(vm.article)" style="margin-right: 20px;"
+                                   ng-if="vm.currentUser.level==vm.ROLE_LEVEL.SA||vm.currentUser.level==vm.ROLE_LEVEL.BO_Y_TE"><i class="fa fa-edit"></i>Sửa nhanh</a>
+
+                            </h1>
+                        </div>
+                        <div class="art-cont">
+                            <div ng-bind-html="vm.article.details"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    .italic {
+        font-style: italic;
+    }
+
+    .tree-cate {
+        border: solid 1px #c1c1c1;
+        padding: 0 10px;
+        border-radius: 6px;
+    }
+
+        .tree-cate h2 {
+            font-size: 15px;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin: 0;
+            line-height: 40px;
+        }
+
+            .tree-cate h2 i {
+                padding-right: 5px;
+            }
+
+    .cateart {
+        padding: 10px 0px;
+    }
+
+        .cateart ul li {
+            list-style: none;
+            color: #666;
+            position: relative;
+            line-height: 22px;
+        }
+
+            .cateart ul li i.fa-plus-square {
+                margin-left: 10px;
+            }
+
+            .cateart ul li a {
+                color: #666;
+                display: block;
+                line-height: 22px;
+                padding-right: 22px;
+                font-size: 13px;
+                padding: 3px 22px 3px 0px
+            }
+
+                .cateart ul li a i {
+                    margin-right: 5px;
+                }
+
+                .cateart ul li a.btndown {
+                    position: absolute;
+                    right: 0;
+                    padding: 0;
+                    top: 5px;
+                }
+
+                    .cateart ul li a.btndown i {
+                        font-size: 18px;
+                        color: #4ac144
+                    }
+
+            .cateart ul li ul li {
+                text-transform: none;
+            }
+
+            .cateart ul li ul {
+            }
+
+                .cateart ul li ul li a {
+                    padding-left: 12px;
+                    font-weight: normal;
+                    position: unset;
+                    top: unset;
+                    right: unset
+                }
+
+                .cateart ul li ul li ul li a {
+                    padding-left: 24px;
+                }
+
+                .cateart ul li ul li ul li ul li a {
+                    padding-left: 36px;
+                }
+
+    .art-detail {
+        border: solid 1px #c1c1c1;
+        border-radius: 6px;
+    }
+
+    .art-head {
+        background: #f1f1f1;
+        margin-bottom: 20px;
+        padding: 0 10px;
+    }
+
+        .art-head h1 {
+            font-size: 16px;
+            margin: 0;
+            line-height: 40px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+            .art-head h1 a {
+                font-size: 13px;
+            }
+
+    .art-cont {
+        padding: 10px;
+    }
+
+        .art-cont * {
+            max-width: 100% !important
+        }
+
+    .tree-cate .tree {
+        display: none;
+    }
+
+    .tree-cate .fa-folder {
+        color: #f9bf34;
+    }
+</style>
+
+@*<script>
+        setTimeout(function () {
+            $('.tree-toggler').on('click', function () {
+                $(this).parent().children('ul.tree').slideToggle(300);
+            });
+        }, 300);
+    </script>*@

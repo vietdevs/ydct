@@ -1,0 +1,65 @@
+﻿<div class="modal-content">
+    <div class="modal-header">
+        <h4 class="modal-title text-center text-uppercase">
+            <span>Thông tin thanh toán của hồ sơ [{{vm.hoSo.soDangKy}}]</span>
+            <button class="close" type="button" ng-click="vm.cancel()" aria-hidden="true"></button>
+        </h4>
+    </div>
+    <div class="modal-body" busy-if="vm.loading">
+        <table class="table table-bordered" ng-if="vm.arrThanhToan.length>0">
+            <thead>
+                <tr>
+                    <th width="30">STT</th>
+                    <th>Thông tin thanh toán</th>
+                    <th>
+                        Phí đã nộp
+                    </th>
+                    @*<th>
+                        Phí xác nhận
+                    </th>*@
+                    <th>
+                        Kênh thanh toán
+                    </th>
+                    <th>
+                        Trạng thái giao dịch
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in vm.arrThanhToan">
+                    <td><b>{{$index + 1}}</b></td>
+                    <td>
+                        <b>Mã giao dịch: </b>{{item.maGiaoDich}}<br />
+                        <b>Mã đơn hàng: </b>{{item.maDonHang}}<br />
+                        <b>Ngày thanh toán: </b>{{item.ngayGiaoDich | date:'dd/MM/yyyy HH:mm:ss'}}
+                    </td>
+                    <td>{{item.phiDaNop| number:0}}</td>
+                    @*<td>{{item.phiXacNhan| number:0}}</td>*@
+                    <td>{{item.strKenhThanhToan}}</td>
+                    <td>
+                        {{item.strTrangThaiNganHang}}<br />
+                        <div ng-if="(item.trangThaiNganHang != vm.GIAO_DICH_THANH_CONG)&& (item.trangThaiNganHang == vm.BAT_DAU_GIAO_DICH || item.trangThaiNganHang == vm.GIAO_DICH_DANG_CHO_KET_QUA)">
+                            @*1: Bắt đầu giao dịch, 2: Giao dịch đang chờ kết quả*@
+                            <a class="btn btn-success btn-sm" ng-show="item.kenhThanhToan == vm.KENH_THANH_TOAN.KENH_KEYPAY"
+                               ng-click="vm.QueryBildToKeypay(item);">
+                                Xác nhận với Keypay
+                            </a>
+                        </div>
+                        <text ng-if="item.trangThaiKeToan == 2"><br /><b>Lý do:</b> {{item.lyDoHuyThanhToan}}</text>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="row" ng-if="vm.arrThanhToan.length==0 && vm.loading == false">
+            <p style="text-align:center; font-size:24px;">Hồ sơ chưa có thanh toán nào!</p>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <div class="col-md-12">
+            <button type="button" ng-disabled="vm.saving" class="btn btn-default"
+                    ng-click="vm.cancel()">
+                <i class="glyphicon glyphicon-remove"></i> Đóng
+            </button>
+        </div>
+    </div>
+</div>

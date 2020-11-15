@@ -1,0 +1,392 @@
+﻿@using newPSG.PMS.Web.Navigation
+@{
+    ViewBag.CurrentPageName = PageNames.Frontend.Dangky;
+}
+<link href="~/metronic/assets/global/css/components-front.css" rel="stylesheet" />
+<link href="~/metronic/assets/frontend/layout/css/custom.min.css" rel="stylesheet" />
+
+<style>
+    .pre-header {
+        padding: 10px 0px;
+        background: #10769a;
+        color: #fff;
+    }
+
+        .pre-header a {
+            text-align: center;
+            border: 1px solid #fff;
+            border-radius: 5px;
+            padding: 0 10px;
+            color: #fff;
+            -webkit-transition: all 300ms;
+            -o-transition: all 300ms;
+            transition: all 300ms;
+        }
+
+        .pre-header i {
+            padding-right: 5px;
+        }
+</style>
+<!-- BEGIN SIDEBAR & CONTENT -->
+<div class="bread-crumb">
+    <div class="bread-crumb-item">
+    </div>
+</div>
+<div ng-controller="ctrl.dangky as vm" class="container dangky-chicuc section ">
+    <div id="dataForm">
+        <div class="row margin-bottom-40 margin-top-30">
+            <!-- BEGIN CONTENT -->
+            <div class="col-md-12 col-sm-12">
+                <div class="content-page">
+                    <div class="portlet light bordered">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <i class="icon-plus"></i>
+                                <span class="caption-subject bold uppercase"> Đăng ký tài khoản doanh nghiệp</span>
+                            </div>
+                            <div class="actions">
+                                <a class="btn" href="javascript:void(0)"><i class="fa fa-question-circle"></i> Xem hướng dẫn</a>
+                            </div>
+                        </div>
+                        <div class="portlet-body">
+                            @*-----------------------Thông tin doanh nghiệp-----------------------*@
+                            <div busy-if="vm.dsdoanhnghiep_loading">
+                                <div class="portlet-body form">
+                                    <div id="DoanhNghiepCreateOrEditForm" name="DoanhNghiepCreateOrEditForm">
+                                        <div class="form-body">
+                                            <div class="portlet box blue-soft ">
+                                                <div class="portlet-title">
+                                                    <div class="caption">
+                                                        Thông tin doanh nghiệp
+                                                    </div>
+                                                </div>
+                                                <div class="portlet-body">
+                                                    <div class="row">
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label>Mã số doanh nghiệp <span class="font-red">*</span></label>
+                                                                <input class="form-control"
+                                                                       placeholder="Mã số thuế"
+                                                                       title="Mã số thuế của doanh nghiệp là duy nhất"
+                                                                       ng-blur="vm.checkExistTenDangNhap()"
+                                                                       ng-change="vm.changeMaSoThue()"
+                                                                       type="text"
+                                                                       ng-model="vm.dataForm.MaSoThue"
+                                                                       name="MaSoThue" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-9">
+                                                            <div class="form-group">
+                                                                <label>Tên tiếng Việt <span class="font-red">*</span></label>
+                                                                <input class="form-control"
+                                                                       placeholder="Tên tiếng Việt"
+                                                                       type="text"
+                                                                       title="Tên tiếng Việt của doanh nghiệp"
+                                                                       ng-model="vm.dataForm.TenDoanhNghiep"
+                                                                       name="Ten" />
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-md-12 ">
+                                                            <div class="form-group">
+                                                                <label>Loại hình</label><span class="font-red">*</span>
+                                                                <select id="ddlLoaiHinh"
+                                                                        style="width:100%"
+                                                                        kendo-drop-down-list
+                                                                        k-ng-model="vm.dataForm.loaiHinhDoanhNghiepId"
+                                                                        k-options="vm.loaiHinhOption"
+                                                                        class="form-control"></select>
+
+                                                            </div>
+                                                        </div>
+
+
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label>Tên tiếng Anh</label>
+                                                                <input class="form-control"
+                                                                       placeholder="Tên doanh nghiệp bằng tiếng Anh"
+                                                                       title="Tên tiếng Anh của doanh nghiệp"
+                                                                       type="text"
+                                                                       ng-model="vm.dataForm.TenTiengAnh" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label>Tên viết tắt</label>
+                                                                <input class="form-control"
+                                                                       placeholder="Tên viết tắt"
+                                                                       type="text"
+                                                                       title="Tên viết tắt của doanh nghiệp"
+                                                                       ng-model="vm.dataForm.TenVietTat" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="portlet box blue-soft">
+                                                <div class="portlet-title">
+                                                    <div class="caption">
+                                                        Địa chỉ
+                                                    </div>
+                                                </div>
+                                                <div class="portlet-body">
+                                                    <div class="row">
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label>Tỉnh/Thành phố</label><span class="font-red">*</span>
+                                                                <input id="ddlTinh"
+                                                                       name="ddlTinh"
+                                                                       style="width:100%"
+                                                                       kendo-drop-down-list
+                                                                       k-ng-model="vm.dataForm.TinhId"
+                                                                       k-options="vm.ddlTinhOptions"
+                                                                       data-fv-notempty="true" data-fv-notempty-message="Không được để trống trường này" data-fv-trigger="blur"
+                                                                       class="form-control" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label>Huyện</label><span class="font-red">*</span>
+                                                                <input id="ddlHuyen"
+                                                                       name="ddlHuyen"
+                                                                       style="width:100%"
+                                                                       kendo-drop-down-list
+                                                                       k-ng-model="vm.dataForm.HuyenId"
+                                                                       k-options="vm.ddlHuyenOptions"
+                                                                       k-cascade-from-field="'parentId'"
+                                                                       k-cascade-from="'ddlTinh'"
+                                                                       data-fv-notempty="true" data-fv-notempty-message="Không được để trống trường này" data-fv-trigger="blur"
+                                                                       class="form-control" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label>Xã</label><span class="font-red">*</span>
+                                                                <input id="ddlXa"
+                                                                       name="ddlXa"
+                                                                       style="width:100%"
+                                                                       kendo-drop-down-list
+                                                                       k-ng-model="vm.dataForm.XaId"
+                                                                       k-options="vm.ddlXaOptions"
+                                                                       k-cascade-from-field="'parentId'"
+                                                                       k-cascade-from="'ddlHuyen'"
+                                                                       data-fv-notempty="true" data-fv-notempty-message="Không được để trống trường này" data-fv-trigger="blur"
+                                                                       class="form-control" />
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label>Địa chỉ chi tiết<span class="font-red">*</span></label>
+                                                                <input class="form-control"
+                                                                       placeholder="Địa chỉ chi tiết"
+                                                                       name="diaChi" type="text"
+                                                                       ng-model="vm.dataForm.DiaChi"
+                                                                       data-fv-trigger="blur"
+                                                                       data-fv-notempty="true" data-fv-notempty-message="Không được để trống trường này" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row">
+
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label>Số điện thoại<span class="font-red">*</span></label>
+                                                                <input class="form-control"
+                                                                       title="Số điện thoại"
+                                                                       ng-pattern="/^[0-9]*$/"
+                                                                       placeholder="Số điện thoại doanh nghiệp"
+                                                                       type="text"
+                                                                       data-fv-notempty="true" data-fv-notempty-message="Không được để trống trường này" data-fv-trigger="blur"
+                                                                       ng-model="vm.dataForm.SoDienThoai">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label>Fax</label>
+                                                                <input class="form-control"
+                                                                       title="Fax"
+                                                                       placeholder="Fax"
+                                                                       type="text"
+                                                                       ng-model="vm.dataForm.Fax">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label>Email doanh nghiệp</label><span class="font-red">*</span>
+                                                                <input class="form-control"
+                                                                       placeholder="Email doanh nghiệp"
+                                                                       ng-blur="vm.checkExistEmailDoanhNghiep()"
+                                                                       title="Lưu ý: Hãy nhập đúng email của doanh nghiệp để nhận email xác nhận."
+                                                                       type="email"
+                                                                       data-fv-notempty="true" data-fv-notempty-message="Không được để trống trường này" data-fv-trigger="blur"
+                                                                       ng-model="vm.dataForm.EmailDoanhNghiep"
+                                                                       name="EmailDoanhNghiep" />
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label>Website</label>
+                                                                <input class="form-control"
+                                                                       title="Website doanh nghiệp"
+                                                                       placeholder="Website"
+                                                                       type="text"
+                                                                       ng-model="vm.dataForm.Website" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="portlet box blue-soft">
+                                                <div class="portlet-title">
+                                                    <div class="caption">
+                                                        Người đại diện
+                                                    </div>
+                                                </div>
+                                                <div class="portlet-body">
+                                                    <div class="row">
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label>Họ và tên <span class="font-red">*</span></label>
+                                                                <input class="form-control"
+                                                                       placeholder="Họ và tên"
+                                                                       title="Họ và tên người đại diện"
+                                                                       type="text"
+                                                                       data-fv-notempty="true" data-fv-notempty-message="Không được để trống trường này" data-fv-trigger="blur"
+                                                                       ng-model="vm.dataForm.TenNguoiDaiDien"
+                                                                       name="TenNguoiDaiDien" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label>Email</label><span class="font-red">*</span>
+                                                                <input class="form-control"
+                                                                       placeholder="Email "
+                                                                       title="Lưu ý: Hãy nhập đúng email của người đại diện"
+                                                                       type="email"
+                                                                       data-fv-notempty="true"
+                                                                       data-fv-notempty-message="Không được để trống trường này"
+                                                                       data-fv-trigger="blur"
+                                                                       ng-model="vm.dataForm.EmailXacNhan"
+                                                                       name="EmailDoanhNghiep" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label>Chức vụ</label>
+                                                                <select style="width:100%"
+                                                                        kendo-drop-down-list name="chucvu"
+                                                                        k-ng-model="vm.dataForm.ChucVuNguoiDaiDienId"
+                                                                        k-options="vm.chucVuOption"
+                                                                        data-fv-notempty="true" data-fv-notempty-message="Không được để trống trường này" data-fv-trigger="blur"
+                                                                        class="form-control"></select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label>Số điện thoại người đại diện</label>
+                                                                <input class="form-control"
+                                                                       title="Số điện thoại người đại diện"
+                                                                       placeholder="Số điện thoại người đại diện"
+                                                                       type="text"
+                                                                       data-fv-notempty="true" data-fv-notempty-message="Không được để trống trường này" data-fv-trigger="blur"
+                                                                       ng-model="vm.dataForm.DienThoaiNguoiDaiDien">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-actions">
+                                            <button type="button" ng-disabled="vm.saving" button-busy="vm.saving" busy-text="@L("SavingWithThreeDot")" class="btn green-meadow" ng-click="vm.SubmitForm()"><i class="fa fa-save"></i> Đăng ký</button>
+                                            <label type="button" ng-disabled="vm.saving" class="btn red" ng-click="vm.ResetForm()"> <i class="fa fa-repeat"></i> Đặt lại</label>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END CONTENT -->
+        </div>
+    </div>
+
+    <!--Modal view tai lieu-->
+    <div id="tai-lieu-modal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Xem file PDF</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row" style="height: 700px">
+                            <iframe title="Xem tài liệu" style="width: 100%; height: 100%;" ng-src="{{vm.trustSrc(vm.pathPDF)}}" frameborder="0"></iframe>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+</div>
+<!-- END SIDEBAR & CONTENT -->
+
+<script type="text/ng-template" id="frmHuongDanModal.html">
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="vm.closeModal()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel"><b>Hướng dẫn đăng ký tài khoản</b></h4>
+    </div>
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <iframe width="800" height="500" src="https://www.youtube.com/embed/mb1VYuJs7Zw" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" ng-click="vm.closeModal()">Đóng</button>
+    </div>
+</script>
+
+<style type="text/css">
+    .table > tbody > tr > td {
+        vertical-align: middle;
+    }
+
+    .modal-header {
+        background-color: #3598dc !important;
+    }
+
+    .modal .modal-content .modal-title {
+        color: #fff;
+    }
+
+    .modal .modal-content .modal-title {
+        font-weight: 400;
+    }
+</style>
+
+
+
+
+
+

@@ -1,0 +1,57 @@
+﻿<div id="tinhCreateOrEditForm">
+    <div class="modal-header">
+        <h4 class="modal-title">
+            <span ng-if="!vm.tinh.id">Tạo Tỉnh Thành Mới</span>
+            <span ng-if="vm.tinh.id">Sửa Tỉnh Thành</span>
+            <button type="button" class="close" ng-click="vm.cancel()" aria-hidden="true"></button>
+        </h4>
+    </div>
+    <div class="modal-body">
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-9">
+                    <label>Tên Tỉnh</label><span class="font-red">*</span>
+                    <input class="form-control"
+                           type="text"
+                           name="Ten"
+                           ng-model="vm.tinh.ten"
+                           data-fv-notempty="true"
+                           data-fv-notempty-message="Không được để trống trường này"
+                           data-fv-trigger="blur" />
+                </div>
+                <div class="col-md-3">
+                    <label>Kích Hoạt</label><br />
+                    <input bs-switch
+                           ng-model="vm.tinh.isActive"
+                           type="checkbox"
+                           switch-on-text="<i class='fa fa-check' aria-hidden='true'></i>"
+                           switch-on-color="success"
+                           switch-off-text="<i class='fa fa-times' aria-hidden='true'></i>"
+                           ng-true-value=true
+                           ng-false-value=false>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Mã Tỉnh</label><span class="font-red">*</span>
+            <input class="form-control"
+                   type="number"
+                   name="niisId"
+                   ng-model="vm.tinh.niisId"
+                   data-fv-notempty="true"
+                   data-fv-notempty-message="Không được để trống trường này"
+                   data-fv-trigger="blur" />
+        </div>
+        <div class="form-group">
+            <label>Mô Tả</label>
+            <textarea class="form-control"
+                      name="MoTaLyDo"
+                      ng-model="vm.tinh.moTa"
+                      rows="5"></textarea>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" button-busy="vm.saving" busy-text="@L("SavingWithThreeDot")" class="btn green-meadow" ng-click="vm.save()"><i class="fa fa-save"></i> <span>@L("Save")</span></button>
+        <button ng-disabled="vm.saving" type="button" class="btn red" ng-click="vm.cancel()"><i class="glyphicon glyphicon-remove"></i>@L("Cancel")</button>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+﻿<div id="createOrEditFormModal">
+    <div class="modal-header">
+        <div class="modal-title">
+            <h4 class="modal-title text-center uppercase">
+                <span>Điều kiện lọc của loại hồ sơ:<span style="color:red">{{vm.setting_LoaiHoSo.name}} </span> </span>
+                <button type="button" class="close" ng-click="vm.cancel()" aria-hidden="true"></button>
+            </h4>
+        </div>
+    </div>
+    <div class="modal-body">
+        <table class="table table-bordered table-hover" style="margin-bottom: 0px;">
+            <thead>
+                <tr>
+                    <th style="width:60px;text-align:center;"> # </th>
+                    <th style="width:100px;text-align:center;"> Thao tác </th>
+                    <th> Tên điều kiện lọc </th>
+                    <th> Điều kiện lọc </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in vm.listSetting_LoaiHoSo_Filter">
+                    <td style="width:60px;text-align:center;">{{$index + 1}}</td>
+                    <td style="width:100px;">
+                        <button title"Sửa" class='btn btn-success btn-xs' ng-click="vm.openModal(item)"><em class="fa fa-pencil"></em></button>
+                        <button title="Xóa" class='btn btn-danger btn-xs' ng-click="vm.delete(item)"><em class="fa fa-trash"></em></button>
+                    </td>
+                    <td>{{item.name}}</td>
+                    <td>
+                        ...
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div style="margin-top:5px;">
+            <button type="button" class="btn blue" ng-click="vm.openModal()"><em class="fa fa-plus"></em><span> Thêm mới </span></button>
+        </div>
+    </div>
+
+    <div class="modal-footer">
+        <button ng-disabled="vm.saving" type="button" class="btn btn-default" ng-click="vm.cancel()">@L("Cancel")</button>
+    </div>
+</div>

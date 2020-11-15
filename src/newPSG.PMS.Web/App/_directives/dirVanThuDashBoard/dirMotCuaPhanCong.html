@@ -1,0 +1,66 @@
+﻿<style>
+    .no-border:focus {
+        border: none !important;
+        outline: none!important;
+    }
+</style>
+
+<div class="col-md-6 no-border" ng-click="vm.go_motcuaphancongchung()">
+    <div class="dashboard-stat2 bordered"  style="min-height: 300px;">
+        <div class="display">
+            <div class="number">
+                <h3 class="font-purple-soft">
+                    <span class="margin-right-20" data-counter="counterup">{{vm.totalFormCase.case0}}</span><small>Hồ sơ</small>
+                </h3>
+                <small class="font-blue" style="cursor:pointer">MỘT CỬA CHUYỂN HỒ SƠ</small>
+            </div>
+            <div class="icon">
+                <i class="icon-user"></i>
+            </div>
+        </div>
+        <div class="progress-info margin-bottom-40">
+            <div class="progress">
+                <span style="width: {{vm.totalFormCase.case1 * 100 /vm.totalFormCase.case0}}%;" class="progress-bar progress-bar-success green-sharp">
+                    <span class="sr-only"> 0% </span>
+                </span>
+            </div>
+            <div class="status">
+                <div class="status-title"> Hồ sơ chưa được tiếp nhận </div>
+                <div class="status-number"> {{vm.totalFormCase.case1}} hồ sơ </div>
+            </div>
+        </div>
+        <div class="progress-info margin-bottom-40">
+            <div class="progress">
+                <span style="width: {{vm.totalFormCase.case2 * 100 /vm.totalFormCase.case0}}%;" class="progress-bar progress-bar-success blue-sharp">
+                    <span class="sr-only">0% </span>
+                </span>
+            </div>
+            <div class="status">
+                <div class="status-title"> Hồ sơ đã được tiếp nhận tại một cửa </div>
+                <div class="status-number"> {{vm.totalFormCase.case2}} hồ sơ </div>
+            </div>
+        </div>
+        <div class="progress-info margin-bottom-40">
+            <div class="progress">
+                <span style="width: {{vm.totalFormCase.case3 * 100 /vm.totalFormCase.case0}}%;" class="progress-bar progress-bar-success  red-haze">
+                    <span class="sr-only">0% </span>
+                </span>
+            </div>
+            <div class="status">
+                <div class="status-title"> Hồ sơ bị trả lại </div>
+                <div class="status-number"> {{vm.totalFormCase.case3}} hồ sơ </div>
+            </div>
+        </div>
+        <div class="progress-info margin-bottom-40">
+            <div class="progress">
+                <span style="width: {{vm.totalFormCase.case4 * 100 /vm.totalFormCase.case0}}%;" class="progress-bar progress-bar-success purple-soft">
+                    <span class="sr-only">0%</span>
+                </span>
+            </div>
+            <div class="status">
+                <div class="status-title">  Hồ sơ đã hoàn thành </div>
+                <div class="status-number"> {{vm.totalFormCase.case4}} hồ sơ </div>
+            </div>
+        </div>
+    </div>
+</div>

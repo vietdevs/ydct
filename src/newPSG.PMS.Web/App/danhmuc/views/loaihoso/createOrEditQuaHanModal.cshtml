@@ -1,0 +1,172 @@
+﻿<style>
+    @@media (min-width: 768px) {
+         .modal-dialog{
+             width: 80%;
+             margin: 30px auto;
+         }
+    }
+</style>
+<div id="loaihosoCreateOrEditForm">
+    <div class="modal-header">
+        <h4 class="modal-title">
+            <span ng-if="!vm.loaihoso.id">Tạo Loại Hồ Sơ Mới</span>
+            <span ng-if="vm.loaihoso.id">Sửa Loại Hồ Sơ</span>
+            <button type="button" aria-hidden="true" class="close" ng-click="vm.cancel()"></button>
+        </h4>
+    </div>
+    <div class="modal-body">
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-4">
+                    <label>Tên loại hồ sơ</label><span><span class="font-red">*</span></span>
+                    <input style="width:50%" class="form-control"
+                           type="text"
+                           name="Ten"
+                           ng-model="vm.loaihoso.tenLoaiHoSo"
+                           data-fv-notempty="true"
+                           data-fv-notempty-message="Không được để trống trường này"
+                           data-fv-trigger="blur" />
+                </div>
+                <div class="col-md-4">
+                    <label>Số ngày xử lý tối đa của thủ tục</label>
+                   <span  class="form-control" style="width:50%">{{vm.loaihoso.soNgayXuLy}} ngày</span>
+                </div>
+                <div class="col-md-4">
+                    <label>Kích Hoạt</label><br />
+                    <input bs-switch
+                           ng-model="vm.loaihoso.isActive"
+                           type="checkbox"
+                           switch-on-text="<i class='fa fa-check' aria-hidden='true'></i>"
+                           switch-on-color="success"
+                           switch-off-text="<i class='fa fa-times' aria-hidden='true'></i>"
+                           ng-true-value=true
+                           ng-false-value=false>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="caption">
+                <em class="fa fa-hand-rock-o font-yellow-casablanca"></em>
+                <span class="caption-subject bold font-yellow-casablanca uppercase"> Cấu hình thời giản thẩm định </span>
+            </div>
+            <div class="table-scrollable table-scrollable-borderless">
+                <table class="table table-hover table-light">
+                    <thead>
+                        <tr class="uppercase">
+                            <th style="width:180px">Đơn vị gửi </th>
+                            <th  style="width:180px">Đơn vị nhận </th>
+                            <th width="40px">Số ngày xử lý </th>
+                            <th width="80px">Loại hồ sơ bổ sung </th>
+                            <th  style="width:200px">Luồng xử lý </th>
+                            <th  style="text-align:center">Mô tả </th>
+                            <th style="width:80px;text-align:center"> # </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="item in vm.jsonHanXuLy">
+                            <td>
+                                <input style="width: 100%"
+                                       kendo-drop-down-list
+                                       ng-model="item.donViGui"
+                                       k-options="vm.donViXuLyOptions"
+                                       k-auto-bind="true"
+                                       class="form-control" />
+                                <check-validate-empty datacheck="item.donViGui"></check-validate-empty>
+                            </td>
+                            <td>
+                                <input style="width: 100%"
+                                       kendo-drop-down-list
+                                       ng-model="item.donViNhan"
+                                       k-options="vm.donViXuLyOptions"
+                                       k-auto-bind="true"
+                                       class="form-control" />
+                                <check-validate-empty datacheck="item.donViNhan"></check-validate-empty>
+                            </td>
+                            <td>
+                                <input class="form-control" type="number" min="0" ng-model="item.soNgayXuLy">
+                                <check-validate-empty datacheck="item.soNgayXuLy"></check-validate-empty>
+                            </td>
+                            <td>
+                                <input bs-switch
+                                       ng-model="item.isHoSoBS"
+                                       type="checkbox"
+                                       switch-on-text="<i class='fa fa-check' aria-hidden='true'></i>"
+                                       switch-on-color="success"
+                                       switch-off-text="<i class='fa fa-times' aria-hidden='true'></i>"
+                                       ng-true-value=true
+                                       ng-false-value=false>
+                            </td>
+                            <td>
+                                <input style="width: 100%"
+                                       kendo-drop-down-list
+                                       ng-model="item.luongXuLy"
+                                       k-options="vm.luongXuLyOptions"
+                                       k-auto-bind="true"
+                                       class="form-control" />
+                            </td>
+                            <td>
+                                <textarea class="form-control"
+                                          name="MoTaloaihoso"
+                                          ng-model="item.moTa"
+                                          rows="1"></textarea>
+                            </td>
+                            <td>                              
+                                <button type="button" class="btn red" ng-click="vm.deleteNewCauHinhThamDinh(item)"><em class="fa fa-close"></em>Xóa</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div style="margin-top:5px;">
+                    <button type="submit" class="btn btn-primary blue ng-isolate-scope" ng-click="vm.addNewCauHinhThamDinh()">
+                        <span><em class="fa fa-plus-square"></em> <span> Thêm nội dung</span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        @*<div class="form-group">
+            <div class="row">
+                <div class="col-md-6">
+                    <label>Qui trình thẩm định chung</label><br />
+                    <input style="width: 100%"
+                           kendo-drop-down-list
+                           ng-model="vm.loaihoso.quiTrinhXuLy"
+                           k-options="vm.quiTrinhOptions"
+                           k-auto-bind="true"
+                           class="form-control" />
+                </div>
+                <div class="col-md-6">
+                    <label>Thủ tục áp dụng</label><br />
+                    <input style="width: 100%"
+                           kendo-drop-down-list
+                           ng-model="vm.loaihoso.thuTucId"
+                           k-options="vm.thuTucOptions"
+                           k-auto-bind="true"
+                           class="form-control" />
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Mã kết nối cục liên thông</label>
+            <input class="form-control"
+                   type="text"
+                   name="MaKetNoi"
+                   ng-model="vm.loaihoso.niisId"
+                   ui-number-mask="0" />
+        </div>*@
+        @*<div class="form-group">
+            <label>Mô Tả</label>
+            <textarea class="form-control"
+                      name="MoTaloaihoso"
+                      ng-model="vm.loaihoso.moTa"
+                      rows="5"></textarea>
+        </div>*@
+    </div>
+    <div class="modal-footer">
+        <button type="button" button-busy="vm.saving" busy-text="@L("SavingWithThreeDot")" class="btn btn-primary green-meadow" ng-click="vm.save()"><i class="fa fa-save"></i> <span>@L("Save")</span></button>
+        <button ng-disabled="vm.saving" type="button" class="btn red" ng-click="vm.cancel()"><i class="glyphicon glyphicon-remove"></i>@L("Cancel")</button>
+    </div>
+</div>

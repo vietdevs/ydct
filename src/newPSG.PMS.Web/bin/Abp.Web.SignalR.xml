@@ -1,0 +1,119 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Abp.Web.SignalR</name>
+    </assembly>
+    <members>
+        <member name="T:Abp.Web.SignalR.AbpSignalRContractResolver">
+            <summary>
+            Uses CamelCasePropertyNamesContractResolver instead of DefaultContractResolver for SignalR communication. 
+            </summary>
+        </member>
+        <member name="P:Abp.Web.SignalR.AbpSignalRContractResolver.IgnoredAssemblies">
+            <summary>
+            List of ignored assemblies.
+            It contains only the SignalR's own assembly.
+            If you don't want that your assembly's types are automatically camel cased while sending to the client, then add it to this list.
+            </summary>
+        </member>
+        <member name="M:Abp.Web.SignalR.AbpSignalRContractResolver.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Abp.Web.SignalR.AbpSignalRContractResolver"/> class.
+            </summary>
+        </member>
+        <member name="T:Abp.Web.SignalR.AbpWebSignalRModule">
+            <summary>
+            ABP SignalR integration module.
+            </summary>
+        </member>
+        <member name="M:Abp.Web.SignalR.AbpWebSignalRModule.PreInitialize">
+            <inheritdoc/>
+        </member>
+        <member name="M:Abp.Web.SignalR.AbpWebSignalRModule.Initialize">
+            <inheritdoc/>
+        </member>
+        <member name="T:Abp.Web.SignalR.Hubs.AbpCommonHub">
+            <summary>
+            Common Hub of ABP.
+            </summary>
+        </member>
+        <member name="M:Abp.Web.SignalR.Hubs.AbpCommonHub.#ctor(Abp.RealTime.IOnlineClientManager,Abp.Auditing.IClientInfoProvider)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Abp.Web.SignalR.Hubs.AbpCommonHub"/> class.
+            </summary>
+        </member>
+        <member name="P:Abp.Web.SignalR.Hubs.AbpHubBase.LocalizationSourceName">
+            <summary>
+            Gets/sets name of the localization source that is used in this application service.
+            It must be set in order to use <see cref="M:Abp.Web.SignalR.Hubs.AbpHubBase.L(System.String)"/> and <see cref="M:Abp.Web.SignalR.Hubs.AbpHubBase.L(System.String,System.Globalization.CultureInfo)"/> methods.
+            </summary>
+        </member>
+        <member name="P:Abp.Web.SignalR.Hubs.AbpHubBase.LocalizationSource">
+            <summary>
+            Gets localization source.
+            It's valid if <see cref="P:Abp.Web.SignalR.Hubs.AbpHubBase.LocalizationSourceName"/> is set.
+            </summary>
+        </member>
+        <member name="M:Abp.Web.SignalR.Hubs.AbpHubBase.L(System.String)">
+            <summary>
+            Gets localized string for given key name and current language.
+            </summary>
+            <param name="name">Key name</param>
+            <returns>Localized string</returns>
+        </member>
+        <member name="M:Abp.Web.SignalR.Hubs.AbpHubBase.L(System.String,System.Object[])">
+            <summary>
+            Gets localized string for given key name and current language with formatting strings.
+            </summary>
+            <param name="name">Key name</param>
+            <param name="args">Format arguments</param>
+            <returns>Localized string</returns>
+        </member>
+        <member name="M:Abp.Web.SignalR.Hubs.AbpHubBase.L(System.String,System.Globalization.CultureInfo)">
+            <summary>
+            Gets localized string for given key name and specified culture information.
+            </summary>
+            <param name="name">Key name</param>
+            <param name="culture">culture information</param>
+            <returns>Localized string</returns>
+        </member>
+        <member name="M:Abp.Web.SignalR.Hubs.AbpHubBase.L(System.String,System.Globalization.CultureInfo,System.Object[])">
+            <summary>
+            Gets localized string for given key name and current language with formatting strings.
+            </summary>
+            <param name="name">Key name</param>
+            <param name="culture">culture information</param>
+            <param name="args">Format arguments</param>
+            <returns>Localized string</returns>
+        </member>
+        <member name="T:Abp.Web.SignalR.Notifications.SignalRRealTimeNotifier">
+            <summary>
+            Implements <see cref="T:Abp.Notifications.IRealTimeNotifier"/> to send notifications via SignalR.
+            </summary>
+        </member>
+        <member name="P:Abp.Web.SignalR.Notifications.SignalRRealTimeNotifier.Logger">
+            <summary>
+            Reference to the logger.
+            </summary>
+        </member>
+        <member name="M:Abp.Web.SignalR.Notifications.SignalRRealTimeNotifier.#ctor(Abp.RealTime.IOnlineClientManager)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Abp.Web.SignalR.Notifications.SignalRRealTimeNotifier"/> class.
+            </summary>
+        </member>
+        <member name="M:Abp.Web.SignalR.Notifications.SignalRRealTimeNotifier.SendNotificationsAsync(Abp.Notifications.UserNotification[])">
+            <inheritdoc/>
+        </member>
+        <member name="T:Abp.Web.SignalR.WindsorDependencyResolver">
+            <summary>
+            Replaces <see cref="T:Microsoft.AspNet.SignalR.DefaultDependencyResolver"/> to resolve dependencies from Castle Windsor (<see cref="T:Castle.Windsor.IWindsorContainer"/>).
+            </summary>
+        </member>
+        <member name="M:Abp.Web.SignalR.WindsorDependencyResolver.#ctor(Castle.Windsor.IWindsorContainer)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Abp.Web.SignalR.WindsorDependencyResolver"/> class.
+            </summary>
+            <param name="windsorContainer">The windsor container.</param>
+        </member>
+    </members>
+</doc>

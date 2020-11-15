@@ -1,0 +1,149 @@
+﻿<div id="dataItemCreateOrEditForm">
+    <div class="modal-header">
+        <h4 class="modal-title text-center uppercase">
+            <span ng-if="!vm.dataItem.id">Tạo nội dung thẩm định Mới</span>
+            <span ng-if="vm.dataItem.id">Sửa nội dung thẩm định</span>
+            <button type="button" class="close" ng-click="vm.cancel()" aria-hidden="true"></button>
+        </h4>
+    </div>
+    <div class="modal-body">
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-6">
+                    <label>Thủ tục</label><span><span class="font-red">*</span></span>
+                    <div app.common.filter.thutucenum selected="vm.dataItem.thuTucId"></div>
+                    <check-validate-empty datacheck="vm.dataItem.thuTucId"></check-validate-empty>
+                </div>
+                <div class="col-md-6" ng-if="vm.isAdmin">
+                    <label>Vai trò</label><span><span class="font-red">*</span></span>
+                    <div filter.common.rolelevel id-value="vm.dataItem.roleLevel" value-change="vm.changeRole"></div>
+                    <check-validate-empty datacheck="vm.dataItem.roleLevel"></check-validate-empty>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-6" ng-if="vm.dataItem.roleLevel == vm.ROLE_LEVEL.CHUYEN_GIA">
+                    <label>Tiểu ban</label><span><span class="font-red">*</span></span>
+                    <div filter.common.tieuban value="vm.dataItem.tieuBanEnum"></div>
+                    <check-validate-empty datacheck="vm.dataItem.tieuBanEnum"></check-validate-empty>
+                </div>
+                <div class="col-md-6">
+                    <label>Loại biên bản</label><span><span class="font-red">*</span></span>
+                    <div filter.common.loaibienban value="vm.dataItem.loaiBienBanThamDinhId" control="vm.controlLoaiBienBan"></div>
+                    <check-validate-empty datacheck="vm.dataItem.loaiBienBanThamDinhId"></check-validate-empty>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <div class="form-group">
+            <div class="caption">
+                <em class="fa fa-hand-rock-o font-yellow-casablanca"></em>
+                <span class="caption-subject bold font-yellow-casablanca uppercase"> Nội dung thẩm định </span>
+            </div>
+            <div class="table-scrollable table-scrollable-borderless">
+                <table class="table table-hover table-light">
+                    <thead>
+                        <tr class="uppercase">
+                            <th style="width:100px;"> Level </th>
+                            <th style="width:120px;"> STT </th>
+                            <th> Tiêu đề thẩm định </th>
+                            <th style="width:95px;text-align:center"> Tiêu đề </th>
+                            <th style="width:95px;text-align:center"> Bắt buộc </th>
+                            <th style="width:125px;text-align:center"> Thao tác </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="item in vm.dataItem.listNoiDung">
+                            <td>
+                                <input style="width: 100%"
+                                       ng-disabled="true"
+                                       kendo-drop-down-list
+                                       ng-model="item.level"
+                                       k-options="vm.ROLE_LEVELOptions"
+                                       class="form-control" />
+                            </td>
+                            <td>
+                                <input class="form-control"
+                                       ng-class="'level-' + item.level"
+                                       type="text"
+                                       ng-model="item.stt" />
+                                <check-validate-empty datacheck="item.stt"></check-validate-empty>
+                            </td>
+                            <td>
+                                <textarea class="form-control"
+                                          ng-model="item.tieuDeThamDinh"
+                                          rows="1"></textarea>
+                                <check-validate-empty datacheck="item.tieuDeThamDinh"></check-validate-empty>
+                            </td>
+                            <td>
+                                <input bs-switch
+                                       ng-model="item.isTieuDe"
+                                       type="checkbox"
+                                       switch-on-text="<em class='fa fa-check' aria-hidden='true'></em>"
+                                       switch-on-color="success"
+                                       switch-off-text="<em class='fa fa-times' aria-hidden='true'></em>"
+                                       ng-true-value=true
+                                       ng-false-value=false>
+                            </td>
+                            <td>
+                                <input bs-switch
+                                       ng-model="item.isValidate"
+                                       type="checkbox"
+                                       switch-on-text="<em class='fa fa-check' aria-hidden='true'></em>"
+                                       switch-on-color="success"
+                                       switch-off-text="<em class='fa fa-times' aria-hidden='true'></em>"
+                                       ng-true-value=true
+                                       ng-false-value=false>
+                            </td>
+                            <td>
+                                <button type="button" class="btn blue" ng-disabled="!(item.id > 0) || item.level >= 5" ng-click="vm.addTree(item)"><em class="fa fa-plus-square"></em></button>
+                                <button type="button" class="btn red" ng-disabled="item.isDisabled_Close" ng-click="vm.remove(item)"><em class="fa fa-close"></em></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div style="margin-top:5px;">
+                    <button type="submit" class="btn btn-primary blue ng-isolate-scope" ng-click="vm.add()">
+                        <span><em class="fa fa-plus-square"></em> <span> Thêm nội dung</span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" button-busy="vm.saving" busy-text="@L("SavingWithThreeDot")" class="btn blue-steel" ng-click="vm.save()"><em class="fa fa-save"></em> <span>@L("Save")</span></button>
+        <button ng-disabled="vm.saving" type="button" class="btn red" ng-click="vm.cancel()"><em class="glyphicon glyphicon-remove"></em>@L("Cancel")</button>
+    </div>
+</div>
+
+<style>
+    .level-1 {
+        width: 100%;
+        float: right;
+    }
+
+    .level-2 {
+        width: 90%;
+        float: right;
+    }
+
+    .level-3 {
+        width: 80%;
+        float: right;
+    }
+
+    .level-4 {
+        width: 70%;
+        float: right;
+    }
+
+    .level-5 {
+        width: 60%;
+        float: right;
+    }
+
+    .modal-dialog {
+        width: 1200px;
+    }
+</style>

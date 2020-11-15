@@ -1,0 +1,51 @@
+﻿@using newPSG.PMS.Localization
+<style>
+    .left-radio .radio-center {
+        text-align: left;
+    }
+
+    .radio-list {
+        padding-left: 10px;
+    }
+
+    .control-label {
+        text-align: justify;
+    }
+    .thamdinh-readonly {
+       
+    }
+</style>
+<div class="container-fluid">
+    <div class="form-body">
+        <div ng-repeat="item in vm.bienBanThamDinh.arrNoiDungThamXet">
+            <p style="color: #3598dc;margin-bottom: 10px;" class="bold uppercase">{{vm.bienBanThamDinh.donHang.danhSachThuoc[0].tenNguonGoc}}</p>
+            <div ng-if="vm.hoSoXuLy.quiTrinh == vm.QUI_TRINH_THAM_DINH.QT_2_CHUYEN_VIEN">
+                <p class="thamdinh_tit bold bg-blue uppercase">Chuyên viên Thụ Lý: {{vm.nguoiDuyet.tenChuyenVienThuLy}}</p>
+                <div quanlyhoso.thutuc99.directives.util.tablethamdinh
+                     fonlyview="vm.daThuLy"
+                     itemthamdinh="item"
+                     itemview="vm.hoSoXuLy.bienBanThamXet_ChuyenVienThuLy.arrNoiDungThamXet[$index]"
+                     readonly="!vm.isChuyenVienThuLy"
+                     dathamdinh="vm.daThuLy"></div>
+
+                <p class="thamdinh_tit bold bg-blue uppercase">Chuyên viên Phối Hợp: {{vm.nguoiDuyet.tenChuyenVienPhoiHop}}</p>
+                <div quanlyhoso.thutuc99.directives.util.tablethamdinh
+                     fonlyview="vm.daPhoiHop"
+                     itemthamdinh="item"
+                     itemview="vm.hoSoXuLy.bienBanThamXet_ChuyenVienPhoiHop.arrNoiDungThamXet[$index]"
+                     readonly="!vm.isChuyenVienPhoiHop"
+                     dathamdinh="vm.daPhoiHop"></div>
+            </div>
+            <div ng-if="vm.hoSoXuLy.quiTrinh == vm.QUI_TRINH_THAM_DINH.QT_1_CHUYEN_VIEN">
+                <div quanlyhoso.thutuc99.directives.util.tablethamdinh
+                     fonlyview="vm.daThuLy"
+                     itemthamdinh="item"
+                     dataitem="vm.dataItem"
+                     itemview="vm.hoSoXuLy.bienBanThamXet_ChuyenVienThuLy.arrNoiDungThamXet[$index]"
+                     readonly="!vm.isChuyenVienThuLy"
+                     dathamdinh="vm.daThuLy"></div>
+            </div>
+
+        </div>
+    </div>
+</div>

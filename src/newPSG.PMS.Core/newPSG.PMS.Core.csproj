@@ -1,0 +1,425 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{17298EA0-AF73-4F30-B6F1-2066100D7D74}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>newPSG.PMS</RootNamespace>
+    <AssemblyName>newPSG.PMS.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Abp, Version=3.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.3.4.0\lib\netstandard2.0\Abp.dll</HintPath>
+    </Reference>
+    <Reference Include="Abp.AutoMapper, Version=3.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.AutoMapper.3.4.0\lib\netstandard2.0\Abp.AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Abp.Zero, Version=3.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Zero.3.4.0\lib\net461\Abp.Zero.dll</HintPath>
+    </Reference>
+    <Reference Include="Abp.Zero.Common, Version=3.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Zero.Common.3.4.0\lib\netstandard2.0\Abp.Zero.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Abp.Zero.Ldap, Version=3.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Zero.Ldap.3.4.0\lib\netstandard2.0\Abp.Zero.Ldap.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper, Version=6.2.2.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.6.2.2\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.4.2.1\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Facilities.Logging, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.LoggingFacility.4.1.0\lib\net45\Castle.Facilities.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Windsor.4.1.0\lib\net45\Castle.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="JetBrains.Annotations, Version=11.1.0.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
+      <HintPath>..\packages\JetBrains.Annotations.11.1.0\lib\net20\JetBrains.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Caching.Abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Caching.Abstractions.2.0.0\lib\netstandard2.0\Microsoft.Extensions.Caching.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Caching.Memory, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Caching.Memory.2.0.0\lib\netstandard2.0\Microsoft.Extensions.Caching.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.2.0.0\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Options.2.0.0\lib\netstandard2.0\Microsoft.Extensions.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.2.0.0\lib\netstandard2.0\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions.Desktop, Version=1.0.168.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.Desktop.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Nito.AsyncEx, Version=4.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.AsyncEx.4.0.1\lib\net45\Nito.AsyncEx.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Nito.AsyncEx.Concurrent, Version=4.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.AsyncEx.4.0.1\lib\net45\Nito.AsyncEx.Concurrent.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Nito.AsyncEx.Context, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.AsyncEx.Context.1.1.0\lib\net46\Nito.AsyncEx.Context.dll</HintPath>
+    </Reference>
+    <Reference Include="Nito.AsyncEx.Coordination, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.AsyncEx.Coordination.1.0.2\lib\net46\Nito.AsyncEx.Coordination.dll</HintPath>
+    </Reference>
+    <Reference Include="Nito.AsyncEx.Enlightenment, Version=4.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.AsyncEx.4.0.1\lib\net45\Nito.AsyncEx.Enlightenment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Nito.AsyncEx.Tasks, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.AsyncEx.Tasks.1.1.0\lib\net46\Nito.AsyncEx.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Nito.Collections.Deque, Version=1.0.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.Collections.Deque.1.0.4\lib\netstandard2.0\Nito.Collections.Deque.dll</HintPath>
+    </Reference>
+    <Reference Include="Nito.Disposables, Version=1.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.Disposables.1.2.3\lib\netstandard2.0\Nito.Disposables.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Collections.Immutable, Version=1.2.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.1.4.0\lib\netstandard2.0\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.4.4.1\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.ConfigurationManager, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Configuration.ConfigurationManager.4.4.1\lib\net461\System.Configuration.ConfigurationManager.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Common">
+      <HintPath>..\packages\System.Data.Common.4.3.0\lib\net451\System.Data.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.DirectoryServices.AccountManagement" />
+    <Reference Include="System.DirectoryServices.Protocols" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Linq.Dynamic, Version=1.0.6132.35681, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Linq.Dynamic.1.0.7\lib\net40\System.Linq.Dynamic.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Linq.Dynamic.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=0f07ec44de6ac832, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Linq.Dynamic.Core.1.0.8.2\lib\net46\System.Linq.Dynamic.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.4.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Runtime.Serialization.Formatters">
+      <HintPath>..\packages\System.Runtime.Serialization.Formatters.4.3.0\lib\net46\System.Runtime.Serialization.Formatters.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Primitives">
+      <HintPath>..\packages\System.Runtime.Serialization.Primitives.4.3.0\lib\net46\System.Runtime.Serialization.Primitives.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Claims">
+      <HintPath>..\packages\System.Security.Claims.4.3.0\lib\net46\System.Security.Claims.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.XmlDocument">
+      <HintPath>..\packages\System.Xml.XmlDocument.4.3.0\lib\net46\System.Xml.XmlDocument.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.XPath">
+      <HintPath>..\packages\System.Xml.XPath.4.3.0\lib\net46\System.Xml.XPath.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.XPath.XmlDocument, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Xml.XPath.XmlDocument.4.3.0\lib\net46\System.Xml.XPath.XmlDocument.dll</HintPath>
+    </Reference>
+    <Reference Include="TimeZoneConverter, Version=2.2.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\TimeZoneConverter.2.2.1\lib\net45\TimeZoneConverter.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppVar.cs" />
+    <Compile Include="_CommonEnum\LuongXuLyEnum.cs" />
+    <Compile Include="_CommonEnum\LoaiFileEnum.cs" />
+    <Compile Include="_CommonEnum\TrangThaiLienThongApi.cs" />
+    <Compile Include="_CommonEnum\VanBangChuyenMonEnum.cs" />
+    <Compile Include="_CommonEnum\_NhomBaiVietEnum.cs" />
+    <Compile Include="_CommonEnum\_ThanhToanEnum.cs" />
+    <Compile Include="_CommonEnum\_RoleLevelEnum.cs" />
+    <Compile Include="_CommonEnum\_CommonEnumExtensions.cs" />
+    <Compile Include="Utility.cs" />
+    <Compile Include="_CommonEnum\_CommonEnum.cs" />
+    <Compile Include="_CommonEnum\1.ThuTucEnum.cs" />
+    <Compile Include="_CommonEnum\2.FormIdEnum.cs" />
+    <Compile Include="_CommonEnum\3.FormCaseEnum.cs" />
+    <Compile Include="_CommonEnum\4.FormFunctionEnum.cs" />
+    <Compile Include="_CommonEnum\5.DonViXuLyEnum.cs" />
+    <Compile Include="_CommonEnum\6.TrangThaiEnum.cs" />
+    <Compile Include="_HCC.EntityDB\HCC.CauHinhThuTuc\LoaiHoSo\LoaiHoSo_HanXuLy.cs" />
+    <Compile Include="_HCC.EntityDB\HCC.DanhMuc\ChucVu\ChucVu.cs" />
+    <Compile Include="_HCC.EntityDB\HCC.DanhMuc\ChuKy\ChuKy.cs" />
+    <Compile Include="_HCC.EntityDB\HCC.DanhMuc\CuaKhau\CuaKhau.cs" />
+    <Compile Include="_HCC.EntityDB\HCC.DanhMuc\LoaiFile\LoaiFile.cs" />
+    <Compile Include="_HCC.EntityDB\HCC.CauHinhThuTuc\NhomSanPham\NhomSanPham.cs" />
+    <Compile Include="_HCC.EntityDB\HCC.DanhMuc\LichLamViec\LichLamViec.cs" />
+    <Compile Include="_HCC.EntityDB\HCC.DanhMuc\LichLamViec\NgayNghi.cs" />
+    <Compile Include="_HCC.EntityDB\HCC.CauHinhThuTuc\PhongBan\PhongBanNhomSanPham.cs" />
+    <Compile Include="_HCC.EntityDB\HCC.CauHinhThuTuc\PhongBan\PhongBanLoaiHoSo.cs" />
+    <Compile Include="_HCC.EntityDB\HCC.CauHinhThuTuc\ThuTuc\ThuTuc.cs" />
+    <Compile Include="_HCC.EntityDB\HCC.DanhMuc\DiaChinh.Huyen\Huyen.cs" />
+    <Compile Include="_HCC.EntityDB\HCC.DanhMuc\DiaChinh.Xa\Xa.cs" />
+    <Compile Include="_HCC.EntityDB\HCC.CauHinhThuTuc\LoaiHoSo\LoaiHoSo.cs" />
+    <Compile Include="_HCC.EntityDB\HCC.CauHinhThuTuc\PhongBan\PhongBan.cs" />
+    <Compile Include="_HCC.EntityDB\HCC.ChuyenMucHuongDan\Articles.cs" />
+    <Compile Include="_HCC.EntityDB\HCC.ChuyenMucHuongDan\Category.cs" />
+    <Compile Include="_HCC.EntityDB\HCC.QuanLyThanhToan\ThanhToan\ThanhToan.cs" />
+    <Compile Include="_HCC.EntityDB\HCC.DanhMuc\DiaChinh.Tinh\Tinh.cs" />
+    <Compile Include="_HCC.EntityDB\HCC.QuanLyDoanhNghiep\ThongTinPhapLy\ThongTinPhapLy.cs" />
+    <Compile Include="_HCC.EntityDB\HCC.DanhMuc\DiaChinh.QuocGia\QuocGia.cs" />
+    <Compile Include="_HCC.EntityDB\HCC.QuanLyDoanhNghiep\DoanhNghiep\DoanhNghiep.cs" />
+    <Compile Include="_HCC.EntityDB\HCC.DanhMuc\LoaiHinhDoanhNghiep\LoaiHinhDoanhNghiep.cs" />
+    <Compile Include="_HCC.EntityDB\HCC.QuanLyThanhTra\KeHoachThanhTra\KetQuaThanhTra.cs" />
+    <Compile Include="_HCC.EntityDB\HCC.QuanLyThanhTra\KeHoachThanhTra\KeHoachThanhTraChiTiet.cs" />
+    <Compile Include="_HCC.EntityDB\HCC.QuanLyThanhTra\KeHoachThanhTra\KeHoachThanhTra.cs" />
+    <Compile Include="AbpCore\Data\ISqlExecuter.cs" />
+    <Compile Include="PMSConsts.cs" />
+    <Compile Include="PMSCoreModule.cs" />
+    <Compile Include="PMSDomainServiceBase.cs" />
+    <Compile Include="PMSServiceBase.cs" />
+    <Compile Include="AppFolders.cs" />
+    <Compile Include="AppVersionHelper.cs" />
+    <Compile Include="AbpCore\Authorization\AppAuthorizationProvider.cs" />
+    <Compile Include="AbpCore\Authorization\AppPermissions.cs" />
+    <Compile Include="AbpCore\Authorization\Impersonation\ImpersonationCacheManagerExtensions.cs" />
+    <Compile Include="AbpCore\Authorization\Impersonation\ImpersonationCacheItem.cs" />
+    <Compile Include="AbpCore\Authorization\Ldap\AppLdapAuthenticationSource.cs" />
+    <Compile Include="AbpCore\Authorization\PermissionChecker.cs" />
+    <Compile Include="AbpCore\Authorization\Roles\AppRoleConfig.cs" />
+    <Compile Include="AbpCore\Authorization\Roles\RoleStore.cs" />
+    <Compile Include="AbpCore\Authorization\Roles\Role.cs" />
+    <Compile Include="AbpCore\Authorization\Roles\RoleManager.cs" />
+    <Compile Include="AbpCore\Authorization\Roles\StaticRoleNames.cs" />
+    <Compile Include="AbpCore\Authorization\Users\IUserEmailer.cs" />
+    <Compile Include="AbpCore\Authorization\Users\IUserLinkManager.cs" />
+    <Compile Include="AbpCore\Authorization\Users\IUserPolicy.cs" />
+    <Compile Include="AbpCore\Authorization\Users\SwitchToLinkedAccountCacheItem.cs" />
+    <Compile Include="AbpCore\Authorization\Users\SwitchToLinkedAccountCacheManagerExtensions.cs" />
+    <Compile Include="AbpCore\Authorization\Users\UserEmailer.cs" />
+    <Compile Include="AbpCore\Authorization\Users\UserLinkManager.cs" />
+    <Compile Include="AbpCore\Authorization\Users\UserManager.cs" />
+    <Compile Include="AbpCore\Authorization\Users\UserPolicy.cs" />
+    <Compile Include="AbpCore\Authorization\Users\UserStore.cs" />
+    <Compile Include="AbpCore\Authorization\Users\User.cs" />
+    <Compile Include="AbpCore\Chat\ChatFeatureChecker.cs" />
+    <Compile Include="AbpCore\Chat\ChatMessage.cs" />
+    <Compile Include="AbpCore\Chat\ChatMessageManager.cs" />
+    <Compile Include="AbpCore\Chat\ChatMessageReadState.cs" />
+    <Compile Include="AbpCore\Chat\ChatSide.cs" />
+    <Compile Include="AbpCore\Chat\IChatCommunicator.cs" />
+    <Compile Include="AbpCore\Chat\IChatFeatureChecker.cs" />
+    <Compile Include="AbpCore\Chat\IChatMessageManager.cs" />
+    <Compile Include="AbpCore\Chat\NullChatCommunicator.cs" />
+    <Compile Include="AbpCore\Configuration\AppSettingProvider.cs" />
+    <Compile Include="AbpCore\Configuration\AppSettings.cs" />
+    <Compile Include="AbpCore\Debugging\DebugHelper.cs" />
+    <Compile Include="AbpCore\Editions\EditionManager.cs" />
+    <Compile Include="AbpCore\Editions\FeatureValueStore.cs" />
+    <Compile Include="AbpCore\Emailing\PMSSmtpEmailSenderConfiguration.cs" />
+    <Compile Include="AbpCore\Emailing\EmailTemplateProvider.cs" />
+    <Compile Include="AbpCore\Emailing\IEmailTemplateProvider.cs" />
+    <Compile Include="AbpCore\Features\AppFeatureProvider.cs" />
+    <Compile Include="AbpCore\Features\AppFeatures.cs" />
+    <Compile Include="AbpCore\Friendships\Cache\FriendCacheItemExtensions.cs" />
+    <Compile Include="AbpCore\Friendships\Cache\UserWithFriendsCacheItem.cs" />
+    <Compile Include="AbpCore\Friendships\Cache\UserFriendCacheSyncronizer.cs" />
+    <Compile Include="AbpCore\Friendships\Cache\UserFriendsCache.cs" />
+    <Compile Include="AbpCore\Friendships\Friendship.cs" />
+    <Compile Include="AbpCore\Friendships\Cache\FriendCacheItem.cs" />
+    <Compile Include="AbpCore\Friendships\FriendshipExtensions.cs" />
+    <Compile Include="AbpCore\Friendships\FriendshipManager.cs" />
+    <Compile Include="AbpCore\Friendships\ChatUserStateWatcher.cs" />
+    <Compile Include="AbpCore\Friendships\FriendshipState.cs" />
+    <Compile Include="AbpCore\Friendships\Cache\IUserFriendsCache.cs" />
+    <Compile Include="AbpCore\Friendships\IFriendshipManager.cs" />
+    <Compile Include="IAppFolders.cs" />
+    <Compile Include="AbpCore\Identity\IdentitySmsMessageService.cs" />
+    <Compile Include="Localization\CultureHelper.cs" />
+    <Compile Include="AbpCore\MultiTenancy\Demo\RandomUserGenerator.cs" />
+    <Compile Include="AbpCore\MultiTenancy\Tenant.cs" />
+    <Compile Include="AbpCore\MultiTenancy\Demo\TenantDemoDataBuilder.cs" />
+    <Compile Include="AbpCore\MultiTenancy\TenantManager.cs" />
+    <Compile Include="AbpCore\Notifications\AppNotificationNames.cs" />
+    <Compile Include="AbpCore\Notifications\AppNotificationProvider.cs" />
+    <Compile Include="AbpCore\Notifications\AppNotifier.cs" />
+    <Compile Include="AbpCore\Notifications\IAppNotifier.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="AbpCore\Security\PasswordComplexityChecker.cs" />
+    <Compile Include="AbpCore\Security\PasswordComplexitySetting.cs" />
+    <Compile Include="AbpCore\Storage\DbBinaryObjectManager.cs" />
+    <Compile Include="AbpCore\Storage\IBinaryObjectManager.cs" />
+    <Compile Include="AbpCore\Storage\BinaryObject.cs" />
+    <Compile Include="AbpCore\Timing\ITimeZoneService.cs" />
+    <Compile Include="AbpCore\Timing\TimeZoneService.cs" />
+    <Compile Include="AbpCore\Validation\ValidationHelper.cs" />
+    <Compile Include="AbpCore\Web\IWebUrlService.cs" />
+    <Compile Include="AbpCore\Web\WebUrlService.cs" />
+    <Compile Include="_HCC.EntityDB\HCC.QuanLyThuTuc\ThuTuc.TT37\DanhMuc\TT37_HoSoDoanThamDinh.cs" />
+    <Compile Include="_HCC.EntityDB\HCC.QuanLyThuTuc\ThuTuc.TT37\DanhMuc\TT37_PhamViHoatDong.cs" />
+    <Compile Include="_HCC.EntityDB\HCC.QuanLyThuTuc\ThuTuc.TT37\DanhMuc\TT37_HoSoPhamViHD.cs" />
+    <Compile Include="_HCC.EntityDB\HCC.QuanLyThuTuc\ThuTuc.TT37\HoSoXuLy\BienBanThamDinh37.cs" />
+    <Compile Include="_HCC.EntityDB\HCC.QuanLyThuTuc\ThuTuc.TT37\HoSoXuLy\HoSoXuLy37.cs" />
+    <Compile Include="_HCC.EntityDB\HCC.QuanLyThuTuc\ThuTuc.TT37\HoSoXuLy\HoSoXuLyHistory37.cs" />
+    <Compile Include="_HCC.EntityDB\HCC.QuanLyThuTuc\ThuTuc.TT37\HoSo\HoSo37.cs" />
+    <Compile Include="_HCC.EntityDB\HCC.QuanLyThuTuc\ThuTuc.TT37\HoSo\HoSoTepDinhKem37.cs" />
+    <Compile Include="_HCC.EntityDB\HCC.QuanLyThuTuc\ThuTuc.TT98\HoSoXuLy\HoSoXuLy98.cs" />
+    <Compile Include="_HCC.EntityDB\HCC.QuanLyThuTuc\ThuTuc.TT98\HoSoXuLy\HoSoXuLyHistory98.cs" />
+    <Compile Include="_HCC.EntityDB\HCC.QuanLyThuTuc\ThuTuc.TT98\HoSo\HoSo98.cs" />
+    <Compile Include="_HCC.EntityDB\HCC.QuanLyThuTuc\ThuTuc.TT98\HoSo\HoSoTepDinhKem98.cs" />
+    <Compile Include="_HCC.EntityDB\HCC.QuanLyThuTuc\ThuTuc.TT99\HoSoXuLy\BienBanThamDinh99.cs" />
+    <Compile Include="_HCC.EntityDB\HCC.QuanLyThuTuc\ThuTuc.TT99\HoSoXuLy\HoSoXuLy99.cs" />
+    <Compile Include="_HCC.EntityDB\HCC.QuanLyThuTuc\ThuTuc.TT99\HoSoXuLy\HoSoXuLyHistory99.cs" />
+    <Compile Include="_HCC.EntityDB\HCC.QuanLyThuTuc\ThuTuc.TT99\HoSo\HoSo99.cs" />
+    <Compile Include="_HCC.EntityDB\HCC.QuanLyThuTuc\ThuTuc.TT99\HoSo\HoSoTepDinhKem99.cs" />
+    <Compile Include="_HCC.EntityDB\HCC.QuanLyThuTuc\_Base\BienBanThamDinhBase.cs" />
+    <Compile Include="_HCC.EntityDB\HCC.QuanLyThuTuc\_Base\HoSoBase.cs" />
+    <Compile Include="_HCC.EntityDB\HCC.QuanLyThuTuc\_Base\LogFileKy.cs" />
+    <Compile Include="_HCC.EntityDB\HCC.QuanLyThuTuc\_Base\LogUploadFile.cs" />
+    <Compile Include="_HCC.EntityDB\HCC.QuanLyThuTuc\_Base\HoSoTepDinhKemBase.cs" />
+    <Compile Include="_HCC.EntityDB\HCC.QuanLyThuTuc\_Base\HoSoXuLyBase.cs" />
+    <Compile Include="_HCC.EntityDB\HCC.QuanLyThuTuc\_Base\HoSoXuLyHistoryBase.cs" />
+    <Compile Include="_HCC.EntityDB\HCC.QuanLyThuTuc\_ThuTuc.CapSo\CapSoThuTuc\CapSoQuyetDinh.cs" />
+    <Compile Include="_HCC.EntityDB\HCC.QuanLyThuTuc\_ThuTuc.CapSo\CapSoThuTuc\CapSoCongVan.cs" />
+    <Compile Include="_HCC.EntityDB\HCC.QuanLyThuTuc\_ThuTuc.CapSo\CapSoThuTuc\CapSoThuTuc.cs" />
+    <Compile Include="_HCC.EntityDB\HCC.ThietLap\HoSoXuLy_PhanCongSoLuong.cs" />
+    <Compile Include="_HCC.EntityDB\HCC.ThietLap\LoaiBienBanThamDinh.cs" />
+    <Compile Include="_HCC.EntityDB\HCC.ThietLap\PhanLoaiHoSo.cs" />
+    <Compile Include="_HCC.EntityDB\HCC.ThietLap\PhanLoaiHoSo_PhanCong.cs" />
+    <Compile Include="_HCC.EntityDB\HCC.ThietLap\PhanLoaiHoSo_Filter.cs" />
+    <Compile Include="_HCC.EntityDB\HCC.ThietLap\DonViChuyenGia.cs" />
+    <Compile Include="_HCC.EntityDB\HCC.ThietLap\TieuChiThamDinh.cs" />
+    <Compile Include="_HCC.EntityDB\HCC.ThietLap\TieuChiThamDinh_LyDo.cs" />
+    <Compile Include="_HCC.EntityDB\HCC.VFAKhoATTP\IVFA_Base.cs" />
+    <Compile Include="_HCC.EntityDB\HCC.VFAKhoATTP\VFA_CoSoDuDieuKien.cs" />
+    <Compile Include="_HCC.EntityDB\HCC.VFAKhoATTP\VFA_DangKyQuangCao.cs" />
+    <Compile Include="_HCC.EntityDB\HCC.VFAKhoATTP\VFA_TuCongBo.cs" />
+    <Compile Include="_HCC.EntityDB\HCC.VFAKhoATTP\VFA_DangKyCongBo.cs" />
+    <Compile Include="_HCC.EntityDB\HCC.Website\LienHe.cs" />
+    <Compile Include="_HCC.EntityDB\HCC.Website\ThongBao.cs" />
+    <Compile Include="_HCC.EntityDB\HCC.Website\BoThuTuc.cs" />
+    <Compile Include="_HCC.EntityDB\HCC.Website\CauHinhChung.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Localization\PMS\PMS-tr.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Localization\PMS\PMS.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Localization\PMS\PMS-ar.xml" />
+    <EmbeddedResource Include="Localization\PMS\PMS-zh-CN.xml" />
+    <EmbeddedResource Include="Localization\PMS\PMS-de.xml" />
+    <EmbeddedResource Include="Localization\PMS\PMS-pt-BR.xml" />
+    <EmbeddedResource Include="Localization\PMS\PMS-it.xml" />
+    <EmbeddedResource Include="Localization\PMS\PMS-ru.xml" />
+    <EmbeddedResource Include="Localization\PMS\PMS-fr.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Localization\PMS\PMS-es.xml" />
+    <Content Include="Localization\PMS\READ_ME.txt" />
+    <EmbeddedResource Include="AbpCore\Emailing\EmailTemplates\default.html" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
+  </Target>
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

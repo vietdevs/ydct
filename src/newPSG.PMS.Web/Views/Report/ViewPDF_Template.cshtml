@@ -1,0 +1,34 @@
+﻿
+@model string[]
+<div style="width: 100%; height: calc(100% - 10px); margin-top: 10px;">
+    <div style="height: 95%">
+        <form id="viewpdf_template_form" action="@Url.Action(Model[0], Model[1])" method="post" target="viewpdf_template_iframe" style="display:none">
+            <input type="hidden" name="jsonParams" value="@Model[2]" />
+            <input type="hidden" name="exportExcel" value="false" />
+        </form>
+        <iframe id="viewpdf_template_iframe" name="viewpdf_template_iframe" src="#zoom=100" style="height:100%; width:100%"></iframe>
+    </div>
+    <div style="text-align: center">
+        @if (Model.Length < 4 || Model[3] == "true")
+        {
+            <button id="viewpdf_template_btn_export_excel" type="button" class="popup-btn">Xuất excel</button>
+        }
+        
+        <button id="viewpdf_template_btn_close" type="button" class="popup-btn popup-btn-cancel">Đóng</button>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        console.log($('#viewpdf_template_form').attr('action'));
+        $('#viewpdf_template_form').submit();
+
+        $('#viewpdf_template_btn_export_excel').click(function () {
+            $('#viewpdf_template_form input[name=exportExcel]').val('true');
+            $('#viewpdf_template_form').submit();
+        });
+
+        $('#viewpdf_template_btn_close').click(function () {
+            Ext.getCmp('frmViewPDF_Template').close();
+        });
+    });
+</script>

@@ -1,0 +1,27 @@
+@media screen and (max-width: 768px){
+    .kcb-title {
+        font-size: 26px;
+    }
+
+    .logo-nav-row .navbar {
+        min-height: inherit;
+        margin: 0px;
+        border-width: 0px;
+        border-style: initial;
+        border-color: initial;
+        border-image: initial;
+    }
+    .navbar-brand img {
+        max-width: 230px;
+        height: auto !important;
+    }
+    .navbar-header button .icon-bar {
+        background: #2567d3;
+    }
+
+    .logo-nav-row .navbar .navbar-brand {
+        height: inherit;
+        margin-right: 0;
+        padding: 28px 0px;
+    }
+}

@@ -1,0 +1,22 @@
+@using Abp.Organizations
+<div>
+    <form name="exampleForm" role="form" novalidate class="form-validation">
+        <div class="modal-header">
+            <h4 class="modal-title">
+                <span ng-if="vm.organizationUnit.id">@L("Edit"): {{vm.organizationUnit.displayName}}</span>
+                <span ng-if="!vm.organizationUnit.id">@L("NewOrganizationUnit")</span>
+                <button type="button" aria-hidden="true" class="close" ng-click="vm.cancel()"></button>
+            </h4>
+        </div>
+        <div class="modal-body">
+            <div class="form-group form-md-line-input form-md-floating-label no-hint">
+                <input auto-focus class="form-control" type="text" name="DisplayName" ng-class="{'edited':vm.organizationUnit.displayName}" ng-model="vm.organizationUnit.displayName" required maxlength="@OrganizationUnit.MaxDisplayNameLength">
+                <label>@L("Name")</label>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button ng-disabled="vm.saving" type="button" class="btn red" ng-click="vm.cancel()"><i class="glyphicon glyphicon-remove"></i>@L("Cancel")</button>
+            <button type="submit" button-busy="vm.saving" busy-text="@L("SavingWithThreeDot")" class="btn green-meadow" ng-click="vm.save()" ng-disabled="exampleForm.$invalid"><i class="fa fa-save"></i> <span>@L("Save")</span></button>
+        </div>
+    </form>
+</div>

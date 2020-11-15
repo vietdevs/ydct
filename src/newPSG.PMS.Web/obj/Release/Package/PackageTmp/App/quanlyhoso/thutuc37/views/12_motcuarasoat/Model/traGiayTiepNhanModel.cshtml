@@ -1,0 +1,73 @@
+﻿@using newPSG.PMS.Localization
+<style>
+    .attp-xem-ho-so button {
+        margin-bottom: 10px;
+    }
+
+    .attp-xem-ho-so .tabbable-line > .tab-content {
+        padding-top: 10px !important;
+    }
+
+    .modal-header {
+        background-color: #4c87b9;
+    }
+</style>
+<div class="attp-xem-ho-so">
+    <div class="modal-header">
+        <h4 class="modal-title text-center text-uppercase">
+            Phiếu tiếp nhận
+            <button type="button" class="close" ng-click="vm.cancel()" aria-hidden="true"></button>
+        </h4>
+    </div>
+    <div class="modal-body">
+        <div class="container-fluid">
+            <div class="row form-group">
+                <div class="col-md-4">
+                    <label class="text-bold">Hình thức cấp chứng chỉ hành nghề :</label><span class="font-red">*</span>
+                    <div ng-repeat="item in vm.hinhThucCapChungChi">
+                        <label style="padding-left: 30px;">
+                            <md-checkbox ng-model="item.value" style="margin-bottom: 5px;" disabled></md-checkbox>{{item.name}}
+                        </label>
+                    </div>
+                </div>
+                <div class="col-md-4" ng-if="vm.soLanBoSung">
+                    <label class="text-bold">Số lần nộp bổ sung : </label>{{vm.soLanBoSung}}
+                </div>
+                <div class="col-md-4">
+                    <label class="text-bold">Ngày hẹn cấp, cấp lại chứng chỉ hành nghề :</label><span class="font-red">*</span>
+                    <input kendo-date-picker
+                           masked-date-picker
+                           name="ngayDeNghi"
+                           k-max="vm.now"
+                           class="form-control"
+                           k-ng-model="vm.ngayHenCap"
+                           k-format="'dd/MM/yyyy'"
+                           style="width:100%">
+                </div>
+            </div>
+            <div>
+                <label class="text-bold">Đã nhận hồ sơ đề nghị cấp, cấp lại chứng chỉ hành nghề khám bệnh, chữa bệnh bao gồm :</label>
+                <div class="table-responsive" style="height:400px;">
+                    <table class="table table-hover table-striped table-bordered">
+                        <tr ng-repeat="item in vm.listTaiLieuDaNhan">
+                            <td>
+                                {{item.STT}}
+                            </td>
+                            <td>
+                                {{item.name}}
+                            </td>
+                            <td>
+                                <md-checkbox ng-model="item.value" style="margin-bottom: 5px;"></md-checkbox>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-default" ng-click="vm.xemPhieuTiepNhan()" style="margin-left:10px;margin-bottom:0"><em class="fa fa-eye"></em>xem trước giấy tiếp nhận</button>
+        <button ng-disabled="vm.saving" type="button" class="btn blue" ng-click="vm.save()" style="margin-left:10px;margin-bottom:0"><em class="fa fa-save"></em>ký và trả giấy tiếp nhận</button>
+        <button ng-disabled="vm.saving" type="button" class="btn red" ng-click="vm.cancel()"><em class="glyphicon glyphicon-remove"></em>@L("Cancel")</button>
+    </div>
+</div>

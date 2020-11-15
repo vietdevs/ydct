@@ -1,0 +1,36 @@
+﻿<div class="danhsach" ng-controller="quanlyhoso.thutuccommon.views.tracuuhoso as vm">
+    <div class="portlet light bordered">
+        <div class="portlet-title">
+            <div class="caption font-green-meadow">
+                <i class="icon-list font-green-meadow"></i>
+                <span class="caption-subject bold uppercase" style="display:inline-flex;width:800px">
+                    <span style="width:300px">Tra cứu hồ sơ thủ tục</span>
+                    <span app.common.filter.danhsachthutuc selected-thu-tuc="vm.thuTucIdEnum" style="margin-top: -6px;" tracuu="true"></span>
+                </span>
+            </div>
+            <div class="actions">
+            </div>
+        </div>
+        <div class="portlet-body">
+            <div class="row">
+                <div class="col-md-12">
+                    <div quanlyhoso.thutuc18.directives.gridhoso form="vm.form" filterobj="vm.filter" ng-if="vm.thuTucIdEnum==18"></div>
+                    <div quanlyhoso.thutuc19.directives.gridhoso form="vm.form" filterobj="vm.filter" ng-if="vm.thuTucIdEnum==19"></div>
+                    <div quanlyhoso.thutuc21.directives.gridhoso form="vm.form" filterobj="vm.filter" ng-if="vm.thuTucIdEnum==21"></div>
+                    <div quanlyhoso.thutuc22.directives.gridhoso form="vm.form" filterobj="vm.filter" ng-if="vm.thuTucIdEnum==22"></div>
+                    <div quanlyhoso.thutuc23.directives.gridhoso form="vm.form" filterobj="vm.filter" ng-if="vm.thuTucIdEnum==23"></div>
+                    <div quanlyhoso.thutuc24.directives.gridhoso form="vm.form" filterobj="vm.filter" ng-if="vm.thuTucIdEnum==24"></div>
+                    <div quanlyhoso.thutuc25.directives.gridhoso form="vm.form" filterobj="vm.filter" ng-if="vm.thuTucIdEnum==25"></div>
+                    <div quanlyhoso.thutuc36.directives.gridhoso form="vm.form" filterobj="vm.filter" ng-if="vm.thuTucIdEnum==36"></div>
+                    <div quanlyhoso.thutuc38.directives.gridhoso form="vm.form" filterobj="vm.filter" ng-if="vm.thuTucIdEnum==38"></div>
+                    <div quanlyhoso.thutuc39.directives.gridhoso form="vm.form" filterobj="vm.filter" ng-if="vm.thuTucIdEnum==39"></div>
+                    <div quanlyhoso.thutuc40.directives.gridhoso form="vm.form" filterobj="vm.filter" ng-if="vm.thuTucIdEnum==40"></div>
+                    <div quanlyhoso.thutuc41.directives.gridhoso form="vm.form" filterobj="vm.filter" ng-if="vm.thuTucIdEnum==41"></div>
+                    <div quanlyhoso.thutuc42.directives.gridhoso form="vm.form" filterobj="vm.filter" ng-if="vm.thuTucIdEnum==42"></div>
+                    <div quanlyhoso.thutuc43.directives.gridhoso form="vm.form" filterobj="vm.filter" ng-if="vm.thuTucIdEnum==43"></div>
+                    <div quanlyhoso.thutuc83.directives.gridhoso form="vm.form" filterobj="vm.filter" ng-if="vm.thuTucIdEnum==83"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

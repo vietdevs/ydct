@@ -1,0 +1,24 @@
+﻿<div class="danhsach ng-scope" ng-controller="quanlychuky.views.index as vm">
+    <div class="portlet light bordered ng-isolate-scope">
+        <div class="portlet-title">
+            <div class="caption font-green-meadow">
+                <i class="icon-list font-green-meadow"></i>
+                <span class="caption-subject bold uppercase">
+                    <span ng-if="vm.roleLv == vm.ROLE_LEVEL.DOANH_NGHIEP">Danh sách con dấu</span>
+                    <span ng-if="vm.roleLv != vm.ROLE_LEVEL.DOANH_NGHIEP">Danh sách chữ ký</span>
+                </span>
+            </div>
+            <div class="actions">
+                <button class="btn bg-blue-steel bg-font-blue-steel" ng-click="vm.xemVideoHuongDanChuKy()"><i class="fa fa-question-circle"></i> Xem video hướng dẫn</button>
+                <button class="btn green-meadow" ng-click="vm.downloadBoCaiCA()"><i class="fa fa-download"></i> Tải bộ cài</button>
+                <button class="btn green-meadow" ng-if="vm.chuKys.length == 0" ng-click="vm.taoChuKy()" ><i class="fa fa-plus"></i> Thêm chữ ký</button>
+            </div>
+        </div>
+        <div class="portlet-body">
+            <p style="margin-top: 0px; margin-bottom: 8px;"><i><b>Lưu ý:</b> Bộ cài ký điện tử hoạt động ổn định trên nền tảng .NET Framework 4.0 trở lên và hệ điều hành WINDOWS 7 hoặc các phiên bản sau đó.<br /> Hãy <a href="javascript:void(0);" ng-click="vm.xemKiemTraNenTang();">kiểm tra</a> và <a href="javascript:void(0);" ng-click="vm.taiNetFramework();"> tải về</a> trước khi cài đặt bộ ký điện tử (pass giải nén: 123456)</i></p>
+            <div busy-if="vm.loading">
+                <div id="gdChuKy" k-serverPaging="true" k-pageSize="5" k-pageable=false kendo-grid k-data-source='vm.chuKyGridOptions' k-columns="vm.chuKyColumns"></div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,45 @@
+﻿<div>
+    <div id="createOrEditFormModal">
+        <div class="modal-header">
+            <div class="modal-title text-center">
+                <h4 class="modal-title text-center uppercase">
+                    <span ng-if="!vm.dataItem.id">Tạo mới</span>
+                    <span ng-if="vm.dataItem.id">Sửa</span>
+                    <button type="button" class="close" ng-click="vm.cancel()" aria-hidden="true"></button>
+                </h4>
+            </div>
+        </div>
+        <div class="modal-body">
+            <div class="row form-group">
+                <div class="col-md-12">
+                    <label>Tên điều kiện lọc</label><span><span class="font-red">*</span></span>
+                    <input class="form-control"
+                           type="text"
+                           name="name"
+                           ng-model="vm.dataItem.name" />
+                    <check-validate-empty datacheck="vm.dataItem.name"></check-validate-empty>
+                </div>
+            </div>
+            <div class="form-group">
+                <!--Thuốc trong nước-->
+                <div class="row form-group">
+                    <div class="col-md-12">
+                        <h5 class="font-red bold uppercase ">Loại thuốc</h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12" style="margin-left: 15px;">
+                        <md-radio-group ng-model="vm.dataItem.filter.phanLoaiHoSo">
+                            <md-radio-button value="1" class="md-primary margin-bottom-15">Thuốc sản xuất trong nước</md-radio-button>
+                            <md-radio-button value="2" class="md-primary margin-bottom-15">Thuốc sản xuất nước ngoài</md-radio-button>
+                        </md-radio-group>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" button-busy="vm.saving" busy-text="@L("SavingWithThreeDot")" class="btn blue" ng-click="vm.save()"><em class="fa fa-save"></em> <span>@L("Save")</span></button>
+            <button ng-disabled="vm.saving" type="button" class="btn btn-default" ng-click="vm.cancel()">@L("Cancel")</button>
+        </div>
+    </div>
+</div>

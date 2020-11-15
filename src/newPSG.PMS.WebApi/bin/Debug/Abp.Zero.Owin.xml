@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Abp.Zero.Owin</name>
+    </assembly>
+    <members>
+        <member name="M:Abp.Authorization.AbpSignInManager`3.SignInOrTwoFactor(Abp.Authorization.Users.AbpLoginResult{`0,`2},System.Boolean,System.Nullable{System.Boolean})">
+            <summary>
+            This method can return two results:
+            <see cref="F:Microsoft.AspNet.Identity.Owin.SignInStatus.Success"/> indicates that user has successfully signed in.
+            <see cref="F:Microsoft.AspNet.Identity.Owin.SignInStatus.RequiresVerification"/> indicates that user has successfully signed in.
+            </summary>
+            <param name="loginResult">The login result received from <see cref="T:Abp.Authorization.AbpLogInManager`3"/> Should be Success.</param>
+            <param name="isPersistent">True to use persistent cookie.</param>
+            <param name="rememberBrowser">Remember user's browser (and not use two factor auth again) or not.</param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentException">loginResult.Result should be success in order to sign in!</exception>
+        </member>
+        <member name="M:Abp.Authorization.AbpSignInManager`3.SignIn(Abp.Authorization.Users.AbpLoginResult{`0,`2},System.Boolean,System.Nullable{System.Boolean})">
+            <param name="loginResult">The login result received from <see cref="T:Abp.Authorization.AbpLogInManager`3"/> Should be Success.</param>
+            <param name="isPersistent">True to use persistent cookie.</param>
+            <param name="rememberBrowser">Remember user's browser (and not use two factor auth again) or not.</param>
+        </member>
+    </members>
+</doc>

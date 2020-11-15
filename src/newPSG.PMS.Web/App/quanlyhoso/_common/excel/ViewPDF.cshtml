@@ -1,0 +1,21 @@
+﻿<style>
+    .modal-header {
+        background-color: #428bca;
+    }
+</style>
+<div>
+    <div id="ViewPDFModal" novalidate class="form-validation">
+        <div class="modal-header">
+            <h4 class="modal-title text-center text-uppercase">
+                {{vm.modalTitle}}
+                <button type="button" class="close" ng-click="vm.close()" aria-hidden="true"></button>
+            </h4>
+        </div>
+        <div class="modal-body" style="height: 700px">
+            <div id="loadHtml" style="height: 700px"></div>
+        </div>
+        <div class="modal-footer">
+            <button ng-disabled="vm.saving" type="button" class="btn btn-default" ng-click="vm.close()"><i class="glyphicon glyphicon-remove"></i>@L("Cancel")</button>
+        </div>
+    </div>
+</div>

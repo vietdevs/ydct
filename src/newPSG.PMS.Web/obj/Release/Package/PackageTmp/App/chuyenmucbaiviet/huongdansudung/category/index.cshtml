@@ -1,0 +1,31 @@
+﻿<div id="category" class="ng-scope" ng-controller="chuyenmucbaiviet.huongdansudung.category.index as vm">
+    <div class="portlet light bordered ng-isolate-scope">
+        <div class="portlet-title">
+            <div class="caption font-blue-soft">
+                <i class="icon-list font-blue-soft"></i>
+                <span class="caption-subject bold uppercase">Danh sách danh mục</span>
+            </div>
+            <div class="actions">
+                <button class="btn blue-soft" ng-click="vm.taoCategory()"><i class="fa fa-plus"></i> Thêm danh mục</button>
+            </div>
+        </div>
+
+        <div class="portlet light bordered margin-10-left-right" id="row-main">
+            <div class="portlet-body">
+                <div class="row margin-bottom-15">
+                    <div class="col-md-3 col-sm-3 col-xs-6" common.filter.userlevel s-model="vm.filter.RoleLevel"></div>
+                    <div class="col-lg-3 col-md-3 col-xs-6">
+                        <input class="form-control ng-pristine ng-valid ng-empty ng-touched" name="Keyword" ng-model="vm.filter.Filter"
+                               enter-key="vm.getGridData()" placeholder="" type="text">
+                    </div>
+                    <div class="col-lg-1 col-md-1 col-xs-3">
+                        <button tabindex="-1" class="btn blue-soft" type="button" ng-click="vm.getGridData()">Tìm kiếm</button>
+                    </div>
+                </div>
+                <div busy-if="vm.loading">
+                    <div id="gdCategory" k-serverPaging="true" k-pageSize="5" k-pageable='{"refresh": true, "pageSizes": true, messages: {empty: "Không có dữ liệu", display: "Hiển thị từ {0} đến {1}/{2} bản ghi",itemsPerPage: "Bản ghi hiển thị"}}' kendo-grid k-data-source='vm.categoryGridOptions' k-columns="vm.categoryColumns"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

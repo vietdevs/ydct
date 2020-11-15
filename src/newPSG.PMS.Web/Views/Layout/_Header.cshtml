@@ -1,0 +1,91 @@
+﻿@using Abp.Application.Navigation
+@using Abp.Collections.Extensions
+@using Abp.Extensions
+@using newPSG.PMS.Web.Views
+@model newPSG.PMS.Web.Models.Layout.HeaderViewModel
+@helper ShowMenuItemRecursively(UserMenuItem menuItem, int currentLevel)
+{
+    <li class="@(menuItem.Name == Model.CurrentPageName ? "active" : "") @(menuItem.Items.IsNullOrEmpty() ? "" : (currentLevel == 0 ? "sub" : "dropdown-submenu"))">
+        @if (menuItem.Items.IsNullOrEmpty())
+        {
+            if (!menuItem.Url.IsNullOrEmpty())
+            {
+                <a href="@(UrlChecker.IsRooted(menuItem.Url) ? menuItem.Url : (ApplicationPath + menuItem.Url))">@menuItem.DisplayName</a>
+            }
+            else
+            {
+                <a href="@ApplicationPath">@menuItem.DisplayName</a>
+            }
+        }
+        else
+        {
+            <a href="javascript:;">
+                @menuItem.DisplayName
+            </a>
+            <ul class="sub-menu">
+                @foreach (var childMenuItem in menuItem.Items)
+                {
+                    @ShowMenuItemRecursively(childMenuItem, currentLevel + 1)
+                }
+            </ul>
+        }
+    </li>
+}
+<!--Header Start-->
+<header class="wf100 header ">
+    <div class="topbar">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-6">
+                    <ul class="left-links">
+                        <li> <a href="#"><i class="fa fa-phone"></i><span> 0974433534</span></a></li>
+                        <li><a href="#"><i class="far fa-envelope"></i><span> baonam30698@gmail.com</span></a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    <ul class="right-links">
+                        <li>
+                            @if (Model.LoginInformations != null)
+                            {
+                                <a href="@Url.Action("Index", "Application")" class="btn-hover"><i class="fas fa-sign-in-alt"></i> @Model.GetShownLoginName() (@L("GoToApplication"))</a>
+                            }
+                            else
+                            {
+                                <a href="@Url.Action("Login", "Account")" class="btn-hover">@L("LogIn")</a>
+                            }
+                        </li>
+                        <li>
+                            <a href="@Url.Action("Index", "Dangky")" class="btn-hover">@L("Đăng ký")</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="logo-nav-row">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <nav class="navbar">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                            <a class="navbar-brand" href="/">
+                                <img src="/Content/Uploads/images/logo.png" style="height:52px;" alt="">
+                            </a>
+                        </div>
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse" id="byt-cqlydct">
+                            <ul class="nav navbar-nav navbar-right">
+                                @foreach (var menuItem in @Model.Menu.Items)
+                                {
+                                    @ShowMenuItemRecursively(menuItem, 0)
+                                }
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!--Header End--> 

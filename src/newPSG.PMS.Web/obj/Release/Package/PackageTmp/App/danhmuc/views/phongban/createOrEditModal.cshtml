@@ -1,0 +1,81 @@
+﻿<div id="phongBanCreateOrEditForm">
+    <div class="modal-header">
+        <h4 class="modal-title">
+            <span ng-if="!vm.model">Tạo phòng ban mới</span>
+            <span ng-if="vm.model">Sửa phòng ban</span>
+            <button type="button" aria-hidden="true" class="close" ng-click="vm.cancel()"></button>
+        </h4>
+    </div>
+    <div class="modal-body">
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-8">
+                    <label class="text-bold">Tên phòng ban</label><span class="font-red">*</span>
+                    <input class="form-control"
+                           type="text"
+                           name="TenPhongBan"
+                           ng-model="vm.model.tenPhongBan"
+                           data-fv-notempty="true"
+                           data-fv-notempty-message="Không được để trống trường này"
+                           data-fv-trigger="blur" />
+                </div>
+                <div class="col-md-4">
+                    <label class="text-bold">Mã phòng ban</label><span class="font-red">*</span>
+                    <input class="form-control"
+                           type="text"
+                           name="MãPhongBan"
+                           ng-model="vm.model.maPhongBan"
+                           data-fv-notempty="true"
+                           data-fv-notempty-message="Không được để trống trường này"
+                           data-fv-trigger="blur" />
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                @*<div class="col-md-8 box-check-info">
+                        <label class="text-bold">Qui trình thẩm định áp dụng</label><br />
+                        <input style="width: 100%"
+                               kendo-drop-down-list
+                               ng-model="vm.model.quiTrinh"
+                               k-options="vm.quiTrinhOptions"
+                               class="form-control" />
+                    </div>*@
+                <div class="col-md-12">
+                    <label class="text-bold">Loại hồ sơ phòng ban tiếp nhận</label><br />
+                    <span class="multiselect-native-select">
+                        <select multi-select includeSelectAllOption="true" maxheight="300" name="ddlNhomSanPhamMultiSelect"
+                                allSelectedText='Chọn tất cả'
+                                nSelectedText='Loại hồ sơ'
+                                buttonWidth="100%"
+                                enableFiltering="true" selectAllText="Chọn tất cả" nonSelectedText='Chưa chọn'
+                                enableClickableOptGroups="true" enableCollapsibleOptGroups="true" multiple
+                                ng-model="vm.arrLoaiHoSoIdChon"
+                                ng-options="item as item.name for item in vm.loaiHoSo track by item.id"></select>
+                    </span>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-4">
+                    <label class="text-bold">Kích Hoạt</label><br />
+                    <input bs-switch
+                           ng-model="vm.model.isActive"
+                           type="checkbox"
+                           switch-on-text="<i class='fa fa-check' aria-hidden='true'></i>"
+                           switch-off-text="<i class='fa fa-times' aria-hidden='true'></i>"
+                           switch-on-color="success"
+                           ng-true-value=true
+                           ng-false-value=false>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" button-busy="vm.saving" busy-text="@L("SavingWithThreeDot")" class="btn green-meadow" ng-click="vm.save()"><i class="fa fa-save"></i> <span>@L("Save")</span></button>
+            <button ng-disabled="vm.saving" type="button" class="btn red" ng-click="vm.cancel()"><i class="glyphicon glyphicon-remove"></i>@L("Cancel")</button>
+        </div>
+    </div>
+</div>

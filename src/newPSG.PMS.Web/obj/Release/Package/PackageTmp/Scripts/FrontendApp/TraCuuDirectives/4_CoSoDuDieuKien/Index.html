@@ -1,0 +1,88 @@
+﻿<div class="container-fluid">
+    <div class="page-bottom pbottom-70">
+        <div class="search-panel bg-light">
+            <div class="container">
+                <div class="col-md-12">
+                    <div enter-key="vm.refreshGridHS()">
+                        <div class="row form-group">
+                            <div class="col-md-6">
+                                <label class="text-bold">Tên doanh nghiệp</label>
+                                <input kendo-auto-complete ng-model="vm.filter.tenDoanhNghiep" k-options="vm.auto_complete_doanh_nghiep_options" style="width: 100%;" />
+                            </div>
+                            <div class="col-md-6">
+                                <label class="text-bold">Loại sản phẩm đăng ký</label>
+                                <input ng-model="vm.filter.loaiSanPhamDangKy" class="form-control" style="width: 100%;" />
+                            </div>
+
+                        </div>
+
+                        <div class="collapse mbottom-20" id="nangcao">
+                            <div class="row form-group">
+                                <div class="col-md-6">
+                                    <label class="text-bold">Tỉnh</label>
+                                    <select id="ddlTinh"
+                                            style="width: 100%"
+                                            kendo-drop-down-list
+                                            k-ng-model="vm.filter.tinhId"
+                                            k-options="vm.tinhOptions"
+                                            class="form-control"></select>
+
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="text-bold">Địa chỉ</label>
+                                    <input ng-model="vm.filter.diaChi" enter-key="vm.refreshHoSo()" class="form-control" />
+                                </div>
+                            </div>
+                            <!--<div class="row form-group">
+                                <div class="col-md-6">
+                                    <label class="text-bold">Ngày tự công bố</label>
+                                    <input date-range-picker
+                                           type="text"
+                                           options="vm.ngayCapOptions"
+                                           min="vm.ngayCapOptions.min"
+                                           max="vm.ngayCapOptions.max"
+                                           class="form-control date-picker"
+                                           ng-model="vm.ngayCapModel" />
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="text-bold">Nhóm sản phẩm</label>
+                                    <select id="ddlNhomSanPham"
+                                            style="width: 100%"
+                                            kendo-drop-down-list
+                                            k-ng-model="vm.filter.nhomSanPhamId"
+                                            k-options="vm.nhomSanPhamOptions"
+                                            class="form-control"></select>
+                                </div>
+                            </div>-->
+                        </div>
+                        <p>
+                            <a class="text-secondary" data-toggle="collapse" href="#nangcao" role="button" aria-expanded="false" aria-controls="nangcao">
+                                Tra cứu nâng cao <em class="fa fa-angle-down"></em>
+                            </a>
+                        </p>
+                        <div class="row form-group">
+                            <div class="col-md-12 text-center">
+                                <button class="btn btn-success" ng-click="vm.refreshHoSo()" ng-disabled="vm.loading"><em class="fa fa-search"></em> Tìm kiếm</button>
+                                <button class="btn btn-outline-secondary" ng-click="vm.refreshControll()" ng-disabled="vm.loading"><em class="fa fa-repeat"></em> Đặt lại</button>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <i>Tìm thấy <b>{{vm.countKetQua}}</b> kết quả theo từ khóa ...</i>
+        <div style="margin-bottom:20px">
+            <div class="table-scrollable">
+                <div id="gridHoSo"
+                     kendo-grid
+                     k-serverPaging="true"
+                     k-pageSize="10"
+                     k-pageable='{"refresh": true, "pageSizes": true, messages: {empty: "Không có dữ liệu", display: "Hiển thị từ {0} đến {1}/{2} bản ghi",itemsPerPage: "Bản ghi hiển thị"}}'
+                     k-options="vm.hoSoGridOptions"
+                     k-data-source='vm.gridHoSoDataSource'
+                     k-columns="vm.columnGridHoSo"></div>
+            </div>
+        </div>
+    </div>
+</div>

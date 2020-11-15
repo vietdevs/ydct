@@ -1,0 +1,33 @@
+﻿@using Abp.Authorization.Users
+<div>
+    <div id="xemKiemTraNenTangModal" novalidate class="form-validation">
+        <div class="modal-header">
+            <h4 class="modal-title text-center text-uppercase">
+               Hướng dẫn kiểm tra phiên bản .NET Framework và hệ điều hành
+                <button type="button" class="close" ng-click="vm.cancel()" aria-hidden="true"></button>
+            </h4>
+        </div>
+        <div class="modal-body text-center">
+            <uib-tabset class="tab-container tabbable-line">
+                @*-----------------------Kiểm tra .NET Framework------------------------*@
+                <uib-tab index="0" heading="Kiểm tra .NET Framework">
+                    <div id="KiemTraNetFramework" name="KiemTraNetFramework">
+                        <iframe width="800" height="600" src="https://www.youtube.com/embed/D67Eho5388U" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    </div>
+                </uib-tab>
+                @*-----------------------Kiểm tra .NET Framework------------------------*@
+
+                @*-----------------------Kiểm tra hệ điều hành------------------------*@
+                <uib-tab index="1" heading="Kiểm tra hệ điều hành">
+                    <div id="KiemTraHeDieuHanh" name="KiemTraHeDieuHanh">
+                        <iframe width="800" height="600" src="https://www.youtube.com/embed/Kt1PhXLrY3c" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    </div>
+                </uib-tab>
+                @*-----------------------Kiểm tra hệ điều hành------------------------*@
+            </uib-tabset>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn red" ng-click="vm.cancel()"><i class="glyphicon glyphicon-remove"></i>@L("Cancel")</button>
+        </div>
+    </div>
+</div>

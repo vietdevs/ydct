@@ -1,0 +1,68 @@
+﻿<style type="text/css">
+    .tooltip-inner {
+        max-width: 500px;
+    }
+    .theme-panel {
+        min-width: 770px;
+    }
+    .see-hoso {
+        color: #156c37;
+    }
+</style>
+<div class="row form-group">
+    <div class="col-lg-6 col-md-6 col-xs-12">
+        <div class="input-group">
+            <input type="text" class="form-control" name="Keyword" ng-model="vm.filter.keyword" enter-key="vm.quickSearchDoanhNghiep()"
+                   placeholder="Nhập tên doanh nghiệp hoặc số ĐKKD. Ấn Enter để tìm">
+            <div id="frmSearch" class="input-group-btn" uib-dropdown auto-close="disabled">
+                <button tabindex="-1" class="btn btn-success" type="button" ng-click="vm.quicksearchDoanhNghiep()"><i class="fa fa-search"></i></button>
+                <button id="button1" type="button" class="btn btn-success dropdown-toggle" uib-dropdown-toggle  ><i class="fa fa-angle-down"></i></button>
+                <div class="dropdown-menu theme-panel pull-right dropdown-custom" uib-dropdown-menu role="menu" aria-labelledby="button1">
+                    <div class="col-md-12">
+                        <field>
+                            <div class="row form-group">
+                                <div class="col-md-4">
+                                    <label>Loại hình doanh nghiệp</label>
+                                    <select id="ddlLoaiHinh"
+                                            style="width: 100%"
+                                            kendo-drop-down-list
+                                            k-ng-model="vm.filter.loaiHinh"
+                                            k-options="vm.loaiHinhOptions"
+                                            class="form-control"></select>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label>Trạng thái</label>
+                                    <select id="ddlTrangThai"
+                                            style="width: 100%"
+                                            kendo-drop-down-list
+                                            k-ng-model="vm.filter.trangThai"
+                                            k-options="vm.trangThaiOptions"
+                                            class="form-control"></select>
+                                </div>
+                                <div class="col-md-4">
+                                    <label>Tỉnh / Thành phố</label>
+                                    <select id="ddlTinh"
+                                            style="width: 100%"
+                                            kendo-drop-down-list
+                                            k-ng-model="vm.filter.tinhId"
+                                            k-options="vm.tinhOptions"
+                                            disabled="disabled"
+                                            class="form-control"></select>
+                                </div>
+                            </div>
+
+                            <div class="form-actions text-right">
+                                <button class="btn btn-success btn-sm" type="button" ng-click="vm.quicksearchDoanhNghiep()"><i class="fa fa-search"></i> Tìm kiếm</button>
+                                <button class="btn default btn-sm" type="button" ng-click="vm.refreshDoanhNghiep()">Đặt lại</button>
+                            </div> @*Button search*@
+                        </field>
+                    </div>
+                </div>
+                <button class="btn default" type="button" ng-click="vm.refreshDoanhNghiep()"><i class="fa fa-repeat"></i></button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+    </div>
+</div> 

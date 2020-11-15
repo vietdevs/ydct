@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://kpWebservices/" targetNamespace="http://kpWebservices/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="ConfirmTransResult" type="tns:ConfirmTransResult" />
+  <xs:element name="ConfirmTransResultResponse" type="tns:ConfirmTransResultResponse" />
+  <xs:element name="QuerryBillStatus" type="tns:QuerryBillStatus" />
+  <xs:element name="QuerryBillStatusResponse" type="tns:QuerryBillStatusResponse" />
+  <xs:element name="QuerryBillStatusV2" type="tns:QuerryBillStatusV2" />
+  <xs:element name="QuerryBillStatusV2Response" type="tns:QuerryBillStatusV2Response" />
+  <xs:element name="sendOrder" type="tns:sendOrder" />
+  <xs:element name="sendOrderResponse" type="tns:sendOrderResponse" />
+  <xs:complexType name="QuerryBillStatusV2">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="merchant_code" type="xs:string" />
+      <xs:element minOccurs="0" name="merchant_trans_id" type="xs:string" />
+      <xs:element minOccurs="0" name="good_code" type="xs:string" />
+      <xs:element minOccurs="0" name="trans_time" type="xs:string" />
+      <xs:element minOccurs="0" name="secure_hash" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="QuerryBillStatusV2Response">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ConfirmTransResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="merchant_code" type="xs:string" />
+      <xs:element minOccurs="0" name="good_code" type="xs:string" />
+      <xs:element minOccurs="0" name="merchant_trans_id" type="xs:string" />
+      <xs:element minOccurs="0" name="trans_id" type="xs:string" />
+      <xs:element minOccurs="0" name="trans_result" type="xs:string" />
+      <xs:element minOccurs="0" name="secure_hash" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ConfirmTransResultResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="QuerryBillStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="merchant_trans_id" type="xs:string" />
+      <xs:element minOccurs="0" name="good_code" type="xs:string" />
+      <xs:element minOccurs="0" name="trans_id" type="xs:string" />
+      <xs:element minOccurs="0" name="merchant_code" type="xs:string" />
+      <xs:element minOccurs="0" name="secure_hash" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="QuerryBillStatusResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="sendOrder">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return_url" type="xs:string" />
+      <xs:element minOccurs="0" name="version" type="xs:string" />
+      <xs:element minOccurs="0" name="current_locale" type="xs:string" />
+      <xs:element minOccurs="0" name="currency_code" type="xs:string" />
+      <xs:element minOccurs="0" name="command" type="xs:string" />
+      <xs:element minOccurs="0" name="merchant_trans_id" type="xs:string" />
+      <xs:element minOccurs="0" name="country_code" type="xs:string" />
+      <xs:element minOccurs="0" name="good_code" type="xs:string" />
+      <xs:element minOccurs="0" name="xml_description" type="xs:string" />
+      <xs:element minOccurs="0" name="net_cost" type="xs:string" />
+      <xs:element minOccurs="0" name="ship_fee" type="xs:string" />
+      <xs:element minOccurs="0" name="tax" type="xs:string" />
+      <xs:element minOccurs="0" name="merchant_code" type="xs:string" />
+      <xs:element minOccurs="0" name="service_code" type="xs:string" />
+      <xs:element minOccurs="0" name="secure_hash" type="xs:string" />
+      <xs:element minOccurs="0" name="desc_1" type="xs:string" />
+      <xs:element minOccurs="0" name="desc_2" type="xs:string" />
+      <xs:element minOccurs="0" name="desc_3" type="xs:string" />
+      <xs:element minOccurs="0" name="desc_4" type="xs:string" />
+      <xs:element minOccurs="0" name="desc_5" type="xs:string" />
+      <xs:element minOccurs="0" name="customer_name" type="xs:string" />
+      <xs:element minOccurs="0" name="customer_phone" type="xs:string" />
+      <xs:element minOccurs="0" name="customer_address" type="xs:string" />
+      <xs:element minOccurs="0" name="customer_email" type="xs:string" />
+      <xs:element minOccurs="0" name="internal_bank" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="sendOrderResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

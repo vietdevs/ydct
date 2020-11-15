@@ -1,0 +1,50 @@
+/* here you can put your own css to customize and override the theme */
+.page-header .navbar-collapse .navbar-nav .more-dropdown-sub > a::after {
+    content:"";
+}
+
+@media (min-width: 992px) {
+    .page-header .navbar-fixed-top {
+        padding: 5px 20px;
+    }
+    .page-header .navbar-collapse {
+        margin-top: 60px;
+    }
+    .page-header .topbar-actions {
+        top: 5px;
+        right: 15px;
+    }
+    .page-content {
+        padding: 75px 20px 15px;
+    }
+}
+.mega-menu .dropdown-menu-fw {
+    left: 14px;
+    right: 14px;
+}
+.page-header .navbar .navbar-nav > li > a {
+    font-size: 17px;
+    padding: 20px 25px;
+    font-family: Oswald,sans-serif;
+    color: lightsteelblue;
+}
+    .page-header .navbar .navbar-nav > li > a > i {
+        top:1px;
+    }
+
+.page-header .navbar-collapse .navbar-nav .more-dropdown-sub > a {
+    padding: 20px !important;
+}
+.page-header .navbar .navbar-nav .dropdown-menu > li > a {
+    font-size:16px;
+}
+.page-header .navbar .navbar-nav .dropdown-menu {
+    box-shadow: 0px 0px 0px rgba(0,0,0,.16),1px 2px 2px rgba(0,0,0,.22)!important;
+}
+
+
+.breadcrumbs {
+    margin-bottom: 25px;
+    padding-right: 5px;
+    margin-top: 5px;
+}

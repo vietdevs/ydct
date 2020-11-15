@@ -1,0 +1,158 @@
+﻿<style>
+    .modal-dialog {
+        width: 80%
+    }
+</style>
+<div id="bothutucCreateOrEditForm" draggable>
+    <div class="modal-header">
+        <span class="pull-right" ng-click="vm.cancel()" aria-hidden="true"><i class="glyphicon glyphicon-remove"></i></span>
+        <span class="pull-right" id="fulscreen" aria-hidden="true"><i class="glyphicon glyphicon-fullscreen"></i></span>
+        <h4 class="modal-title">
+            <span ng-if="!vm.bothutuc.id">Tạo Mới</span>
+            <span ng-if="vm.bothutuc.id">Sửa</span>
+        </h4>
+    </div>
+    <div class="modal-body">
+        <div class="form-group clearfix">
+            <label class="col-md-2 col-sm-2 col-xs-12 control-label">Tên thủ tục <span class="font-red">*</span></label>
+            <div class="col-md-10 col-sm-10 col-xs-12">
+                <input class="form-control"
+                       type="text"
+                       ng-model="vm.bothutuc.tenThuTuc"
+                       data-fv-notempty="true" ng-change="vm.GetSeo()"
+                       data-fv-notempty-message="Không được để trống trường này"
+                       data-fv-trigger="blur" />
+            </div>
+        </div>
+        <div class="form-group clearfix">
+            <label class="col-md-2 col-sm-2 col-xs-12 control-label">Url<span class="font-red">*</span></label>
+            <div class="col-md-10 col-sm-10 col-xs-12">
+                <input class="form-control"
+                       type="text"
+                       ng-model="vm.bothutuc.duongDan"
+                       data-fv-notempty-message="Không được để trống trường này"
+                       data-fv-trigger="blur" />
+            </div>
+        </div>
+        <div class="form-group clearfix">
+            <label class="col-md-2 col-sm-2 col-xs-12 control-label">Số hồ sơ <span class="font-red">*</span></label>
+            <div class="col-md-10 col-sm-10 col-xs-12">
+                <input class="form-control"
+                       type="text"
+                       ng-model="vm.bothutuc.soHoSo"
+                       data-fv-notempty="true"
+                       data-fv-notempty-message="Không được để trống trường này"
+                       data-fv-trigger="blur" />
+            </div>
+        </div>
+        <div class="form-group clearfix">
+            <label class="col-md-2 col-sm-2 col-xs-12 control-label">Tên VBQPPL <span class="font-red">*</span></label>
+            <div class="col-md-10 col-sm-10 col-xs-12">
+                <input class="form-control"
+                       type="text"
+                       ng-model="vm.bothutuc.tenVBQPPL"
+                       data-fv-notempty="true"
+                       data-fv-notempty-message="Không được để trống trường này"
+                       data-fv-trigger="blur" />
+            </div>
+        </div>
+
+        <div class="form-group clearfix margin-top-15">
+            <label for="inputEmail3" class="col-sm-2 control-label">Cơ quan thực hiện</label>
+            <div class="col-sm-10">
+                <input class="form-control" ng-model="vm.bothutuc.coQuanThucHien" />
+            </div>
+        </div>
+        <div class="form-group clearfix margin-top-15">
+            <label class="col-md-2 col-sm-2 col-xs-12 control-label">
+                Hành chính cấp
+            </label>
+            <div class="col-md-2 col-sm-2 col-xs-2">
+                <select class="form-control" style="width:150px" ng-model="vm.bothutuc.hanhChinhCap">
+                    <option ng-repeat="cap in vm.hanhChinhCap" value="{{cap.value}}">{{cap.title}}</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group clearfix margin-top-15">
+            <label for="inputEmail3" class="col-sm-2 control-label">Mô tả</label>
+            <div class="col-sm-10">
+                <textarea class="form-control" ng-model="vm.bothutuc.moTa"></textarea>
+            </div>
+        </div>
+        <div class="form-group clearfix margin-top-15">
+            <label for="inputEmail3" class="col-sm-2 control-label">Thông tin chung</label>
+            <div class="col-sm-10">
+                <textarea class="form-control" ckeditor="" ng-model="vm.bothutuc.thongTinChung"></textarea>
+            </div>
+        </div>
+        <div class="form-group clearfix margin-top-15">
+            <label for="inputEmail3" class="col-sm-2 control-label">Trình tự thực hiện</label>
+            <div class="col-sm-10">
+                <textarea class="form-control" ckeditor="" ng-model="vm.bothutuc.trinhTuThucHien"></textarea>
+            </div>
+        </div>
+        <div class="form-group clearfix margin-top-15">
+            <label for="inputEmail3" class="col-sm-2 control-label">Thành phần hồ sơ</label>
+            <div class="col-sm-10">
+                <textarea class="form-control" ckeditor="" ng-model="vm.bothutuc.thanhPhanHoSo"></textarea>
+            </div>
+        </div>
+        <div class="form-group clearfix margin-top-15">
+            <label for="inputEmail3" class="col-sm-2 control-label">Yêu cầu điều kiện</label>
+            <div class="col-sm-10">
+                <textarea class="form-control" ckeditor="" ng-model="vm.bothutuc.yeuCauDieuKien"></textarea>
+            </div>
+        </div>
+        <div class="form-group clearfix margin-top-15">
+            <label class="col-md-2 col-sm-2 col-xs-12 control-label">Ảnh</label>
+            <div class="col-md-8 col-sm-8 col-xs-10">
+                <input class="form-control"
+                       type="text"
+                       ng-model="vm.bothutuc.anh"
+                       data-fv-trigger="blur" />
+            </div>
+            <div class="col-md-2 col-sm-2 col-xs-2">
+                <button class="btn btn-default" type="button" ng-click="vm.ChooseImage()">Chọn ảnh</button>
+            </div>
+        </div>
+        <div class="form-group clearfix margin-top-15">
+            <label class="col-md-2 col-sm-2 col-xs-12 control-label">Thứ tự</label>
+            <div class="col-md-10 col-sm-10 col-xs-12">
+                <input class="form-control" style="width:80px"
+                       ng-model="vm.bothutuc.sortOrder" name="SortOrder"
+                       type="number" value="1"
+                       data-fv-trigger="blur">
+            </div>
+        </div>
+        <div class="form-group clearfix margin-top-15">
+            <label class="col-md-2 col-sm-2 col-xs-12 control-label">Trang chủ</label>
+            <div class="col-md-10 col-sm-10 col-xs-12">
+                <input bs-switch
+                       ng-model="vm.bothutuc.isHome"
+                       type="checkbox"
+                       switch-on-text="<i class='fa fa-check' aria-hidden='true'></i>"
+                       switch-on-color="success"
+                       switch-off-text="<i class='fa fa-times' aria-hidden='true'></i>"
+                       ng-true-value=true
+                       ng-false-value=false>
+            </div>
+        </div>
+        <div class="form-group clearfix margin-top-15">
+            <label class="col-md-2 col-sm-2 col-xs-12 control-label">Kích hoạt</label>
+            <div class="col-md-10 col-sm-10 col-xs-12">
+                <input bs-switch
+                       ng-model="vm.bothutuc.isActive"
+                       type="checkbox"
+                       switch-on-text="<i class='fa fa-check' aria-hidden='true'></i>"
+                       switch-on-color="success"
+                       switch-off-text="<i class='fa fa-times' aria-hidden='true'></i>"
+                       ng-true-value=true
+                       ng-false-value=false>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" button-busy="vm.saving" busy-text="@L(" SavingWithThreeDot")" class="btn green-meadow" ng-click="vm.save()"><i class="fa fa-save"></i> <span>@L("Save")</span></button>
+        <button ng-disabled="vm.saving" type="button" class="btn red" ng-click="vm.cancel()"><i class="glyphicon glyphicon-remove"></i>@L("Cancel")</button>
+    </div>
+</div>

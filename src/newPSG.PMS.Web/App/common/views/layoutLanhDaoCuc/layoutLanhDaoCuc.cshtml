@@ -1,0 +1,118 @@
+﻿@using System.Threading
+@using System.Web.Optimization
+@using Abp.Application.Features
+@using Abp.Extensions
+@using Abp.MultiTenancy
+@using Abp.Timing
+@using Abp.Web.Mvc.Extensions
+@using newPSG.PMS.Features
+@using newPSG.PMS.Localization
+@using newPSG.PMS.Web.Bundling
+@{
+    SetAntiForgeryCookie();
+}
+<!DOCTYPE html>
+<html lang="en" data-ng-app="appLanhDaoCuc">
+<!--<![endif]-->
+<head>
+    <title>Cục Quản lý Dược - Bộ Y tế</title>
+    <meta charset="utf-8" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+
+    <link rel="shortcut icon" href="~/favicon.ico" />
+
+    @*<link href="~/Content/fonts-open-sans.css" rel="stylesheet" type="text/css" />*@
+    <link href="~/Content/fonts-roboto.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/font-summernote.css" rel="stylesheet" type="text/css" />
+
+    @Styles.Render("~/Bundles/App/libs/css" + (CultureHelper.IsRtl ? "RTL" : ""))
+    <link id="ng_load_plugins_before" />
+    @Styles.Render("~/Bundles/App/metronic/css" + (CultureHelper.IsRtl ? "RTL" : ""))
+    @Styles.Render("~/Bundles/Common/css")
+    @Styles.Render("~/Bundles/App/css")
+
+    <style>
+        .note-editor .note-editable p {
+            margin: 0 !important;
+            margin-top: 3px !important;
+        }
+        .page-md .modal-lg {
+            width: 90% !important;
+        }
+    </style>
+
+    <script type="text/javascript">
+        var abp = abp || {}; abp.appPath = '@ApplicationPath';
+        var app = app || {};
+    </script>
+</head>
+<body ng-controller="common.views.layoutLanhDaoCuc as vm" class="page-container-bg-solid page-header-fixed page-sidebar-closed-hide-logo page-md" ng-cloak>
+    <div class="page-header navbar navbar-fixed-top md-shadow-zero-light">
+        <div class="page-header-inner">
+            <div class="page-logo">
+                <a href="/" target="_blank">
+                    <img src="~/Common/Images/backend-logo.png" alt="logo" class="logo-default" width="185" height="34" />
+                </a>
+            </div>
+            <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse">
+            </a>
+
+            <div class="page-top">
+                <div class="top-menu">
+                    <ul class="nav navbar-nav pull-right">
+                        <li class="separator hide"> </li>
+
+                        <li class="dropdown dropdown-user dropdown-dark">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true" title="{{vm.isImpersonatedLogin ? '@L("YouCanBackToYourAccount")' : ''}}">
+                                <span class="username username-hide-on-mobile">
+                                    <i ng-if="vm.isImpersonatedLogin" class="icon-action-undo font-red-sunglo"></i> {{vm.getShownUserName()}}
+                                </span>
+                                <img id="HeaderProfilePicture" alt="" class="img-circle" src="@Url.Action("GetProfilePicture", "Profile")?t=@Clock.Now.Ticks.ToString()" />
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-default">
+                                <li class="divider"></li>
+                                <li>
+                                    <a href="@Url.Action("Logout", "Account")"><i class="icon-logout"></i> @L("Logout")</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix">
+    </div>
+    <div class="page-container">
+
+        <div class="page-content-wrapper">
+            <div class="page-content" style="margin:0px !important">
+                <div app.layoutlanhdaocuc.pagecontent></div>
+            </div>
+        </div>
+    </div>
+
+    @Scripts.Render("~/Bundles/App/LanhDaoCuc/libs/js")
+
+    <script>
+        abp.localization.defaultSourceName = '@LocalizationSourceName';
+        moment.locale('@Thread.CurrentThread.CurrentUICulture.Name'); //Localizing moment.js
+    </script>
+
+    @Html.IncludeScript(ScriptPaths.Angular_Localization)
+    @Html.IncludeScript(ScriptPaths.Bootstrap_Select_Localization)
+    @Html.IncludeScript(ScriptPaths.JQuery_Timeago_Localization)
+
+    <!-- Dynamic scripts of ABP system (They are created on runtime and can not be bundled) -->
+    <script src="~/api/AbpServiceProxies/GetAll?type=angular&v=@(Clock.Now.Ticks)"></script>
+    <script src="~/api/AbpServiceProxies/GetAll?v=@(Clock.Now.Ticks)"></script>
+    <script src="~/AbpScripts/GetScripts?v=@(Clock.Now.Ticks)" type="text/javascript"></script>
+
+    @*@Scripts.Render("~/Bundles/App/metronic/js")*@
+    @Scripts.Render("~/Bundles/App/LanhDaoCuc/js")
+</body>
+</html>

@@ -1,0 +1,82 @@
+﻿<style type="text/css">
+    .modal-dialog {width:90% !important}
+    .hight_light_info{font-weight:700;}
+    .lable_info_title{width:140px;}
+    hr, p {
+        margin: 10px 0;
+    }
+</style>
+    <div class="modal-content">
+        <div class="modal-body">
+            <div ng-class="vm.dataForm.isDaXuLy != true ? 'col-md-8' : 'col-md-12'">
+                <uib-tabset class="tab-container tabbable-line" active="vm.currentTab">
+                    @*-----------------------Thông tin doanh nghiệp------------------------*@
+
+                    <uib-tab index="0" heading="Thông tin doanh nghiệp">
+                        <h4 class="bold font-green-meadow" style="text-transform:uppercase;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"> Thông tin doanh nghiệp</h4>
+                        <p><label class="text-bold">Loại hình: </label>{{vm.dataForm.phamViEnum==1?'DN/Cơ sở đăng ký trong nước':'Doanh nghiệp nước ngoài'}}</p>
+                        <p><label class="text-bold">Mã số thuế: </label> {{vm.dataForm.maSoThue}}</p>
+                        <p><label class="text-bold">Tên tiếng Việt: </label> {{vm.dataForm.tenDoanhNghiep}}</p>
+                        <p><label class="text-bold">Tên tiếng Anh: </label> {{vm.dataForm.tenTiengAnh}}</p>
+                        <p><label class="text-bold">Tên viết tắt: </label>{{vm.dataForm.tenVietTat}}</p>
+                        <p><label class="text-bold">Hình thức: </label> {{vm.dataForm.tenLoaiHinh}}</p>
+                        <hr />
+                        <h4 class="bold font-green-meadow" style="text-transform:uppercase;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"> Địa chỉ</h4>
+                        <p><label class="text-bold">Tỉnh/Thành phố: </label> {{vm.dataForm.tinh}}</p>
+                        <p><label class="text-bold">Quận/Huyện: </label> {{vm.dataForm.huyen}}</p>
+                        <p><label class="text-bold">Xã/Phường: </label> {{vm.dataForm.xa}}</p>
+                        <p><label class="text-bold">Địa chỉ chi tiết: </label> {{vm.dataForm.diaChi}}</p>
+                        <p><label class="text-bold">Điện thoại: </label> {{vm.dataForm.soDienThoai}}</p>
+                        <p><label class="text-bold">Fax: </label> {{vm.dataForm.fax}}</p>
+                        <p><label class="text-bold">Email: </label> {{vm.dataForm.emailDoanhNghiep}}</p>
+                        <p><label class="text-bold">Website: </label> {{vm.dataForm.website}}</p>
+                        <hr />
+                        <h4 class="bold font-green-meadow" style="text-transform:uppercase;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">Người đại diện</h4>
+                        <p><label class="text-bold">Họ và tên: </label> {{vm.dataForm.tenNguoiDaiDien}}</p>
+                        <p><label class="text-bold">Chức vụ: </label> {{vm.dataForm.tenChucVuNguoiDaiDien}}</p>
+                        <p><label class="text-bold">Email xác nhận tài khoản: </label> {{vm.dataForm.emailXacNhan}}</p>
+                        <p><label class="text-bold">Số điện thoại người đại diện: </label> {{vm.dataForm.dienThoaiNguoiDaiDien}}</p>
+                    </uib-tab>
+                    @*-----------------------Thông tin doanh nghiệp------------------------*@
+                </uib-tabset>
+            </div>
+            <div ng-class="vm.dataForm.isDaXuLy != true ? 'col-md-4' : ''" ng-if="vm.dataForm.isDaXuLy != true" style="margin-top: 30px">
+                <h4 class="bold font-blue-steel" style="text-transform:uppercase;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"> Duyệt tài khoản doanh nghiệp</h4>
+                <div class="form-group" style="padding-top: 10px;">
+                    <div class="form-group form-md-radios">
+                        <div class="md-radio-inline">
+                            <div class="md-radio has-success">
+                                <input type="radio" id="duyetDoanhNghiep_Radio" name="duyetDoanhNghiep_Radio" class="md-radiobtn" data-ng-model="vm.duyetDoanhNghiep" data-ng-value="true">
+                                <label for="duyetDoanhNghiep_Radio">
+                                    <span class="inc"></span>
+                                    <span class="check"></span>
+                                    <span class="box"></span> <b>Mở tài khoản</b>
+                                </label>
+                            </div>
+                            <div class="md-radio has-error">
+                                <input type="radio" id="duyetDoanhNghiep_Radio1" name="duyetDoanhNghiep_Radio1" class="md-radiobtn" data-ng-model="vm.duyetDoanhNghiep" data-ng-value="false">
+                                <label for="duyetDoanhNghiep_Radio1">
+                                    <span class="inc"></span>
+                                    <span class="check"></span>
+                                    <span class="box"></span> <b>Không chấp nhận</b>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group" ng-if="vm.duyetDoanhNghiep == false">
+                        <label><b>Lý do không chấp nhận thông tin đăng ký</b><text class="font-red">*</text></label>
+                        <textarea class="form-control" rows="3" ng-model="vm.lyDoKhongDuyet"></textarea>
+                    </div>
+                </div>
+
+                @*<button button-busy="vm.saving" busy-text="@L("SavingWithThreeDot")" type="button" ng-if="vm.dataForm.isDaXuLy != true" class="btn btn-success" ng-click="vm.moTaiKhoan(vm.dataForm)"><i class="fa fa-check"></i>Mở tài khoản</button>
+                <button button-busy="vm.saving" busy-text="@L("SavingWithThreeDot")" ng-if="vm.dataForm.isDaXuLy != true" class="btn btn-danger" ng-click="vm.khongChapNhan(vm.dataForm)"><i class="fa fa-close"></i>Không chấp nhận</button>*@
+            </div>
+        </div>
+        <div class="modal-footer">
+            <div class="col-md-12">
+                <button button-busy="vm.saving" busy-text="@L("SavingWithThreeDot")" ng-if="vm.dataForm.isDaXuLy != true" class="btn bg-green-meadow bg-font-green-meadow" ng-click="vm.save(vm.dataForm)"><i class="fa fa-save"></i> Lưu</button>
+                <button ng-disabled="vm.saving" type="button" class="btn btn-default" ng-click="vm.cancel()"><i class="glyphicon glyphicon-remove"></i>Đóng</button>
+            </div>
+        </div>
+    </div>

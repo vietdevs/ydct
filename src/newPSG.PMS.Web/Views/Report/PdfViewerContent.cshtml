@@ -1,0 +1,35 @@
+﻿@{ 
+    Layout = "~/Views/Layout/_PdfViewerLayout.cshtml";
+}
+<style type="text/css">
+    .modal-dialog {
+        width: 700px;
+    }
+
+    .some-pdf-container {
+        width: 100%;
+        height: 500px;
+    }
+
+    .page-header.navbar.navbar-fixed-top {
+        display: none;
+    }
+
+    #printablePdf .page-header {
+        display: none;
+    }
+
+    .page-footer, .page-footer-inner, .page-footer .page-footer-inner {
+        display: none;
+    }
+</style>
+
+<div ng-controller="common.views.printviewer.content as vm">
+    <div class="some-pdf-container">
+        <pdfjs-viewer data="vm.data"></pdfjs-viewer>
+    </div>
+
+</div>
+<input type="hidden" id="hdPrintType" value="@ViewBag.PrintType" />
+<input type="hidden" id="hdId"  value="@ViewBag.id" />
+<input type="hidden" id="hdPlace" value="@ViewBag.place" />

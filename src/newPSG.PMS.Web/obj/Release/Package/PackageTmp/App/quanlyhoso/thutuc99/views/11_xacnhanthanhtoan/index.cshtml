@@ -1,0 +1,168 @@
+﻿@using newPSG.PMS.Localization
+
+<div class="danhsach" ng-controller="quanlyhoso.thutuc99.views.xacnhanthanhtoan.index as vm">
+    <div class="portlet light bordered" ng-show="vm.show_mode==null">
+        <div class="portlet-title">
+            <div class="caption font-blue-steel">
+                <em class="icon-list font-blue-steel"></em>
+                <span class="caption-subject bold uppercase">Danh sách hồ sơ thanh toán bằng chuyển khoản</span>
+            </div>
+        </div>
+        <div class="portlet-body">
+            <div class="row form-group atpp-filter">
+                <div class="col-lg-5 col-md-5 col-xs-12">
+                    <div class="input-group">
+                        <input type="text" id="skeyword" class="form-control" name="Keyword" ng-model="vm.filter.Filter" enter-key="vm.refreshGridHS()" onfocus="onFocusElei(this)"
+                               placeholder="Nhập mã hồ sơ, số đăng ký, tên tổ chức, mã số, tên sản phẩm, mã giao dich hoặc mã đơn hàng. Ấn Enter để tìm">
+                        <div class="input-group-btn" uib-dropdown auto-close="disabled">
+                            <button tabindex="-1" class="btn blue-steel" type="button" ng-click="vm.refreshGridHS()"><em class="fa fa-search"></em></button>
+                            <button id="button1" type="button" class="btn blue-steel dropdown-toggle" uib-dropdown-toggle><em class="fa fa-angle-down"></em></button>
+                            <div class="dropdown-menu theme-panel pull-right dropdown-custom" uib-dropdown-menu role="menu" aria-labelledby="button1">
+                                <div class="col-md-12">
+                                    <field>
+                                        <div class="row form-group">
+                                            <div class="col-md-6">
+                                                <label>Nhóm sản phẩm</label>
+                                                <select id="ddlNhomSanPham"
+                                                        style="width: 100%"
+                                                        kendo-drop-down-list
+                                                        k-ng-model="vm.filter.NhomSanPhamId"
+                                                        k-options="vm.nhomSanPhamOptions"
+                                                        class="form-control"></select>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <label>Tỉnh / Thành phố</label>
+                                                <select id="ddlTinh"
+                                                        style="width: 100%"
+                                                        kendo-drop-down-list
+                                                        k-ng-model="vm.filter.TinhId"
+                                                        k-options="vm.tinhOptions"
+                                                        class="form-control"></select>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-actions text-right">
+                                            <button class="btn blue-steel btn-sm" type="button" ng-click="vm.refreshGridHS()"><em class="fa fa-search"></em> Tìm kiếm</button>
+                                            <button class="btn default btn-sm" type="button" ng-click="vm.refreshControll()">Đặt lại</button>
+                                        </div>
+                                    </field>
+                                </div>
+                            </div>
+                            <button class="btn default" type="button" ng-click="vm.refreshControll()"><em class="fa fa-repeat"></em></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7 col-md-7">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12">
+                            <div class="mt-radio-inline">
+                                <label ng-repeat="item in vm.listFormCase" class="mt-radio">
+                                    <input name="optionsRadios" ng-model="vm.filter.formCase" ng-change="vm.refreshGridHS()" value="{{ item.id }}" type="radio"> {{ item.name }}
+                                    <span></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="gridHoSo" busy-if="vm.loading"
+                 kendo-grid
+                 k-serverPaging="true"
+                 k-pageSize="10"
+                 k-pageable='{"refresh": true, "pageSizes": true, messages: {empty: "Không có dữ liệu", display: "Hiển thị từ {0} đến {1}/{2} hồ sơ",itemsPerPage: "Hồ sơ hiển thị"}}'
+                 k-options="vm.hoSoGridOptions"
+                 k-data-source='vm.gridHoSoDataSource'
+                 k-columns="vm.columnGridHoSo"></div>
+        </div>
+    </div>
+
+    <div class="portlet light" ng-show="vm.show_mode == 'xac_nhan_thanh_toan'">
+        <div class="portlet-title">
+            <div class="caption font-blue-steel uppercase">
+                <em class="fa fa-pencil font-green-sharp"></em>Hồ sơ - {{vm.dataItem.tenSanPham}} [ {{vm.dataItem.maHoSo}} ]
+            </div>
+            <div class="tools">
+                <a ng-click="vm.closeModal()"><em class="glyphicon glyphicon-remove font-blue-steel"></em></a>
+            </div>
+        </div>
+        <div class="portlet-body form">
+            <div class="row">
+                <div class="col-md-7">
+                    <h4>Hóa đơn thanh toán</h4>
+                    <div ng-if="vm.show_mode == 'xac_nhan_thanh_toan'">
+                        <div view-hoa-don thanhtoan="vm.thanhToan"></div>
+                    </div>
+                </div>
+
+                <div class="col-md-5">
+                    <h4>Thông tin thanh toán</h4>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p><span class="text-bold">Mã giao dịch: </span> {{vm.thanhToan.maGiaoDich}}</p>
+                            <p><span class="text-bold">Số tài khoản nộp: </span> {{vm.thanhToan.soTaiKhoanNop}}</p>
+                            <p><span class="text-bold">Số tiền: </span> {{vm.thanhToan.phiDaNop | number:0}} VNĐ</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p><span class="text-bold">Mã đơn hàng: </span> {{vm.thanhToan.maDonHang}}</p>
+                            <p><span class="text-bold">Số tài khoản hưởng: </span> {{vm.thanhToan.soTaiKhoanHuong}}</p>
+                            <p><span class="text-bold">Ngày giao dịch: </span> {{vm.thanhToan.ngayGiaoDich | date: 'dd/MM/yyyy'}}</p>
+                        </div>
+                        <div class="col-md-12">
+                            <p style="margin-top: 0; margin-bottom: 5px;"><span class="text-bold">Ghi chú: </span></p>
+                            <div ng-bind-html="vm.thanhToan.ghiChu"></div>
+                        </div>
+                    </div>
+                    <hr />
+                    <h4>Thông tin hồ sơ</h4>
+                    <p><span class="text-bold">Số đăng ký công bố: </span> {{vm.dataItem.soDangKy}}</p>
+                    <p><span class="text-bold">Tên sản phẩm: </span> {{vm.dataItem.tenSanPham}}</p>
+                    <p><span class="text-bold">Loại hồ sơ: </span> {{vm.dataItem.strLoaiHoSo}}</p>
+                    <p><span class="text-bold">Tên doanh nghiệp: </span> {{vm.dataItem.tenDoanhNghiep}}</p>
+                    <div class="portlet box blue-steel">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                Xác nhận thanh toán chuyển khoản
+                            </div>
+                            <div class="tools">
+                            </div>
+                        </div>
+                        <div class="portlet-body form">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group" style="padding-top: 10px;">
+                                            <div class="mt-radio-inline">
+                                                <label class="mt-radio">
+                                                    <input name="HoSoIsDat_Radio" ng-model="vm.duyetThanhToan.thanhToanIsDat_Radio" value="1" type="radio"> Thanh toán hợp lệ
+                                                    <span></span>
+                                                </label>
+                                                <label class="mt-radio">
+                                                    <input name="HoSoIsDat_Radio" ng-model="vm.duyetThanhToan.thanhToanIsDat_Radio" value="0" type="radio"> Thanh toán không hợp lệ
+                                                    <span></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group" ng-if="vm.duyetThanhToan.thanhToanIsDat_Radio == '0'">
+                                            <label>Lý do không hợp lệ</label><span class="font-red">*</span>
+                                            <textarea class="form-control" rows="3" ng-model="vm.duyetThanhToan.yKienXacNhan"></textarea>
+                                        </div>
+
+                                        <div class="form-actions right">
+                                            <button type="button" class="btn btn-md green" ng-click="vm.saveXacNhanThanhToan()" button-busy="vm.saving" busy-text="@L("SavingWithThreeDot")">
+                                                <em class="fa fa-save"></em>
+                                                <text>Lưu</text>
+                                            </button>
+                                            <button type="button" ng-click="vm.closeModal()" class="btn red"><em class="fa fa-close"></em> Đóng</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

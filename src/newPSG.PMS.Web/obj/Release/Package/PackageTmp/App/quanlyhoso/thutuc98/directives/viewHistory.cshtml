@@ -1,0 +1,25 @@
+﻿@using newPSG.PMS.Localization
+
+<div class="row">
+    <div class="col-md-12">
+        <div style="display:inline-block;width:100%;overflow-x:auto; overflow-y: auto;min-height: 260px;">
+            <ul class="attp-timeline attp-timeline-horizontal">
+                <li class="attp-timeline-item" ng-repeat="item in vm.listYKien">
+                    <div class="attp-timeline-badge primary">
+                        <a href="javascript;" ng-click="vm.xemChiTiet(item)"><em class="{{item.noteIconClass}}" style="background-color: {{item.noteColor}};"></em></a>
+                        <p class="badge bg-grey-salsa badge-time" style="vertical-align: top;margin: 0;"> {{item.creationTime | date :  "dd/MM/yyyy HH:mm"}} </p>
+                        <p class="badge badge-success badge-user" style="height: auto;margin: -28px 0 0;vertical-align: top;">
+                            {{item.nguoiXuLy}}
+                            <br />{{item.hanhDongXuLy}}
+                        </p>
+                    </div>
+                    <div class="attp-timeline-panel" ng-show="item.noiDungYKien">
+                        <div class="attp-timeline-body">
+                            <p ng-bind-html="vm.getYKien(item)"></p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

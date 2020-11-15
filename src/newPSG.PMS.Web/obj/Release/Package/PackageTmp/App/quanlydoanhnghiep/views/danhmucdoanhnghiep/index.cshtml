@@ -1,0 +1,22 @@
+﻿@using newPSG.PMS.Localization
+<div class="danhsach" ng-controller="quanlydoanhnghiep.views.danhmucdoanhnghiep.index as vm">
+    <div class="portlet light bordered">
+        <div class="portlet-title">
+            <div class="caption font-green-meadow">
+                <i class="icon-list font-green-meadow "></i>
+                <span class="caption-subject bold uppercase">Danh sách doanh nghiệp</span>
+            </div>
+            <div class="actions">
+            </div>
+        </div>
+        <div class="portlet-body">
+            @Html.Partial("~/App/quanlydoanhnghiep/views/danhmucdoanhnghiep/filter/filterDoanhNghiep.cshtml")
+            <div class="portlet-body" busy-if="vm.dsdoanhnghiep_loading">
+                <div kendo-grid
+                     k-options="vm.doanhNghiepGridOptions"
+                     k-data-source='vm.gridDoanhNghiepDataSource'
+                     k-columns="vm.columnGridDoanhNghiep"></div>
+            </div>
+        </div>
+    </div>
+</div>

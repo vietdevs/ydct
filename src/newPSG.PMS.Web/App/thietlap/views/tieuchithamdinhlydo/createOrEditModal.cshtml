@@ -1,0 +1,115 @@
+﻿<div>
+    <div id="createOrEditForm">
+        <div class="modal-header">
+            <div class="modal-title">
+                <h4 style="display: inline-block; margin:0;">
+                    <span ng-if="!vm.dataId">Tạo mới</span>
+                    <span ng-if="vm.dataId">Sửa</span>
+                </h4>
+            </div>
+        </div>
+        <div class="modal-body">
+            <form autocomplete="off">
+                <div class="form-group">
+                    <div class="collapse" id="nangcao">
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label>Thủ tục</label><span><span class="font-red">*</span></span>
+                                    <div app.common.filter.thutucenum selected="vm.filter.thuTucId"></div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label>Vai trò</label><span><span class="font-red">*</span></span>
+                                    <div filter.common.rolelevel id-value="vm.filter.roleLevel" value-change="vm.changeRole"></div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label>Tiểu ban</label><span><span class="font-red">*</span></span>
+                                    <div filter.common.tieuban value="vm.filter.tieuBanEnum"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label>Loại biên bản</label><span><span class="font-red">*</span></span>
+                                    <div filter.common.loaibienban value="vm.filter.loaiBienBanThamDinhId"></div>
+                                </div>
+                                <div class="col-md-8">
+                                    <label style="color:white;">.</label>
+                                    <div class="input-group">
+                                        <div class="input-group-btn" uib-dropdown auto-close="disabled">
+                                            <button tabindex="-1" class="btn blue-steel" type="button" ng-click="vm.timKiem()"><em class="fa fa-search"></em> Tìm kiến</button>
+                                            <button class="btn default" type="button" ng-click="vm.refesh()"><em class="fa fa-repeat"></em> Đặt lại</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="caption font-grey-gallery">
+                        <span class="text-secondary collapsed" data-toggle="collapse" href="#nangcao" role="button" aria-expanded="false" aria-controls="nangcao" ng-click="vm.checkCollapse()">
+                            <strong>Lọc tiêu chí thẩm định <text ng-show="vm.isCollapsed">( ấn vào để mở ) <em class="fa fa-arrow-down" style="font-size: large"></em></text> <text ng-show="!vm.isCollapsed"> ( ấn vào để đóng ) <em class="fa fa-arrow-up" style="font-size: large"></em></text></strong>
+                        </span>
+                    </div>
+                    <hr />
+
+                    <div class="form-group">
+                        <label> Tiêu chi thẩm định</label><span class="font-red">*</span>
+                        <input id="TieuChiThamDinh"
+                               name="TieuChiThamDinh"
+                               style="width: 100%"
+                               kendo-drop-down-list
+                               k-ng-model="vm.dataModal.tieuChiThamDinhId"
+                               k-options="vm.noiDungThamDinhOptions"
+                               class="form-control" />
+                    </div>
+                    <div class="caption">
+                        <em class="fa fa-hand-rock-o font-yellow-casablanca"></em>
+                        <span class="caption-subject bold font-yellow-casablanca uppercase"> Lý do </span>
+                    </div>
+                    <div class="table-scrollable table-scrollable-borderless">
+                        <table class="table table-hover table-light">
+                            <thead>
+                                <tr class="uppercase">
+                                    <th style="width:45px;"> STT </th>
+                                    <th> Lý do </th>
+                                    <th style="width:60px;text-align:center"> # </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="item in vm.dataModal.listLyDo">
+                                    <td>
+                                        {{$index + 1}}
+                                    </td>
+                                    <td>
+                                        <textarea class="form-control"
+                                                  ng-model="item.lyDo"
+                                                  rows="1"></textarea>
+                                        <check-validate-empty datacheck="item.lyDo"></check-validate-empty>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn red" ng-click="vm.remove(item)"><em class="fa fa-close"></em></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div style="margin-top:5px;">
+                            <button type="submit" class="btn btn-primary blue ng-isolate-scope" ng-click="vm.add()">
+                                <span><em class="fa fa-plus-square"></em> <span> Thêm </span></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button type="button" button-busy="vm.saving" busy-text="@L("SavingWithThreeDot")" class="btn blue-steel" ng-click="vm.save()"><em class="fa fa-save"></em> <span>@L("Save")</span></button>
+            <button ng-disabled="vm.saving" type="button" class="btn btn-default" ng-click="vm.cancel()">@L("Cancel")</button>
+        </div>
+    </div>
+</div>
+<style>
+    .modal-dialog {
+        width: 1000px;
+    }
+</style>

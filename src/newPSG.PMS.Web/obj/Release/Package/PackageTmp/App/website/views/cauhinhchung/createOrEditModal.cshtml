@@ -1,0 +1,134 @@
+﻿<style>
+    .modal-dialog {
+        width: 60%
+    }
+</style>
+<div id="CauHinhChungCreateOrEditForm">
+    <div class="modal-header">
+        <h4 class="modal-title text-center">
+            <span ng-if="!vm.cauHinhChung.id">Tạo cấu hình</span>
+            <span ng-if="vm.cauHinhChung.id">Sửa cấu hình</span>
+            <button class="close" type="button" ng-click="vm.cancel()" aria-hidden="true"></button>
+        </h4>
+    </div>
+    <div class="modal-body">
+        <div class="form-group clearfix">
+            <label class="col-md-2 col-sm-2 col-xs-12 control-label">Từ khóa <span class="font-red">*</span></label>
+            <div class="col-md-10 col-sm-10 col-xs-12">
+                <input class="form-control"
+                       type="text"
+                       name="SettingKey"
+                       ng-model="vm.cauHinhChung.tuKhoa"
+                       data-fv-notempty="true"
+                       data-fv-notempty-message="Không được để trống trường này"
+                       data-fv-trigger="blur" />
+            </div>
+        </div>
+        <div class="form-group clearfix margin-top-15">
+            <label class="col-md-2 col-sm-2 col-xs-12 control-label">Mô tả</label>
+            <div class="col-md-10 col-sm-10 col-xs-12">
+                <input class="form-control"
+                       type="text"
+                       name="Description"
+                       ng-model="vm.cauHinhChung.moTa"
+                       data-fv-notempty="true"
+                       data-fv-notempty-message="Không được để trống trường này"
+                       data-fv-trigger="blur" />
+            </div>
+        </div>
+
+        <div class="form-group clearfix margin-top-15">
+            <label class="col-md-2 col-sm-2 col-xs-12 control-label">
+                Nhóm cấu hình
+            </label>
+            <div class="col-md-2 col-sm-2 col-xs-2">
+                <select class="form-control" style="width:150px" ng-model="vm.cauHinhChung.nhomCauHinh">
+                    <option ng-repeat="group in vm.group" ng-value="{{group.value}}">{{group.title}}</option>
+                    @*<option value="1">Thông tin chung</option>
+                        <option value="2">Thông tin liên hệ</option>
+                        <option value="3">Cài đặt mã nhúng</option>
+                        <option value="4">Cấu hình hiển thị</option>*@
+                </select>
+            </div>
+        </div>
+        @*<div class="form-group clearfix margin-top-15">
+                <label class="col-md-2 col-sm-2 col-xs-12 control-label">Giá trị</label>
+                <div class="col-md-10 col-sm-10 col-xs-12">
+                    <textarea class="form-control"
+                              type="text"
+                              ng-model="vm.cauHinhChung.giaTri"
+                              data-fv-trigger="blur"><</textarea>
+                </div>
+            </div>*@
+        <div class="form-group clearfix margin-top-15">
+            <label class="col-md-2 col-sm-2 col-xs-12 control-label">
+                Kiểu cấu hình
+            </label>
+            <div class="col-md-2 col-sm-2 col-xs-2">
+                <select class="form-control" style="width:150px" ng-model="vm.cauHinhChung.kieuCauHinh">
+                    <option ng-repeat="type in vm.type" value="{{type.value}}">{{type.title}}</option>
+                    @*<option value="1">Text</option>
+                        <option value="2">Ảnh</option>
+                        <option value="3">Văn bản</option>*@
+                </select>
+            </div>
+        </div>
+        <div class="form-group clearfix margin-top-15" ng-if="vm.cauHinhChung.kieuCauHinh=='1'">
+            <label class="col-md-2 col-sm-2 col-xs-12 control-label">Giá trị</label>
+            <div class="col-md-10 col-sm-10 col-xs-12">
+                <textarea class="form-control"
+                          type="text"
+                          ng-model="vm.cauHinhChung.string"
+                          data-fv-trigger="blur"><</textarea>
+            </div>
+        </div>
+        <div class="form-group clearfix margin-top-15" ng-if="vm.cauHinhChung.kieuCauHinh=='2'">
+            <label class="col-md-2 col-sm-2 col-xs-12 control-label">Giá trị</label>
+            <div class="col-md-8 col-sm-8 col-xs-10">
+                <input class="form-control"
+                       type="text"
+                       ng-model="vm.cauHinhChung.image"
+                       data-fv-trigger="blur" />
+            </div>
+            <div class="col-md-2 col-sm-2 col-xs-2">
+                <button class="btn btn-default" type="button" ng-click="vm.ChooseImageAdd()">Chọn ảnh</button>
+            </div>
+        </div>
+
+        <div class="form-group clearfix margin-top-15" ng-if="vm.cauHinhChung.kieuCauHinh=='3'">
+            <label class="col-md-2 col-sm-2 col-xs-12 control-label">Giá trị</label>
+            <div class="col-md-10 col-sm-10 col-xs-12">
+                <textarea class="form-control"
+                          type="text"
+                          ng-model="vm.cauHinhChung.text"
+                          data-fv-trigger="blur" ckeditor="ckDescription"><</textarea>
+            </div>
+        </div>
+        <div class="form-group clearfix margin-top-15">
+            <label class="col-md-2 col-sm-2 col-xs-12 control-label">Thứ tự</label>
+            <div class="col-md-10 col-sm-10 col-xs-12">
+                <input class="form-control" style="width:80px"
+                       ng-model="vm.cauHinhChung.sortOrder" name="SortOrder"
+                       type="number" value="1"
+                       data-fv-trigger="blur">
+            </div>
+        </div>
+        <div class="form-group clearfix margin-top-15">
+            <label class="col-md-2 col-sm-2 col-xs-12 control-label">Kích hoạt</label>
+            <div class="col-md-10 col-sm-10 col-xs-12">
+                <input bs-switch
+                       ng-model="vm.cauHinhChung.isActive"
+                       type="checkbox"
+                       switch-on-text="<i class='fa fa-check' aria-hidden='true'></i>"
+                       switch-on-color="success"
+                       switch-off-text="<i class='fa fa-times' aria-hidden='true'></i>"
+                       ng-true-value=true
+                       ng-false-value=false>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" button-busy="vm.saving" busy-text="@L("SavingWithThreeDot")" class="btn green-meadow" ng-click="vm.save()"><i class="fa fa-save"></i> <span>@L("Save")</span></button>
+        <button ng-disabled="vm.saving" type="button" class="btn red" ng-click="vm.cancel()"><i class="glyphicon glyphicon-remove"></i>@L("Cancel")</button>
+    </div>
+</div>

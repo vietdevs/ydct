@@ -1,0 +1,130 @@
+﻿
+<style>
+    .table > tbody > tr > td {
+        vertical-align: middle;
+    }
+
+    .table > thead > tr > th {
+        vertical-align: middle;
+    }
+</style>
+<div class="portlet light bordered" id="FrmThongTinHoSo" name="FrmThongTinHoSo">
+    <div class="row" style="margin-top:15px;">
+        <div class="col-md-6 form-group">
+            <label class="text-bold">Ngày đề nghị</label><span class="font-red">*</span>
+            <input kendo-date-picker
+                   masked-date-picker
+                   name="ngayDeNghi"
+                   k-max="vm.now"
+                   class="form-control"
+                   k-ng-model="vm.hoso.ngayDeNghi"
+                   k-format="'dd/MM/yyyy'"
+                   style="width:100%">
+            <check-validate-empty datacheck="vm.hoso.ngayDeNghi"></check-validate-empty>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 form-group">
+            <label class="text-bold">Họ và tên</label><span class="font-red">*</span>
+            <input id="tenCoSoNhapKhau"
+                   type="text"
+                   onfocus="onFocusElei(this)"
+                   name="hoTenNguoiDeNghi"
+                   class="form-control"
+                   ng-model="vm.hoso.hoTenNguoiDeNghi"
+                   placeholder="Tên người đề nghị"
+                   maxlength="500">
+            <check-validate-empty datacheck="vm.hoso.hoTenNguoiDeNghi"></check-validate-empty>
+        </div>
+        <div class="col-md-6 form-group">
+            <label class="text-bold">Ngày sinh</label><span class="font-red">*</span>
+            <input kendo-date-picker
+                   masked-date-picker
+                   name="ngaySinh"
+                   k-max="vm.now"
+                   type="text"
+                   class="form-control"
+                   k-ng-model="vm.hoso.ngaySinh"
+                   k-format="'dd/MM/yyyy'"
+                   style="width:100%">
+            <check-validate-empty datacheck="vm.hoso.ngaySinh"></check-validate-empty>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 form-group">
+            <label class="text-bold">Địa chỉ cơ trú</label><span class="font-red">*</span>
+            <input type="text" 
+                   name="diachicutru"
+                   class="form-control"
+                   placeholder="Địa chỉ cư trú"
+                   ng-model="vm.hoso.diaChiCuTru" />
+            <check-validate-empty datacheck="vm.hoso.diaChiCuTru"></check-validate-empty>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 form-group">
+            <label class="text-bold">Số giấy cá nhân</label><span class="font-red">*</span>
+            <input type="text" 
+                   name="soNhanBiet"
+                   class="form-control"
+                   placeholder="số CMT,số hộ chiếu, thẻ căn cước"
+                   ng-model="vm.hoso.maSoThue" 
+                   />
+            <check-validate-empty datacheck="vm.hoso.maSoThue"></check-validate-empty>
+        </div>
+        <div class="col-md-6 form-group">
+            <label class="text-bold">Ngày cấp</label><span class="font-red">*</span>
+            <input kendo-date-picker
+                   masked-date-picker
+                   type="text"
+                   name="ngayCap"
+                   class="form-control"
+                   k-max="vm.now"
+                   k-ng-model="vm.hoso.ngayCap"
+                   k-format="'dd/MM/yyyy'"
+                   style="width:100%">
+            <check-validate-empty datacheck="vm.hoso.ngayCap"></check-validate-empty>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 form-group">
+            <label class="text-bold">Nơi cấp</label><span class="font-red">*</span>
+            <input type="text" 
+                   name="soNhanBiet"
+                   class="form-control"
+                   placeholder="Nơi cấp"
+                   ng-model="vm.hoso.noiCap" />
+            <check-validate-empty datacheck="vm.hoso.noiCap"></check-validate-empty>
+        </div>
+        <div class="col-md-6 form-group">
+            <label class="text-bold">Điện thoại</label><span class="font-red">*</span>
+            <input type="text" 
+                   name="dienThoaiNguoiDeNghi"
+                   class="form-control"
+                   placeholder="Điện thoại"
+                   ng-model="vm.hoso.dienThoaiNguoiDeNghi" />
+            <check-validate-empty datacheck="vm.hoso.dienThoaiNguoiDeNghi"></check-validate-empty>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 form-group">
+            <label class="text-bold">Email</label>
+            <input type="text"
+                   name="emailNguoiDeNghi"
+                   class="form-control"
+                   placeholder="email"
+                   ng-model="vm.hoso.emailNguoiDeNghi"
+                   >
+        </div>
+        <div class="col-md-6 form-group">
+            <label class="text-bold">Văn bằng chuyên môn</label><span class="font-red">*</span>
+            <input kendo-drop-down-list
+                   name="vanBangChuyenMon"
+                   class="form-control"
+                   k-options="vm.vanBangOptions"
+                   ng-model="vm.hoso.vanBangChuyenMon"
+                   style="width:100%">
+            <check-validate-empty datacheck="vm.hoso.vanBangChuyenMon"></check-validate-empty>
+        </div>
+    </div>
+</div>

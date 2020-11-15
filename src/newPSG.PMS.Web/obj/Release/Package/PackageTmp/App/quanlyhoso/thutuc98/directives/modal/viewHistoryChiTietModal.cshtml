@@ -1,0 +1,135 @@
+﻿@using Abp.Authorization.Users
+<div>
+    <div id="historyModal" novalidate class="form-validation">
+        <div class="modal-header">
+            <h4 class="modal-title text-center text-uppercase">
+                Xem chi tiết lịch sử
+                <button type="button" class="close" ng-click="vm.cancel()" aria-hidden="true"></button>
+            </h4>
+        </div>
+        <div class="modal-body">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="hoan-tat-thanh-toan">
+                        <div class="panel panel-default order-success">
+                            <div class="panel-body div-second">
+                                <div class="panel panel-warning customer-info">
+                                    <div class="form-body row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <strong>Ngày xử lý: </strong>
+                                                <text>{{vm.itemYKien.creationTime | date :  "dd/MM/yyyy HH:mm:ss"}}</text>
+                                            </div>
+                                            <div class="form-group">
+                                                <strong>Người xử lý: </strong>
+                                                <text>{{vm.itemYKien.nguoiXuLy}}</text>
+                                            </div>
+                                            <div class="form-group">
+                                                <strong>Hành động xử lý: </strong>
+                                                <text>{{vm.itemYKien.hanhDongXuLy}}</text>
+                                            </div>
+                                            <div class="form-group" ng-if="vm.itemYKien.noiDungYKien">
+                                                <strong>Ý kiến: </strong>
+                                                <p ng-bind-html="vm.itemYKien.noiDungYKien" style="margin-top: 5px;"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--Chuyên viên được phân công-->
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group" ng-if="vm.itemYKien.donViXuLy == 4">
+                                                <strong>Chuyên viên thụ lý được phân công: </strong><text>{{vm.itemYKien.strTenChuyenVienThuLy}}</text>
+                                            </div>
+                                            <div class="form-group" style="display: none">
+                                                <strong>Chuyên viên phối hợp được phân công: </strong><text>{{vm.itemYKien.strTenChuyenVienPhoiHop}}</text>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--Chuyên viên được phân công-->
+                                    <!--Chuyên viên thẩm định-->
+                                    <div ng-if="vm.itemYKien.donViXuLy == 10">
+                                        <div class="form-group" ng-if="vm.itemYKien.isChuyenNhanh == 1">
+                                            <strong>Lý do chuyển nhanh: </strong>
+                                            <p ng-bind-html="vm.itemYKien.lyDoChuyenNhanh" style="margin-top: 5px;"></p>
+                                        </div>
+                                        <div class="form-group" ng-show="vm.itemYKien.hoSoIsDat==false && (vm.itemYKien.isSuaCV==true || vm.itemYKien.noiDungCV != null)">
+                                            <strong>Nội dung công văn:</strong>
+                                            <hr style="margin:5px;" />
+                                            <div class="form-body">
+                                                <div class="panel">
+                                                    <div ng-bind-html="vm.itemYKien.noiDungCV"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--Chuyên viên thẩm định-->
+                                    <!--Chuyên viên tổng hợp-->
+                                    <div ng-if="vm.itemYKien.donViXuLy == 12">
+                                        <div class="form-group" ng-if="vm.itemYKien.isChuyenNhanh == 1">
+                                            <strong>Lý do chuyển nhanh: </strong>
+                                            <p ng-bind-html="vm.itemYKien.lyDoChuyenNhanh" style="margin-top: 5px;"></p>
+                                        </div>
+                                        <div>
+                                            <strong>Kết quả hồ sơ: </strong>
+                                            <span ng-show="vm.itemYKien.hoSoIsDat==true" class="label label-success text-center">Hồ sơ đạt</span>
+                                            <span ng-show="vm.itemYKien.hoSoIsDat==false" class="label label-danger text-center">Hồ sơ không đạt</span>
+                                        </div>
+                                        <div class="form-group" ng-show="vm.itemYKien.hoSoIsDat==false && (vm.itemYKien.isSuaCV==true || vm.itemYKien.noiDungCV != null)">
+                                            <strong>Nội dung sửa công văn:</strong>
+                                            <hr style="margin:5px;" />
+                                            <div class="form-body">
+                                                <div class="panel">
+                                                    <div ng-bind-html="vm.itemYKien.noiDungCV"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--Chuyên viên tổng hợp-->
+                                    <!--Phó phòng duyệt-->
+                                    <div ng-if="vm.itemYKien.donViXuLy == 13">
+                                        <div class="form-group">
+                                            <strong>Kết quả hồ sơ: </strong>
+                                            <span ng-show="vm.itemYKien.hoSoIsDat==true" class="label label-success text-center">Hồ sơ đạt</span>
+                                            <span ng-show="vm.itemYKien.hoSoIsDat==false" class="label label-danger text-center">Hồ sơ không đạt</span>
+                                        </div>
+                                        <div class="form-group" ng-show="vm.itemYKien.hoSoIsDat==false && (vm.itemYKien.isSuaCV==true || vm.itemYKien.noiDungCV != null)">
+                                            <strong>Nội dung sửa công văn:</strong>
+                                            <hr style="margin:5px;" />
+                                            <div class="form-body">
+                                                <div class="panel">
+                                                    <div ng-bind-html="vm.itemYKien.noiDungCV"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--Phó phòng duyệt-->
+                                    <!--Trưởng phòng duyệt-->
+                                    <div ng-if="vm.itemYKien.donViXuLy == 5">
+                                        <div class="form-group">
+                                            <strong>Kết quả hồ sơ: </strong>
+                                            <span ng-show="vm.itemYKien.hoSoIsDat==true" class="label label-success text-center">Hồ sơ đạt</span>
+                                            <span ng-show="vm.itemYKien.hoSoIsDat==false" class="label label-danger text-center">Hồ sơ không đạt</span>
+                                        </div>
+                                        <div class="form-group" ng-show="vm.itemYKien.hoSoIsDat==false && (vm.itemYKien.isSuaCV==true || vm.itemYKien.noiDungCV != null)">
+                                            <strong>Nội dung sửa công văn:</strong>
+                                            <hr style="margin:5px;" />
+                                            <div class="form-body">
+                                                <div class="panel">
+                                                    <div ng-bind-html="vm.itemYKien.noiDungCV"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--Trưởng phòng duyệt-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button ng-disabled="vm.saving" type="button" class="btn red" ng-click="vm.cancel()"><em class="glyphicon glyphicon-remove"></em>@L("Cancel")</button>
+    </div>
+</div>

@@ -1,0 +1,154 @@
+﻿@using newPSG.PMS.Web.Navigation
+@{
+    ViewBag.CurrentPageName = PageNames.Frontend.Tracuu;
+}
+
+<style>
+    .btn-blue {
+        background: #4281c5;
+        color: white;
+    }
+</style>
+
+<div class="bread-crumb bg-blue-steel">
+    <div class="bread-crumb-item">
+        <div class="container">
+            <ul class="page-breadcrumb breadcrumb">
+                <li>
+                    <a href="@Url.Action("Index", "Home")">Trang chủ</a>
+                </li>
+                <li>
+                    <span class="active">Tra cứu</span>
+                </li>
+                <li>
+                    <span class="active">@ViewBag.TenThuTuc</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div ng-controller="tracuubase as vm">
+    <span style="display:none" id="tenThuTuc">@ViewBag.TenThuTucDirective</span>
+
+    @{
+        if (ViewBag.Url.Contains("danang."))
+        {
+            <div compile="vm.dirTraCuu"></div>
+        }
+        else if (ViewBag.Url.Contains("dongnai."))
+        {
+            <div ng-init="vm.tenantName = 'dongnai'"></div>
+            <div compile="vm.dirTraCuu"></div>
+        }
+        else if (ViewBag.Url.Contains("hanoi."))
+        {
+            <div ng-init="vm.tenantName = 'hanoi'"></div>
+            <div compile="vm.dirTraCuu"></div>
+        }
+        else if (ViewBag.Url.Contains("laocai."))
+        {
+            <div ng-init="vm.tenantName = 'laocai'"></div>
+            <div compile="vm.dirTraCuu"></div>
+        }
+        else if (ViewBag.Url.Contains("vinhphuc."))
+        {
+            <div ng-init="vm.tenantName = 'vinhphuc'"></div>
+            <div compile="vm.dirTraCuu"></div>
+        }
+        else
+        {
+            <div class="search-procedure header-bottom">
+                <div class="search-control">
+                    <div class="container">
+                        <div class="row">
+                            <form action="/" method="post">
+                                <div class="input-group">
+                                    <input type="search" class="form-control">
+                                    <span class="input-group-btn">
+                                        <button class="btn " type="button">
+                                            <span class="glyphicon glyphicon-search" aria-hidden="true">
+                                            </span> Search!
+                                        </button>
+                                    </span>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="search-resul mt-50">
+                    <div class="container">
+                        <div class="row">
+                            <span>Tìm thấy <strong class="text-success">8228</strong> kết quả</span>
+                        </div>
+                        <div class="row">
+                            <div class="mt-30">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="row">
+                                                <div class="col-md-9">
+                                                    <h5 class="card-title">Thực phẩm bảo vệ sức khỏe ENZYME SANOFA</h5>
+                                                </div>
+                                                <div class="col-md-3 text-right">
+                                                    <button href="#" class="btn btn-outline-success"><i class="fa fa-eye"></i> Xem bản công bố</button>
+                                                </div>
+                                            </div>
+                                            <p class="card-text font-weight-bold">CÔNG TY TNHH THƯƠNG MẠI QUỐC TẾ SANOFA FRANCE</p>
+                                            <p class="card-text"><span class="font-weight-bold">Địa chỉ:</span> Số nhà 04, TT38 Khu đô thị Văn Phú, Phường Phú La, Quận Hà Đông, Thành phố Hà Nội, Việt Nam</p>
+                                            <p class="card-text"><span class="font-weight-bold">Nhóm sản phẩm:</span> Thực phẩm bảo vệ sức khỏe</p>
+                                            <div class="row">
+                                                <div class="col-md-4"><p class="card-text"><span class="font-weight-bold">Ngày công bố:</span> 06/05/2019</p></div>
+                                                <div class="col-md-4"><p class="card-text"><span class="font-weight-bold">Mã hồ sơ:</span> 19.03.27.30002.DKCB</p></div>
+                                                <div class="col-md-4"><p class="card-text"><span class="font-weight-bold">Số tiếp nhận:</span> 4772/2019/ĐKSP</p></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-30">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="row">
+                                                <div class="col-md-9">
+                                                    <h5 class="card-title">Thực phẩm bảo vệ sức khỏe ENZYME SANOFA</h5>
+                                                </div>
+                                                <div class="col-md-3 text-right">
+                                                    <button href="#" class="btn btn-outline-success"><i class="fa fa-eye"></i> Xem bản công bố</button>
+                                                </div>
+                                            </div>
+                                            <p class="card-text font-weight-bold">CÔNG TY TNHH THƯƠNG MẠI QUỐC TẾ SANOFA FRANCE</p>
+                                            <p class="card-text"><span class="font-weight-bold">Địa chỉ:</span> Số nhà 04, TT38 Khu đô thị Văn Phú, Phường Phú La, Quận Hà Đông, Thành phố Hà Nội, Việt Nam</p>
+                                            <p class="card-text"><span class="font-weight-bold">Nhóm sản phẩm:</span> Thực phẩm bảo vệ sức khỏe</p>
+                                            <div class="row">
+                                                <div class="col-md-4"><p class="card-text"><span class="font-weight-bold">Ngày công bố:</span> 06/05/2019</p></div>
+                                                <div class="col-md-4"><p class="card-text"><span class="font-weight-bold">Mã hồ sơ:</span> 19.03.27.30002.DKCB</p></div>
+                                                <div class="col-md-4"><p class="card-text"><span class="font-weight-bold">Số tiếp nhận:</span> 4772/2019/ĐKSP</p></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="mt-30">
+                                <nav aria-label="Page navigation">
+                                    <ul class="pagination">
+                                        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        }
+    }
+</div>
+

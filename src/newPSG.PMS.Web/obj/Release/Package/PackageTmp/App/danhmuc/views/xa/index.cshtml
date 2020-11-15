@@ -1,0 +1,70 @@
+﻿<div class="danhsach ng-scope" ng-controller="danhmuc.views.xa.index as vm">
+    <div class="portlet light bordered ng-isolate-scope">
+        <div class="portlet-title">
+            <div class="caption font-green-meadow">
+                <i class="icon-list font-green-meadow"></i>
+                <span class="caption-subject bold uppercase">Danh sách xã</span>
+            </div>
+            <div class="actions">
+                <button class="btn green-meadow" ng-click="vm.taoXa()"><i class="fa fa-plus"></i> Thêm xã</button>
+            </div>
+        </div>
+        <div class="portlet-body">
+            <div class="row form-group">
+                <div class="col-lg-6 col-md-6 col-xs-12">
+                    <div class="input-group">
+                        <input class="form-control ng-pristine ng-valid ng-empty ng-touched" name="Keyword" ng-model="vm.filter.Filter" enter-key="vm.getGridData()" placeholder="Nhập tên xã. Ấn Enter để tìm kiếm" type="text">
+                        <div class="input-group-btn" uib-dropdown auto-close="disabled">
+                            <button tabindex="-1" class="btn green-meadow" type="button" ng-click="vm.quickSearchHoSo()"><i class="fa fa-search"></i></button>
+                            <button id="button1" type="button" class="btn green-meadow dropdown-toggle" uib-dropdown-toggle><i class="fa fa-angle-down"></i></button>
+                            <div class="dropdown-menu theme-panel pull-right dropdown-custom" uib-dropdown-menu role="menu" aria-labelledby="button1">
+                                <div class="col-md-12">
+                                    <field>
+                                        <div class="row form-group">
+                                            <div class="col-md-6">
+                                                <label>Tỉnh/Thành Phố</label>
+                                                <input style="width: 100%"
+                                                       id="ddlTinh"
+                                                       kendo-drop-down-list
+                                                       name="ddlTinh"
+                                                       ng-model="vm.filter.tinhId"
+                                                       k-options="vm.tinhOptions"
+                                                       k-on-change="vm.changeTinh()"
+                                                       k-auto-bind="true"
+                                                       class="form-control" />
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label>Quận/Huyện</label>
+                                                <input style="width: 100%"
+                                                       id="ddlTinh"
+                                                       kendo-drop-down-list
+                                                       name="ddlTinh"
+                                                       ng-model="vm.filter.huyenId"
+                                                       k-options="vm.huyenOptions"
+                                                       k-on-change="vm.changeHuyen()"
+                                                       k-auto-bind="false"
+                                                       class="form-control" />
+                                            </div>
+                                        </div>
+                                        <div class="form-actions text-right">
+                                            <button class="btn green-meadow btn-sm" type="button" ng-click="vm.getGridData()"><i class="fa fa-search"></i> Tìm kiếm</button>
+                                            <button class="btn default btn-sm" type="button" ng-click="vm.initGridHoSo()">Đặt lại</button>
+                                        </div>
+                                    </field>
+                                </div>
+                            </div>
+                            <button class="btn default" type="button" ng-click="vm.initGridHoSo()"><i class="fa fa-repeat"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                </div>
+            </div>
+        </div>
+        <div class="portlet-body">
+            <div busy-if="vm.loading">
+                <div id="gdXa" k-serverPaging="true" k-pageSize="5" k-pageable='{"refresh": true, "pageSizes": [ 10,25,50,100], messages: {empty: "Không có dữ liệu", display: "Hiển thị từ {0} đến {1}/{2} bản ghi",itemsPerPage: "Bản ghi hiển thị"}}' kendo-grid k-data-source='vm.xaGridOptions' k-columns="vm.xaColumns"></div>
+            </div>
+        </div>
+    </div>
+</div>

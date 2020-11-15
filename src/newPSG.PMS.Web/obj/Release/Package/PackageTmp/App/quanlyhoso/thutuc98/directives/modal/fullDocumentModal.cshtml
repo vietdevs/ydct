@@ -1,0 +1,18 @@
+﻿@using Abp.Authorization.Users
+<div>
+    <div class="modal-header">
+        <h4 class="modal-title text-center text-uppercase">
+            {{vm.title}}
+            <button type="button" class="close" ng-click="vm.cancel()" aria-hidden="true"></button>
+        </h4>
+    </div>
+    <div class="modal-body">
+        <div class="container-fluid">
+            <div class="row" style="height: 700px" ng-bind-html="vm.dataHtml">
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button ng-disabled="vm.saving" type="button" class="btn red" ng-click="vm.cancel()"><em class="glyphicon glyphicon-remove"></em>@L("Cancel")</button>
+    </div>
+</div>

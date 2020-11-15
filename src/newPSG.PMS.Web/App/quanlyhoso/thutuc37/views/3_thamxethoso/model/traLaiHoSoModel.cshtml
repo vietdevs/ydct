@@ -1,0 +1,36 @@
+﻿@using newPSG.PMS.Localization
+<style>
+    .attp-xem-ho-so button {
+        margin-bottom: 10px;
+    }
+
+    .attp-xem-ho-so .tabbable-line > .tab-content {
+        padding-top: 10px !important;
+    }
+
+    .modal-header {
+        background-color: #4c87b9;
+    }
+</style>
+<div class="attp-xem-ho-so">
+    <div class="modal-header">
+        <h4 class="modal-title text-center text-uppercase">
+            Từ chối tiếp nhận hồ sơ
+            <button type="button" class="close" ng-click="vm.cancel()" aria-hidden="true"></button>
+        </h4>
+    </div>
+    <div id="FormLapDoanThamDinh" class="modal-body">
+        <div class="row">
+            <div class="col-md-12">
+                <label class="text-bold">Lý do trả lại: </label><span class="font-red">*</span>
+                <textarea type="text" name="lydotralai" ng-model="vm.lyDoTraLai" class="form-control" rows="5"></textarea>
+            </div>
+        </div>
+        
+    </div>
+    <div class="modal-footer">
+        
+        <button ng-disabled="vm.saving" type="button" class="btn blue" ng-click="vm.save()" style="margin-left:10px;margin-bottom:0"><em class="fa fa-save"></em>Trả lại hồ sơ</button>
+        <button ng-disabled="vm.saving" type="button" class="btn red" ng-click="vm.cancel()"><em class="glyphicon glyphicon-remove"></em>@L("Cancel")</button>
+    </div>
+</div>

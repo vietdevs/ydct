@@ -1,0 +1,79 @@
+﻿@model IEnumerable<newPSG.PMS.EntityDB.ThongBao>
+@using newPSG.PMS.Web.Navigation
+@{
+    ViewBag.CurrentPageName = PageNames.Frontend.Baocao;
+}
+
+@section Styles{
+    <style>
+        .events-wrapper .event-post-full .event-post-content {
+            width: 100%;
+        }
+    </style>
+}
+
+<section class="wf100 subheader">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                @*<h3 class="stitle text-center" style="margin: 0; color: #fff">
+                    Liên hệ
+                </h3>*@
+                <ul>
+                    <li> <a href="#">Home</a> </li>
+                    <li> <a href="Lienhe"> Thông báo  </a> </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END SIDEBAR & CONTENT -->
+
+<div class="main-content">
+    <div class="events-wrapper events-listing">
+        <div class="container">
+           
+            @foreach (var item in Model)
+            {
+                <div class="event-post-full">
+                    <div class="event-post-content">
+                        <div class="event-post-txt clearfix">
+
+                            <h3><a href="/thong-bao/@item.DuongDan">@item.TenThongBao</a></h3>
+                            <div class="event-post-img">
+                                <img src="@item.Anh" alt="Alternate Text" />
+                            </div>
+                            <div>
+                                <ul class="event-meta">
+                                    <li><i class="fa fa-clock-o"></i>  @item.CreationTime.ToString()</li>
+                                    @*<li><i class="far fa-envelope"></i> hotrodoanhnghiep.bqlattp@vfa.gov.vn</li>*@
+                                </ul>
+                                <p>
+                                    @item.MoTa
+                                </p>
+
+                                <div class="event-post-loc"> <a href="@item.TaiLieu" style="float: left; cursor: pointer ;border-left: none; padding: 0 0px;"><i class="fas fa-download"></i>Tải mẫu tài liệu</a> @*<a href="@item.TaiLieu" target="_blank"><i class="fas fa-arrow-right"></i></a>*@ </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <hr />
+            }
+
+            @*<div class="site-pagination">
+            <nav aria-label="Page navigation">
+                <ul class="pagination">
+                    <li> <a href="#" aria-label="Previous"> <span aria-hidden="true">«</span> </a> </li>
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li class="active"><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li> <a href="#" aria-label="Next"> <span aria-hidden="true">»</span> </a> </li>
+                </ul>
+            </nav>
+        </div>*@
+        </div>
+    </div>
+</div>

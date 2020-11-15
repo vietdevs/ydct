@@ -1,0 +1,91 @@
+﻿<div class="portlet light">
+    <div class="portlet-title">
+        <div class="caption font-green-jungle uppercase">
+            <em class="fa fa-pencil font-blue-steel"></em>Thẩm định hồ sơ - {{vm.dataItem.tenSanPham}} [ {{vm.dataItem.soDangKy}} ]
+            <quanlyhoso.thutuc99.directives.util.boxngayquahan dataitem="vm.dataItem"/>
+        </div>
+        <div class="tools">
+            <div class="input-group" style="float: left;margin-right: 10px;">
+                <div class="" uib-dropdown auto-close="disabled" is-open="vm.dropdownSearchIsOpen">
+                    <button id="button1" type="button" class="btn btn-sm btn-success dropdown-toggle" uib-dropdown-toggle>Xem lịch sử <em class="fa fa-sm fa-angle-down" style="font-size: 15px;font-weight: bolder; margin-left: 6px;"></em></button>
+                    <div class="dropdown-menu theme-panel pull-right dropdown-custom advance-history" uib-dropdown-menu role="menu" aria-labelledby="button1">
+                        <div class="col-md-12">
+                            <quanlyhoso.thutuc99.directives.viewhistorydrop hosoid="vm.dataItem.id" />
+                        </div>
+                    </div>
+                    <a ng-click="vm.closeModal()"><em class="glyphicon glyphicon-remove font-green-meadow"></em></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="portlet-body">
+        <div class="row">
+            <div class="col-md-6">
+                <div>
+                    <quanlyhoso.thutuc99.directives.viewtailieu hoso="vm.dataItem" />
+                </div>
+            </div>
+            <div class="col-md-6" id="ThamDinhHoSo">
+                <div>
+                    <uib-tabset class="tab-container tabbable-custom margin-bottom-30">
+                        <uib-tab heading="Biên bản thẩm định" class="bold uppercase">
+                            <div class="row" style="margin-left: -5px;margin-right: -5px;">
+                                <div class="col-md-12 right" style="padding-top:10px; padding-bottom:10px;">
+                                    <a class="btn btn-sm btn-default" ng-click="vm.xemBienBanThamDinh()">
+                                        <em class="fa fa-eye-slash"></em>
+                                        <text>Xem biên bản thẩm định</text>
+                                    </a>
+                                </div>
+                                <div class="col-md-12 form-group">
+                                    <div class="md-radio-inline">
+                                        <div class="md-radio has-success">
+                                            <input type="radio" id="hoSoIsDat_Radio" name="hoSoIsDat_Radio" class="md-radiobtn" ng-model="vm.duyetHoSo.isThamXetDat" data-ng-value="true">
+                                            <label for="hoSoIsDat_Radio">
+                                                <span class="inc"></span>
+                                                <span class="check"></span>
+                                                <span class="box"></span> <strong>Hồ sơ đạt</strong>
+                                            </label>
+                                        </div>
+                                        <div class="md-radio has-error">
+                                            <input type="radio" id="hoSoIsDat_Radio1" name="hoSoIsDat_Radio1" class="md-radiobtn" ng-model="vm.duyetHoSo.isThamXetDat" data-ng-value="false">
+                                            <label for="hoSoIsDat_Radio1">
+                                                <span class="inc"></span>
+                                                <span class="check"></span>
+                                                <span class="box"></span> <strong>Hồ sơ không đạt</strong>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="text-bold">Ý kiến </label><span ng-show="vm.duyetHoSo.isThamXetDat == false" class="font-red">*</span>
+                                        <textarea id="diaChi"
+                                                  type="text"
+                                                  name="diaChi"
+                                                  class="form-control"
+                                                  ng-model="vm.duyetHoSo.yKienBoSung"
+                                                  placeholder="Địa chỉ trụ sở"
+                                                  rows="2"
+                                                  maxlength="500"></textarea>
+                                        <check-validate-empty ng-if="vm.duyetHoSo.isThamXetDat == false" datacheck="vm.duyetHoSo.yKienBoSung"></check-validate-empty>
+                                    </div>
+                                </div>
+                                <div class="portlet-body form">
+                                    <div class="form-actions right" style="padding-right:15px;">
+                                        <button type="button" button-busy="vm.saving" busy-text="Đang lưu..." class="btn btn-sm green" ng-click="vm.saveThamDinhHoSo()">
+                                            <em class="fa fa-save"></em> Lưu lại
+                                        </button>
+                                        <button type="button" button-busy="vm.saving" busy-text="Đang lưu..." class="btn green" ng-click="vm.chuyenThamDinhHoSo()">
+                                            <em class="fa fa-arrow-up"></em> Chuyển hồ sơ 
+                                        </button>
+                                        <button type="button" class="btn red" ng-click="vm.closeModal()"><em class="fa fa-close"></em> Đóng</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </uib-tab>
+                    </uib-tabset>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,162 @@
+﻿@using newPSG.PMS.Localization
+
+
+<div class="danhsach" ng-controller="quanlyhoso.thutuc99.views.phongbanphancong.index as vm">
+    <div class="portlet light bordered" ng-show="vm.show_mode==null">
+        <div class="portlet-title">
+            <div class="caption font-green-soft">
+                <em class="icon-list font-green-soft"></em>
+                <span class="caption-subject bold uppercase">Danh sách hồ sơ cần phân công</span>
+            </div>
+        </div>
+        <div class="portlet-body">
+            <quanlyhoso.thutuc99.directives.gridhoso form="vm.form"
+                                                     filterobj="vm.filter"
+                                                     phongbanphancong="vm.openPhongBanPhanCong"
+                                                     loadcheckall="vm.updateArrCheckbox" />
+        </div>
+    </div>
+
+    <!-- MODAL -->
+    <div class="modal fade" id="ModalPhongBanPhanCong" data-backdrop="static" data-keyboard="false" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" style="width:80%;">
+            <form name="exampleForm" role="form" class="form-validation ng-pristine ng-invalid ng-invalid-required ng-valid-maxlength">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">
+                            <span class="ng-scope">{{vm.phanCongInfo.title}}</span>
+                        </h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th style="width:30px">STT</th>
+                                            <th>Chuyên viên</th>
+                                            <th>
+                                                Số hồ sơ đang thụ lý
+                                            </th>
+                                            <th>
+                                                Số hồ sơ đang hỗ trợ
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="item in vm.listThongKePhanCong">
+                                            <td>{{$index + 1}}</td>
+                                            <td>{{item.tenChuyenVien}}</td>
+                                            <td>{{item.sumChuyenVienThuLy}}</td>
+                                            <td>
+                                                {{item.sumChuyenVienPhoiHop}}
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="col-md-6">
+                                <div id="boxInfo">
+                                    <div ng-show="1==0" class="row">
+                                        <div class="col-md-12 margin-bottom-10">
+                                            <div class="form-group">
+                                                <div class="col-md-3">
+                                                    <label class="text-bold">Trưởng phòng</label> <span class="font-red">*</span>
+                                                </div>
+
+                                                <div class="col-md-9">
+                                                    <select class="form-control" ng-disabled="vm.truongPhongId!=null" style="width:98%"
+                                                            ng-options="obj.id as obj.name for obj in vm.listTruongPhong"
+                                                            ng-model="vm.phanCongInfo.truongPhongId">
+                                                        <option value="">Chọn ...</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr />
+                                    <div class="row">
+                                        <div class="col-md-12 margin-bottom-10">
+                                            <div class="form-group">
+                                                <div class="col-md-3">
+                                                    <label class="text-bold">Chuyên viên thụ lý</label> <span class="font-red">*</span>
+                                                </div>
+                                                <div class="col-md-9">
+                                                    <select id="ddlCv1" style="width:98%"
+                                                            kendo-drop-down-list
+                                                            ng-model="vm.phanCongInfo.chuyenVienThuLyId"
+                                                            ng-change="vm.cv1OnChange()"
+                                                            k-options="vm.cv1Options"
+                                                            class="form-control"></select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12 margin-bottom-10">
+                                            <div class="form-group">
+                                                <div class="col-md-3">
+                                                    <label class="text-bold">Chuyên viên phối hợp</label> <span class="font-red">*</span>
+                                                </div>
+
+                                                <div class="col-md-9">
+                                                    <select id="ddlCv2" style="width:98%"
+                                                            kendo-drop-down-list
+                                                            ng-model="vm.phanCongInfo.chuyenVienPhoiHopId"
+                                                            ng-disabled="vm.phanCongInfo.chuyenVienThuLyId == null"
+                                                            k-options="vm.cv2Options"
+                                                            class="form-control"></select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr />
+                                    <div class="row">
+                                        <div class="col-md-12 margin-bottom-10">
+                                            <div class="form-group">
+                                                <div class="col-md-3">
+                                                    <label class="text-bold">Lãnh đạo phòng phụ trách <span class="font-red">*</span></label>
+                                                </div>
+                                                <div class="col-md-9">
+                                                    <div class="mt-radio-inline">
+                                                        <label class="mt-radio">
+                                                            <input ng-model="vm.phanCongInfo.isChuyenNhanh" data-ng-value="true" type="radio"> Trưởng phòng
+                                                            <span></span>
+                                                        </label>
+                                                        <label class="mt-radio">
+                                                            <input ng-model="vm.phanCongInfo.isChuyenNhanh" data-ng-value="false" type="radio"> Phó phòng
+                                                            <span></span>
+                                                        </label>
+                                                    </div>
+                                                    <div ng-show="vm.phanCongInfo.isChuyenNhanh==false">
+                                                        <label class="text-bold">Chọn phó phòng</label> <span class="font-red">*</span>
+                                                        <select class="form-control input-medium"
+                                                                ng-options="obj.id as obj.name for obj in vm.listPhoPhong"
+                                                                ng-model="vm.phanCongInfo.phoPhongId">
+                                                            <option value="">Chọn</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="margin-hor-5" />
+                                <p class="text-right">
+                                    <button type="submit" button-busy="vm.saving" busy-text="Đang lưu..." class="btn btn-primary blue ng-isolate-scope"
+                                            ng-click="vm.luuPhongBanPhanCong()"
+                                            ng-disabled="exampleForm.$invalid">
+                                        <em class="fa fa-save"></em> <span>Phân công</span>
+                                    </button>
+                                    <button ng-disabled="vm.saving" type="button" class="btn btn-default" ng-click="vm.closeModal()">Đóng</button>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- END MODAL -->
+</div>

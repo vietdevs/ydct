@@ -1,0 +1,62 @@
+﻿@model newPSG.PMS.EntityDB.BoThuTuc
+<section class="wf100 subheader">
+    <div class="container">
+        <ul>
+            <li> <a href="/">Trang chủ</a> </li>
+            <li> <a href="#">Chi tiết thủ tục</a> </li>
+        </ul>
+    </div>
+</section>
+
+<div class="main-content thutuc-content">
+    @*<span style="display:none" id="tenThuTuc">@ViewBag.TenThuTucDirective</span>*@
+    <div class="events-wrapper events-listing" style="padding-bottom: 0;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="stitle text-center">
+                        @Model.TenThuTuc
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="wf100 p75 recent-events events-wrapper events-listing ">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="recent-events">
+                        @*<h2 class="stitle">Top 10 hồ sơ được cấp giấy mới nhất</h2>*@
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#tab1" aria-controls="tab1" role="tab" data-toggle="tab">Thông tin chung</a></li>
+                            <li role="presentation"><a href="#tab2" aria-controls="tab2" role="tab" data-toggle="tab">Trình tự thực hiện</a></li>
+                            <li role="presentation"><a href="#tab3" aria-controls="tab3" role="tab" data-toggle="tab">Thành phần hồ sơ</a></li>
+                            <li role="presentation"><a href="#tab4" aria-controls="tab4" role="tab" data-toggle="tab">Yêu cầu, điều kiện</a></li>
+                        </ul>
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="tab1">
+                                @Html.Raw(Model.ThongTinChung)
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="tab2">
+                                @Html.Raw(Model.TrinhTuThucHien)
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="tab3">
+                                @Html.Raw(Model.ThanhPhanHoSo)
+                            </div>
+                            <div role="tabpanel" class="tab-pane " id="tab4">
+                                @Html.Raw(Model.YeuCauDieuKien)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="tab-footer" style="margin-top: 20px;">
+                        <a href="#" class="btn btn-info">Nộp hồ sơ trực tuyến</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

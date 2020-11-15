@@ -1,0 +1,6 @@
+﻿@using newPSG.PMS.Localization
+
+<span class='qua-han bg-green' ng-if='vm.dataItem.soNgayQuaHan<=0'><em class='fa fa-clock-o'></em> {{vm.dataItem.strQuaHan}} (Hạn Trả Hồ Sơ: {{vm.dataItem.ngayHenTra | date:'dd/MM/yyyy'}})</span>
+<span class='qua-han bg-yellow-crusta' ng-if='vm.dataItem.soNgayQuaHan<=5 && vm.dataItem.soNgayQuaHan>0'><em class='fa fa-clock-o'></em> {{vm.dataItem.strQuaHan}} (Hạn Trả Hồ Sơ: {{vm.dataItem.ngayHenTra | date:'dd/MM/yyyy'}})</span>
+<span class='qua-han bg-red ' ng-if='vm.dataItem.soNgayQuaHan>5'><em class='fa fa-clock-o'></em> {{vm.dataItem.strQuaHan}} (Hạn Trả Hồ Sơ: {{vm.dataItem.ngayHenTra | date:'dd/MM/yyyy'}})</span>
+

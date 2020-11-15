@@ -1,0 +1,87 @@
+﻿<div id="xaCreateOrEditForm">
+    <div class="modal-header">
+        <h4 class="modal-title">
+            <span ng-if="!vm.xa.id">Tạo Xã Mới</span>
+            <span ng-if="vm.xa.id">Sửa Xã</span>
+            <button type="button" class="close" ng-click="vm.cancel()" aria-hidden="true"></button>
+        </h4>
+    </div>
+    <div class="modal-body">
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-9">
+                    <label>Tên Xã</label><span><span class="font-red">*</span></span>
+                    <input class="form-control"
+                           type="text"
+                           name="Ten"
+                           ng-model="vm.xa.ten"
+                           data-fv-notempty="true"
+                           data-fv-notempty-message="Không được để trống trường này"
+                           data-fv-trigger="blur" />
+                </div>
+                <div class="col-md-3">
+                    <label>Kích Hoạt</label><br />
+                    <input bs-switch
+                           ng-model="vm.xa.isActive"
+                           type="checkbox"
+                           switch-on-text="<i class='fa fa-check' aria-hidden='true'></i>"
+                           switch-on-color="success"
+                           switch-off-text="<i class='fa fa-times' aria-hidden='true'></i>"
+                           ng-true-value=true
+                           ng-false-value=false>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Mã Xã</label><span><span class="font-red">*</span></span>
+            <input class="form-control"
+                   type="number"
+                   name="MaXa"
+                   ng-model="vm.xa.niisId"
+                   data-fv-notempty="true"
+                   data-fv-notempty-message="Không được để trống trường này"
+                   data-fv-trigger="blur" />
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-6">
+                    <label>Tỉnh/Thành Phố</label><span class="font-red">*</span>
+                    <input style="width: 100%"
+                           id="ddlTinh"
+                           kendo-drop-down-list
+                           name="ddlTinh"
+                           ng-model="vm.xa.tinhId"
+                           k-options="vm.tinhOptions"
+                           k-on-change="vm.changeTinh()"
+                           data-fv-notempty="true"
+                           data-fv-notempty-message="Không được để trống trường này"
+                           data-fv-trigger="blur"
+                           k-auto-bind="true"
+                           class="form-control" />
+                </div>
+                <div class="col-md-6">
+                    <label>Quận/Huyện</label><span class="font-red">*</span>
+                    <input style="width: 100%"
+                           id="ddlHuyen"
+                           kendo-drop-down-list
+                           name="ddlHuyen"
+                           ng-model="vm.xa.huyenId"
+                           k-options="vm.huyenOptions"
+                           data-fv-notempty="true"
+                           data-fv-notempty-message="Không được để trống trường này"
+                           data-fv-trigger="blur"
+                           k-auto-bind="false"
+                           k-cascade-from="'ddlTinh'"
+                           k-cascade-from-field="'parentId'"
+                           class="form-control" />
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" button-busy="vm.saving" busy-text="@L("SavingWithThreeDot")" class="btn green-meadow" ng-click="vm.save()"><i class="fa fa-save"></i> <span>@L("Save")</span></button>
+        <button ng-disabled="vm.saving" type="button" class="btn red" ng-click="vm.cancel()"><i class="glyphicon glyphicon-remove"></i>@L("Cancel")</button>
+    </div>
+</div>

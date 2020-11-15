@@ -1,0 +1,215 @@
+﻿<div class="danhsach ng-scope" ng-controller="danhmuc.views.lichlamviec.index as vm">
+    @*-------------------------------------------List content-------------------------------------------*@
+    <div class="portlet light bordered ng-isolate-scope" ng-show="vm.show_mode==null">
+        <div class="portlet-title">
+            <div class="caption font-green-meadow">
+                <i class="icon-list font-green-meadow"></i>
+                <span class="caption-subject bold uppercase">Danh sách lịch làm việc</span>
+            </div>
+            <div class="actions">
+                <button class="btn green-meadow" ng-click="vm.taoLichLamViec()"><i class="fa fa-plus"></i> Thêm lịch làm việc</button>
+            </div>
+        </div>
+        <div class="portlet-body">
+            <div class="row form-group">
+                <div class="col-lg-6 col-md-6 col-xs-12">
+                    <div class="input-group">
+                        <input class="form-control ng-pristine ng-valid ng-empty ng-touched" name="Keyword" ng-model="vm.filter.Filter" enter-key="vm.getGridData()" placeholder="Nhập tên lịch. Ấn Enter để tìm kiếm" type="text">
+                        <div class="input-group-btn" uib-dropdown auto-close="disabled">
+                            <button tabindex="-1" class="btn green-meadow" type="button" ng-click="vm.getGridData()"><i class="fa fa-search"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                </div>
+            </div>
+        </div>
+        <div class="portlet-body">
+            <div busy-if="vm.loading">
+                <div id="gdlichLamViec" k-serverPaging="true" k-pageSize="5" k-pageable='{"refresh": true, "pageSizes": [ 10,25,50,100], messages: {empty: "Không có dữ liệu", display: "Hiển thị từ {0} đến {1}/{2} bản ghi",itemsPerPage: "Bản ghi hiển thị"}}' kendo-grid k-data-source='vm.lichLamViecGridOptions' k-columns="vm.lichLamViecColumns"></div>
+            </div>
+        </div>
+    </div>
+
+    @*-------------------------------------------Detail content-------------------------------------------*@
+    <div id="LichLamViecCreateOrEditForm" name="lichLamViecCreateOrEditForm" class="portlet light bordered" ng-show="vm.show_mode != null">
+        <div class="portlet-title">
+            <div class="caption font-green-meadow">
+                <i class="fa fa-plus font-green-meadow"></i>
+                <span class="caption-subject bold uppercase" ng-if="vm.lichlamviec.id == null">Thêm mới lịch làm việc</span>
+                <span class="caption-subject bold uppercase" ng-if="vm.lichlamviec.id != null">Chỉnh sửa lịch làm việc - <small class="font-green-meadow">{{vm.lichlamviec.tenLich}}</small></span>
+            </div>
+            <div class="actions">
+                <a href="javascript:void(0)" title="Đóng" ng-click="vm.openGridFormHS()"><i class="glyphicon glyphicon-remove"></i></a>
+            </div>
+        </div>
+        <div class="portlet-body">
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="form-group">
+                            <label for="exampleInputName2" class="text-bold">Tên lịch làm việc</label><span class="font-red">*</span>
+                            <input type="text" ng-model="vm.lichlamviec.tenLich" name="tenLich" class="form-control" placeholder="Tên lịch làm việc"
+                                   data-fv-notempty="true"
+                                   data-fv-notempty-message="Không được để trống trường này"
+                                   data-fv-trigger="blur">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <label>Ngày bắt đầu và kết thúc</label>
+                        <input date-range-picker
+                               type="text"
+                               class="form-control date-picker"
+                               ng-model="vm.ngayLamViecModel" />
+                    </div>
+                    <div class="col-md-1">
+                        <label>Kích Hoạt</label><br />
+                        <input bs-switch
+                               ng-model="vm.lichlamviec.isActive"
+                               type="checkbox"
+                               switch-on-text="<i class='fa fa-check' aria-hidden='true'></i>"
+                               switch-on-color="success"
+                               switch-off-text="<i class='fa fa-times' aria-hidden='true'></i>"
+                               ng-true-value=true
+                               ng-false-value=false />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-1">
+                        <label>Thứ hai</label><br />
+                        <input bs-switch
+                               ng-model="vm.lichlamviec.t2"
+                               type="checkbox"
+                               switch-on-text="<i class='fa fa-check' aria-hidden='true'></i>"
+                               switch-on-color="success"
+                               switch-off-text="<i class='fa fa-times' aria-hidden='true'></i>"
+                               data-fv-notempty="true"
+                               data-fv-notempty-message="Không được để trống trường này"
+                               ng-true-value=true
+                               ng-false-value=false />
+                    </div>
+                    <div class="col-md-1">
+                        <label>Thứ ba</label><br />
+                        <input bs-switch
+                               ng-model="vm.lichlamviec.t3"
+                               type="checkbox"
+                               switch-on-text="<i class='fa fa-check' aria-hidden='true'></i>"
+                               switch-on-color="success"
+                               switch-off-text="<i class='fa fa-times' aria-hidden='true'></i>"
+                               data-fv-notempty="true"
+                               data-fv-notempty-message="Không được để trống trường này"
+                               ng-true-value=true
+                               ng-false-value=false />
+                    </div>
+                    <div class="col-md-1">
+                        <label>Thứ tư</label><br />
+                        <input bs-switch
+                               ng-model="vm.lichlamviec.t4"
+                               type="checkbox"
+                               switch-on-text="<i class='fa fa-check' aria-hidden='true'></i>"
+                               switch-on-color="success"
+                               switch-off-text="<i class='fa fa-times' aria-hidden='true'></i>"
+                               data-fv-notempty="true"
+                               data-fv-notempty-message="Không được để trống trường này"
+                               ng-true-value=true
+                               ng-false-value=false />
+                    </div>
+                    <div class="col-md-1">
+                        <label>Thứ năm</label><br />
+                        <input bs-switch
+                               ng-model="vm.lichlamviec.t5"
+                               type="checkbox"
+                               switch-on-text="<i class='fa fa-check' aria-hidden='true'></i>"
+                               switch-on-color="success"
+                               switch-off-text="<i class='fa fa-times' aria-hidden='true'></i>"
+                               data-fv-notempty="true"
+                               data-fv-notempty-message="Không được để trống trường này"
+                               ng-true-value=true
+                               ng-false-value=false />
+                    </div>
+                    <div class="col-md-1">
+                        <label>Thứ sáu</label><br />
+                        <input bs-switch
+                               ng-model="vm.lichlamviec.t6"
+                               type="checkbox"
+                               switch-on-text="<i class='fa fa-check' aria-hidden='true'></i>"
+                               switch-on-color="success"
+                               switch-off-text="<i class='fa fa-times' aria-hidden='true'></i>"
+                               data-fv-notempty="true"
+                               data-fv-notempty-message="Không được để trống trường này"
+                               ng-true-value=true
+                               ng-false-value=false />
+                    </div>
+                    <div class="col-md-1">
+                        <label>Thứ bảy</label><br />
+                        <input bs-switch
+                               ng-model="vm.lichlamviec.t7"
+                               type="checkbox"
+                               switch-on-text="<i class='fa fa-check' aria-hidden='true'></i>"
+                               switch-on-color="success"
+                               switch-off-text="<i class='fa fa-times' aria-hidden='true'></i>"
+                               data-fv-notempty="true"
+                               data-fv-notempty-message="Không được để trống trường này"
+                               ng-true-value=true
+                               ng-false-value=false />
+                    </div>
+                    <div class="col-md-1">
+                        <label>Chủ nhật</label><br />
+                        <input bs-switch
+                               ng-model="vm.lichlamviec.cn"
+                               type="checkbox"
+                               switch-on-text="<i class='fa fa-check' aria-hidden='true'></i>"
+                               switch-on-color="success"
+                               switch-off-text="<i class='fa fa-times' aria-hidden='true'></i>"
+                               data-fv-notempty="true"
+                               data-fv-notempty-message="Không được để trống trường này"
+                               ng-true-value=true
+                               ng-false-value=false />
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" ng-show="vm.lichlamviec != null && vm.lichlamviec.id!=null">
+                <div class="row">
+                    <div class="portlet light bordered ng-isolate-scope">
+                        <div class="portlet-title">
+                            <div class="caption font-green-meadow">
+                                <i class="icon-list font-green-meadow"></i>
+                                <span class="caption-subject bold uppercase">Danh sách ngày nghỉ</span>
+                            </div>
+                            <div class="actions">
+                                <button class="btn green-meadow" ng-click="vm.taoNgayNghi()"><i class="fa fa-plus"></i> Thêm ngày nghỉ</button>
+                            </div>
+                        </div>
+                        <div class="portlet-body">
+                            <div class="row form-group">
+                                <div class="col-lg-6 col-md-6 col-xs-12">
+                                    <div class="input-group">
+                                        <input class="form-control ng-pristine ng-valid ng-empty ng-touched" name="Keyword" ng-model="vm.filterNgayNghi.Filter" enter-key="vm.getNgayNghiGridData()" placeholder="Nhập lý do nghỉ. Ấn Enter để tìm kiếm" type="text">
+                                        <div id="frmSearch" class="input-group-btn dropdown" uib-dropdown="" auto-close="disabled">
+                                            <button class="btn green-meadow" type="button" ng-click="vm.getNgayNghiGridData()"><i class="fa fa-search"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portlet-body">
+                        <div busy-if="vm.loadingNgayNghi">
+                            <div id="gdNgayNghi" k-serverPaging="true" k-pageSize="5" k-pageable='{"refresh": true, "pageSizes": [ 10,25,50,100], messages: {empty: "Không có dữ liệu", display: "Hiển thị từ {0} đến {1}/{2} bản ghi",itemsPerPage: "Bản ghi hiển thị"}}' kendo-grid k-data-source='vm.ngayNghiGridOptions' k-columns="vm.ngayNghiColumns"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="actions text-right">
+                    <button class="btn green-meadow" ng-click="vm.save()" button-busy="vm.saving" busy-text="@L("SavingWithThreeDot")"><i class="fa fa-save"></i> <text ng-show="vm.lichlamviec.id != null">Lưu chỉnh sửa</text> <text ng-show="vm.lichlamviec.id == null">Lưu</text></button>
+                    <button class="btn red" ng-click="vm.openGridFormHS()"><i class="glyphicon glyphicon-remove"></i> Hủy</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,1714 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<localizationDictionary culture="en">
+  <texts>
+    <text name="Trang chủ" value="Trang chủ" />
+    <text name="Thủ tục hành chính" value="Thủ tục hành chính" />
+    <text name="Tra cứu" value="Tra cứu" />
+    <text name="Liên hệ" value="Liên hệ" />
+    <text name="Thông báo" value="Thông báo" />
+    <text name="Đăng ký" value="Đăng ký" />
+    <text name="Bộ thủ tục" value="Thủ tục hành chính" />
+    <text name="Báo cáo" value="Báo cáo" />
+
+    <!--<text name="HomePage" value="Home page" />-->
+    <text name="HomePage" value="Trang chủ" />
+    <!--<text name="AboutUs" value="About us" />-->
+    <text name="AboutUs" value="Giới thiệu" />
+    <!--<text name="Administration" value="Administration" />-->
+    <text name="Administration" value="Quản trị" />
+    <!--<text name="Roles" value="Roles" />-->
+    <text name="Roles" value="Vai trò" />
+    <!--<text name="Users" value="Users" />-->
+    <text name="Users" value="Người dùng" />
+    <!--<text name="InvalidFormMessage" value="Your form is invalid. Please check and correct it." />-->
+    <text name="InvalidFormMessage" value="Biểu mẫu chưa đúng. Xin vui lòng kiểm tra lại." />
+    <text name="InvalidUserNameOrPassword" value="Tên đăng nhập hoặc mật khẩu không đúng" />
+    <text name="ThereIsNoTenantDefinedWithName{0}" value="There is no tenant defined with name {0}" />
+    <text name="TenantIsNotActive" value="Tenant {0} is not active." />
+    <text name="UserIsNotActiveAndCanNotLogin" value="Người dùng {0} không kích hoạt không thể đăng nhập." />
+    <text name="PleaseEnterLoginInformation" value="Hãy nhập thông tin đăng nhập" />
+    <text name="TenancyName" value="Tenancy name" />
+    <!--<text name="UserNameOrEmail" value="User name or email" />-->
+    <text name="UserNameOrEmail" value="Tên đăng nhập hoặc email" />
+    <!--<text name="Password" value="Password" />-->
+    <text name="Password" value="Mật khẩu" />
+    <!--<text name="RememberMe" value="Remember me" />-->
+    <text name="RememberMe" value="Lưu tài khoản" />
+    <!--<text name="LogIn" value="Log in" />-->
+    <text name="LogIn" value="Đăng nhập" />
+    <!--<text name="ForgotPassword" value="Forgot password?" />-->
+    <text name="ForgotPassword" value="Quên mật khẩu?" />
+    <!--<text name="DontYouHaveAnAccount" value="Don't you have an account?" />-->
+    <text name="DontYouHaveAnAccount" value="Bạn không có tài khoản?" />
+    <!--<text name="CreateAnAccount" value="Create account" />-->
+    <text name="CreateAnAccount" value="Tạo tài khoản" />
+    <!--<text name="Pages" value="Pages" />-->
+    <text name="Pages" value="Các trang" />
+    <!--<text name="RoleName" value="Role name" />-->
+    <text name="RoleName" value="Tên vai trò" />
+    <!--<text name="EditRole" value="Edit role" />-->
+    <text name="EditRole" value="Sửa vai trò" />
+    <!--<text name="CreateNewRole" value="Create new role" />-->
+    <text name="CreateNewRole" value="Tạo vai trò" />
+    <!--<text name="RoleProperties" value="Role properties" />-->
+    <text name="RoleProperties" value="Role properties" />
+    <!--<text name="Permissions" value="Permissions" />-->
+    <text name="Permissions" value="Quyền" />
+    <!--<text name="Save" value="Save" />-->
+    <text name="Save" value="Lưu" />
+    <!--<text name="Cancel" value="Cancel" />-->
+    <text name="Cancel" value="Đóng" />
+    <!--<text name="RolesHeaderInfo" value="Use roles to group permissions." />-->
+    <text name="RolesHeaderInfo" value="Quản lý vai trò và nhóm quyền." />
+    <!--<text name="Static" value="Static" />-->
+    <text name="Static" value="Cố định" />
+    <!--<text name="Actions" value="Actions" />-->
+    <text name="Actions" value="Thao tác" />
+    <!--<text name="Delete" value="Delete" />-->
+    <text name="Delete" value="Xóa" />
+    <!--<text name="SavedSuccessfully" value="Saved successfully." />-->
+    <text name="SavedSuccessfully" value="Lưu thành công." />
+    <!--<text name="AreYouSure" value="Are you sure?" />-->
+    <text name="AreYouSure" value="Chắc chắn?" />
+    <!--<text name="YesDelete" value="Yes, delete!" />-->
+    <text name="YesDelete" value="Chắc chắn, xóa!" />
+    <!--<text name="DeletingUser" value="Deleting user" />-->
+    <text name="DeletingUser" value="Người xóa" />
+    <!--<text name="UsersHeaderInfo" value="Manage users and permissions." />-->
+    <text name="UsersHeaderInfo" value="Quản lý người dùng và quyền." />
+    <!--<text name="CreateNewUser" value="Create new user" />-->
+    <text name="CreateNewUser" value="Tạo mới người dùng" />
+    <!--<text name="UserName" value="User name" />-->
+    <text name="UserName" value="Tên đăng nhập" />
+    <!--<text name="Name" value="Name" />-->
+    <text name="Name" value="Tên" />
+    <!--<text name="Surname" value="Surname" />-->
+    <text name="Surname" value="Họ" />
+    <!--<text name="EmailAddress" value="Email address" />-->
+    <text name="EmailAddress" value="Địa chỉ email" />
+    <!--<text name="LastLoginTime" value="Last login time" />-->
+    <text name="LastLoginTime" value="Lần đăng nhập cuối" />
+    <!--<text name="EditUser" value="Edit user" />-->
+    <text name="EditUser" value="Sửa người dùng" />
+    <!--<text name="UserInformations" value="User informations" />-->
+    <text name="UserInformations" value="Thông tin người dùng" />
+    <!--<text name="PasswordRepeat" value="Password (repeat)" />-->
+    <text name="PasswordRepeat" value="Nhập lại mật khẩu" />
+    <!--<text name="SuccessfullyDeleted" value="Successfully deleted." />-->
+    <text name="SuccessfullyDeleted" value="Xóa thành công." />
+    <!--<text name="RoleDeleteWarningMessage" value="Role {0} will be deleted and unassigned from all assigned users." />-->
+    <text name="RoleDeleteWarningMessage" value="Vai trò {0} sẽ bị xóa." />
+    <!--<text name="UserDeleteWarningMessage" value="User {0} will be deleted." />-->
+    <text name="UserDeleteWarningMessage" value="Người dùng {0} sẽ bị xóa." />
+    <!--<text name="Active" value="Active" />-->
+    <text name="Active" value="Kích hoạt" />
+    <!--<text name="EmailConfirm" value="Email confirm" />-->
+    <text name="EmailConfirm" value="Xác nhận email" />
+    <!--<text name="Yes" value="Yes" />-->
+    <text name="Yes" value="Có" />
+    <!--<text name="No" value="No" />-->
+    <text name="No" value="Không" />
+    <text name="MySettings" value="Cài đặt của tôi" />
+    <!--<text name="Logout" value="Logout" />-->
+    <text name="Logout" value="Đăng xuất" />
+    <text name="Reset" value="Reset" />
+    <text name="ResetPermissionsTooltip" value="This button immediately resets user specific permission settings and saves changes. The user will only have permissions from assigned roles." />
+    <text name="ResetSuccessfully" value="Reset successfully" />
+    <text name="Tenants" value="Tenants" />
+    <text name="TenantsHeaderInfo" value="Manage your tenants." />
+    <text name="CreateNewTenant" value="Create new tenant" />
+    <text name="TenancyCodeName" value="Tenancy code name" />
+    <text name="TenantName" value="Tenant name" />
+    <text name="TenantDeleteWarningMessage" value="Tenant {0} will be deleted." />
+    <!--<text name="AdminEmailAddress" value="admin email" />-->
+    <text name="AdminEmailAddress" value="Email quản trị viên" />
+    <!--<text name="AdminPassword" value="admin password" />-->
+    <text name="AdminPassword" value="Mật khẩu quản trị viên" />
+    <!--<text name="AdminPasswordRepeat" value="admin password (repeat)" />-->
+    <text name="AdminPasswordRepeat" value="Mật khẩu xác nhận" />
+    <text name="EditTenant" value="Edit tenant" />
+    <!--<text name="ChangingPermissions" value="Changing permissions" />-->
+    <text name="ChangingPermissions" value="Sửa quyền" />
+    <!--<text name="EditingUser" value="Editing user" />-->
+    <text name="EditingUser" value="Sửa thông tin người dùng" />
+    <!--<text name="CreatingNewUser" value="Creating new user" />-->
+    <text name="CreatingNewUser" value="Tạo mới người dùng" />
+    <!--<text name="Edit" value="Edit" />-->
+    <text name="Edit" value="Sửa" />
+    <text name="EditingTenant" value="Editing tenant" />
+    <text name="CreatingNewTenant" value="Creating new tenant" />
+    <text name="DeletingTenant" value="Deleting tenant" />
+    <!--<text name="EditingRole" value="Editing role" />-->
+    <text name="EditingRole" value="Sửa vai trò" />
+    <!--<text name="CreatingNewRole" value="Creating new role" />-->
+    <text name="CreatingNewRole" value="Tạo mới vai trò" />
+    <!--<text name="DeletingRole" value="Deleting role" />-->
+    <text name="DeletingRole" value="Xóa vai trò" />
+    <!--<text name="CreationTime" value="Creation time" />-->
+    <text name="CreationTime" value="Thời gian tạo" />
+    <!--<text name="SearchWithThreeDot" value="Search..." />-->
+    <text name="SearchWithThreeDot" value="Tìm kiếm..." />
+    <text name="ResetSpecialPermissions" value="Reset special permissions" />
+    <!--<text name="SavingWithThreeDot" value="Saving..." />-->
+    <text name="SavingWithThreeDot" value="Đang lưu..." />
+    <!--<text name="Settings" value="Settings" />-->
+    <text name="Settings" value="Cài đặt" />
+    <!--<text name="SaveAll" value="Save all" />-->
+    <text name="SaveAll" value="Lưu tất cả" />
+    <!--<text name="SettingsHeaderInfo" value="Show and change application settings." />-->
+    <text name="SettingsHeaderInfo" value="Xem và sửa cấu hình hệ thống." />
+    <text name="EmailSmtp" value="Email (SMTP)" />
+    <text name="DefaultFromAddress" value="Default from (sender) email address" />
+    <text name="DefaultFromDisplayName" value="Default from (sender) display name" />
+    <text name="SmtpHost" value="SMTP host" />
+    <text name="SmtpPort" value="SMTP port" />
+    <text name="UseDefaultCredentials" value="Use default credentials" />
+    <text name="DomainName" value="Domain name" />
+    <text name="UseSsl" value="Use SSL" />
+    <text name="ThisWebSiteRootAddress" value="Web site root address" />
+    <text name="ThisWebSiteRootAddress_Hint" value="It will be used when building links to this web site. It's needed for some tasks like building password reset links. Ex: http://mydomain.com/" />
+    <text name="General" value="General" />
+    <!--<text name="SendPasswordResetLink_Information" value="A password reset link will be sent to your email to reset your password. If you don't get an email within a few minutes, please re-try." />-->
+    <text name="SendPasswordResetLink_Information" value="Đường dẫn trang để thiết lập lại mật khẩu sẽ được gửi đến email của bạn. Nếu không nhận được email trong chốc lát, xin thử lại hoặc liên lạc với quản trị viên." />
+    <!--<text name="Send" value="Send" />-->
+    <text name="Send" value="Gửi" />
+    <text name="PasswordReset" value="Mật khẩu reset" />
+    <text name="InvalidUserNameOrEmailAddress" value="Tài khoản hoặc email không đúng" />
+    <text name="PasswordResetEmail_Subject" value="DUOC mật khẩu reset" />
+    <text name="PasswordResetEmail_Title" value="DUOC mật khẩu reset." />
+    <!--<text name="PasswordResetEmail_SubTitle" value="This email is sent you to reset and re-create your password." />-->
+    <text name="PasswordResetEmail_SubTitle" value="Email này được gửi tới để bạn thiết lập lại mật khẩu." />
+    <text name="PasswordResetEmail_ClickTheLinkBelowToResetYourPassword" value="Hãy nhấp vào link sau để cài lại mật khẩu:" />
+    <text name="EmailActivation_Subject" value="ATTP email kích hoạt" />
+    <text name="EmailActivation_Title" value="Chào bạn đến với hệ thống ATTP" />
+    <text name="EmailActivation_SubTitle" value="Email này được gửi tới để xác nhận bạn đã đăng ký thành công tài khoản trên hệ thống." />
+    <text name="EmailActivation_ClickTheLinkBelowToVerifyYourEmail" value="Hãy ấn vào link bên dưới để tiến hành bước tiếp theo đăng nhập" />
+    <text name="EmailActivation_Please_Wait_For_Activation_Mail" value="Hãy ấn vào link bên dưới để tiến hành bước tiếp theo đăng nhập" />
+
+    <text name="EmailConfirmRegister_Subject" value="ATTP email xác nhận đăng ký" />
+    <text name="EmailConfirmRegister_Title" value="Email xác nhận đăng ký hệ thống An toàn thực phẩm" />
+    <text name="EmailConfirmRegister_SubTitle" value="Email này được gửi tới để xác nhận bạn đã đăng ký thành công tài khoản trên hệ thống." />
+    <text name="EmailActivation_WaitForEmailComfirmation" value="Quản trị viên đang xem xét thông tin đăng ký của bạn. Nếu thông tin đăng ký của bạn hợp lệ hệ thống sẽ gửi thông tin đăng nhập cho bạn. Nếu phải chờ quá lâu xin hãy liên hệ với quản trị viên để được hỗ trợ." />
+
+    <text name="EmailDoNotExcept_Subject" value="ATTP email không xác nhận đăng ký" />
+    <text name="EmailDoNotExcept_Title" value="Email không xác nhận đăng ký hệ thống ATTP" />
+    <text name="EmailDoNotExcept_SubTitle" value="Email này được gửi tới để thông báo thông tin đăng ký của bạn không được chấp nhận." />
+    <text name="EmailDoNotExcept_Content" value="Quản trị viên đã xem xét thông tin đăng ký của bạn và thấy một số điểm không phù hợp như sau:" />
+    <text name="EmailDoNotExcept_Final" value="Hãy liên lạc với quản trị viên và đăng ký với thông tin phù hợp hơn." />
+
+    <text name="EmailDeactiveUserAccount_Subject" value="ATTP email khóa tài khoản" />
+    <text name="EmailDeactiveUserAccount_Title" value="Email khóa tài khoản hệ thống ATTP" />
+    <text name="EmailDeactiveUserAccount_SubTitle" value="Email này được gửi tới để thông báo tài khoản của bạn đã bị khóa trên hệ thống." />
+    <text name="EmailDeactiveUserAccount_Message" value="Tài khoản của bạn trên hệ thống đã bị khóa. Nếu muốn thực hiện các thao tác tiếp theo trên hệ thống xin vui lòng liên hệ với quản trị viên." />
+
+    <text name="EmailActiveUserAccount_Subject" value="ATTP email kích hoạt tài khoản" />
+    <text name="EmailActiveUserAccount_Title" value="Email kích tài khoản hệ thống ATTP" />
+    <text name="EmailActiveUserAccount_SubTitle" value="Email này được gửi tới để thông báo tài khoản của bạn đã được mở khóa trên hệ thống." />
+    <text name="EmailActiveUserAccount_Message" value="Tài khoản của bạn đã được mở khóa. Hãy truy cập đường link để tiếp tục thao tác." />
+
+    <!--<text name="InvalidEmailAddress" value="Invalid email address" />-->
+    <text name="InvalidEmailAddress" value="Địa chỉ email không hợp lệ" />
+    <text name="InvalidPasswordResetCode" value="Invalid password reset code" />
+    <text name="InvalidPasswordResetCode_Detail" value="Please be sure you entered this page by clicking the link sent to your email. If this not solves the problem, you can re-try to request a new password reset link." />
+    <text name="PleaseEnterYourNewPassword" value="Hãy nhập mật khẩu mới của bạn." />
+    <text name="UserEmailIsNotConfirmedAndCanNotLogin" value="Your email address is not confirmed. Please check your email and click the email confirmation link to activate your account. If you did not receive activation email, click the 'email confirmation' to request a new email." />
+    <!--<text name="LoginFailed" value="Login failed!" />-->
+    <text name="LoginFailed" value="Đăng nhập thất bại!" />
+    <!--<text name="InvalidEmailConfirmationCode" value="Invalid email confirmation code" />-->
+    <text name="InvalidEmailConfirmationCode" value="Mã xác nhận email không hợp lệ" />
+    <!--<text name="InvalidEmailConfirmationCode_Detail" value="Please be sure you entered this page by clicking the link sent to your email. If this not solves the problem, you can re-try to request a new confirmation code." />-->
+    <text name="InvalidEmailConfirmationCode_Detail" value="Hãy chắc chắn bạn đến trang này bằng cách nhấp vào đường dẫn được gửi đến email của bạn. Nếu chắc chắn, bạn có thể yêu cầu một mã xác nhận mới." />
+    <!--<text name="YourEmailIsConfirmedMessage" value="Your email address is successfully confirmed." />-->
+    <text name="YourEmailIsConfirmedMessage" value="Email của bạn được xác nhận thành công." />
+    <!--<text name="ShouldChangePasswordOnNextLogin" value="Should change password on next login." />-->
+    <text name="ShouldChangePasswordOnNextLogin" value="Thay đổi mật khẩu ở lần đăng nhập tiếp theo." />
+    <!--<text name="SetRandomPassword" value="Set random password." />-->
+    <text name="SetRandomPassword" value="Tạo ngẫu nhiên mật khẩu." />
+    <!--<text name="EmailActivation" value="Email activation" />-->
+    <text name="EmailActivation" value="Kích hoạt email" />
+    <text name="SendEmailActivationLink_Information" value="A link will be sent to your email to activate your email address. If you don't get an email within a few minutes, please re-try." />
+    <!--<text name="SendActivationEmail" value="Send activation email." />-->
+    <text name="SendActivationEmail" value="Gửi email kích hoạt." />
+    <!--<text name="ChangePassword" value="Change password" />-->
+    <text name="ChangePassword" value="Đổi mật khẩu" />
+    <!--<text name="CurrentPassword" value="Current password" />-->
+    <text name="CurrentPassword" value="Mật khẩu hiện tại" />
+    <!--<text name="NewPassword" value="New password" />-->
+    <text name="NewPassword" value="Mật khẩu mới" />
+    <!--<text name="NewPasswordRepeat" value="New password (repeat)" />-->
+    <text name="NewPasswordRepeat" value="Xác nhận mật khẩu mới" />
+    <text name="YourPasswordHasChangedSuccessfully" value="Your password has changed successfully." />
+    <text name="SelfUserRegistrationIsDisabledMessage" value="You can not register to the system!" />
+    <text name="SelfUserRegistrationIsDisabledMessage_Detail" value="Self user registration is disabled. Please contact to the system administrator to register." />
+    <text name="SuccessfullyRegistered" value="Successfully registered" />
+    <text name="ConfirmationMailSentPleaseClickLinkInTheEmail" value="A confirmation mail sent to {0}. Please click link in the email in order to confirm your mail address." />
+    <text name="YourAccountIsWaitingToBeActivatedByAdmin" value="Your account is waiting to be activated by system admin." />
+    <text name="NameSurname" value="Họ và tên" />
+    <!--<text name="UserManagement" value="User management" />-->
+    <text name="UserManagement" value="Quản lý người dùng" />
+    <text name="AllowUsersToRegisterThemselves" value="Cho phép người dùng đăng ký tài khoản" />
+    <text name="AllowUsersToRegisterThemselves_Hint" value="Nếu bạn đóng chức năng này. Người dùng chỉ có thể thêm bởi người quản trị" />
+    <text name="NewRegisteredUsersIsActiveByDefault" value="Người dùng mới đăng nhập mặc định được kích hoạt." />
+    <text name="NewRegisteredUsersIsActiveByDefault_Hint" value="Nếu bạn đóng chức năng này. Người dùng mới sẽ không được kích hoạt cho đến khi người quản trị xác nhận." />
+    <!--<text name="Default" value="Default" />-->
+    <text name="Default" value="Mặc định" />
+    <text name="DefaultRole_Description" value="Assign to new users as default." />
+    <text name="StaticRole_Tooltip" value="Static roles can not be deleted." />
+    <text name="EmailConfirmationRequiredForLogin" value="Xác nhận email khi đăng nhập" />
+    <text name="{0}UserCannotBeDeleted" value="{0} user can not be deleted." />
+    <text name="TenantNameCanNotBeEmpty" value="Tenant name can not be empty" />
+    <!--<text name="ExportToExcel" value="Export to excel" />-->
+    <text name="ExportToExcel" value="Xuất ra file excel" />
+    <!--<text name="ChangeProfilePicture" value="Change profile picture" />-->
+    <text name="ChangeProfilePicture" value="Đổi ảnh đại diện" />
+    <text name="TenantName_Regex_Description" value="Tenant name must be at least 2 chars, starts with a letter and continue with letter, number, dash or underscore." />
+    <text name="ProfilePicture_Change_Info" value="You can select a JPG/JPEG/PNG file with a maximum 1MB size." />
+    <text name="ProfilePicture_Change_Error" value="Your profile picture could not be changed." />
+    <text name="ProfilePicture_Warn_SizeLimit" value="Picture size must be smalled than 1MB. Please select another file." />
+    <text name="ProfilePicture_Warn_FileType" value="You can only select JPG/JPEG/GIF/PNG file. Please select another file." />
+    <text name="Signature_Warn_SizeLimit" value="Picture size must be smalled than 3MB. Please select another file." />
+    <text name="Signature_Warn_FileType" value="You can only select JPG/JPEG/GIF/PNG file. Please select another file." />
+    <!--<text name="Dashboard" value="Dashboard" />-->
+    <text name="Dashboard" value="Trang chủ" />
+    <text name="DashboardHeaderInfo" value="statistics and reports" />
+    <text name="GoToApplication" value="Đến ứng dụng" />
+    <text name="TenantInformations" value="Tenant informations" />
+    <text name="PersonalInformations" value="Personal information" />
+    <text name="AccountSettings" value="Cài đặt tài khoản" />
+    <text name="Captha_Hint" value="Please enter the security code shown in the picture below:" />
+    <!--<text name="Back" value="Back" />-->
+    <text name="Back" value="Quay lại" />
+    <!--<text name="Submit" value="Submit" />-->
+    <text name="Submit" value="Gửi đi" />
+    <!--<text name="SignUp" value="Sign up" />-->
+    <text name="SignUp" value="Đăng ký" />
+    <!--<text name="CaptchaCanNotBeEmpty" value="Security code can not be empty." />-->
+    <text name="CaptchaCanNotBeEmpty" value="Mã bảo mật không được để trống." />
+    <!--<text name="IncorrectCaptchaAnswer" value="Security code is not valid." />-->
+    <text name="IncorrectCaptchaAnswer" value="Mã bảo mật không hợp lệ." />
+    <!--<text name="FormIsNotValidMessage" value="Form is not valid. Please check and fix errors." />-->
+    <text name="FormIsNotValidMessage" value="Biểu mẫu không hợp lệ. Hãy kiểm tra và sửa lại" />
+    <!--<text name="CanNotChangeAdminUserName" value="Can not change username of the admin." />-->
+    <text name="CanNotChangeAdminUserName" value="Không thể đổi tên đăng nhập quản trị." />
+    <!--<text name="Error" value="Error!" />-->
+    <text name="Error" value="Có lỗi!" />
+    <text name="OopsYouAreLost" value="Oops! You're lost." />
+    <!--<text name="WeCanNotFindThePage" value="We can not find the page you're looking for." />-->
+    <text name="WeCanNotFindThePage" value="Chúng tôi không tìm được trang bạn muốn đến." />
+    <text name="DashboardDemo_Note_Title" value="Welcome to ASP.NET Zero startup project!" />
+    <text name="DashboardDemo_Note_Info">
+      In this demo, you can use the left menu to test the application.
+      This dashboard page is just for demonstration, but all other pages and functionalities are fully implemented, working and ready for production.
+      You can add/apply your business requirements on this startup project (or remove any functionality you don't need).
+      Thus, you can have a signification time gain to immediately start your own project requirements.
+    </text>
+    <!--<text name="WelcomePage_Title" value="Welcome!" />-->
+    <text name="WelcomePage_Title" value="Chào mừng!" />
+    <text name="WelcomePage_Info" value="Chào mừng bạn đến với hệ thống. Xin mời chọn menu chức năng." />
+    <text name="RequestedFileDoesNotExists" value="Requested file does not exists!" />
+    <text name="MailSent" value="Đã gửi email" />
+    <!--<text name="PasswordResetMailSentMessage" value="A password reset link sent to your e-mail address. Please check your emails." />-->
+    <text name="PasswordResetMailSentMessage" value="Đường dẫn trang thiết lập lại mật khẩu đã được gửi đến email của bạn." />
+    <text name="ActivationMailSentMessage" value="An e-mail activation link sent to your e-mail address. Please check your emails." />
+    <text name="UseCaptchaOnRegistration" value="Dùng bảo mật captcha cho đăng ký." />
+    <!--<text name="FormBasedRegistration" value="Form Based Registration" />-->
+    <text name="FormBasedRegistration" value="Biểu mẫu đăng ký" />
+    <text name="LdapSettings" value="LDAP Settings" />
+    <text name="EnableLdapAuthentication" value="Enable LDAP Authentication." />
+    <text name="OtherSettings" value="Cài đặt khác" />
+    <!--<text name="AuditLogs" value="Audit logs" />-->
+    <text name="AuditLogs" value="Nhật ký hệ thống" />
+    <!--<text name="Success" value="Success" />-->
+    <text name="Success" value="Thành công" />
+    <!--<text name="Time" value="Time" />-->
+    <text name="Time" value="Thời gian" />
+    <!--<text name="Service" value="Service" />-->
+    <text name="Service" value="Service" />
+    <!--<text name="Action" value="Action" />-->
+    <text name="Action" value="Thao tác" />
+    <!--<text name="Duration" value="Duration" />-->
+    <text name="Duration" value="Thời lượng" />
+    <!--<text name="IpAddress" value="IP address" />-->
+    <text name="IpAddress" value="Địa chỉ IP" />
+    <!--<text name="Client" value="Client" />-->
+    <text name="Client" value="Máy khách" />
+    <!--<text name="Browser" value="Browser" />-->
+    <text name="Browser" value="Trình duyệt" />
+    <text name="Xms" value="{0} ms" />
+    <!--<text name="Close" value="Close" />-->
+    <text name="Close" value="Đóng" />
+    <!--<text name="Refresh" value="Refresh" />-->
+    <text name="Refresh" value="Làm mới" />
+    <!--<text name="ErrorState" value="Error state" />-->
+    <text name="ErrorState" value="Trạng thái lỗi " />
+    <!--<text name="All" value="All" />-->
+    <text name="All" value="Tất cả" />
+    <!--<text name="HasError" value="Has error" />-->
+    <text name="HasError" value="Có lỗi" />
+    <!--<text name="ShowAdvancedFilters" value="Show advanced filters" />-->
+    <text name="ShowAdvancedFilters" value="Hiển thị tìm kiếm nâng cao" />
+    <!--<text name="HideAdvancedFilters" value="Hide advanced filters" />-->
+    <text name="HideAdvancedFilters" value="Ẩn tìm kiếm nâng cao" />
+    <!--<text name="AuditLogDetail" value="Audit log detail" />-->
+    <text name="AuditLogDetail" value="Nhật kí chi tiết" />
+    <!--<text name="Parameters" value="Parameters" />-->
+    <text name="Parameters" value="Các tham số" />
+    <!--<text name="DateRange" value="Date range" />-->
+    <text name="DateRange" value="Phạm vi ngày" />
+    <text name="ActionInformations" value="Action informations" />
+    <!--<text name="Today" value="Today" />-->
+    <text name="Today" value="Hôm nay" />
+    <!--<text name="Yesterday" value="Yesterday" />-->
+    <text name="Yesterday" value="Hôm qua" />
+    <!--<text name="Last7Days" value="Last 7 days" />-->
+    <text name="Last7Days" value="7 ngày trước" />
+    <!--<text name="Last30Days" value="Last 30 days" />-->
+    <text name="Last30Days" value="30 ngày trước" />
+    <!--<text name="ThisMonth" value="This month" />-->
+    <text name="ThisMonth" value="Tháng này" />
+    <!--<text name="LastMonth" value="Last month" />-->
+    <text name="LastMonth" value="Tháng trước" />
+    <text name="TenantSelection" value="Tenant Selection" />
+    <text name="TenantSelection_Detail" value="Please select one of the following tenants." />
+    <!--<text name="LoginWith" value="Login with:" />-->
+    <text name="LoginWith" value="Đăng nhập với:" />
+    <!--<text name="PasswordChangeDontRememberMessage" value="If you can not remember your password, {0}." />-->
+    <text name="PasswordChangeDontRememberMessage" value="Nếu bạn không nhớ được mật khẩu, {0}." />
+    <!--<text name="ClickHere" value="click here" />-->
+    <text name="ClickHere" value="Hãy ấn vào" />
+    <text name="Apply" value="Áp dụng" />
+    <text name="CustomRange" value="Tùy chỉnh" />
+    <text name="DashboardNoteForMpaVersion">
+      <![CDATA[
+      See Demo for Multi-Page Application version with <strong>ASP.NET MVC</strong> and <strong>jQuery</strong>.
+      ]]>
+    </text>
+    <text name="DashboardNoteForSpaVersion">
+      <![CDATA[
+      Notice: There is also a <strong>Single-Page Application</strong> version built using ASP.NET MVC and <strong>AngularJs</strong>.
+      ]]>
+    </text>
+    <!--<text name="SeeDemo" value="See demo" />-->
+    <text name="SeeDemo" value="Xem demo" />
+    <!--<text name="Edition" value="Edition" />-->
+    <text name="Edition" value="Phiên bản" />
+    <!--<text name="Editions" value="Editions" />-->
+    <text name="Editions" value="Các phiên bản" />
+    <!--<text name="EditionsHeaderInfo" value="Manage editions and features of the application" />-->
+    <text name="EditionsHeaderInfo" value="Quản lý phiên bản và tính năng của ứng dụng" />
+    <!--<text name="CreateNewEdition" value="Create new edition" />-->
+    <text name="CreateNewEdition" value="Tạo mới phiên bản" />
+    <!--<text name="EditEdition" value="Edit edition" />-->
+    <text name="EditEdition" value="Sửa phiên bản" />
+    <text name="EditionProperties" value="Edition properties" />
+    <text name="EditionName" value="Edition name" />
+    <text name="Features" value="Features" />
+    <text name="EditionDeleteWarningMessage" value="{0} will be deleted and unassigned from all assigned tenants." />
+    <text name="CreatingNewEdition" value="Creating new edition" />
+    <text name="EditingEdition" value="Editing edition" />
+    <text name="DeletingEdition" value="Deleting edition" />
+    <text name="ChangingFeatures" value="Changing features" />
+    <text name="ResetSpecialFeatures" value="Reset special features" />
+    <text name="ResetFeaturesTooltip" value="This button immediately resets tenant specific feature settings and saves changes. The tenant will only have features from assigned edition." />
+    <!--<text name="NotAssigned" value="Not assigned" />-->
+    <text name="NotAssigned" value="Không được chỉ định" />
+    <text name="InvalidFeaturesWarning" value="One or more feature values are not valid!" />
+    <!--<text name="Languages" value="Languages" />-->
+    <text name="Languages" value="Ngôn ngữ" />
+    <!--<text name="LanguagesHeaderInfo" value="Manage user interface languages." />-->
+    <text name="LanguagesHeaderInfo" value="Quản lý ngôn ngữ." />
+    <!--<text name="CreateNewLanguage" value="Create new language" />-->
+    <text name="CreateNewLanguage" value="Tạo mới ngôn ngữ" />
+    <!--<text name="Code" value="Code" />-->
+    <text name="Code" value="Mã" />
+    <!--<text name="CreatingNewLanguage" value="Creating new language" />-->
+    <text name="CreatingNewLanguage" value="Tạo mới ngôn ngữ" />
+    <!--<text name="EditingLanguage" value="Editing language" />-->
+    <text name="EditingLanguage" value="Sửa ngôn ngữ" />
+    <!--<text name="DeletingLanguages" value="Deleting language" />-->
+    <text name="DeletingLanguages" value="Xóa ngôn ngữ" />
+    <!--<text name="ChangingTexts" value="Changing texts" />-->
+    <text name="ChangingTexts" value="Đổi văn bản" />
+    <!--<text name="SuccessfullySaved" value="Successfully saved." />-->
+    <text name="SuccessfullySaved" value="Lưu thành công." />
+    <!--<text name="Language" value="Language" />-->
+    <text name="Language" value="Ngôn ngữ" />
+    <!--<text name="Flag" value="Flag" />-->
+    <text name="Flag" value="Cờ" />
+    <!--<text name="SetAsDefaultLanguage" value="Set as default language" />-->
+    <text name="SetAsDefaultLanguage" value="Đặt làm ngôn ngữ mặc định" />
+    <text name="InvlalidLanguageCode" value="Invalid language code." />
+    <text name="EditLanguage" value="Edit language" />
+    <text name="ChangeTexts" value="Change texts" />
+    <text name="TargetValue" value="Target value" />
+    <text name="BaseValue" value="Base value" />
+    <text name="Key" value="Key" />
+    <!--<text name="SaveAndClose" value="Save &amp; Close" />-->
+    <text name="SaveAndClose" value="Lưu và đóng" />
+    <!--<text name="SaveAndNext" value="Save &amp; Next" />-->
+    <text name="SaveAndNext" value="Lưu và tiếp tục" />
+    <text name="EditText" value="Edit text" />
+    <text name="LanguageTexts" value="Language texts" />
+    <text name="LanguageTextsHeaderInfo" value="Edit texts for languages." />
+    <text name="EmptyOnes" value="Empty ones" />
+    <text name="Source" value="Source" />
+    <text name="BaseLanguage" value="Base language" />
+    <text name="TargetLanguage" value="Target language" />
+    <text name="Previous" value="Previous" />
+    <text name="LanguageDeleteWarningMessage" value="Are you sure to delete the language {0}?" />
+    <text name="CanNotEditOrDeleteDefaultLanguages" value="Can not edit or delete default languages. You can only edit or delete the languages you added. But you can change texts of all languages." />
+    <text name="LookingForMpaVersion" value="Looking for Multi-Page Application Version?" />
+    <text name="LookingForSpaVersion" value="Looking for Single-Page Application Version?" />
+    <text name="ThisLanguageAlreadyExists" value="This language already exists!" />
+    <text name="OrganizationUnits" value="Tổ chức nhóm" />
+    <!--<text name="OrganizationUnits" value="Organization units" />-->
+    <text name="OrganizationUnitsHeaderInfo" value="Use organization units to organize users and entities" />
+    <text name="OrganizationTree" value="Organization tree" />
+    <text name="Members" value="Members" />
+    <text name="SelectAnOrganizationUnitToSeeMembers" value="Select an organization unit to see members." />
+    <text name="OrganizationUnitDeleteWarningMessage" value="Are you sure to delete organization unit {0}?" />
+    <text name="AddSubUnit" value="Add sub unit" />
+    <text name="AddMember" value="Add member" />
+    <text name="SuccessfullyAdded" value="Successfully added" />
+    <text name="RemoveUserFromOuWarningMessage" value="Are you sure to remove user {0} from organization unit {1}?" />
+    <text name="SuccessfullyRemoved" value="Successfully removed" />
+    <text name="SelectAnItem" value="Select an item" />
+    <text name="NewOrganizationUnit" value="New organization unit" />
+    <text name="SelectAUser" value="Select a user" />
+    <text name="Select" value="Select" />
+    <text name="UserIsAlreadyInTheOrganizationUnit" value="This user is already in the organization unit!" />
+    <text name="AddRootUnit" value="Add root unit" />
+    <text name="AddUser" value="Add user" />
+    <text name="NoOrganizationUnitDefinedYet" value="No organization unit defined yet." />
+    <text name="OrganizationUnitMoveConfirmMessage" value="Please confirm to move {0} to under {1}." />
+    <text name="Root" value="Root" />
+    <text name="SuccessfullyMoved" value="Successfully moved." />
+    <text name="AddedTime" value="Addition time" />
+    <text name="ManagingMembers" value="Managing members" />
+    <text name="ManagingOrganizationTree" value="Managing organization tree" />
+    <text name="LoginForUsers" value="Login for users" />
+    <text name="LoginAsThisUser" value="Login as this user" />
+    <text name="BackToMyAccount" value="Back to my account" />
+    <text name="LoginForTenants" value="Login for tenants" />
+    <text name="LoginAsThisTenant" value="Login as this tenant" />
+    <text name="AuditLogImpersonatedOperationInfo" value="Note: This operation is performed by another user on behalf of this user." />
+    <text name="CustomData" value="Custom data" />
+    <text name="None" value="None" />
+    <text name="YouCanBackToYourAccount" value="You can back to your account here." />
+    <text name="CascadeImpersonationErrorMessage" value="Can not make cascade impersonation. This is already an impersonated login!" />
+    <text name="FromTenantToHostImpersonationErrorMessage" value="Can not impersonate a host user from a tenant user!" />
+    <text name="DifferentTenantImpersonationErrorMessage" value="Can not impersonate a user of a different tenant!" />
+    <text name="ImpersonationTokenErrorMessage" value="Impersonation token is invalid or expired!" />
+    <text name="NotImpersonatedLoginErrorMessage" value="This is not an impersonated login!" />
+    <text name="YouCannotLinkToSameAccount">You can not link to same account!</text>
+    <text name="ChangePasswordBeforeLinkToAnAccount">You must change your password before linking this account!</text>
+    <!--<text name="LinkedAccounts">Linked accounts</text>-->
+    <text name="LinkedAccounts">Kết nối tài khoản</text>
+    <!--<text name="ManageAccounts">Manage accounts</text>-->
+    <text name="ManageAccounts">Quản trị nhiều tài khoản</text>
+    <!--<text name="LinkNewAccount">Link new account</text>-->
+    <text name="LinkNewAccount">Kết nối một tài khoản mới</text>
+    <!--<text name="SuccessfullyUnlinked">Successfully unlinked</text>-->
+    <text name="SuccessfullyUnlinked">Kết nối tài khoản thành công</text>
+    <!--<text name="LinkedUserDeleteWarningMessage">Link to user {0} will be deleted.</text>-->
+    <text name="LinkedUserDeleteWarningMessage">Kết nối đến người dùng {0} sẽ bị xóa.</text>
+    <text name="SwitchToLinkedAccountTokenErrorMessage" value="Impersonation token is invalid or expired!" />
+    <text name="WelcomeToTheApplicationNotificationMessage" value="Welcome to PMS! Notification system is used to inform you for intended events. You can select which type of notifications you want to receive from the notification settings." />
+    <text name="NewUserRegisteredNotificationDefinition" value="On a new user registered to the application." />
+    <text name="NewUserRegisteredNotificationMessage" value="A new user registered to the application. User name: {userName}, Email address: {emailAddress}." />
+    <text name="SeeAllNotifications" value="See all notifications" />
+    <text name="SetAsRead" value="set as read" />
+    <text name="SetAllAsRead" value="Set all as read" />
+    <text name="NotificationSettings" value="Notification settings" />
+    <text name="ReceiveNotifications" value="Receive Notifications" />
+    <text name="ReceiveNotifications_Definition" value="This option can be used to completely enable/disable receiving notifications." />
+    <text name="NotificationTypes" value="Notification Types" />
+    <text name="ReceiveNotifications_DisableInfo" value="You completely disabled receiving notifications. You can enabled it and select notification types you want to receive." />
+    <text name="Notifications" value="Notifications" />
+    <text name="ThereIsNoNotification" value="There is no notification." />
+    <text name="Unread" value="Unread" />
+    <text name="YouCanNotDeleteOwnAccount" value="You can not delete own user account!" />
+    <!--<text name="On" value="On" />
+    <text name="Off" value="Off" />-->
+    <text name="On" value="Bật" />
+    <text name="Off" value="Tắt" />
+    <!--<text name="Maintenance">Maintenance</text>-->
+    <text name="Maintenance">Bảo trì</text>
+    <text name="Caches">Caches</text>
+    <text name="CacheSuccessfullyCleared">Cache successfully cleared.</text>
+    <text name="AllCachesSuccessfullyCleared">All caches successfully cleared.</text>
+    <text name="ClearAll">Clear all</text>
+    <text name="Clear">Clear</text>
+    <text name="CachesHeaderInfo">You can clear caches in application on this page.</text>
+    <text name="TestEmailSettingsHeader">Test Email Settings</text>
+    <text name="SendTestEmail">Send Test Email</text>
+    <text name="TestEmail_Subject">PMS test email</text>
+    <text name="TestEmail_Body">This is a test email.</text>
+    <text name="TestEmailSentSuccessfully">Test e-mail sent successfully.</text>
+    <text name="WebSiteLogs">Website Logs</text>
+    <text name="WebSiteLogsHeaderInfo">You can see latest logs in this page or download all logs in a single zip file.</text>
+    <text name="DownloadAll">Download all</text>
+    <text name="TenantManagement">Tenant management</text>
+    <text name="AllowTenantsToRegisterThemselves" value="Allow tenants to register to the system." />
+    <text name="AllowTenantsToRegisterThemselves_Hint" value="If you disable this, tenants will only be added by admin using tenant management page." />
+    <text name="NewRegisteredTenantsIsActiveByDefault" value="New registered tenants are active by default." />
+    <text name="NewRegisteredTenantsIsActiveByDefault_Hint" value="If you disable this, new tenants will not be active (and can not login) until admin manually activate the account." />
+    <text name="TenantSignUp">Tenant SignUp</text>
+    <text name="NewTenantRegisteredNotificationDefinition" value="On a new tenant registered to the application." />
+    <text name="NewTenantRegisteredNotificationMessage" value="A new tenant registered to the application. Tenancy name: {tenancyName}." />
+    <!--<text name="LoginAttempts">Login attempts</text>-->
+    <text name="LoginAttempts">Lịch sử đăng nhập</text>
+    <!--<text name="Failed">Failed</text>-->
+    <text name="Failed">Thất bại</text>
+    <text name="NewTenant">New tenant</text>
+    <text name="ResizedProfilePicture_Warn_SizeLimit" value="Resized picture size must be smalled than 100KB. Please resize down and try again." />
+    <text name="RegisterFormUserNameInvalidMessage">Please do not enter an email address for username.</text>
+    <text name="UseHostDatabase" value="Use host database" />
+    <text name="DatabaseConnectionString" value="Database connection string" />
+    <text name="TenantDatabaseConnectionStringChangeWarningMessage" value="Notice: Before changing the database connection string for a tenant, you should move the tenant database to the new location. Changing connection string does not move the tenant database." />
+    <text name="Timezone">Timezone</text>
+    <text name="HasOwnDatabase">HasOwnDatabase</text>
+    <text name="TimeZoneSettingChangedRefreshPageNotification">Timezone setting changed. Click OK button to refresh page and changes to take effect.</text>
+    <text name="Ok">Ok</text>
+    <!--<text name="Permission">Permission</text>-->
+    <text name="Permission">Quyền</text>
+    <!--<text name="Role">Role</text>-->
+    <text name="Role">Vai trò</text>
+    <!--<text name="Security">Security</text>-->
+    <text name="Security">Bảo mật</text>
+    <text name="PasswordComplexity">Sự phức tạp của mật khẩu</text>
+    <!--<text name="MinPasswordLength">Minimum password length</text>-->
+    <text name="MinPasswordLength">Độ dài mật khẩu nhở nhất</text>
+    <!--<text name="MaxPasswordLength">Maximum password length</text>-->
+    <text name="MaxPasswordLength">Độ dài mật khẩu lớn nhất</text>
+    <text name="UseNumbers">Dùng số trong mật khẩu</text>
+    <text name="UseUpperCaseLetters">Dùng chữ cái viết hoa trong mật khẩu</text>
+    <text name="UseLowerCaseLetters">Dùng chữ cái viết thường trong mật khẩu</text>
+    <text name="UsePunctuations">Dùng dấu chấm câu trong mật khẩu</text>
+    <!--<text name="UseDefaultSettings">Use default settings</text>-->
+    <text name="UseDefaultSettings">Dùng cài đặt mặc định</text>
+    <text name="PasswordComplexityNotSatisfied">Độ phức tạp của mật khẩu không đáp ứng.</text>
+    <text name="PasswordComplexity_MinLength_Hint">Mật khẩu có ít nhất {0} ký tự</text>
+    <text name="PasswordComplexity_MaxLength_Hint">Mật khẩu có nhiều nhất {0} ký tự</text>
+    <text name="PasswordComplexity_UseNumbers_Hint">Mật khẩu phải chứa ít nhất 1 chữ số</text>
+    <text name="PasswordComplexity_UseUpperCaseLetters_Hint">Mật khẩu phải chức ít nhất 1 chữ cái viết hoa</text>
+    <text name="PasswordComplexity_UseLowerCaseLetters_Hint">Mật khẩu phải chức ít nhất 1 chữ cái viết thường</text>
+    <text name="PasswordComplexity_UsePunctuations_Hint">Mật khẩu phải chức ít nhất 1 chữ cái đặc biệt</text>
+    <text name="YouAlreadySentAFriendshipRequestToThisUser">You already added this user.</text>
+    <text name="YouCannotBeFriendWithYourself">You can not be friend with yourself.</text>
+    <text name="NewChatMessageEmail_Title">Message Details</text>
+    <text name="NewChatMessageEmail_SubTitle"></text>
+    <text name="NewChatMessageEmail_Subject">You have a new chat message</text>
+    <!--<text name="Sender">Sender</text>-->
+    <text name="Sender">Người gửi</text>
+    <!--<text name="Message">Message</text>-->
+    <text name="Message">Tin nhắn</text>
+    <text name="UserBlocked">User blocked successfully.</text>
+    <text name="UserUnblocked">Block removed from user successfully.</text>
+    <text name="BlockUser">Block user</text>
+    <text name="UnblockUser">Unblock</text>
+    <text name="FriendshipRequestAccepted">Friendship request accepted</text>
+    <text name="UserSendYouAFriendshipRequest">{0} added you as a friend.</text>
+    <text name="Friends">Friends</text>
+    <text name="Others">Others</text>
+    <text name="BlockedUsers">Blocked Users</text>
+    <text name="YouDontHaveAnyFriend">You don't have any friends. Write a username to above input box and click "Add Friend" button.</text>
+    <text name="YouDontHaveAnyBlockedFriend">You don't have any blocked users. In order to block a friend, select a friend and select block from actions dropdown.</text>
+    <text name="ChatUserSearch_Hint">
+      <![CDATA[
+      Write only username for same tenant users, <br>
+      <strong>[tenancyName]\[userName]</strong> for other tenant's users <br><br>
+      for example: <br>
+      .\admin -> for host admin <br>
+      Test\admin -> for test tenant's admin <br>
+      admin -> for your tenant's admin
+      ]]>
+    </text>
+    <text name="AddFriend">Add friend</text>
+    <text name="TypeAMessageHere">Type a message here...</text>
+    <text name="Chat">Chat</text>
+    <text name="ChatFeature">Chat</text>
+    <text name="ChatFeatureIsNotEnabledForSender">Chat is not enabled for you.</text>
+    <text name="ChatFeatureIsNotEnabledForReceiver">Chat is not enabled for tenant.</text>
+    <text name="UserIsBlocked">Người dùng đã bị khóa.</text>
+    <text name="ChatIsNotConnectedWarning">Chat is not connected.</text>
+    <text name="Demo_SampleChatMessage">Hi, This is a test message. Please login with my account in a different browser and checkout how chat feature works.</text>
+    <text name="TenantToTenantChatFeatureIsNotEnabledForSender">Chat with other tenants is not enabled for you.</text>
+    <text name="TenantToTenantChatFeatureIsNotEnabledForReceiver">Chat with other tenants is not enabled for tenant.</text>
+    <text name="TenantToHostChatFeatureIsNotEnabledForSender">Chat with host is not enabled for you.</text>
+    <text name="TenantToHostChatFeatureIsNotEnabledForReceiver">Chat with host is not enabled for tenant.</text>
+    <text name="TenantToTenantChatFeature">Chat with other tenants</text>
+    <text name="TenantToHostChatFeature">Chat with host</text>
+    <!--<text name="FilterByPermission">Filter by permission</text>-->
+    <text name="FilterByPermission">Lọc theo quyền</text>
+    <!--<text name="FilterByRole">Filter by role</text>-->
+    <text name="FilterByRole">Lọc theo vai trò</text>
+    <text name="FilterOrAddUser">Filter/Add user</text>
+    <text name="HangfireDashboard" value="Hangfire dashboard" />
+    <text name="TargetUserNotFoundProbablyDeleted">Target user could not be found. It's probably deleted.</text>
+    <text name="UserLockedOutMessage">The user account has been locked out. Please try again later.</text>
+    <text name="SendSecurityCode">Send security code.</text>
+    <text name="SendSecurityCode_Information">You should verify yourself to login. Please select a verification type. A code will be sent based on selected verification type.</text>
+    <text name="SendSecurityCodeErrorMessage">Security code could not be sent!</text>
+    <text name="VerifySecurityCodeNotLoggedInErrorMessage">You should be login first, in order to verify yourself! Probably, your login has been timeout. Please go to the login page and re-try it.</text>
+    <text name="VerificationCode">Verification code</text>
+    <text name="VerifySecurityCode">Verify Security Code</text>
+    <text name="VerifySecurityCode_Information">Please enter the verification code sent to you.</text>
+    <text name="RememberThisBrowser">Remember this browser</text>
+    <text name="InvalidSecurityCode">Invalid security code!</text>
+    <text name="PhoneNumber">Phone number</text>
+    <text name="Unlock">Unlock</text>
+    <text name="UnlockedTheUser">Unlocked the user {0}</text>
+    <text name="UserLockOut">Khóa người dùng</text>
+    <text name="EnableUserAccountLockingOnFailedLoginAttemts">Bật khóa tài khoản người dùng khi đăng nhập không thành công</text>
+    <text name="MaxFailedAccessAttemptsBeforeLockout">Số lần đăng nhập thất bại trước khi khóa tài khoản</text>
+    <text name="DefaultAccountLockoutDurationAsSeconds">Khoảng thời gian khóa tài khoản (giây)</text>
+    <text name="TwoFactorLogin">Two Factor Login</text>
+    <text name="EnableTwoFactorLogin">Enable two factor user login.</text>
+    <text name="IsEmailVerificationEnabled">Enable email verification.</text>
+    <text name="IsSmsVerificationEnabled">Enable SMS verification.</text>
+    <text name="AllowToRememberBrowserForTwoFactorLogin">Allow to remember browser. If you allows this, users can select to remember browser to skip second time two factor login for the same browser.</text>
+    <text name="IsTwoFactorEnabled">Is two factor authentication enabled?</text>
+    <text name="IsLockoutEnabled">Is lockout enabled ?</text>
+    <text name="IsLockoutEnabled_Hint">User is locked for a while after a certain amount of failed login attempts.</text>
+    <text name="ApplicationLogo">Application Logo</text>
+    <text name="CustomCSS">Custom CSS</text>
+    <!--<text name="Upload">Upload</text>-->
+    <text name="Upload">Tải lên</text>
+    <!--<text name="Download">Download</text>-->
+    <text name="Download">Tải xuống</text>
+    <text name="UploadLogo_Info">Select a JPG/JPEG/PNG/GIF file with a maximum of 30KB size and 168x33 pixel resolution.</text>
+    <text name="UploadCSS_Info">Select a .css file with a maximum of 1MB size.</text>
+    <!--<text name="Browse">Browse</text>-->
+    <text name="Browse">Trình duyệt</text>
+    <!--<text name="Appearance">Appearance</text>-->
+    <text name="Appearance">Giao diện</text>
+    <text name="ClearedSuccessfully">Cleared successfully</text>
+    <text name="File_Empty_Error">Please select a file!</text>
+    <text name="File_SizeLimit_Error">Size of the file exceeds allowed limits!</text>
+    <text name="File_Invalid_Type_Error">Invalid file type!</text>
+    <text name="MaximumUserCount">Maximum user count (0 = unlimited)</text>
+    <text name="MaximumUserCount_Error_Message">Reached to maximum allowed user count!</text>
+    <text name="MaximumUserCount_Error_Detail">This tenant is allowed to have a maximum of {0} users.</text>
+    <text name="UnlockedTenandAdmin">Unlocked admin user for {0}</text>
+
+    <!-- NHÃN -->
+    <text name="QuyTrinh">Quy trình</text>
+    <text name="DangKyCongBo">Bản công bố sản phẩm</text>
+    <text name="DangKyMoi">Đăng ký mới</text>
+    <text name="CanBoPhanCong">Cán bộ phân công</text>
+    <text name="ThayDoiSauCongBo">Thay đổi sau công bố</text>
+    <text name="PhanCongLai">Phân công lại</text>
+    <text name="DuyetHoSoSuaDoiSauCongBo">Duyệt hồ sơ sửa đổi sau công bố</text>
+    <text name="SoanCongVan">Trình hồ sơ</text>
+    <text name="HoSoChuyenVienTrinhDat">Hồ sơ chuyên viên trình đạt</text>
+    <text name="HoSoChuyenVienTrinhSDBS">Hồ sơ chuyên viên trình SĐBS</text>
+    <text name="LanhDaoPhongThamDinhHoSo">Lãnh đạo phòng thẩm định hồ sơ</text>
+    <text name="LanhDaoCucThamDinhHoSo">Lãnh đạo cục phê duyệt hồ sơ</text>
+    <text name="HoSoDatPhongXinYKien">Hồ sơ chuyên viên trình</text>
+    <text name="HoSoSDBSPhongXinYKien">Hồ sơ SĐBS phòng xin ý kiến</text>
+    <text name="DongDauCongVan">Đóng dấu văn bản</text>
+    <text name="SuaDoiBoSung">Sửa đổi bổ sung</text>
+    <text name="PhoPhongThamDinhHoSo">Phó phòng thẩm định hồ sơ</text>
+    <text name="ChuyenVienThamDinhLai">Bổ sung công văn</text>
+    <text name="ThamDinhHoSoBoSung" value="Thẩm định hồ sơ bổ sung" />
+    <text name="TongHopThamDinh" value="Tổng hợp thẩm định" />
+    <text name="SoanLaiCongVan" value="Soạn lại công văn" />
+    <text name="ThongKeLanhDaoCucXuLyHoSo">Thống kê lãnh đạo cục xử lý hồ sơ</text>
+    <text name="HoSoQuaHan">Hồ sơ quá hạn</text>
+    <text name="Tinh" value="Tỉnh" />
+    <text name="TatCa" value="Tất cả" />
+    <text name="Thang" value="Tháng" />
+
+    <!-- KHÁC -->
+    <text name="DeleteWarningMessage" value="Bản ghi '{0}' sẽ bị xóa." />
+    <text name="DeleteTinhWarningMessage" value="Tỉnh '{0}' sẽ bị xóa." />
+    <text name="DeleteHuyenWarningMessage" value="Quận/Huyện '{0}' sẽ bị xóa." />
+    <text name="DeleteXaWarningMessage" value="Phường/Xã '{0}' sẽ bị xóa." />
+    <text name="DeleteDonViWarningMessage" value="Đơn vị '{0}' sẽ bị xóa." />
+    <text name="DeleteQuocGiaWarningMessage" value="Quốc gia '{0}' sẽ bị xóa." />
+    <text name="DeleteChucDanhWarningMessage" value="Chức danh '{0}' sẽ bị xóa." />
+    <text name="DeleteLichLamViecWarningMessage" value="Lịch làm việc '{0}' sẽ bị xóa." />
+    <text name="DeleteNgayNghiWarningMessage" value="Ngày nghỉ này sẽ bị xóa." />
+    <text name="OK" value="OK" />
+    <text name="KhongTimThayDuLieu" value="Không tìm thấy dữ liệu." />
+    <text name="HayThemMauNhanSanPham" value="Hãy thêm mẫu nhãn sản phẩm" />
+    <text name="QuanLyAdmin" value="Quản lý admin"></text>
+    <text name="QuanLyHoSoDangKyCongBo" value="Quản lý hồ sơ đăng ký công bố"></text>
+
+    <!-- THỦ TỤC 99 -->
+    <text name="ThuTuc99" value="Thủ tục TT-99"></text>
+    <text name="ThuTuc99_DangKyHoSo" value="Đăng ký hồ sơ"></text>
+    <text name="ThuTuc99_XacNhanThanhToan" value="Xác nhận thanh toán"></text>
+    <text name="ThuTuc99_MotCuaRaSoat" value="Rà soát hồ sơ"></text>
+    <text name="ThuTuc99_MotCuaPhanCong" value="Một cửa chuyển hồ sơ"></text>
+    <text name="ThuTuc99_PhongBanPhanCong" value="Phân công"></text>
+    <text name="ThuTuc99_TruongPhongDuyet" value="Trưởng phòng duyệt"></text>
+    <text name="ThuTuc99_LanhDaoCucDuyet" value="Lãnh đạo cục duyệt"></text>
+    <text name="ThuTuc99_LanhDaoBoDuyet" value="Lãnh đạo bộ duyệt"></text>
+    <text name="ThuTuc99_VanThuDuyet" value="Văn thư đóng dấu"></text>
+    <text name="ThuTuc99_TraCuuHoSo" value="Tra cứu hồ sơ"></text>
+    <text name="ThuTuc99_ThamDinhHoSo" value="Thẩm định hồ sơ"></text>
+    <text name="ThuTuc99_PhoPhongDuyet" value="Phó phòng duyệt"></text>
+
+    <!-- THỦ TỤC 98 -->
+    <text name="ThuTuc98" value="Thủ tục TT-98"></text>
+    <text name="ThuTuc98_DangKyHoSo" value="Đăng ký hồ sơ"></text>
+    <text name="ThuTuc98_MotCuaRaSoat" value="Rà soát hồ sơ"></text>
+    <text name="ThuTuc98_TruongPhongDuyet" value="Trưởng phòng duyệt"></text>
+    <text name="ThuTuc98_TraCuuHoSo" value="Tra cứu hồ sơ"></text>
+
+    <!-- THỦ TỤC 01 -->
+    <text name="ThuTuc01" value="Thủ tục TT-01"></text>
+    <text name="ThuTuc01_DangKyHoSo" value="Đăng ký hồ sơ"></text>
+    <text name="ThuTuc01_XacNhanThanhToan" value="Xác nhận thanh toán"></text>
+    <text name="ThuTuc01_MotCuaRaSoat" value="Rà soát hồ sơ"></text>
+    <text name="ThuTuc01_MotCuaPhanCong" value="Một cửa chuyển hồ sơ"></text>
+    <text name="ThuTuc01_PhongBanPhanCong" value="Phân công"></text>
+    <text name="ThuTuc01_TruongPhongDuyet" value="Trưởng phòng duyệt"></text>
+    <text name="ThuTuc01_LanhDaoCucDuyet" value="Lãnh đạo cục duyệt"></text>
+    <text name="ThuTuc01_LanhDaoBoDuyet" value="Lãnh đạo bộ duyệt"></text>
+    <text name="ThuTuc01_VanThuDuyet" value="Văn thư đóng dấu"></text>
+    <text name="ThuTuc01_TraCuuHoSo" value="Tra cứu hồ sơ"></text>
+    <text name="ThuTuc01_ThamDinhHoSo" value="Thẩm định hồ sơ"></text>
+    <text name="ThuTuc01_PhoPhongDuyet" value="Phó phòng duyệt"></text>
+
+    <!-- THỦ TỤC 02 -->
+    <text name="ThuTuc02" value="Thủ tục TT-02"></text>
+    <text name="ThuTuc02_DangKyHoSo" value="Đăng ký hồ sơ"></text>
+    <text name="ThuTuc02_XacNhanThanhToan" value="Xác nhận thanh toán"></text>
+    <text name="ThuTuc02_MotCuaRaSoat" value="Rà soát hồ sơ"></text>
+    <text name="ThuTuc02_MotCuaPhanCong" value="Một cửa chuyển hồ sơ"></text>
+    <text name="ThuTuc02_PhongBanPhanCong" value="Phân công"></text>
+    <text name="ThuTuc02_TruongPhongDuyet" value="Trưởng phòng duyệt"></text>
+    <text name="ThuTuc02_LanhDaoCucDuyet" value="Lãnh đạo cục duyệt"></text>
+    <text name="ThuTuc02_LanhDaoBoDuyet" value="Lãnh đạo bộ duyệt"></text>
+    <text name="ThuTuc02_VanThuDuyet" value="Văn thư đóng dấu"></text>
+    <text name="ThuTuc02_TraCuuHoSo" value="Tra cứu hồ sơ"></text>
+    <text name="ThuTuc02_ThamDinhHoSo" value="Thẩm định hồ sơ"></text>
+    <text name="ThuTuc02_PhoPhongDuyet" value="Phó phòng duyệt"></text>
+
+    <!-- THỦ TỤC 03 -->
+    <text name="ThuTuc03" value="Thủ tục TT-03"></text>
+    <text name="ThuTuc03_DangKyHoSo" value="Đăng ký hồ sơ"></text>
+    <text name="ThuTuc03_XacNhanThanhToan" value="Xác nhận thanh toán"></text>
+    <text name="ThuTuc03_MotCuaRaSoat" value="Rà soát hồ sơ"></text>
+    <text name="ThuTuc03_MotCuaPhanCong" value="Một cửa chuyển hồ sơ"></text>
+    <text name="ThuTuc03_PhongBanPhanCong" value="Phân công"></text>
+    <text name="ThuTuc03_TruongPhongDuyet" value="Trưởng phòng duyệt"></text>
+    <text name="ThuTuc03_LanhDaoCucDuyet" value="Lãnh đạo cục duyệt"></text>
+    <text name="ThuTuc03_LanhDaoBoDuyet" value="Lãnh đạo bộ duyệt"></text>
+    <text name="ThuTuc03_VanThuDuyet" value="Văn thư đóng dấu"></text>
+    <text name="ThuTuc03_TraCuuHoSo" value="Tra cứu hồ sơ"></text>
+    <text name="ThuTuc03_ThamDinhHoSo" value="Thẩm định hồ sơ"></text>
+    <text name="ThuTuc03_PhoPhongDuyet" value="Phó phòng duyệt"></text>
+    <text name="ThuTuc03_ChuyenGiaThamDinh" value="Chuyên gia thẩm định"></text>
+    <text name="ThuTuc03_HoiDongThamDinh" value="Hội đồng thẩm định"></text>
+
+    <!-- THỦ TỤC 04 -->
+    <text name="ThuTuc04" value="Thủ tục TT-04"></text>
+    <text name="ThuTuc04_DangKyHoSo" value="Đăng ký hồ sơ"></text>
+    <text name="ThuTuc04_XacNhanThanhToan" value="Xác nhận thanh toán"></text>
+    <text name="ThuTuc04_MotCuaRaSoat" value="Rà soát hồ sơ"></text>
+    <text name="ThuTuc04_MotCuaPhanCong" value="Một cửa chuyển hồ sơ"></text>
+    <text name="ThuTuc04_PhongBanPhanCong" value="Phân công"></text>
+    <text name="ThuTuc04_TruongPhongDuyet" value="Trưởng phòng duyệt"></text>
+    <text name="ThuTuc04_LanhDaoCucDuyet" value="Lãnh đạo cục duyệt"></text>
+    <text name="ThuTuc04_LanhDaoBoDuyet" value="Lãnh đạo bộ duyệt"></text>
+    <text name="ThuTuc04_VanThuDuyet" value="Văn thư đóng dấu"></text>
+    <text name="ThuTuc04_TraCuuHoSo" value="Tra cứu hồ sơ"></text>
+    <text name="ThuTuc04_ThamDinhHoSo" value="Thẩm định hồ sơ"></text>
+    <text name="ThuTuc04_PhoPhongDuyet" value="Phó phòng duyệt"></text>
+
+    <!-- THỦ TỤC 05 -->
+    <text name="ThuTuc05" value="Thủ tục TT-05"></text>
+    <text name="ThuTuc05_DangKyHoSo" value="Đăng ký hồ sơ"></text>
+    <text name="ThuTuc05_XacNhanThanhToan" value="Xác nhận thanh toán"></text>
+    <text name="ThuTuc05_MotCuaRaSoat" value="Rà soát hồ sơ"></text>
+    <text name="ThuTuc05_MotCuaPhanCong" value="Một cửa chuyển hồ sơ"></text>
+    <text name="ThuTuc05_PhongBanPhanCong" value="Phân công"></text>
+    <text name="ThuTuc05_TruongPhongDuyet" value="Trưởng phòng duyệt"></text>
+    <text name="ThuTuc05_LanhDaoCucDuyet" value="Lãnh đạo cục duyệt"></text>
+    <text name="ThuTuc05_LanhDaoBoDuyet" value="Lãnh đạo bộ duyệt"></text>
+    <text name="ThuTuc05_VanThuDuyet" value="Văn thư đóng dấu"></text>
+    <text name="ThuTuc05_TraCuuHoSo" value="Tra cứu hồ sơ"></text>
+    <text name="ThuTuc05_ThamDinhHoSo" value="Thẩm định hồ sơ"></text>
+    <text name="ThuTuc05_PhoPhongDuyet" value="Phó phòng duyệt"></text>
+
+    <!-- THỦ TỤC 06 -->
+    <text name="ThuTuc06" value="Thủ tục TT-06"></text>
+    <text name="ThuTuc06_DangKyHoSo" value="Đăng ký hồ sơ"></text>
+    <text name="ThuTuc06_XacNhanThanhToan" value="Xác nhận thanh toán"></text>
+    <text name="ThuTuc06_MotCuaRaSoat" value="Rà soát hồ sơ"></text>
+    <text name="ThuTuc06_MotCuaPhanCong" value="Một cửa chuyển hồ sơ"></text>
+    <text name="ThuTuc06_PhongBanPhanCong" value="Phân công"></text>
+    <text name="ThuTuc06_TruongPhongDuyet" value="Trưởng phòng duyệt"></text>
+    <text name="ThuTuc06_LanhDaoCucDuyet" value="Lãnh đạo cục duyệt"></text>
+    <text name="ThuTuc06_LanhDaoBoDuyet" value="Lãnh đạo bộ duyệt"></text>
+    <text name="ThuTuc06_VanThuDuyet" value="Văn thư đóng dấu"></text>
+    <text name="ThuTuc06_TraCuuHoSo" value="Tra cứu hồ sơ"></text>
+    <text name="ThuTuc06_ThamDinhHoSo" value="Thẩm định hồ sơ"></text>
+    <text name="ThuTuc06_PhoPhongDuyet" value="Phó phòng duyệt"></text>
+
+    <!-- THỦ TỤC 07 -->
+    <text name="ThuTuc07" value="Thủ tục TT-07"></text>
+    <text name="ThuTuc07_DangKyHoSo" value="Đăng ký hồ sơ"></text>
+    <text name="ThuTuc07_XacNhanThanhToan" value="Xác nhận thanh toán"></text>
+    <text name="ThuTuc07_MotCuaRaSoat" value="Rà soát hồ sơ"></text>
+    <text name="ThuTuc07_MotCuaPhanCong" value="Một cửa chuyển hồ sơ"></text>
+    <text name="ThuTuc07_PhongBanPhanCong" value="Phân công"></text>
+    <text name="ThuTuc07_TruongPhongDuyet" value="Trưởng phòng duyệt"></text>
+    <text name="ThuTuc07_LanhDaoCucDuyet" value="Lãnh đạo cục duyệt"></text>
+    <text name="ThuTuc07_LanhDaoBoDuyet" value="Lãnh đạo bộ duyệt"></text>
+    <text name="ThuTuc07_VanThuDuyet" value="Văn thư đóng dấu"></text>
+    <text name="ThuTuc07_TraCuuHoSo" value="Tra cứu hồ sơ"></text>
+    <text name="ThuTuc07_ThamDinhHoSo" value="Thẩm định hồ sơ"></text>
+    <text name="ThuTuc07_PhoPhongDuyet" value="Phó phòng duyệt"></text>
+
+    <!-- THỦ TỤC 08 -->
+    <text name="ThuTuc08" value="Thủ tục TT-08"></text>
+    <text name="ThuTuc08_DangKyHoSo" value="Đăng ký hồ sơ"></text>
+    <text name="ThuTuc08_XacNhanThanhToan" value="Xác nhận thanh toán"></text>
+    <text name="ThuTuc08_MotCuaRaSoat" value="Rà soát hồ sơ"></text>
+    <text name="ThuTuc08_MotCuaPhanCong" value="Một cửa chuyển hồ sơ"></text>
+    <text name="ThuTuc08_PhongBanPhanCong" value="Phân công"></text>
+    <text name="ThuTuc08_TruongPhongDuyet" value="Trưởng phòng duyệt"></text>
+    <text name="ThuTuc08_LanhDaoCucDuyet" value="Lãnh đạo cục duyệt"></text>
+    <text name="ThuTuc08_LanhDaoBoDuyet" value="Lãnh đạo bộ duyệt"></text>
+    <text name="ThuTuc08_VanThuDuyet" value="Văn thư đóng dấu"></text>
+    <text name="ThuTuc08_TraCuuHoSo" value="Tra cứu hồ sơ"></text>
+    <text name="ThuTuc08_ThamDinhHoSo" value="Thẩm định hồ sơ"></text>
+    <text name="ThuTuc08_PhoPhongDuyet" value="Phó phòng duyệt"></text>
+
+    <!-- THỦ TỤC 09 -->
+    <text name="ThuTuc09" value="Thủ tục TT-09"></text>
+    <text name="ThuTuc09_DangKyHoSo" value="Đăng ký hồ sơ"></text>
+    <text name="ThuTuc09_XacNhanThanhToan" value="Xác nhận thanh toán"></text>
+    <text name="ThuTuc09_MotCuaRaSoat" value="Rà soát hồ sơ"></text>
+    <text name="ThuTuc09_MotCuaPhanCong" value="Một cửa chuyển hồ sơ"></text>
+    <text name="ThuTuc09_PhongBanPhanCong" value="Phân công"></text>
+    <text name="ThuTuc09_TruongPhongDuyet" value="Trưởng phòng duyệt"></text>
+    <text name="ThuTuc09_LanhDaoCucDuyet" value="Lãnh đạo cục duyệt"></text>
+    <text name="ThuTuc09_LanhDaoBoDuyet" value="Lãnh đạo bộ duyệt"></text>
+    <text name="ThuTuc09_VanThuDuyet" value="Văn thư đóng dấu"></text>
+    <text name="ThuTuc09_TraCuuHoSo" value="Tra cứu hồ sơ"></text>
+    <text name="ThuTuc09_ThamDinhHoSo" value="Thẩm định hồ sơ"></text>
+    <text name="ThuTuc09_PhoPhongDuyet" value="Phó phòng duyệt"></text>
+
+    <!-- THỦ TỤC 10 -->
+    <text name="ThuTuc10" value="Thủ tục TT-10"></text>
+    <text name="ThuTuc10_DangKyHoSo" value="Đăng ký hồ sơ"></text>
+    <text name="ThuTuc10_XacNhanThanhToan" value="Xác nhận thanh toán"></text>
+    <text name="ThuTuc10_MotCuaRaSoat" value="Rà soát hồ sơ"></text>
+    <text name="ThuTuc10_MotCuaPhanCong" value="Một cửa chuyển hồ sơ"></text>
+    <text name="ThuTuc10_PhongBanPhanCong" value="Phân công"></text>
+    <text name="ThuTuc10_TruongPhongDuyet" value="Trưởng phòng duyệt"></text>
+    <text name="ThuTuc10_LanhDaoCucDuyet" value="Lãnh đạo cục duyệt"></text>
+    <text name="ThuTuc10_LanhDaoBoDuyet" value="Lãnh đạo bộ duyệt"></text>
+    <text name="ThuTuc10_VanThuDuyet" value="Văn thư đóng dấu"></text>
+    <text name="ThuTuc10_TraCuuHoSo" value="Tra cứu hồ sơ"></text>
+    <text name="ThuTuc10_ThamDinhHoSo" value="Thẩm định hồ sơ"></text>
+    <text name="ThuTuc10_PhoPhongDuyet" value="Phó phòng duyệt"></text>
+
+    <!-- THỦ TỤC 11 -->
+    <text name="ThuTuc11" value="Thủ tục TT-11"></text>
+    <text name="ThuTuc11_DangKyHoSo" value="Đăng ký hồ sơ"></text>
+    <text name="ThuTuc11_XacNhanThanhToan" value="Xác nhận thanh toán"></text>
+    <text name="ThuTuc11_MotCuaRaSoat" value="Rà soát hồ sơ"></text>
+    <text name="ThuTuc11_MotCuaPhanCong" value="Một cửa chuyển hồ sơ"></text>
+    <text name="ThuTuc11_PhongBanPhanCong" value="Phân công"></text>
+    <text name="ThuTuc11_TruongPhongDuyet" value="Trưởng phòng duyệt"></text>
+    <text name="ThuTuc11_LanhDaoCucDuyet" value="Lãnh đạo cục duyệt"></text>
+    <text name="ThuTuc11_LanhDaoBoDuyet" value="Lãnh đạo bộ duyệt"></text>
+    <text name="ThuTuc11_VanThuDuyet" value="Văn thư đóng dấu"></text>
+    <text name="ThuTuc11_TraCuuHoSo" value="Tra cứu hồ sơ"></text>
+    <text name="ThuTuc11_ThamDinhHoSo" value="Thẩm định hồ sơ"></text>
+    <text name="ThuTuc11_PhoPhongDuyet" value="Phó phòng duyệt"></text>
+
+    <!-- THỦ TỤC 12 -->
+    <text name="ThuTuc12" value="Thủ tục TT-12"></text>
+    <text name="ThuTuc12_DangKyHoSo" value="Đăng ký hồ sơ"></text>
+    <text name="ThuTuc12_XacNhanThanhToan" value="Xác nhận thanh toán"></text>
+    <text name="ThuTuc12_MotCuaRaSoat" value="Rà soát hồ sơ"></text>
+    <text name="ThuTuc12_MotCuaPhanCong" value="Một cửa chuyển hồ sơ"></text>
+    <text name="ThuTuc12_PhongBanPhanCong" value="Phân công"></text>
+    <text name="ThuTuc12_TruongPhongDuyet" value="Trưởng phòng duyệt"></text>
+    <text name="ThuTuc12_LanhDaoCucDuyet" value="Lãnh đạo cục duyệt"></text>
+    <text name="ThuTuc12_LanhDaoBoDuyet" value="Lãnh đạo bộ duyệt"></text>
+    <text name="ThuTuc12_VanThuDuyet" value="Văn thư đóng dấu"></text>
+    <text name="ThuTuc12_TraCuuHoSo" value="Tra cứu hồ sơ"></text>
+    <text name="ThuTuc12_ThamDinhHoSo" value="Thẩm định hồ sơ"></text>
+    <text name="ThuTuc12_PhoPhongDuyet" value="Phó phòng duyệt"></text>
+
+    <!-- THỦ TỤC 13 -->
+    <text name="ThuTuc13" value="Thủ tục TT-13"></text>
+    <text name="ThuTuc13_DangKyHoSo" value="Đăng ký hồ sơ"></text>
+    <text name="ThuTuc13_XacNhanThanhToan" value="Xác nhận thanh toán"></text>
+    <text name="ThuTuc13_MotCuaRaSoat" value="Rà soát hồ sơ"></text>
+    <text name="ThuTuc13_MotCuaPhanCong" value="Một cửa chuyển hồ sơ"></text>
+    <text name="ThuTuc13_PhongBanPhanCong" value="Phân công"></text>
+    <text name="ThuTuc13_TruongPhongDuyet" value="Trưởng phòng duyệt"></text>
+    <text name="ThuTuc13_LanhDaoCucDuyet" value="Lãnh đạo cục duyệt"></text>
+    <text name="ThuTuc13_LanhDaoBoDuyet" value="Lãnh đạo bộ duyệt"></text>
+    <text name="ThuTuc13_VanThuDuyet" value="Văn thư đóng dấu"></text>
+    <text name="ThuTuc13_TraCuuHoSo" value="Tra cứu hồ sơ"></text>
+    <text name="ThuTuc13_ThamDinhHoSo" value="Thẩm định hồ sơ"></text>
+    <text name="ThuTuc13_PhoPhongDuyet" value="Phó phòng duyệt"></text>
+
+    <!-- THỦ TỤC 14 -->
+    <text name="ThuTuc14" value="Thủ tục TT-14"></text>
+    <text name="ThuTuc14_DangKyHoSo" value="Đăng ký hồ sơ"></text>
+    <text name="ThuTuc14_XacNhanThanhToan" value="Xác nhận thanh toán"></text>
+    <text name="ThuTuc14_MotCuaRaSoat" value="Rà soát hồ sơ"></text>
+    <text name="ThuTuc14_MotCuaPhanCong" value="Một cửa chuyển hồ sơ"></text>
+    <text name="ThuTuc14_PhongBanPhanCong" value="Phân công"></text>
+    <text name="ThuTuc14_TruongPhongDuyet" value="Trưởng phòng duyệt"></text>
+    <text name="ThuTuc14_LanhDaoCucDuyet" value="Lãnh đạo cục duyệt"></text>
+    <text name="ThuTuc14_LanhDaoBoDuyet" value="Lãnh đạo bộ duyệt"></text>
+    <text name="ThuTuc14_VanThuDuyet" value="Văn thư đóng dấu"></text>
+    <text name="ThuTuc14_TraCuuHoSo" value="Tra cứu hồ sơ"></text>
+    <text name="ThuTuc14_ThamDinhHoSo" value="Thẩm định hồ sơ"></text>
+    <text name="ThuTuc14_PhoPhongDuyet" value="Phó phòng duyệt"></text>
+
+    <!-- THỦ TỤC 15 -->
+    <text name="ThuTuc15" value="Thủ tục TT-15"></text>
+    <text name="ThuTuc15_DangKyHoSo" value="Đăng ký hồ sơ"></text>
+    <text name="ThuTuc15_XacNhanThanhToan" value="Xác nhận thanh toán"></text>
+    <text name="ThuTuc15_MotCuaRaSoat" value="Rà soát hồ sơ"></text>
+    <text name="ThuTuc15_MotCuaPhanCong" value="Một cửa chuyển hồ sơ"></text>
+    <text name="ThuTuc15_PhongBanPhanCong" value="Phân công"></text>
+    <text name="ThuTuc15_TruongPhongDuyet" value="Trưởng phòng duyệt"></text>
+    <text name="ThuTuc15_LanhDaoCucDuyet" value="Lãnh đạo cục duyệt"></text>
+    <text name="ThuTuc15_LanhDaoBoDuyet" value="Lãnh đạo bộ duyệt"></text>
+    <text name="ThuTuc15_VanThuDuyet" value="Văn thư đóng dấu"></text>
+    <text name="ThuTuc15_TraCuuHoSo" value="Tra cứu hồ sơ"></text>
+    <text name="ThuTuc15_ThamDinhHoSo" value="Thẩm định hồ sơ"></text>
+    <text name="ThuTuc15_PhoPhongDuyet" value="Phó phòng duyệt"></text>
+
+    <!-- THỦ TỤC 16 -->
+    <text name="ThuTuc16" value="Thủ tục TT-16"></text>
+    <text name="ThuTuc16_DangKyHoSo" value="Đăng ký hồ sơ"></text>
+    <text name="ThuTuc16_XacNhanThanhToan" value="Xác nhận thanh toán"></text>
+    <text name="ThuTuc16_MotCuaRaSoat" value="Rà soát hồ sơ"></text>
+    <text name="ThuTuc16_MotCuaPhanCong" value="Một cửa chuyển hồ sơ"></text>
+    <text name="ThuTuc16_PhongBanPhanCong" value="Phân công"></text>
+    <text name="ThuTuc16_TruongPhongDuyet" value="Trưởng phòng duyệt"></text>
+    <text name="ThuTuc16_LanhDaoCucDuyet" value="Lãnh đạo cục duyệt"></text>
+    <text name="ThuTuc16_LanhDaoBoDuyet" value="Lãnh đạo bộ duyệt"></text>
+    <text name="ThuTuc16_VanThuDuyet" value="Văn thư đóng dấu"></text>
+    <text name="ThuTuc16_TraCuuHoSo" value="Tra cứu hồ sơ"></text>
+    <text name="ThuTuc16_ThamDinhHoSo" value="Thẩm định hồ sơ"></text>
+    <text name="ThuTuc16_PhoPhongDuyet" value="Phó phòng duyệt"></text>
+
+    <!-- THỦ TỤC 17 -->
+    <text name="ThuTuc17" value="Thủ tục TT-17"></text>
+    <text name="ThuTuc17_DangKyHoSo" value="Đăng ký hồ sơ"></text>
+    <text name="ThuTuc17_XacNhanThanhToan" value="Xác nhận thanh toán"></text>
+    <text name="ThuTuc17_MotCuaRaSoat" value="Rà soát hồ sơ"></text>
+    <text name="ThuTuc17_MotCuaPhanCong" value="Một cửa chuyển hồ sơ"></text>
+    <text name="ThuTuc17_PhongBanPhanCong" value="Phân công"></text>
+    <text name="ThuTuc17_TruongPhongDuyet" value="Trưởng phòng duyệt"></text>
+    <text name="ThuTuc17_LanhDaoCucDuyet" value="Lãnh đạo cục duyệt"></text>
+    <text name="ThuTuc17_LanhDaoBoDuyet" value="Lãnh đạo bộ duyệt"></text>
+    <text name="ThuTuc17_VanThuDuyet" value="Văn thư đóng dấu"></text>
+    <text name="ThuTuc17_TraCuuHoSo" value="Tra cứu hồ sơ"></text>
+    <text name="ThuTuc17_ThamDinhHoSo" value="Thẩm định hồ sơ"></text>
+    <text name="ThuTuc17_PhoPhongDuyet" value="Phó phòng duyệt"></text>
+
+    <!-- THỦ TỤC 18 -->
+    <text name="ThuTuc18" value="Thủ tục TT-18"></text>
+    <text name="ThuTuc18_DangKyHoSo" value="Đăng ký hồ sơ"></text>
+    <text name="ThuTuc18_XacNhanThanhToan" value="Xác nhận thanh toán"></text>
+    <text name="ThuTuc18_MotCuaRaSoat" value="Rà soát hồ sơ"></text>
+    <text name="ThuTuc18_MotCuaPhanCong" value="Một cửa chuyển hồ sơ"></text>
+    <text name="ThuTuc18_PhongBanPhanCong" value="Phân công"></text>
+    <text name="ThuTuc18_TruongPhongDuyet" value="Trưởng phòng duyệt"></text>
+    <text name="ThuTuc18_LanhDaoCucDuyet" value="Lãnh đạo cục duyệt"></text>
+    <text name="ThuTuc18_LanhDaoBoDuyet" value="Lãnh đạo bộ duyệt"></text>
+    <text name="ThuTuc18_VanThuDuyet" value="Văn thư đóng dấu"></text>
+    <text name="ThuTuc18_TraCuuHoSo" value="Tra cứu hồ sơ"></text>
+    <text name="ThuTuc18_ThamDinhHoSo" value="Thẩm định hồ sơ"></text>
+    <text name="ThuTuc18_PhoPhongDuyet" value="Phó phòng duyệt"></text>
+
+    <!-- THỦ TỤC 19 -->
+    <text name="ThuTuc19" value="Thủ tục TT-19"></text>
+    <text name="ThuTuc19_DangKyHoSo" value="Đăng ký hồ sơ"></text>
+    <text name="ThuTuc19_XacNhanThanhToan" value="Xác nhận thanh toán"></text>
+    <text name="ThuTuc19_MotCuaRaSoat" value="Rà soát hồ sơ"></text>
+    <text name="ThuTuc19_MotCuaPhanCong" value="Một cửa chuyển hồ sơ"></text>
+    <text name="ThuTuc19_PhongBanPhanCong" value="Phân công"></text>
+    <text name="ThuTuc19_TruongPhongDuyet" value="Trưởng phòng duyệt"></text>
+    <text name="ThuTuc19_LanhDaoCucDuyet" value="Lãnh đạo cục duyệt"></text>
+    <text name="ThuTuc19_LanhDaoBoDuyet" value="Lãnh đạo bộ duyệt"></text>
+    <text name="ThuTuc19_VanThuDuyet" value="Văn thư đóng dấu"></text>
+    <text name="ThuTuc19_TraCuuHoSo" value="Tra cứu hồ sơ"></text>
+    <text name="ThuTuc19_ThamDinhHoSo" value="Thẩm định hồ sơ"></text>
+    <text name="ThuTuc19_PhoPhongDuyet" value="Phó phòng duyệt"></text>
+
+    <!-- THỦ TỤC 20 -->
+    <text name="ThuTuc20" value="Thủ tục TT-20"></text>
+    <text name="ThuTuc20_DangKyHoSo" value="Đăng ký hồ sơ"></text>
+    <text name="ThuTuc20_XacNhanThanhToan" value="Xác nhận thanh toán"></text>
+    <text name="ThuTuc20_MotCuaRaSoat" value="Rà soát hồ sơ"></text>
+    <text name="ThuTuc20_MotCuaPhanCong" value="Một cửa chuyển hồ sơ"></text>
+    <text name="ThuTuc20_PhongBanPhanCong" value="Phân công"></text>
+    <text name="ThuTuc20_TruongPhongDuyet" value="Trưởng phòng duyệt"></text>
+    <text name="ThuTuc20_LanhDaoCucDuyet" value="Lãnh đạo cục duyệt"></text>
+    <text name="ThuTuc20_LanhDaoBoDuyet" value="Lãnh đạo bộ duyệt"></text>
+    <text name="ThuTuc20_VanThuDuyet" value="Văn thư đóng dấu"></text>
+    <text name="ThuTuc20_TraCuuHoSo" value="Tra cứu hồ sơ"></text>
+    <text name="ThuTuc20_ThamDinhHoSo" value="Thẩm định hồ sơ"></text>
+    <text name="ThuTuc20_PhoPhongDuyet" value="Phó phòng duyệt"></text>
+
+    <!-- THỦ TỤC 21 -->
+    <text name="ThuTuc21" value="Thủ tục TT-21"></text>
+    <text name="ThuTuc21_DangKyHoSo" value="Đăng ký hồ sơ"></text>
+    <text name="ThuTuc21_XacNhanThanhToan" value="Xác nhận thanh toán"></text>
+    <text name="ThuTuc21_MotCuaRaSoat" value="Rà soát hồ sơ"></text>
+    <text name="ThuTuc21_MotCuaPhanCong" value="Một cửa chuyển hồ sơ"></text>
+    <text name="ThuTuc21_PhongBanPhanCong" value="Phân công"></text>
+    <text name="ThuTuc21_TruongPhongDuyet" value="Trưởng phòng duyệt"></text>
+    <text name="ThuTuc21_LanhDaoCucDuyet" value="Lãnh đạo cục duyệt"></text>
+    <text name="ThuTuc21_LanhDaoBoDuyet" value="Lãnh đạo bộ duyệt"></text>
+    <text name="ThuTuc21_VanThuDuyet" value="Văn thư đóng dấu"></text>
+    <text name="ThuTuc21_TraCuuHoSo" value="Tra cứu hồ sơ"></text>
+    <text name="ThuTuc21_ThamDinhHoSo" value="Thẩm định hồ sơ"></text>
+    <text name="ThuTuc21_PhoPhongDuyet" value="Phó phòng duyệt"></text>
+
+    <!-- THỦ TỤC 22 -->
+    <text name="ThuTuc22" value="Thủ tục TT-22"></text>
+    <text name="ThuTuc22_DangKyHoSo" value="Đăng ký hồ sơ"></text>
+    <text name="ThuTuc22_XacNhanThanhToan" value="Xác nhận thanh toán"></text>
+    <text name="ThuTuc22_MotCuaRaSoat" value="Rà soát hồ sơ"></text>
+    <text name="ThuTuc22_MotCuaPhanCong" value="Một cửa chuyển hồ sơ"></text>
+    <text name="ThuTuc22_PhongBanPhanCong" value="Phân công"></text>
+    <text name="ThuTuc22_TruongPhongDuyet" value="Trưởng phòng duyệt"></text>
+    <text name="ThuTuc22_LanhDaoCucDuyet" value="Lãnh đạo cục duyệt"></text>
+    <text name="ThuTuc22_LanhDaoBoDuyet" value="Lãnh đạo bộ duyệt"></text>
+    <text name="ThuTuc22_VanThuDuyet" value="Văn thư đóng dấu"></text>
+    <text name="ThuTuc22_TraCuuHoSo" value="Tra cứu hồ sơ"></text>
+    <text name="ThuTuc22_ThamDinhHoSo" value="Thẩm định hồ sơ"></text>
+    <text name="ThuTuc22_PhoPhongDuyet" value="Phó phòng duyệt"></text>
+
+    <!-- THỦ TỤC 23 -->
+    <text name="ThuTuc23" value="Thủ tục TT-23"></text>
+    <text name="ThuTuc23_DangKyHoSo" value="Đăng ký hồ sơ"></text>
+    <text name="ThuTuc23_XacNhanThanhToan" value="Xác nhận thanh toán"></text>
+    <text name="ThuTuc23_MotCuaRaSoat" value="Rà soát hồ sơ"></text>
+    <text name="ThuTuc23_MotCuaPhanCong" value="Một cửa chuyển hồ sơ"></text>
+    <text name="ThuTuc23_PhongBanPhanCong" value="Phân công"></text>
+    <text name="ThuTuc23_TruongPhongDuyet" value="Trưởng phòng duyệt"></text>
+    <text name="ThuTuc23_LanhDaoCucDuyet" value="Lãnh đạo cục duyệt"></text>
+    <text name="ThuTuc23_LanhDaoBoDuyet" value="Lãnh đạo bộ duyệt"></text>
+    <text name="ThuTuc23_VanThuDuyet" value="Văn thư đóng dấu"></text>
+    <text name="ThuTuc23_TraCuuHoSo" value="Tra cứu hồ sơ"></text>
+    <text name="ThuTuc23_ThamDinhHoSo" value="Thẩm định hồ sơ"></text>
+    <text name="ThuTuc23_PhoPhongDuyet" value="Phó phòng duyệt"></text>
+
+    <!-- THỦ TỤC 24 -->
+    <text name="ThuTuc24" value="Thủ tục TT-24"></text>
+    <text name="ThuTuc24_DangKyHoSo" value="Đăng ký hồ sơ"></text>
+    <text name="ThuTuc24_XacNhanThanhToan" value="Xác nhận thanh toán"></text>
+    <text name="ThuTuc24_MotCuaRaSoat" value="Rà soát hồ sơ"></text>
+    <text name="ThuTuc24_MotCuaPhanCong" value="Một cửa chuyển hồ sơ"></text>
+    <text name="ThuTuc24_PhongBanPhanCong" value="Phân công"></text>
+    <text name="ThuTuc24_TruongPhongDuyet" value="Trưởng phòng duyệt"></text>
+    <text name="ThuTuc24_LanhDaoCucDuyet" value="Lãnh đạo cục duyệt"></text>
+    <text name="ThuTuc24_LanhDaoBoDuyet" value="Lãnh đạo bộ duyệt"></text>
+    <text name="ThuTuc24_VanThuDuyet" value="Văn thư đóng dấu"></text>
+    <text name="ThuTuc24_TraCuuHoSo" value="Tra cứu hồ sơ"></text>
+    <text name="ThuTuc24_ThamDinhHoSo" value="Thẩm định hồ sơ"></text>
+    <text name="ThuTuc24_PhoPhongDuyet" value="Phó phòng duyệt"></text>
+
+    <!-- THỦ TỤC 25 -->
+    <text name="ThuTuc25" value="Thủ tục TT-25"></text>
+    <text name="ThuTuc25_DangKyHoSo" value="Đăng ký hồ sơ"></text>
+    <text name="ThuTuc25_XacNhanThanhToan" value="Xác nhận thanh toán"></text>
+    <text name="ThuTuc25_MotCuaRaSoat" value="Rà soát hồ sơ"></text>
+    <text name="ThuTuc25_MotCuaPhanCong" value="Một cửa chuyển hồ sơ"></text>
+    <text name="ThuTuc25_PhongBanPhanCong" value="Phân công"></text>
+    <text name="ThuTuc25_TruongPhongDuyet" value="Trưởng phòng duyệt"></text>
+    <text name="ThuTuc25_LanhDaoCucDuyet" value="Lãnh đạo cục duyệt"></text>
+    <text name="ThuTuc25_LanhDaoBoDuyet" value="Lãnh đạo bộ duyệt"></text>
+    <text name="ThuTuc25_VanThuDuyet" value="Văn thư đóng dấu"></text>
+    <text name="ThuTuc25_TraCuuHoSo" value="Tra cứu hồ sơ"></text>
+    <text name="ThuTuc25_ThamDinhHoSo" value="Thẩm định hồ sơ"></text>
+    <text name="ThuTuc25_PhoPhongDuyet" value="Phó phòng duyệt"></text>
+
+    <!-- THỦ TỤC 26 -->
+    <text name="ThuTuc26" value="Thủ tục TT-26"></text>
+    <text name="ThuTuc26_DangKyHoSo" value="Đăng ký hồ sơ"></text>
+    <text name="ThuTuc26_XacNhanThanhToan" value="Xác nhận thanh toán"></text>
+    <text name="ThuTuc26_MotCuaRaSoat" value="Rà soát hồ sơ"></text>
+    <text name="ThuTuc26_MotCuaPhanCong" value="Một cửa chuyển hồ sơ"></text>
+    <text name="ThuTuc26_PhongBanPhanCong" value="Phân công"></text>
+    <text name="ThuTuc26_TruongPhongDuyet" value="Trưởng phòng duyệt"></text>
+    <text name="ThuTuc26_LanhDaoCucDuyet" value="Lãnh đạo cục duyệt"></text>
+    <text name="ThuTuc26_LanhDaoBoDuyet" value="Lãnh đạo bộ duyệt"></text>
+    <text name="ThuTuc26_VanThuDuyet" value="Văn thư đóng dấu"></text>
+    <text name="ThuTuc26_TraCuuHoSo" value="Tra cứu hồ sơ"></text>
+    <text name="ThuTuc26_ThamDinhHoSo" value="Thẩm định hồ sơ"></text>
+    <text name="ThuTuc26_PhoPhongDuyet" value="Phó phòng duyệt"></text>
+
+    <!-- THỦ TỤC 27 -->
+    <text name="ThuTuc27" value="Thủ tục TT-27"></text>
+    <text name="ThuTuc27_DangKyHoSo" value="Đăng ký hồ sơ"></text>
+    <text name="ThuTuc27_XacNhanThanhToan" value="Xác nhận thanh toán"></text>
+    <text name="ThuTuc27_MotCuaRaSoat" value="Rà soát hồ sơ"></text>
+    <text name="ThuTuc27_MotCuaPhanCong" value="Một cửa chuyển hồ sơ"></text>
+    <text name="ThuTuc27_PhongBanPhanCong" value="Phân công"></text>
+    <text name="ThuTuc27_TruongPhongDuyet" value="Trưởng phòng duyệt"></text>
+    <text name="ThuTuc27_LanhDaoCucDuyet" value="Lãnh đạo cục duyệt"></text>
+    <text name="ThuTuc27_LanhDaoBoDuyet" value="Lãnh đạo bộ duyệt"></text>
+    <text name="ThuTuc27_VanThuDuyet" value="Văn thư đóng dấu"></text>
+    <text name="ThuTuc27_TraCuuHoSo" value="Tra cứu hồ sơ"></text>
+    <text name="ThuTuc27_ThamDinhHoSo" value="Thẩm định hồ sơ"></text>
+    <text name="ThuTuc27_PhoPhongDuyet" value="Phó phòng duyệt"></text>
+
+    <!-- THỦ TỤC 28 -->
+    <text name="ThuTuc28" value="Thủ tục TT-28"></text>
+    <text name="ThuTuc28_DangKyHoSo" value="Đăng ký hồ sơ"></text>
+    <text name="ThuTuc28_XacNhanThanhToan" value="Xác nhận thanh toán"></text>
+    <text name="ThuTuc28_MotCuaRaSoat" value="Rà soát hồ sơ"></text>
+    <text name="ThuTuc28_MotCuaPhanCong" value="Một cửa chuyển hồ sơ"></text>
+    <text name="ThuTuc28_PhongBanPhanCong" value="Phân công"></text>
+    <text name="ThuTuc28_TruongPhongDuyet" value="Trưởng phòng duyệt"></text>
+    <text name="ThuTuc28_LanhDaoCucDuyet" value="Lãnh đạo cục duyệt"></text>
+    <text name="ThuTuc28_LanhDaoBoDuyet" value="Lãnh đạo bộ duyệt"></text>
+    <text name="ThuTuc28_VanThuDuyet" value="Văn thư đóng dấu"></text>
+    <text name="ThuTuc28_TraCuuHoSo" value="Tra cứu hồ sơ"></text>
+    <text name="ThuTuc28_ThamDinhHoSo" value="Thẩm định hồ sơ"></text>
+    <text name="ThuTuc28_PhoPhongDuyet" value="Phó phòng duyệt"></text>
+
+    <!-- THỦ TỤC 29 -->
+    <text name="ThuTuc29" value="Thủ tục TT-29"></text>
+    <text name="ThuTuc29_DangKyHoSo" value="Đăng ký hồ sơ"></text>
+    <text name="ThuTuc29_XacNhanThanhToan" value="Xác nhận thanh toán"></text>
+    <text name="ThuTuc29_MotCuaRaSoat" value="Rà soát hồ sơ"></text>
+    <text name="ThuTuc29_MotCuaPhanCong" value="Một cửa chuyển hồ sơ"></text>
+    <text name="ThuTuc29_PhongBanPhanCong" value="Phân công"></text>
+    <text name="ThuTuc29_TruongPhongDuyet" value="Trưởng phòng duyệt"></text>
+    <text name="ThuTuc29_LanhDaoCucDuyet" value="Lãnh đạo cục duyệt"></text>
+    <text name="ThuTuc29_LanhDaoBoDuyet" value="Lãnh đạo bộ duyệt"></text>
+    <text name="ThuTuc29_VanThuDuyet" value="Văn thư đóng dấu"></text>
+    <text name="ThuTuc29_TraCuuHoSo" value="Tra cứu hồ sơ"></text>
+    <text name="ThuTuc29_ThamDinhHoSo" value="Thẩm định hồ sơ"></text>
+    <text name="ThuTuc29_PhoPhongDuyet" value="Phó phòng duyệt"></text>
+
+    <!-- THỦ TỤC 30 -->
+    <text name="ThuTuc30" value="Thủ tục TT-30"></text>
+    <text name="ThuTuc30_DangKyHoSo" value="Đăng ký hồ sơ"></text>
+    <text name="ThuTuc30_XacNhanThanhToan" value="Xác nhận thanh toán"></text>
+    <text name="ThuTuc30_MotCuaRaSoat" value="Rà soát hồ sơ"></text>
+    <text name="ThuTuc30_MotCuaPhanCong" value="Một cửa chuyển hồ sơ"></text>
+    <text name="ThuTuc30_PhongBanPhanCong" value="Phân công"></text>
+    <text name="ThuTuc30_TruongPhongDuyet" value="Trưởng phòng duyệt"></text>
+    <text name="ThuTuc30_LanhDaoCucDuyet" value="Lãnh đạo cục duyệt"></text>
+    <text name="ThuTuc30_LanhDaoBoDuyet" value="Lãnh đạo bộ duyệt"></text>
+    <text name="ThuTuc30_VanThuDuyet" value="Văn thư đóng dấu"></text>
+    <text name="ThuTuc30_TraCuuHoSo" value="Tra cứu hồ sơ"></text>
+    <text name="ThuTuc30_ThamDinhHoSo" value="Thẩm định hồ sơ"></text>
+    <text name="ThuTuc30_PhoPhongDuyet" value="Phó phòng duyệt"></text>
+
+    <!-- THỦ TỤC 31 -->
+    <text name="ThuTuc31" value="Thủ tục TT-31"></text>
+    <text name="ThuTuc31_DangKyHoSo" value="Đăng ký hồ sơ"></text>
+    <text name="ThuTuc31_XacNhanThanhToan" value="Xác nhận thanh toán"></text>
+    <text name="ThuTuc31_MotCuaRaSoat" value="Rà soát hồ sơ"></text>
+    <text name="ThuTuc31_MotCuaPhanCong" value="Một cửa chuyển hồ sơ"></text>
+    <text name="ThuTuc31_PhongBanPhanCong" value="Phân công"></text>
+    <text name="ThuTuc31_TruongPhongDuyet" value="Trưởng phòng duyệt"></text>
+    <text name="ThuTuc31_LanhDaoCucDuyet" value="Lãnh đạo cục duyệt"></text>
+    <text name="ThuTuc31_LanhDaoBoDuyet" value="Lãnh đạo bộ duyệt"></text>
+    <text name="ThuTuc31_VanThuDuyet" value="Văn thư đóng dấu"></text>
+    <text name="ThuTuc31_TraCuuHoSo" value="Tra cứu hồ sơ"></text>
+    <text name="ThuTuc31_ThamDinhHoSo" value="Thẩm định hồ sơ"></text>
+    <text name="ThuTuc31_PhoPhongDuyet" value="Phó phòng duyệt"></text>
+
+    <!-- THỦ TỤC 32 -->
+    <text name="ThuTuc32" value="Thủ tục TT-32"></text>
+    <text name="ThuTuc32_DangKyHoSo" value="Đăng ký hồ sơ"></text>
+    <text name="ThuTuc32_XacNhanThanhToan" value="Xác nhận thanh toán"></text>
+    <text name="ThuTuc32_MotCuaRaSoat" value="Rà soát hồ sơ"></text>
+    <text name="ThuTuc32_MotCuaPhanCong" value="Một cửa chuyển hồ sơ"></text>
+    <text name="ThuTuc32_PhongBanPhanCong" value="Phân công"></text>
+    <text name="ThuTuc32_TruongPhongDuyet" value="Trưởng phòng duyệt"></text>
+    <text name="ThuTuc32_LanhDaoCucDuyet" value="Lãnh đạo cục duyệt"></text>
+    <text name="ThuTuc32_LanhDaoBoDuyet" value="Lãnh đạo bộ duyệt"></text>
+    <text name="ThuTuc32_VanThuDuyet" value="Văn thư đóng dấu"></text>
+    <text name="ThuTuc32_TraCuuHoSo" value="Tra cứu hồ sơ"></text>
+    <text name="ThuTuc32_ThamDinhHoSo" value="Thẩm định hồ sơ"></text>
+    <text name="ThuTuc32_PhoPhongDuyet" value="Phó phòng duyệt"></text>
+
+    <!-- THỦ TỤC 33 -->
+    <text name="ThuTuc33" value="Thủ tục TT-33"></text>
+    <text name="ThuTuc33_DangKyHoSo" value="Đăng ký hồ sơ"></text>
+    <text name="ThuTuc33_XacNhanThanhToan" value="Xác nhận thanh toán"></text>
+    <text name="ThuTuc33_MotCuaRaSoat" value="Rà soát hồ sơ"></text>
+    <text name="ThuTuc33_MotCuaPhanCong" value="Một cửa chuyển hồ sơ"></text>
+    <text name="ThuTuc33_PhongBanPhanCong" value="Phân công"></text>
+    <text name="ThuTuc33_TruongPhongDuyet" value="Trưởng phòng duyệt"></text>
+    <text name="ThuTuc33_LanhDaoCucDuyet" value="Lãnh đạo cục duyệt"></text>
+    <text name="ThuTuc33_LanhDaoBoDuyet" value="Lãnh đạo bộ duyệt"></text>
+    <text name="ThuTuc33_VanThuDuyet" value="Văn thư đóng dấu"></text>
+    <text name="ThuTuc33_TraCuuHoSo" value="Tra cứu hồ sơ"></text>
+    <text name="ThuTuc33_ThamDinhHoSo" value="Thẩm định hồ sơ"></text>
+    <text name="ThuTuc33_PhoPhongDuyet" value="Phó phòng duyệt"></text>
+
+    <!-- THỦ TỤC 34 -->
+    <text name="ThuTuc34" value="Thủ tục TT-34"></text>
+    <text name="ThuTuc34_DangKyHoSo" value="Đăng ký hồ sơ"></text>
+    <text name="ThuTuc34_XacNhanThanhToan" value="Xác nhận thanh toán"></text>
+    <text name="ThuTuc34_MotCuaRaSoat" value="Rà soát hồ sơ"></text>
+    <text name="ThuTuc34_MotCuaPhanCong" value="Một cửa chuyển hồ sơ"></text>
+    <text name="ThuTuc34_PhongBanPhanCong" value="Phân công"></text>
+    <text name="ThuTuc34_TruongPhongDuyet" value="Trưởng phòng duyệt"></text>
+    <text name="ThuTuc34_LanhDaoCucDuyet" value="Lãnh đạo cục duyệt"></text>
+    <text name="ThuTuc34_LanhDaoBoDuyet" value="Lãnh đạo bộ duyệt"></text>
+    <text name="ThuTuc34_VanThuDuyet" value="Văn thư đóng dấu"></text>
+    <text name="ThuTuc34_TraCuuHoSo" value="Tra cứu hồ sơ"></text>
+    <text name="ThuTuc34_ThamDinhHoSo" value="Thẩm định hồ sơ"></text>
+    <text name="ThuTuc34_PhoPhongDuyet" value="Phó phòng duyệt"></text>
+
+    <!-- THỦ TỤC 35 -->
+    <text name="ThuTuc35" value="Thủ tục TT-35"></text>
+    <text name="ThuTuc35_DangKyHoSo" value="Đăng ký hồ sơ"></text>
+    <text name="ThuTuc35_XacNhanThanhToan" value="Xác nhận thanh toán"></text>
+    <text name="ThuTuc35_MotCuaRaSoat" value="Rà soát hồ sơ"></text>
+    <text name="ThuTuc35_MotCuaPhanCong" value="Một cửa chuyển hồ sơ"></text>
+    <text name="ThuTuc35_PhongBanPhanCong" value="Phân công"></text>
+    <text name="ThuTuc35_TruongPhongDuyet" value="Trưởng phòng duyệt"></text>
+    <text name="ThuTuc35_LanhDaoCucDuyet" value="Lãnh đạo cục duyệt"></text>
+    <text name="ThuTuc35_LanhDaoBoDuyet" value="Lãnh đạo bộ duyệt"></text>
+    <text name="ThuTuc35_VanThuDuyet" value="Văn thư đóng dấu"></text>
+    <text name="ThuTuc35_TraCuuHoSo" value="Tra cứu hồ sơ"></text>
+    <text name="ThuTuc35_ThamDinhHoSo" value="Thẩm định hồ sơ"></text>
+    <text name="ThuTuc35_PhoPhongDuyet" value="Phó phòng duyệt"></text>
+
+    <!-- THỦ TỤC 36 -->
+    <text name="ThuTuc36" value="Thủ tục TT-36"></text>
+    <text name="ThuTuc36_DangKyHoSo" value="Đăng ký hồ sơ"></text>
+    <text name="ThuTuc36_XacNhanThanhToan" value="Xác nhận thanh toán"></text>
+    <text name="ThuTuc36_MotCuaRaSoat" value="Rà soát hồ sơ"></text>
+    <text name="ThuTuc36_MotCuaPhanCong" value="Một cửa chuyển hồ sơ"></text>
+    <text name="ThuTuc36_PhongBanPhanCong" value="Phân công"></text>
+    <text name="ThuTuc36_TruongPhongDuyet" value="Trưởng phòng duyệt"></text>
+    <text name="ThuTuc36_LanhDaoCucDuyet" value="Lãnh đạo cục duyệt"></text>
+    <text name="ThuTuc36_LanhDaoBoDuyet" value="Lãnh đạo bộ duyệt"></text>
+    <text name="ThuTuc36_VanThuDuyet" value="Văn thư đóng dấu"></text>
+    <text name="ThuTuc36_TraCuuHoSo" value="Tra cứu hồ sơ"></text>
+    <text name="ThuTuc36_ThamDinhHoSo" value="Thẩm định hồ sơ"></text>
+    <text name="ThuTuc36_PhoPhongDuyet" value="Phó phòng duyệt"></text>
+
+    <!-- THỦ TỤC 37 -->
+    <text name="ThuTuc37" value="Thủ tục TT-37"></text>
+    <text name="ThuTuc37_DangKyHoSo" value="Đăng ký hồ sơ"></text>
+    <text name="ThuTuc37_XacNhanThanhToan" value="Xác nhận thanh toán"></text>
+    <text name="ThuTuc37_MotCuaRaSoat" value="Rà soát hồ sơ"></text>
+    <text name="ThuTuc37_MotCuaPhanCong" value="Phân công phòng ban"></text>
+    <text name="ThuTuc37_PhongBanPhanCong" value="Phân công"></text>
+    <text name="ThuTuc37_TruongPhongDuyet" value="Trưởng phòng duyệt "></text>
+    <text name="ThuTuc37_TruongPhongDuyetThamDinh" value="Trưởng phòng duyệt thẩm định"></text>
+    <text name="ThuTuc37_LanhDaoCucDuyet" value="Lãnh đạo cục duyệt"></text>
+    <text name="ThuTuc37_LanhDaoCucDuyetThamDinh" value="Lãnh đạo cục duyệt thẩm định"></text>
+    <text name="ThuTuc37_LanhDaoBoDuyet" value="Lãnh đạo bộ duyệt"></text>
+    <text name="ThuTuc37_VanThuDuyet" value="Văn thư đóng dấu"></text>
+    <text name="ThuTuc37_VanThuDuyetThamDinh" value="Văn thư trả kết quả"></text>
+    <text name="ThuTuc37_TraCuuHoSo" value="Tra cứu hồ sơ"></text>
+    <text name="ThuTuc37_ThamXetHoSo" value="Thẩm xét hồ sơ"></text>
+    <text name="ThuTuc37_ThamDinhHoSo" value="Thẩm định hồ sơ"></text>
+    <text name="ThuTuc37_TongHopThamDinh" value="Tổng hợp thẩm định"></text>
+    <text name="ThuTuc37_PhoPhongDuyet" value="Phó phòng duyệt"></text>
+
+    <!-- THỦ TỤC 38 -->
+    <text name="ThuTuc38" value="Thủ tục TT-38"></text>
+    <text name="ThuTuc38_DangKyHoSo" value="Đăng ký hồ sơ"></text>
+    <text name="ThuTuc38_XacNhanThanhToan" value="Xác nhận thanh toán"></text>
+    <text name="ThuTuc38_MotCuaRaSoat" value="Rà soát hồ sơ"></text>
+    <text name="ThuTuc38_MotCuaPhanCong" value="Một cửa chuyển hồ sơ"></text>
+    <text name="ThuTuc38_PhongBanPhanCong" value="Phân công"></text>
+    <text name="ThuTuc38_TruongPhongDuyet" value="Trưởng phòng duyệt"></text>
+    <text name="ThuTuc38_LanhDaoCucDuyet" value="Lãnh đạo cục duyệt"></text>
+    <text name="ThuTuc38_LanhDaoBoDuyet" value="Lãnh đạo bộ duyệt"></text>
+    <text name="ThuTuc38_VanThuDuyet" value="Văn thư đóng dấu"></text>
+    <text name="ThuTuc38_TraCuuHoSo" value="Tra cứu hồ sơ"></text>
+    <text name="ThuTuc38_ThamDinhHoSo" value="Thẩm định hồ sơ"></text>
+    <text name="ThuTuc38_PhoPhongDuyet" value="Phó phòng duyệt"></text>
+
+    <!-- THỦ TỤC 39 -->
+    <text name="ThuTuc39" value="Thủ tục TT-39"></text>
+    <text name="ThuTuc39_DangKyHoSo" value="Đăng ký hồ sơ"></text>
+    <text name="ThuTuc39_XacNhanThanhToan" value="Xác nhận thanh toán"></text>
+    <text name="ThuTuc39_MotCuaRaSoat" value="Rà soát hồ sơ"></text>
+    <text name="ThuTuc39_MotCuaPhanCong" value="Một cửa chuyển hồ sơ"></text>
+    <text name="ThuTuc39_PhongBanPhanCong" value="Phân công"></text>
+    <text name="ThuTuc39_TruongPhongDuyet" value="Trưởng phòng duyệt"></text>
+    <text name="ThuTuc39_LanhDaoCucDuyet" value="Lãnh đạo cục duyệt"></text>
+    <text name="ThuTuc39_LanhDaoBoDuyet" value="Lãnh đạo bộ duyệt"></text>
+    <text name="ThuTuc39_VanThuDuyet" value="Văn thư đóng dấu"></text>
+    <text name="ThuTuc39_TraCuuHoSo" value="Tra cứu hồ sơ"></text>
+    <text name="ThuTuc39_ThamDinhHoSo" value="Thẩm định hồ sơ"></text>
+    <text name="ThuTuc39_PhoPhongDuyet" value="Phó phòng duyệt"></text>
+
+    <!-- THỦ TỤC 40 -->
+    <text name="ThuTuc40" value="Thủ tục TT-40"></text>
+    <text name="ThuTuc40_DangKyHoSo" value="Đăng ký hồ sơ"></text>
+    <text name="ThuTuc40_XacNhanThanhToan" value="Xác nhận thanh toán"></text>
+    <text name="ThuTuc40_MotCuaRaSoat" value="Rà soát hồ sơ"></text>
+    <text name="ThuTuc40_MotCuaPhanCong" value="Một cửa chuyển hồ sơ"></text>
+    <text name="ThuTuc40_PhongBanPhanCong" value="Phân công"></text>
+    <text name="ThuTuc40_TruongPhongDuyet" value="Trưởng phòng duyệt"></text>
+    <text name="ThuTuc40_LanhDaoCucDuyet" value="Lãnh đạo cục duyệt"></text>
+    <text name="ThuTuc40_LanhDaoBoDuyet" value="Lãnh đạo bộ duyệt"></text>
+    <text name="ThuTuc40_VanThuDuyet" value="Văn thư đóng dấu"></text>
+    <text name="ThuTuc40_TraCuuHoSo" value="Tra cứu hồ sơ"></text>
+    <text name="ThuTuc40_ThamDinhHoSo" value="Thẩm định hồ sơ"></text>
+    <text name="ThuTuc40_PhoPhongDuyet" value="Phó phòng duyệt"></text>
+
+    <!-- THỦ TỤC 41 -->
+    <text name="ThuTuc41" value="Thủ tục TT-41"></text>
+    <text name="ThuTuc41_DangKyHoSo" value="Đăng ký hồ sơ"></text>
+    <text name="ThuTuc41_XacNhanThanhToan" value="Xác nhận thanh toán"></text>
+    <text name="ThuTuc41_MotCuaRaSoat" value="Rà soát hồ sơ"></text>
+    <text name="ThuTuc41_MotCuaPhanCong" value="Một cửa chuyển hồ sơ"></text>
+    <text name="ThuTuc41_PhongBanPhanCong" value="Phân công"></text>
+    <text name="ThuTuc41_TruongPhongDuyet" value="Trưởng phòng duyệt"></text>
+    <text name="ThuTuc41_LanhDaoCucDuyet" value="Lãnh đạo cục duyệt"></text>
+    <text name="ThuTuc41_LanhDaoBoDuyet" value="Lãnh đạo bộ duyệt"></text>
+    <text name="ThuTuc41_VanThuDuyet" value="Văn thư đóng dấu"></text>
+    <text name="ThuTuc41_TraCuuHoSo" value="Tra cứu hồ sơ"></text>
+    <text name="ThuTuc41_ThamDinhHoSo" value="Thẩm định hồ sơ"></text>
+    <text name="ThuTuc41_PhoPhongDuyet" value="Phó phòng duyệt"></text>
+
+    <!-- THỦ TỤC 42 -->
+    <text name="ThuTuc42" value="Thủ tục TT-42"></text>
+    <text name="ThuTuc42_DangKyHoSo" value="Đăng ký hồ sơ"></text>
+    <text name="ThuTuc42_XacNhanThanhToan" value="Xác nhận thanh toán"></text>
+    <text name="ThuTuc42_MotCuaRaSoat" value="Rà soát hồ sơ"></text>
+    <text name="ThuTuc42_MotCuaPhanCong" value="Một cửa chuyển hồ sơ"></text>
+    <text name="ThuTuc42_PhongBanPhanCong" value="Phân công"></text>
+    <text name="ThuTuc42_TruongPhongDuyet" value="Trưởng phòng duyệt"></text>
+    <text name="ThuTuc42_LanhDaoCucDuyet" value="Lãnh đạo cục duyệt"></text>
+    <text name="ThuTuc42_LanhDaoBoDuyet" value="Lãnh đạo bộ duyệt"></text>
+    <text name="ThuTuc42_VanThuDuyet" value="Văn thư đóng dấu"></text>
+    <text name="ThuTuc42_TraCuuHoSo" value="Tra cứu hồ sơ"></text>
+    <text name="ThuTuc42_ThamDinhHoSo" value="Thẩm định hồ sơ"></text>
+    <text name="ThuTuc42_PhoPhongDuyet" value="Phó phòng duyệt"></text>
+
+    <!-- THỦ TỤC 43 -->
+    <text name="ThuTuc43" value="Thủ tục TT-43"></text>
+    <text name="ThuTuc43_DangKyHoSo" value="Đăng ký hồ sơ"></text>
+    <text name="ThuTuc43_XacNhanThanhToan" value="Xác nhận thanh toán"></text>
+    <text name="ThuTuc43_MotCuaRaSoat" value="Rà soát hồ sơ"></text>
+    <text name="ThuTuc43_MotCuaPhanCong" value="Một cửa chuyển hồ sơ"></text>
+    <text name="ThuTuc43_PhongBanPhanCong" value="Phân công"></text>
+    <text name="ThuTuc43_TruongPhongDuyet" value="Trưởng phòng duyệt"></text>
+    <text name="ThuTuc43_LanhDaoCucDuyet" value="Lãnh đạo cục duyệt"></text>
+    <text name="ThuTuc43_LanhDaoBoDuyet" value="Lãnh đạo bộ duyệt"></text>
+    <text name="ThuTuc43_VanThuDuyet" value="Văn thư đóng dấu"></text>
+    <text name="ThuTuc43_TraCuuHoSo" value="Tra cứu hồ sơ"></text>
+    <text name="ThuTuc43_ThamDinhHoSo" value="Thẩm định hồ sơ"></text>
+    <text name="ThuTuc43_PhoPhongDuyet" value="Phó phòng duyệt"></text>
+
+    <!-- THỦ TỤC 44 -->
+    <text name="ThuTuc44" value="Thủ tục TT-44"></text>
+    <text name="ThuTuc44_DangKyHoSo" value="Đăng ký hồ sơ"></text>
+    <text name="ThuTuc44_XacNhanThanhToan" value="Xác nhận thanh toán"></text>
+    <text name="ThuTuc44_MotCuaRaSoat" value="Rà soát hồ sơ"></text>
+    <text name="ThuTuc44_MotCuaPhanCong" value="Một cửa chuyển hồ sơ"></text>
+    <text name="ThuTuc44_PhongBanPhanCong" value="Phân công"></text>
+    <text name="ThuTuc44_TruongPhongDuyet" value="Trưởng phòng duyệt"></text>
+    <text name="ThuTuc44_LanhDaoCucDuyet" value="Lãnh đạo cục duyệt"></text>
+    <text name="ThuTuc44_LanhDaoBoDuyet" value="Lãnh đạo bộ duyệt"></text>
+    <text name="ThuTuc44_VanThuDuyet" value="Văn thư đóng dấu"></text>
+    <text name="ThuTuc44_TraCuuHoSo" value="Tra cứu hồ sơ"></text>
+    <text name="ThuTuc44_ThamDinhHoSo" value="Thẩm định hồ sơ"></text>
+    <text name="ThuTuc44_PhoPhongDuyet" value="Phó phòng duyệt"></text>
+
+    <!-- THỦ TỤC 45 -->
+    <text name="ThuTuc45" value="Thủ tục TT-45"></text>
+    <text name="ThuTuc45_DangKyHoSo" value="Đăng ký hồ sơ"></text>
+    <text name="ThuTuc45_XacNhanThanhToan" value="Xác nhận thanh toán"></text>
+    <text name="ThuTuc45_MotCuaRaSoat" value="Rà soát hồ sơ"></text>
+    <text name="ThuTuc45_MotCuaPhanCong" value="Một cửa chuyển hồ sơ"></text>
+    <text name="ThuTuc45_PhongBanPhanCong" value="Phân công"></text>
+    <text name="ThuTuc45_TruongPhongDuyet" value="Trưởng phòng duyệt"></text>
+    <text name="ThuTuc45_LanhDaoCucDuyet" value="Lãnh đạo cục duyệt"></text>
+    <text name="ThuTuc45_LanhDaoBoDuyet" value="Lãnh đạo bộ duyệt"></text>
+    <text name="ThuTuc45_VanThuDuyet" value="Văn thư đóng dấu"></text>
+    <text name="ThuTuc45_TraCuuHoSo" value="Tra cứu hồ sơ"></text>
+    <text name="ThuTuc45_ThamDinhHoSo" value="Thẩm định hồ sơ"></text>
+    <text name="ThuTuc45_PhoPhongDuyet" value="Phó phòng duyệt"></text>
+
+    <!-- THỦ TỤC 46 -->
+    <text name="ThuTuc46" value="Thủ tục TT-46"></text>
+    <text name="ThuTuc46_DangKyHoSo" value="Đăng ký hồ sơ"></text>
+    <text name="ThuTuc46_XacNhanThanhToan" value="Xác nhận thanh toán"></text>
+    <text name="ThuTuc46_MotCuaRaSoat" value="Rà soát hồ sơ"></text>
+    <text name="ThuTuc46_MotCuaPhanCong" value="Một cửa chuyển hồ sơ"></text>
+    <text name="ThuTuc46_PhongBanPhanCong" value="Phân công"></text>
+    <text name="ThuTuc46_TruongPhongDuyet" value="Trưởng phòng duyệt"></text>
+    <text name="ThuTuc46_LanhDaoCucDuyet" value="Lãnh đạo cục duyệt"></text>
+    <text name="ThuTuc46_LanhDaoBoDuyet" value="Lãnh đạo bộ duyệt"></text>
+    <text name="ThuTuc46_VanThuDuyet" value="Văn thư đóng dấu"></text>
+    <text name="ThuTuc46_TraCuuHoSo" value="Tra cứu hồ sơ"></text>
+    <text name="ThuTuc46_ThamDinhHoSo" value="Thẩm định hồ sơ"></text>
+    <text name="ThuTuc46_PhoPhongDuyet" value="Phó phòng duyệt"></text>
+
+    <!-- THỦ TỤC 47 -->
+    <text name="ThuTuc47" value="Thủ tục TT-47"></text>
+    <text name="ThuTuc47_DangKyHoSo" value="Đăng ký hồ sơ"></text>
+    <text name="ThuTuc47_XacNhanThanhToan" value="Xác nhận thanh toán"></text>
+    <text name="ThuTuc47_MotCuaRaSoat" value="Rà soát hồ sơ"></text>
+    <text name="ThuTuc47_MotCuaPhanCong" value="Một cửa chuyển hồ sơ"></text>
+    <text name="ThuTuc47_PhongBanPhanCong" value="Phân công"></text>
+    <text name="ThuTuc47_TruongPhongDuyet" value="Trưởng phòng duyệt"></text>
+    <text name="ThuTuc47_LanhDaoCucDuyet" value="Lãnh đạo cục duyệt"></text>
+    <text name="ThuTuc47_LanhDaoBoDuyet" value="Lãnh đạo bộ duyệt"></text>
+    <text name="ThuTuc47_VanThuDuyet" value="Văn thư đóng dấu"></text>
+    <text name="ThuTuc47_TraCuuHoSo" value="Tra cứu hồ sơ"></text>
+    <text name="ThuTuc47_ThamDinhHoSo" value="Thẩm định hồ sơ"></text>
+    <text name="ThuTuc47_PhoPhongDuyet" value="Phó phòng duyệt"></text>
+
+    <!-- THỦ TỤC 48 -->
+    <text name="ThuTuc48" value="Thủ tục TT-48"></text>
+    <text name="ThuTuc48_DangKyHoSo" value="Đăng ký hồ sơ"></text>
+    <text name="ThuTuc48_XacNhanThanhToan" value="Xác nhận thanh toán"></text>
+    <text name="ThuTuc48_MotCuaRaSoat" value="Rà soát hồ sơ"></text>
+    <text name="ThuTuc48_MotCuaPhanCong" value="Một cửa chuyển hồ sơ"></text>
+    <text name="ThuTuc48_PhongBanPhanCong" value="Phân công"></text>
+    <text name="ThuTuc48_TruongPhongDuyet" value="Trưởng phòng duyệt"></text>
+    <text name="ThuTuc48_LanhDaoCucDuyet" value="Lãnh đạo cục duyệt"></text>
+    <text name="ThuTuc48_LanhDaoBoDuyet" value="Lãnh đạo bộ duyệt"></text>
+    <text name="ThuTuc48_VanThuDuyet" value="Văn thư đóng dấu"></text>
+    <text name="ThuTuc48_TraCuuHoSo" value="Tra cứu hồ sơ"></text>
+    <text name="ThuTuc48_ThamDinhHoSo" value="Thẩm định hồ sơ"></text>
+    <text name="ThuTuc48_PhoPhongDuyet" value="Phó phòng duyệt"></text>
+
+    <!-- THỦ TỤC 49 -->
+    <text name="ThuTuc49" value="Thủ tục TT-49"></text>
+    <text name="ThuTuc49_DangKyHoSo" value="Đăng ký hồ sơ"></text>
+    <text name="ThuTuc49_XacNhanThanhToan" value="Xác nhận thanh toán"></text>
+    <text name="ThuTuc49_MotCuaRaSoat" value="Rà soát hồ sơ"></text>
+    <text name="ThuTuc49_MotCuaPhanCong" value="Một cửa chuyển hồ sơ"></text>
+    <text name="ThuTuc49_PhongBanPhanCong" value="Phân công"></text>
+    <text name="ThuTuc49_TruongPhongDuyet" value="Trưởng phòng duyệt"></text>
+    <text name="ThuTuc49_LanhDaoCucDuyet" value="Lãnh đạo cục duyệt"></text>
+    <text name="ThuTuc49_LanhDaoBoDuyet" value="Lãnh đạo bộ duyệt"></text>
+    <text name="ThuTuc49_VanThuDuyet" value="Văn thư đóng dấu"></text>
+    <text name="ThuTuc49_TraCuuHoSo" value="Tra cứu hồ sơ"></text>
+    <text name="ThuTuc49_ThamDinhHoSo" value="Thẩm định hồ sơ"></text>
+    <text name="ThuTuc49_PhoPhongDuyet" value="Phó phòng duyệt"></text>
+
+    <!-- THỦ TỤC 50 -->
+    <text name="ThuTuc50" value="Thủ tục TT-50"></text>
+    <text name="ThuTuc50_DangKyHoSo" value="Đăng ký hồ sơ"></text>
+    <text name="ThuTuc50_XacNhanThanhToan" value="Xác nhận thanh toán"></text>
+    <text name="ThuTuc50_MotCuaRaSoat" value="Rà soát hồ sơ"></text>
+    <text name="ThuTuc50_MotCuaPhanCong" value="Một cửa chuyển hồ sơ"></text>
+    <text name="ThuTuc50_PhongBanPhanCong" value="Phân công"></text>
+    <text name="ThuTuc50_TruongPhongDuyet" value="Trưởng phòng duyệt"></text>
+    <text name="ThuTuc50_LanhDaoCucDuyet" value="Lãnh đạo cục duyệt"></text>
+    <text name="ThuTuc50_LanhDaoBoDuyet" value="Lãnh đạo bộ duyệt"></text>
+    <text name="ThuTuc50_VanThuDuyet" value="Văn thư đóng dấu"></text>
+    <text name="ThuTuc50_TraCuuHoSo" value="Tra cứu hồ sơ"></text>
+    <text name="ThuTuc50_ThamDinhHoSo" value="Thẩm định hồ sơ"></text>
+    <text name="ThuTuc50_PhoPhongDuyet" value="Phó phòng duyệt"></text>
+
+    <!-- THỦ TỤC 51 -->
+    <text name="ThuTuc51" value="Thủ tục TT-51"></text>
+    <text name="ThuTuc51_DangKyHoSo" value="Đăng ký hồ sơ"></text>
+    <text name="ThuTuc51_XacNhanThanhToan" value="Xác nhận thanh toán"></text>
+    <text name="ThuTuc51_MotCuaRaSoat" value="Rà soát hồ sơ"></text>
+    <text name="ThuTuc51_MotCuaPhanCong" value="Một cửa chuyển hồ sơ"></text>
+    <text name="ThuTuc51_PhongBanPhanCong" value="Phân công"></text>
+    <text name="ThuTuc51_TruongPhongDuyet" value="Trưởng phòng duyệt"></text>
+    <text name="ThuTuc51_LanhDaoCucDuyet" value="Lãnh đạo cục duyệt"></text>
+    <text name="ThuTuc51_LanhDaoBoDuyet" value="Lãnh đạo bộ duyệt"></text>
+    <text name="ThuTuc51_VanThuDuyet" value="Văn thư đóng dấu"></text>
+    <text name="ThuTuc51_TraCuuHoSo" value="Tra cứu hồ sơ"></text>
+    <text name="ThuTuc51_ThamDinhHoSo" value="Thẩm định hồ sơ"></text>
+    <text name="ThuTuc51_PhoPhongDuyet" value="Phó phòng duyệt"></text>
+
+    <!-- THỦ TỤC 52 -->
+    <text name="ThuTuc52" value="Thủ tục TT-52"></text>
+    <text name="ThuTuc52_DangKyHoSo" value="Đăng ký hồ sơ"></text>
+    <text name="ThuTuc52_XacNhanThanhToan" value="Xác nhận thanh toán"></text>
+    <text name="ThuTuc52_MotCuaRaSoat" value="Rà soát hồ sơ"></text>
+    <text name="ThuTuc52_MotCuaPhanCong" value="Một cửa chuyển hồ sơ"></text>
+    <text name="ThuTuc52_PhongBanPhanCong" value="Phân công"></text>
+    <text name="ThuTuc52_TruongPhongDuyet" value="Trưởng phòng duyệt"></text>
+    <text name="ThuTuc52_LanhDaoCucDuyet" value="Lãnh đạo cục duyệt"></text>
+    <text name="ThuTuc52_LanhDaoBoDuyet" value="Lãnh đạo bộ duyệt"></text>
+    <text name="ThuTuc52_VanThuDuyet" value="Văn thư đóng dấu"></text>
+    <text name="ThuTuc52_TraCuuHoSo" value="Tra cứu hồ sơ"></text>
+    <text name="ThuTuc52_ThamDinhHoSo" value="Thẩm định hồ sơ"></text>
+    <text name="ThuTuc52_PhoPhongDuyet" value="Phó phòng duyệt"></text>
+
+    <!-- THỦ TỤC 53 -->
+    <text name="ThuTuc53" value="Thủ tục TT-53"></text>
+    <text name="ThuTuc53_DangKyHoSo" value="Đăng ký hồ sơ"></text>
+    <text name="ThuTuc53_XacNhanThanhToan" value="Xác nhận thanh toán"></text>
+    <text name="ThuTuc53_MotCuaRaSoat" value="Rà soát hồ sơ"></text>
+    <text name="ThuTuc53_MotCuaPhanCong" value="Một cửa chuyển hồ sơ"></text>
+    <text name="ThuTuc53_PhongBanPhanCong" value="Phân công"></text>
+    <text name="ThuTuc53_TruongPhongDuyet" value="Trưởng phòng duyệt"></text>
+    <text name="ThuTuc53_LanhDaoCucDuyet" value="Lãnh đạo cục duyệt"></text>
+    <text name="ThuTuc53_LanhDaoBoDuyet" value="Lãnh đạo bộ duyệt"></text>
+    <text name="ThuTuc53_VanThuDuyet" value="Văn thư đóng dấu"></text>
+    <text name="ThuTuc53_TraCuuHoSo" value="Tra cứu hồ sơ"></text>
+    <text name="ThuTuc53_ThamDinhHoSo" value="Thẩm định hồ sơ"></text>
+    <text name="ThuTuc53_PhoPhongDuyet" value="Phó phòng duyệt"></text>
+
+    <!-- THỦ TỤC 54 -->
+    <text name="ThuTuc54" value="Thủ tục TT-54"></text>
+    <text name="ThuTuc54_DangKyHoSo" value="Đăng ký hồ sơ"></text>
+    <text name="ThuTuc54_XacNhanThanhToan" value="Xác nhận thanh toán"></text>
+    <text name="ThuTuc54_MotCuaRaSoat" value="Rà soát hồ sơ"></text>
+    <text name="ThuTuc54_MotCuaPhanCong" value="Một cửa chuyển hồ sơ"></text>
+    <text name="ThuTuc54_PhongBanPhanCong" value="Phân công"></text>
+    <text name="ThuTuc54_TruongPhongDuyet" value="Trưởng phòng duyệt"></text>
+    <text name="ThuTuc54_LanhDaoCucDuyet" value="Lãnh đạo cục duyệt"></text>
+    <text name="ThuTuc54_LanhDaoBoDuyet" value="Lãnh đạo bộ duyệt"></text>
+    <text name="ThuTuc54_VanThuDuyet" value="Văn thư đóng dấu"></text>
+    <text name="ThuTuc54_TraCuuHoSo" value="Tra cứu hồ sơ"></text>
+    <text name="ThuTuc54_ThamDinhHoSo" value="Thẩm định hồ sơ"></text>
+    <text name="ThuTuc54_PhoPhongDuyet" value="Phó phòng duyệt"></text>
+
+    <!-- THỦ TỤC 55 -->
+    <text name="ThuTuc55" value="Thủ tục TT-55"></text>
+    <text name="ThuTuc55_DangKyHoSo" value="Đăng ký hồ sơ"></text>
+    <text name="ThuTuc55_XacNhanThanhToan" value="Xác nhận thanh toán"></text>
+    <text name="ThuTuc55_MotCuaRaSoat" value="Rà soát hồ sơ"></text>
+    <text name="ThuTuc55_MotCuaPhanCong" value="Một cửa chuyển hồ sơ"></text>
+    <text name="ThuTuc55_PhongBanPhanCong" value="Phân công"></text>
+    <text name="ThuTuc55_TruongPhongDuyet" value="Trưởng phòng duyệt"></text>
+    <text name="ThuTuc55_LanhDaoCucDuyet" value="Lãnh đạo cục duyệt"></text>
+    <text name="ThuTuc55_LanhDaoBoDuyet" value="Lãnh đạo bộ duyệt"></text>
+    <text name="ThuTuc55_VanThuDuyet" value="Văn thư đóng dấu"></text>
+    <text name="ThuTuc55_TraCuuHoSo" value="Tra cứu hồ sơ"></text>
+    <text name="ThuTuc55_ThamDinhHoSo" value="Thẩm định hồ sơ"></text>
+    <text name="ThuTuc55_PhoPhongDuyet" value="Phó phòng duyệt"></text>
+
+    <!-- THỦ TỤC 56 -->
+    <text name="ThuTuc56" value="Thủ tục TT-56"></text>
+    <text name="ThuTuc56_DangKyHoSo" value="Đăng ký hồ sơ"></text>
+    <text name="ThuTuc56_XacNhanThanhToan" value="Xác nhận thanh toán"></text>
+    <text name="ThuTuc56_MotCuaRaSoat" value="Rà soát hồ sơ"></text>
+    <text name="ThuTuc56_MotCuaPhanCong" value="Một cửa chuyển hồ sơ"></text>
+    <text name="ThuTuc56_PhongBanPhanCong" value="Phân công"></text>
+    <text name="ThuTuc56_TruongPhongDuyet" value="Trưởng phòng duyệt"></text>
+    <text name="ThuTuc56_LanhDaoCucDuyet" value="Lãnh đạo cục duyệt"></text>
+    <text name="ThuTuc56_LanhDaoBoDuyet" value="Lãnh đạo bộ duyệt"></text>
+    <text name="ThuTuc56_VanThuDuyet" value="Văn thư đóng dấu"></text>
+    <text name="ThuTuc56_TraCuuHoSo" value="Tra cứu hồ sơ"></text>
+    <text name="ThuTuc56_ThamDinhHoSo" value="Thẩm định hồ sơ"></text>
+    <text name="ThuTuc56_PhoPhongDuyet" value="Phó phòng duyệt"></text>
+    <!-- THỦ TỤC 59 -->
+    <text name="ThuTuc59">Thủ tục TT-59</text>
+    <text name="ThuTuc59_QuanLyHoSo">QL hồ sơ TT-59</text>
+    <text name="ThuTuc59_DangKyHoSo">Đăng ký hồ sơ</text>
+    <text name="ThuTuc59_MotCuaPhanCong">Một cửa phân công</text>
+    <text name="ThuTuc59_PhongBanPhanCong" value="Phân công hồ sơ" />
+    <text name="ThuTuc59_ThamXetHoSo">Thẩm xét hồ sơ</text>
+    <text name="ThuTuc59_TongHopThamXet">Tổng hợp thẩm xét hồ sơ</text>
+    <text name="ThuTuc59_TongHopThamDinh">Tổng hợp thẩm định cơ sở</text>
+    <text name="ThuTuc59_PhoPhongDuyet" value="Phó phòng duyệt" />
+    <text name="ThuTuc59_TruongPhongDuyet" value="Trưởng phòng kết luận thẩm xét" />
+    <text name="ThuTuc59_TruongPhongDuyetThamDinh" value="Trưởng phòng kết luận thẩm định" />
+    <text name="ThuTuc59_LanhDaoCucDuyetThamXet" value="Lãnh đạo duyệt thẩm xét" />
+    <text name="ThuTuc59_LanhDaoCucDuyetThamDinh" value="Lãnh đạo duyệt thẩm định" />
+    <text name="ThuTuc59_VanThuDuyetThamXet" value="Văn thư đóng dấu thẩm xét" />
+    <text name="ThuTuc59_VanThuDuyetThamDinh" value="Văn thư đóng dấu thẩm định" />
+    <text name="ThuTuc59_XacNhanThanhToan" value="Xác nhận thanh toán" />
+    <text name="ThuTuc59_CanBoTraCuu" value="Tra cứu hồ sơ" />
+    <text name="ThuTuc59_ThuHoiGiayChungNhan" value="Thu hồi giấy chứng nhận" />
+    
+    
+    <!-- DANH MỤC -->
+    <text name="DanhMuc">Danh mục chung</text>
+    <text name="QuocGia">Quốc gia</text>
+    <text name="Tinh/TP">Tỉnh / TP</text>
+    <text name="Huyen">Quận / Huyện</text>
+    <text name="Xa">Phường / Xã</text>
+    <text name="ChucDanh">Chức danh</text>
+
+    <!-- QUẢN LÝ DOANH NGHIỆP -->
+    <text name="QuanLyDoanhNghiep">Quản lý doanh nghiệp</text>
+    <text name="LoaiHinhCoSo">Loại hình cơ sở</text>
+    <text name="LoaiHinhDoanhNghiep">Loại hình doanh nghiệp</text>
+    <text name="DanhSachConDau">Con dấu doanh nghiệp</text>
+    <text name="DanhSachDoanhNghiep">Danh sách doanh nghiệp</text>
+    <text name="SuaThongTinDoanhNghiep">Thông tin tổ chức</text>
+
+    <!-- QUẢN LÝ LIÊN THÔNG -->
+    <text name="LienThong">Quản lý liên thông</text>
+    <text name="TuCongBoLT">Tự công bố</text>
+    <text name="DangKyCongBoLT">Đăng ký công bố</text>
+    <text name="CoSoDuKieuKienLT">Cơ sở đủ điều kiện</text>
+    <text name="DangKyQuangCaoLT">Đăng ký quảng cáo</text>
+
+    <!-- THỦ TỤC HÀNH CHÍNH -->
+    <text name="ThuTucHanhChinh" value="Thủ tục hành chính" />
+    <text name="DanhMucThuTuc">Danh mục thủ tục</text>
+    <text name="LoaiHoSo">Loại hồ sơ</text>
+    <text name="DanhSachThuTuc">Danh sách thủ tục</text>
+    <text name="LuaChonThuTuc">Lựa chọn thủ tục</text>
+
+    <!-- QUẢN LÝ THANH TOÁN -->
+    <text name="QuanLyThanhToan" value="Quản lý thanh toán" />
+    <text name="XacNhanThanhToan" value="Xác nhận thanh toán" />
+    <text name="HoaDonDienTu" value="Tạo hóa đơn điện tử" />
+    <text name="ThongKeThanhToan" value="Thống kê thanh toán" />
+    <text name="TrangThaiThanhToanHoSo" value="Tra cứu thanh toán hồ sơ" />
+
+    <!-- PHÂN HỆ THANH TRA -->
+    <text name="PhanHeThanhTra" value="Phân hệ thanh tra" />
+    <text name="PhanHeThanhTra_KeHoachThanhTra" value="Kế hoạch thanh tra" />
+    <text name="PhanHeThanhTra_KetQuaThanhTra" value="Kết quả thanh tra" />
+
+    <!-- HƯỚNG DẪN SỬ DỤNG -->
+    <text name="Pages_HuongDanSuDung_View">Hướng dẫn sử dụng</text>
+    <text name="Pages_HuongDanSuDung">Quản trị HDSD</text>
+    <text name="Pages_HuongDanSuDung_DanhMuc">Chuyên mục HD</text>
+    <text name="Pages_HuongDanSuDung_BaiViet">Bài viết HD</text>
+
+    <!--Thống kê báo cáo-->
+    <text name="ThongKeBaoCao" value="Thống kê báo cáo" />
+    <text name="ThongKeBaoCao_Admin" value="Báo cáo dành cho admin" />
+    <text name="ThongKeBaoCao_LanhDaoCuc" value="Báo cáo dành cho lãnh đạo cục" />
+    <text name="ThongKeBaoCao_VanThu" value="Báo cáo dành cho văn thư" />
+    <text name="ThongKeBaoCao_KeToan" value="Báo cáo dành cho kế toán" />
+    <text name="ThongKeBaoCao_MotCua" value="Báo cáo dành cho một cửa" />
+
+    <!--Quản lý tài khoản-->
+    <text name="QuanLyTaiKhoan" value="Quản lý tài khoản" />
+    <text name="QuanLyPhongBan" value="Quản lý phòng ban" />
+    <text name="ChuKy" value="Thiết lập chữ ký số" />
+    <text name="TaiKhoanCanBoCuc" value="Tài khoản cán bộ cục" />
+    <text name="TaiKhoanSoYTe" value="Tài khoản sở y tế" />
+    <text name="TaiKhoanChuyenGia" value="Tài khoản chuyên gia" />
+
+    <!--Thiết lập chung-->
+    <text name="ThietLap" value="Thiết lập" />
+    <text name="QuanLyLichNghiLe" value="Lịch nghỉ lễ"></text>
+    <text name="ThietLap_LoaiBienBanThamDinh" value="Loại biên bản thẩm định"></text>
+    <text name="ThietLap_DonViChuyenGia" value="Đơn vị chuyên gia"></text>
+    <text name="ThietLap_PhanLoaiHoSo" value="Phân loại hồ sơ"></text>
+    <text name="ThietLap_TieuChiThamDinh" value="Tiêu chí thẩm định"></text>
+    <text name="ThietLap_TieuChiThamDinh_LyDo" value="Tiêu chí thẩm định lý do"></text>
+
+    <!--Website-->
+    <text name="Pages_Website">Quản lý website</text>
+    <text name="Pages_Website_BoThuTuc">Bộ thủ tục</text>
+    <text name="Pages_Website_ThongBao">Thông báo</text>
+    <text name="Pages_Website_LienHe">Liên hệ</text>
+    <text name="Pages_Website_CauHinhChung">Cấu hình chung</text>
+
+    <!-- QUẢN TRỊ DỰ ÁN -->
+    <text name="Pages_QuanTriDuAn_View">Cây quản trị DA</text>
+    <text name="Pages_QuanTriDuAn">Quản trị DA</text>
+    <text name="Pages_QuanTriDuAn_DanhMuc">Chuyên mục DA</text>
+    <text name="Pages_QuanTriDuAn_BaiViet">Bài viết DA</text>
+  </texts>
+</localizationDictionary>

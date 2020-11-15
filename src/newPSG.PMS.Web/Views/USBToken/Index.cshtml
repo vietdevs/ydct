@@ -1,0 +1,84 @@
+﻿
+@{
+    ViewBag.Title = "Demo Sign USB Token by NP API Plugin";
+    Layout = "~/Views/Shared/_Layout_2.cshtml";
+}
+
+@section css
+{
+    @Styles.Render("~/Content/uploadfile")
+}
+
+
+<div class="box box-module box-in-tab-nav">
+    <div class="col-lg-12">
+        <div class="box-module-title">
+            <!--<hr>-->
+            <h2 class="intro-text text-center">
+                <strong>
+                    @ViewBag.Title
+                </strong>
+            </h2>
+
+            <hr>
+        </div>
+        <div class="box-module-content">
+            <div id="createCustForm">
+                <html:form styleId="signUSBForm" styleClass="form-horizontal" action="/uploadFile.do" method="POST"
+                           acceptCharset="UTF-8" enctype="multipart/form-data: charset=utf-8" onsubmit="event.preventDefault(); signUSB();">
+                    <div class="col-lg-12">
+                        <!--Tên khách hàng-->
+                        <div class="form-group">
+                            <label for="filePdf" class="col-sm-3 control-label">
+                            Chọn file PDF
+                            <span style="color: red;"> (*)</span></label>
+                            <div class="col-sm-9">
+                                <div id="fileuploader">Upload</div>
+                                <div style="font-style: italic; margin-top: 10px;">Lưu ý: Chỉ cho phép upload file .pdf</div>
+                                <div style="font-style: italic; margin-top: 10px;">Tải Plugin <a href="~/Asset/plugin/ViettelSigner_NPAPI_Plugin.rar">tại đây</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    @*<div class="col-lg-12" style="margin-top: 20px;">
+                        <div class="form-group">
+                            <label for="filePdf" class="col-sm-3 control-label">Field Name<span style="color: red;"> (*)</span></label>
+                            <div class="col-sm-9">
+                                <input type="text" id="fieldName" name="fieldName" value="" class="form-control" maxlength="15" style="width: 425px;" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12" style="margin-top: 20px;">
+                        <div class="form-group">
+                            <label for="filePdf" class="col-sm-3 control-label">Display Text<span style="color: red;"> (*)</span></label>
+                            <div class="col-sm-9">
+                                <input type="text" id="displayText" name="displayText" value="" class="form-control" maxlength="15" style="width: 425px;" />
+                            </div>
+                        </div>
+                    </div>*@
+                    <div class="col-lg-12">
+                        <object id="plugin0" type="application/x-viettelcasigner" width="0" height="0"></object>
+                    </div>
+                    <div class="col-lg-12">
+                        <div id="errorMessageSignUSB" class="bg-danger" style="padding: 10px; color: red; display: none; text-align: center;"></div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <button type="submit" onclick="signUSB()" class="btn btn-primary" style="margin-left: 45%; margin-top: 20px;">Sign</button>
+                    </div>
+                </html:form>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="resultUpload" style="display: none;"></div>
+<div id="resultHashFile" style="display: none;"></div>
+<div id="resultInsertSignature" style="display: none;"></div>
+
+
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/uploadfile")
+    @Scripts.Render("~/bundles/plugin")
+    <script src="~/Asset/js/USBToken/signUSBToken.js"></script>
+}

@@ -1,0 +1,16 @@
+﻿<div>
+    <div id="ViewPDFModal" novalidate class="form-validation">
+        <div class="modal-header">
+            <h4 class="modal-title">
+                {{vm.modalTitle}}
+                <button type="button" class="close" ng-click="vm.close()" aria-hidden="true"></button>
+            </h4>
+        </div>
+        <div class="modal-body" style="height: 700px">
+            <iframe style="width: 100%; height: 100%;" dir-excel="{{frameUrl}}" id="someId" class="someclass" frameborder="0"></iframe>
+        </div>
+        <div class="modal-footer">
+            <button ng-disabled="vm.saving" type="button" class="btn red" ng-click="vm.close()"><i class="glyphicon glyphicon-remove">@L("Cancel")</button>
+        </div>
+    </div>
+</div>

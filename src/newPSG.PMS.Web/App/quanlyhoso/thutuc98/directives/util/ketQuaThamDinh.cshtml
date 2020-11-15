@@ -1,0 +1,25 @@
+﻿@using newPSG.PMS.Localization
+
+<div class="form-group" ng-if="vm.hoSoXuLy.quiTrinh==vm.QUI_TRINH_THAM_DINH.QT_2_CHUYEN_VIEN">
+    <strong class="margin-right-10" ng-show="vm.hoSoXuLy.bienBanThamXet_ChuyenVienThuLy.isThamXetDat">
+        Chuyên viên thụ lý:&nbsp;&nbsp;<span class="label label-success">Duyệt nhập</span>
+    </strong>
+    <strong class="margin-right-10" ng-hide="vm.hoSoXuLy.bienBanThamXet_ChuyenVienThuLy.isThamXetDat">
+        Chuyên viên thụ lý:&nbsp;&nbsp;<span class="label label-warning">Chưa duyệt, yêu cầu bổ sung</span>
+    </strong>
+
+    <strong ng-show="vm.hoSoXuLy.bienBanThamXet_ChuyenVienPhoiHop.isThamXetDat">
+        Chuyên viên phối hợp:&nbsp;&nbsp;<span class="label label-success">Duyệt nhập</span>
+    </strong>
+    <strong ng-hide="vm.hoSoXuLy.bienBanThamXet_ChuyenVienPhoiHop.isThamXetDat">
+        Chuyên viên phối hợp:&nbsp;&nbsp;<span class="label label-warning">Chưa duyệt, yêu cầu bổ sung</span>
+    </strong>
+</div>
+<div class="form-group" ng-if="vm.hoSoXuLy.quiTrinh==vm.QUI_TRINH_THAM_DINH.QT_1_CHUYEN_VIEN">
+    <strong class="margin-right-10" ng-show="vm.hoSoXuLy.bienBanThamXet_ChuyenVienThuLy.isThamXetDat">
+        Chuyên viên thụ lý:&nbsp;&nbsp;<span class="label label-success">Duyệt nhập</span>
+    </strong>
+    <strong class="margin-right-10" ng-hide="vm.hoSoXuLy.bienBanThamXet_ChuyenVienThuLy.isThamXetDat">
+        Chuyên viên thụ lý:&nbsp;&nbsp;<span class="label label-warning">Chưa duyệt, yêu cầu bổ sung</span>
+    </strong>
+</div>

@@ -1,0 +1,14 @@
+﻿<div class="attp-filter-dn">
+    <input kendo-auto-complete ng-show="showInput"
+           class="form-control "
+           style="width:100%;"
+           ng-model="selectedItem"
+           placeholder="Nhập mã số thuế để tìm kiếm..."
+           k-options="searchOptions" />
+    <div class="input-group" ng-hide="showInput">
+        <input class="form-control" value="{{tenDoanhNghiep}}" ng-disabled="true" />
+        <span class="input-group-btn">
+            <button class="btn red btn-block" ng-click="cancelSelected()"><em class="fa fa-times"></em></button>
+        </span>
+    </div>
+</div>

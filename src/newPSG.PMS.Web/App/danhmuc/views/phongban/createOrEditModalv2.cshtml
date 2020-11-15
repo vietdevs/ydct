@@ -1,0 +1,79 @@
+﻿<div id="_CreateOrEditForm">
+    <div class="modal-header">
+        <h4 class="modal-title">
+            <span ng-if="!vm.model.id">Tạo phòng ban mới</span>
+            <span ng-if="vm.model.id">Sửa phòng ban</span>
+        </h4>
+    </div>
+    <div class="modal-body">
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-12">
+                    <label class="text-bold">Tên phòng ban</label><span><span class="font-red">*</span></span>
+                    <input class="form-control" type="text" name="TenPhongBan" ng-model="vm.model.tenPhongBan" data-fv-notempty="true" data-fv-notempty-message="Không được để trống trường này" />
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-8">
+                    <label class="text-bold">Mã phòng ban</label><span><span class="font-red">*</span></span>
+                    <input class="form-control" type="text" name="MãPhongBan" ng-model="vm.model.maPhongBan" data-fv-notempty="true" data-fv-notempty-message="Không được để trống trường này" />
+                </div>
+                <div class="col-md-4">
+                    <label class="text-bold">Kích Hoạt</label><br />
+                    <input bs-switch
+                           ng-model="vm.model.isActive"
+                           type="checkbox"
+                           switch-on-text="<i class='fa fa-check' aria-hidden='true'></i>"
+                           switch-off-text="<i class='fa fa-times' aria-hidden='true'></i>"
+                           switch-on-color="success"
+                           ng-true-value=true
+                           ng-false-value=false>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="text-bold">Xử lý loại hồ sơ</label><br />
+            <div class="table-scrollable">
+                <table class="table table-striped table-bordered table-hover">
+                    <thead>
+                        <tr class="active">
+                            <th>Xử lý</th>
+                            <th>Tên loại hồ sơ</th>
+                            <th>Quy trình xử lý</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="loaiHoSo in vm.model.arrLoaiHoSoQuiTrinh">
+                            <td class="text-center">
+                                <label class="mt-checkbox">
+                                    <input ng-model="loaiHoSo.isXuLy" type="checkbox" ng-change="vm.checkXuLy(loaiHoSo)">
+                                    <span></span>
+                                </label>
+                            </td>
+                            <td>
+                                {{loaiHoSo.tenLoaiHoSo}}
+                            </td>
+                            <td>
+                                <input style="width: 100%"
+                                       kendo-drop-down-list
+                                       ng-model="loaiHoSo.quiTrinh"
+                                       k-options="vm.quiTrinhOptions"
+                                       ng-disabled="loaiHoSo.isXuLy != true"
+                                       k-auto-bind="true"
+                                       class="form-control" />
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" button-busy="vm.saving" busy-text="@L("SavingWithThreeDot")" class="btn green-meadow" ng-click="vm.save()"><i class="fa fa-save"></i> <span>@L("Save")</span></button>
+            <button ng-disabled="vm.saving" type="button" class="btn btn-default" ng-click="vm.cancel()">@L("Cancel")</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Stimulsoft.Report.MvcMobile</name>
+    </assembly>
+    <members>
+        <member name="F:Stimulsoft.Report.MvcMobile.StiDesignerPermissions.None">
+            <summary>
+            Deny all.
+            </summary>
+        </member>
+        <member name="F:Stimulsoft.Report.MvcMobile.StiDesignerPermissions.Create">
+            <summary>
+            Allows to create an item.
+            </summary>
+        </member>
+        <member name="F:Stimulsoft.Report.MvcMobile.StiDesignerPermissions.Delete">
+            <summary>
+            Allows to delete an item.
+            </summary>
+        </member>
+        <member name="F:Stimulsoft.Report.MvcMobile.StiDesignerPermissions.Modify">
+            <summary>
+            Allows to modify an item.
+            </summary>
+        </member>
+        <member name="F:Stimulsoft.Report.MvcMobile.StiDesignerPermissions.View">
+            <summary>
+            Allows to view an item.
+            </summary>
+        </member>
+        <member name="F:Stimulsoft.Report.MvcMobile.StiDesignerPermissions.ModifyView">
+            <summary>
+            Allows modify and view an item.
+            </summary>
+        </member>
+        <member name="F:Stimulsoft.Report.MvcMobile.StiDesignerPermissions.All">
+            <summary>
+            Allow any action with an item.
+            </summary>
+        </member>
+    </members>
+</doc>

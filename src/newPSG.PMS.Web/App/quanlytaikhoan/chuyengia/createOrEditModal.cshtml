@@ -1,0 +1,152 @@
+﻿@using Abp.Authorization.Users
+<div>
+    <div name="createOrEditForm" id="createOrEditForm" novalidate class="form-validation">
+        <div class="modal-header">
+            <h4 class="modal-title">
+                <span ng-if="vm.user.id">@L("EditUser"): {{vm.user.userName}}</span>
+                <span ng-if="!vm.user.id">@L("CreateNewUser")</span>
+                <button type="button" aria-hidden="true" class="close" ng-click="vm.cancel()"></button>
+            </h4>
+        </div>
+        <div class="modal-body">
+            <div class="form-group row">
+                <div class="col-sm-6">
+                    <label>@L("Surname")</label><span class="font-red">*</span>
+                    <input type="text" name="Surname" class="form-control" ng-class="{'edited':vm.user.surname}" ng-model="vm.user.surname" maxlength="@newPSG.PMS.Authorization.Users.User.MaxSurnameLength">
+                    <check-validate-empty datacheck="vm.user.surname"></check-validate-empty>
+                </div>
+                <div class="col-sm-6">
+                    <label>@L("Name")</label><span class="font-red">*</span>
+                    <input class="form-control" type="text" name="Name" ng-class="{'edited':vm.user.name}" ng-model="vm.user.name" maxlength="@newPSG.PMS.Authorization.Users.User.MaxNameLength">
+                    <check-validate-empty datacheck="vm.user.name"></check-validate-empty>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-md-6">
+                    <label>Email</label><span class="font-red">*</span>
+                    <input type="email" name="EmailAddress" class="form-control" ng-class="{'edited':vm.user.emailAddress}" ng-model="vm.user.emailAddress" maxlength="@AbpUserBase.MaxEmailAddressLength">
+                    <check-validate-empty type="'email'" datacheck="vm.user.emailAddress"></check-validate-empty>
+                </div>
+                <div class="col-md-6">
+                    <label>SĐT</label>
+                    <input type="text" name="PhoneNumber" class="form-control" ng-class="{'edited':vm.user.phoneNumber}" ng-model="vm.user.phoneNumber" maxlength="@newPSG.PMS.Authorization.Users.User.MaxPhoneNumberLength">
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-12">
+                    @*<div class="md-checkbox-list">
+            <div class="md-checkbox">
+                <input id="EditUser_IsActive" class="md-check" type="checkbox" name="isTrongCuc" ng-model="vm.user.isTrongCuc">
+                <label for="EditUser_IsActive">
+                    <span class="inc"></span>
+                    <span class="check"></span>
+                    <span class="box"></span>
+                    Chuyên gia trong cục
+                </label>
+            </div>
+        </div>*@
+                    <label>Đơn vị quản lý chuyên gia</label>
+                    <div filter.common.dvqlchuyengia  value="vm.user.donViChuyenGiaId" value-change="vm.dvqlChuyenGiaChange"></div>
+                    @*<check-validate-empty datacheck="vm.user.donViChuyenGiaId"></check-validate-empty>*@
+                </div>
+            </div>
+            <div class="form-group row" ng-show="vm.user.isTrongCuc">
+                <div class="col-md-6">
+                    <label>Phòng ban</label><span class="font-red">*</span>
+                    <input style="width: 100%"
+                           id="ddlPhongBan"
+                           kendo-drop-down-list
+                           name="ddlPhongBan"
+                           ng-model="vm.user.phongBanId"
+                           k-options="vm.phongBanOptions"
+                           class="form-control" />
+                    <check-validate-empty ng-if="vm.user.isTrongCuc"  datacheck="vm.user.phongBanId"></check-validate-empty>
+                </div>
+                <div class="col-md-6">
+                    <label>Tiểu ban chuyên gia</label><span class="font-red">*</span>
+                    <input style="width: 100%"
+                           id="ddlTieuBan"
+                           kendo-drop-down-list
+                           name="ddlTieuBan"
+                           ng-model="vm.user.tieuBanId"
+                           k-options="vm.tieuBanOptions"
+                           class="form-control" />
+                    <check-validate-empty ng-if="vm.user.isTrongCuc" datacheck="vm.user.tieuBanId"></check-validate-empty>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-md-12">
+                    <label>Vai trò:</label><span class="font-red">*</span>
+                    <div class="md-checkbox-list">
+                        <div class="md-checkbox" ng-repeat="role in vm.roles">
+                            <input id="EditUser_{{role.roleName}}" class="md-check" type="checkbox" name="{{role.roleName}}" ng-model="role.isAssigned">
+                            <label for="EditUser_{{role.roleName}}">
+                                <span class="inc"></span>
+                                <span class="check"></span>
+                                <span class="box"></span>
+                                {{role.roleDisplayName}}
+                            </label>
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+
+            <div class="row form-group">
+                <div class="col-md-12">
+                    <label>@L("UserName")</label><span class="font-red">*</span>
+                    <input type="text" class="form-control" name="UserName" ng-model="vm.user.userName" maxlength="@AbpUserBase.MaxUserNameLength">
+                    <check-validate-empty datacheck="vm.user.userName"></check-validate-empty>
+                </div>
+            </div>
+            <div class="md-checkbox-list">
+                <div class="md-checkbox">
+                    <input id="EditUser_SetRandomPassword" class="md-check" type="checkbox" name="SetRandomPassword" ng-model="vm.setRandomPassword">
+                    <label for="EditUser_SetRandomPassword">
+                        <span class="inc"></span>
+                        <span class="check"></span>
+                        <span class="box"></span>
+                        @L("SetRandomPassword")
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group" ng-if="!vm.setRandomPassword">
+                <label>@L("Password")</label><span ng-if="!vm.user.id" class="font-red">*</span>
+                <input type="password"
+                       name="Password"
+                       class="form-control"
+                       ng-model="vm.user.password">
+                <check-validate-empty ng-if="!vm.user.id" datacheck="vm.user.password" maxlength=20 minlength=8 containupper=true containlower=true></check-validate-empty>
+            </div>
+
+            <div class="form-group" ng-if="!vm.setRandomPassword">
+                <label>@L("PasswordRepeat")</label><span ng-if="!vm.user.id" class="font-red">*</span>
+                <input type="password"
+                       name="PasswordRepeat"
+                       class="form-control"
+                       ng-model="vm.user.passwordRepeat"
+                       maxlength="@newPSG.PMS.Authorization.Users.User.MaxPlainPasswordLength"
+                       ng-minlength="@newPSG.PMS.Authorization.Users.User.MinPlainPasswordLength">
+                <check-validate-empty ng-if="!vm.user.id" datacheck="vm.user.passwordRepeat" textalear="'Mật khẩu xác nhận phải giống mật khẩu muốn thiết lập'" repeatfrom="vm.user.password"></check-validate-empty>
+            </div>
+
+            <div class="md-checkbox-list">
+                <div class="md-checkbox">
+                    <input id="EditUser_IsActive" class="md-check" type="checkbox" name="IsActive" ng-model="vm.user.isActive">
+                    <label for="EditUser_IsActive">
+                        <span class="inc"></span>
+                        <span class="check"></span>
+                        <span class="box"></span>
+                        @L("Active")
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button ng-disabled="vm.saving" type="button" class="btn red" ng-click="vm.cancel()"><em class="glyphicon glyphicon-remove"></em>@L("Cancel")</button>
+            <button type="button" button-busy="vm.saving" busy-text="@L("SavingWithThreeDot")" class="btn blue-steel" ng-click="vm.save()" ><em class="fa fa-save"></em> <span>@L("Save")</span></button>
+        </div>
+    </div>
+</div>

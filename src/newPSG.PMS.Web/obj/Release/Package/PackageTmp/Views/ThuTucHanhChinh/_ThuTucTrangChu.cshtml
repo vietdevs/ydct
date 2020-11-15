@@ -1,0 +1,17 @@
+﻿@model IEnumerable<newPSG.PMS.EntityDB.BoThuTuc>
+@if (Model != null)
+{
+    foreach (var item in Model)
+    {
+        <div class="col-lg-4 col-md-4 col-sm-6">
+            <div class="service-box service-warning">
+                <div class="mb-5 service-box-icon">
+                    <img src="@item.Anh" alt="@item.TenThuTuc" class="service-icon" />
+                </div>
+                <h5 class="service-title text-dark pt-1 ">@item.TenThuTuc</h5>
+                <p class="text-muted service-subtitle ">@item.MoTa</p>
+                <a href="/thu-tuc/@item.DuongDan" class="read-more-icon"><span class="right-icon">→</span></a>
+            </div>
+        </div>
+    }
+}

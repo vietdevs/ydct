@@ -1,0 +1,75 @@
+﻿<div id="lienheCreateOrEditForm" draggable>
+    <div class="modal-header">
+        <span class="pull-right" ng-click="vm.cancel()" aria-hidden="true"><i class="glyphicon glyphicon-remove"></i></span>
+        <span class="pull-right" id="fulscreen" aria-hidden="true"><i class="glyphicon glyphicon-fullscreen"></i></span>
+        <h4 class="modal-title">
+            <span ng-if="vm.lienhe.id">Xem chi tiết liên hệ</span>
+        </h4>
+    </div>
+    <div class="modal-body">
+        <div class="form-group clearfix">
+            <label class="col-md-2 col-sm-2 col-xs-12 control-label">Họ tên </label>
+            <div class="col-md-10 col-sm-10 col-xs-12">
+                <input readonly="readonly" class="form-control"
+                       type="text"
+                       name="FullName"
+                       ng-model="vm.lienhe.hoTen"
+                       data-fv-trigger="blur" />
+            </div>
+        </div>
+        <div class="form-group clearfix">
+            <label class="col-md-2 col-sm-2 col-xs-12 control-label">Điện thoại </label>
+            <div class="col-md-10 col-sm-10 col-xs-12">
+                <input readonly="readonly" class="form-control"
+                       type="text"
+                       name="Phone"
+                       ng-model="vm.lienhe.dienThoai"
+                       data-fv-trigger="blur" />
+            </div>
+        </div>
+        <div class="form-group clearfix">
+            <label class="col-md-2 col-sm-2 col-xs-12 control-label">Email</label>
+            <div class="col-md-10 col-sm-10 col-xs-12">
+                <input readonly="readonly" class="form-control"
+                       type="text"
+                       name="Email"
+                       ng-model="vm.lienhe.email"
+                       data-fv-trigger="blur" />
+            </div>
+        </div>
+        <div class="form-group clearfix">
+            <label class="col-md-2 col-sm-2 col-xs-12 control-label">Địa chỉ</label>
+            <div class="col-md-10 col-sm-10 col-xs-12">
+                <input readonly="readonly" class="form-control"
+                       type="text"
+                       name="Address"
+                       ng-model="vm.lienhe.diaChi"
+                       data-fv-trigger="blur" />
+            </div>
+        </div>
+        <div class="form-group clearfix">
+            <label class="col-md-2 col-sm-2 col-xs-12 control-label">Chủ đề </label>
+            <div class="col-md-10 col-sm-10 col-xs-12">
+                <input readonly="readonly" class="form-control"
+                       type="text"
+                       name="Subject"
+                       ng-model="vm.lienhe.tieuDe"
+                       data-fv-trigger="blur" />
+            </div>
+        </div>
+        <div class="form-group clearfix">
+            <label class="col-md-2 col-sm-2 col-xs-12 control-label">Nội dung </label>
+            <div class="col-md-10 col-sm-10 col-xs-12">
+                <input readonly="readonly" class="form-control"
+                       type="text"
+                       name="Message"
+                       ng-model="vm.lienhe.loiNhan"
+                       data-fv-trigger="blur" />
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        @*<button type="button" button-busy="vm.saving" busy-text="@L(" SavingWithThreeDot")" class="btn green-meadow" ng-click="vm.save()"><i class="fa fa-save"></i> <span>@L("Save")</span></button>*@
+        <button ng-disabled="vm.saving" type="button" class="btn red" ng-click="vm.cancel()"><i class="glyphicon glyphicon-remove"></i>@L("Cancel")</button>
+    </div>
+</div>

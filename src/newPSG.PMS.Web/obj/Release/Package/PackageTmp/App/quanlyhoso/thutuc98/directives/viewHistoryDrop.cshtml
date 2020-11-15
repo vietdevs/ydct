@@ -1,0 +1,46 @@
+﻿@using newPSG.PMS.Localization
+<style>
+    .advance-history {
+        min-width: 900px;
+        right: 16px;
+    }
+</style>
+<field id="history-table">
+    <button type="button" ng-click="vm.xuatExel()" ng-if="vm.user.roleLevel != 1" style="margin-bottom: 10px;" class="btn btn-sm green-jungle pull-right" button-busy="vm.exporting" busy-text="Đang xử lý..."><em class="fa fa-file-excel-o"></em> Xuất File Excel</button>
+    <div class="table-scrollable table-scrollable-borderless" style='max-height:500px;'>
+        <script type='text/javascript'>$('#fixTable').tableHeadFixer({ 'z-index': 1000 });</script>
+        <table id="fixTable" class="table table-striped table-hover table-bordered " style="margin-top: -1px !important;">
+            <thead>
+                <tr class="uppercase bg-blue-soft bg-font-blue-soft">
+                    <th class="font"> <strong>STT </strong> </th>
+                    <th class="font"> <strong>Tên người xử lý </strong>  </th>
+                    <th class="font"> <strong>Thời gian </strong>   </th>
+                    <th class="font"> <strong>Hành động </strong>  </th>
+                    <th class="font"> <strong>Kết quả  </strong> </th>
+                    <th class="font"> <strong class="text-center">Chi tiết  </strong> </th>
+                </tr>
+            </thead>
+            <tr ng-repeat="item in vm.listYKien">
+                <td title="{{item.id}}"> {{$index + 1}} </td>
+                <td>
+                    <div class="primary-link">{{item.nguoiXuLy}}</div>
+                </td>
+                <td> {{item.creationTime | date :  "dd/MM/yyyy HH:mm"}} </td>
+                <td> {{item.hanhDongXuLy}} </td>
+                <td>
+                    <span class='label bg-green-jungle bg-font-green-jungle text-center' ng-show='item.hoSoIsDat == true'>Đạt</span>
+                    <span class='label label-warning text-center' ng-show='item.hoSoIsDat == false'>Cần SĐBS</span>
+                    <span class='label label-default text-center' ng-show='item.hoSoIsDat == null'>Đã xử lý</span>
+                </td>
+                <td>
+                    <a class="dt-button buttons-pdf buttons-html5 btn green btn-outline" style="position: inherit;" ng-if="vm.user.roleLevel != 1" ng-click="vm.xemChiTiet(item)"><span>Xem</span></a>
+                </td>
+            </tr>
+
+        </table>
+    </div>
+    <div class="text-center">
+        <em class="fa fa-warning"></em>
+        <strong>Lịch sử được sắp xếp theo thứ tự giảm dần của thời gian xử lý.</strong><br />
+    </div>
+</field>

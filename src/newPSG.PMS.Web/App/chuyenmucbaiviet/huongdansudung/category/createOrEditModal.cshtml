@@ -1,0 +1,112 @@
+﻿<style>
+    .modal-dialog {
+        width: 80%
+    }
+</style>
+<div id="categoryCreateOrEditForm" draggable>
+    <div class="modal-header">
+        <span class="pull-right" ng-click="vm.cancel()" aria-hidden="true"><i class="glyphicon glyphicon-remove"></i></span>
+        <span class="pull-right" id="fulscreen" aria-hidden="true"><i class="glyphicon glyphicon-fullscreen"></i></span>
+        <h4 class="modal-title">
+            <span ng-if="!vm.category.id">Tạo Danh Mục Mới</span>
+            <span ng-if="vm.category.id">Sửa Danh Mục</span>
+        </h4>
+    </div>
+    <div class="modal-body">
+
+        <div class="form-group clearfix">
+            <div class="form-group">
+                <label class="col-md-2 col-sm-2 col-xs-12 control-label">Đối tượng sử dụng</label>
+                <div class="col-md-4 col-sm-10 col-xs-12" common.filter.userlevel s-model="vm.category.roleLevel"></div>
+            </div>
+        </div>
+        <div class="form-group clearfix hidden">
+            <div class="form-group">
+                <label class="col-md-2 col-sm-2 col-xs-12 control-label">Nhóm bài viết</label>
+                <div class="col-md-4 col-sm-10 col-xs-12">
+                    <common.filter.nhombaiviet s-model="vm.category.groupEnum">
+                </div>
+            </div>
+        </div>
+        <div class="form-group clearfix  margin-top-15">
+            <label class="col-md-2 col-sm-2 col-xs-12 control-label">Tiêu đề <span class="font-red">*</span></label>
+            <div class="col-md-10 col-sm-10 col-xs-12">
+                <input class="form-control"
+                       type="text"
+                       name="Title"
+                       ng-model="vm.category.title"
+                       ng-change="vm.GetSeo()"
+                       data-fv-notempty-message="Không được để trống trường này"
+                       data-fv-trigger="blur" />
+            </div>
+        </div>
+        <div class="form-group clearfix margin-top-15">
+            <label class="col-sm-2 control-label">Đường dẫn</label>
+            <div class="col-sm-10">
+                <input class="form-control"
+                       type="text"
+                       name=""
+                       ng-model="vm.category.description"
+                       data-fv-trigger="blur" />
+            </div>
+        </div>
+        <div class="form-group clearfix margin-top-15">
+            <label class="col-md-2 col-sm-2 col-xs-12 control-label">Danh mục cha <span class="font-red">*</span></label>
+            <div class="col-md-10 col-sm-10 col-xs-12">
+                <select style="width: 100%"
+                        placeholder="Danh mục gốc"
+                        kendo-drop-down-list
+                        data-fv-trigger="blur"
+                        ng-model="vm.category.parentId"
+                        k-options="vm.categoryParentOptions"
+                        class="form-control"></select>
+                <input type="hidden" name="Level" ng-model="vm.category.level" />
+            </div>
+        </div>
+        <div class="form-group clearfix margin-top-15">
+            <label class="col-md-2 col-sm-2 col-xs-12 control-label">File hướng dẫn</label>
+            <div class="col-md-8 col-sm-8 col-xs-10">
+                <input class="form-control"
+                       type="text"
+                       name="Image"
+                       ng-model="vm.category.file"
+                       data-fv-trigger="blur" />
+            </div>
+            <div class="col-md-2 col-sm-2 col-xs-2">
+                <button class="btn btn-default" type="button" ng-click="vm.ChooseImage()">Chọn file</button>
+            </div>
+        </div>
+        <div class="form-group clearfix margin-top-15">
+            <label for="inputEmail3" class="col-sm-2 control-label">Chi tiết</label>
+            <div class="col-sm-10">
+                <textarea class="form-control" name="Details" ckeditor="ckDescription" ng-model="vm.category.details"></textarea>
+            </div>
+        </div>
+        <div class="form-group clearfix margin-top-15">
+            <label class="col-md-2 col-sm-2 col-xs-12 control-label">Thứ tự</label>
+            <div class="col-md-10 col-sm-10 col-xs-12">
+                <input class="form-control" style="width:80px"
+                       ng-model="vm.category.sortOrder" name="SortOrder"
+                       type="number" value="1"
+                       data-fv-trigger="blur">
+            </div>
+        </div>
+        <div class="form-group clearfix margin-top-15">
+            <label class="col-md-2 col-sm-2 col-xs-12 control-label">Kích hoạt</label>
+            <div class="col-md-10 col-sm-10 col-xs-12">
+                <input bs-switch
+                       ng-model="vm.category.isActive"
+                       type="checkbox"
+                       switch-on-text="<i class='fa fa-check' aria-hidden='true'></i>"
+                       switch-on-color="success"
+                       switch-off-text="<i class='fa fa-times' aria-hidden='true'></i>"
+                       ng-true-value=true
+                       ng-false-value=false>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" button-busy="vm.saving" busy-text="@L(" SavingWithThreeDot")" class="btn green-meadow" ng-click="vm.save()"><i class="fa fa-save"></i> <span>@L("Save")</span></button>
+        <button ng-disabled="vm.saving" type="button" class="btn red" ng-click="vm.cancel()"><i class="glyphicon glyphicon-remove"></i>@L("Cancel")</button>
+    </div>
+</div>

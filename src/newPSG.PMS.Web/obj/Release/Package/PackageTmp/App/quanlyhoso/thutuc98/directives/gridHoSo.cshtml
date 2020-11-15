@@ -1,0 +1,154 @@
+﻿@using newPSG.PMS.Localization
+<style>
+    .advance-search {
+        min-width: 665px;
+    }
+
+    .label_form_case {
+        font-size: 10px !important;
+    }
+    .attp-filter .btn.active {
+    color: #fff;
+    background-color: #4c87b9;
+    border-color: #4c87b9;
+    z-index: 0;
+    }
+    .k-grid-header th.k-header {
+    background-color: rgb(76, 135, 185);
+    border-color: rgb(231, 236, 241);
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+</style>
+<uib-tabset class="tab-container tabbable-custom margin-bottom-30" ng-if="vm.form == 'tham_dinh_ho_so'">
+    <uib-tab heading="{{form2.name}}" class="bold uppercase" ng-click="vm.changeTabThamDinhHoSo(form2.id)" ng-repeat=" form2 in vm.listFormCase2">
+    </uib-tab>
+</uib-tabset>
+<div class="box_grid_ho_so">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-xs-12">
+            <div class="input-group">
+                <div class="input-group-btn" uib-dropdown auto-close="disabled">
+                    <button id="button1" type="button" class="btn blue-soft dropdown-toggle" uib-dropdown-toggle ng-click="vm.fMoRong_Change(vm.fMoRong)">
+                        <text ng-show="!vm.fMoRong">Mở rộng <em class="fa fa-angle-down"></em></text>
+                        <text ng-show="vm.fMoRong">Thu gọn <em class="fa fa-angle-up"></em></text>
+                    </button>
+                </div>
+                <input type="text" id="skeyword" class="form-control" name="Keyword" ng-model="vm.filter.keyword" enter-key="vm.quickSearchHoSo()" onfocus="onFocusElei(this)"
+                       placeholder="Nhập mã hồ sơ, số đăng ký, tên tổ chức, mã số. Bấm Enter để tìm">
+                <div class="input-group-btn" uib-dropdown auto-close="disabled">
+                    <button tabindex="-1" class="btn blue-soft" type="button" ng-click="vm.quickSearchHoSo()"><em class="fa fa-search"></em></button>
+                    <button class="btn default" type="button" ng-click="vm.initGridHoSo()"><em class="fa fa-repeat"></em></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12" ng-show="vm.fMoRong">
+            <div style="padding:10px 0;">
+                <field>
+                    <div class="row form-group">
+                        <div class="col-md-6">
+                            <label>Tỉnh / Thành phố</label>
+                        </div>
+                    </div>
+                    <div class="form-actions text-center">
+                        <button class="btn blue-soft btn-sm" type="button" ng-click="vm.quickSearchHoSo()"><em class="fa fa-search"></em> Tìm kiếm</button>
+                        <button class="btn default btn-sm" type="button" ng-click="vm.initGridHoSo()">Đặt lại</button>
+                    </div>
+                </field>
+                <hr />
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 col-md-12">
+            <div style="margin-top:15px;" class="text-center attp-filter">
+                <div class="btn-group" data-toggle="buttons">
+                    <label class="btn btn-default label_form_case" ng-repeat="item in vm.listFormCase" ng-class="vm.filter.formCase == item.id ? 'active':''" ng-click="vm.formCaseOnChange(item.id)" title="{{ vm.classCssFormCase + $index }}">
+                        <input class="toggle" type="radio" ng-model="vm.filter.formCase" value="{{ item.id }}"> {{ item.name }}
+                        <span class="badge bg-red" ng-show="item.totalCount && item.totalCount > 0">{{item.totalCount}} </span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row margin-bottom-10">
+        <div class="col-md-6" ng-show="vm.form == 'mot_cua_phan_cong'">
+            <div class="row">
+                <div class="col-md-6" ng-hide="true">
+                    <label>Chuyển hồ sơ theo loại</label>
+                    <input id="ddlLoaiHoSoPC"
+                           style="width: 100%"
+                           kendo-drop-down-list
+                           ng-change="vm.onChangeLHSPhanCong()"
+                           ng-model="vm.filter.loaiHoSoId"
+                           k-options="vm.loaiHoSoOptions"
+                           class="form-control" />
+                </div>
+
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <div class="col-md-6" ng-show="vm.form == 'phong_ban_phan_cong'">
+            <div class="row">
+                <div class="col-md-6" ng-hide="true">
+                    <label>Phân công nhiều hồ sơ theo loại</label>
+                    <input id="ddlLoaiHoSoPC"
+                           style="width: 100%"
+                           kendo-drop-down-list
+                           ng-change="vm.onChangeLHSPhanCong()"
+                           ng-model="vm.filter.loaiHoSoId"
+                           k-options="vm.loaiHoSoOptions"
+                           class="form-control" />
+                </div>
+                <div class="col-md-3">
+                    <label>&nbsp;</label><br />
+                    <button class="btn btn-md blue-soft" type="button"
+                            ng-show="vm.filter.formCase!=3 && vm.filter.loaiHoSoId"
+                            ng-disabled="(!vm.arrCheckbox || vm.arrCheckbox.length <= 0)"
+                            ng-click="vm.phong_ban_phan_cong()">
+                        <text ng-if="vm.filter.formCase==1">Phân công cán bộ</text>
+                        <text ng-if="vm.filter.formCase==2">Phân công lại cán bộ</text>
+                    </button>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <div class="col-md-6" ng-show="vm.form == 'dang_ky_ho_so'">
+            <label>&nbsp;</label><br />
+            <button class="btn blue-soft" type="button" ng-click="vm.kySoNhieuHoSo()"
+                    ng-show="vm.arrCheckbox && vm.arrCheckbox.length>0">
+                <text>Ký nhiều hồ sơ</text>
+            </button>
+        </div>
+
+        <div class="col-md-6" ng-show="vm.form == 'lanh_dao_cuc_duyet'">
+            <label>&nbsp;</label><br />
+            <button class="btn blue-soft" type="button" ng-click="vm.lanhDaoCucKySoNhieu()"
+                    ng-show="vm.arrCheckbox && vm.arrCheckbox.length>0">
+                <text>Ký & chuyển nhiều hồ sơ</text>
+            </button>
+        </div>
+        <div class="col-md-6" ng-show="vm.form == 'lanh_dao_bo_duyet'">
+            <label>&nbsp;</label><br />
+            <button class="btn blue-soft" type="button" ng-click="vm.lanhDaoBoKySoNhieu()"
+                    ng-show="vm.arrCheckbox && vm.arrCheckbox.length>0">
+                <text>Ký & chuyển nhiều hồ sơ</text>
+            </button>
+        </div>
+        <div class="col-md-6" ng-show="vm.form == 'van_thu_duyet'">
+            <label>&nbsp;</label><br />
+            <button class="btn blue-soft" type="button" ng-click="vm.vanThuDongDauNhieu()"
+                    ng-show="vm.arrCheckbox && vm.arrCheckbox.length>0">
+                <text>Đóng dấu nhiều hồ sơ</text>
+            </button>
+        </div>
+    </div>
+
+    <div id="gridHoSo"
+         kendo-grid
+         k-options="vm.hoSoGridOptions"
+         k-data-source='vm.gridHoSoDataSource'></div>
+</div>

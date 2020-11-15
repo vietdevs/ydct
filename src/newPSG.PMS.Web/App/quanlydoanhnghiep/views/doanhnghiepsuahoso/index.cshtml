@@ -1,0 +1,234 @@
+﻿@using newPSG.PMS.Localization
+<div class="danhsach" ng-controller="quanlydoanhnghiep.views.doanhnghiepsuahoso.index as vm">
+    <div class="col-md-12">
+        <uib-tabset class="tab-container tabbable-line">
+            @*-----------------------Thông tin doanh nghiệp-----------------------*@
+            <uib-tab heading="Thông tin chung">
+                <div class="portlet light bordered" busy-if="vm.dsdoanhnghiep_loading">
+                    <div class="portlet-body form">
+                        <div id="DoanhNghiepCreateOrEditForm" name="DoanhNghiepCreateOrEditForm">
+                            <div class="form-body">
+                                <div class="portlet box green-meadow ">
+                                    <div class="portlet-title">
+                                        <div class="caption">
+                                            Thông tin doanh nghiệp
+                                        </div>
+                                    </div>
+                                    <div class="portlet-body">
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label>Mã số thuế <span class="font-red">*</span></label>
+                                                    <input class="form-control" disabled="" type="text" ng-model="vm.dataForm.maSoThue" name="maSoThue" data-fv-notempty="true" data-fv-notempty-message="Không được để trống trường này" data-fv-trigger="blur" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label>Tên tiếng Việt <span class="font-red">*</span></label>
+                                                    <input class="form-control" type="text"
+                                                           ng-model="vm.dataForm.tenDoanhNghiep"
+                                                           name="tenDoanhNghiep"
+                                                           data-fv-notempty="true"
+                                                           data-fv-notempty-message="Không được để trống trường này"
+                                                           data-fv-trigger="blur">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label>Tên tiếng Anh</label>
+                                                    <input class="form-control"
+                                                           type="text"
+                                                           ng-model="vm.dataForm.tenTiengAnh">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label>Tên viết tắt</label>
+                                                    <input class="form-control" type="text" ng-model="vm.dataForm.tenVietTat">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label>Loại hình</label><span class="font-red">*</span>
+                                                    <input style="width: 100%"
+                                                           kendo-drop-down-list
+                                                           name="ddlLoaiHinh"
+                                                           ng-model="vm.dataForm.loaiHinhDoanhNghiepId"
+                                                           k-options="vm.loaiHinhOptions"
+                                                           data-fv-notempty="true" data-fv-notempty-message="Không được để trống trường này" data-fv-trigger="blur"
+                                                           class="form-control" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label>Có chữ ký số</label><br />
+                                                    <input bs-switch
+                                                           ng-model="vm.dataForm.hasCA"
+                                                           type="checkbox"
+                                                           switch-on-text="<i class='fa fa-check' aria-hidden='true'></i>"
+                                                           switch-on-color="success"
+                                                           switch-off-text="<i class='fa fa-times' aria-hidden='true'></i>"
+                                                           ng-true-value=true
+                                                           ng-false-value=false>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="portlet box green-meadow ">
+                                    <div class="portlet-title">
+                                        <div class="caption">
+                                            Địa chỉ
+                                        </div>
+                                    </div>
+                                    <div class="portlet-body">
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label>Tỉnh/Thành phố </label><span class="font-red">*</span>
+                                                    <input id="ddlTinh"
+                                                           name="ddlTinh"
+                                                           style="width: 100%"
+                                                           kendo-drop-down-list
+                                                           ng-model="vm.dataForm.tinhId"
+                                                           k-options="vm.tinhOptions"
+                                                           data-fv-notempty="true" data-fv-notempty-message="Không được để trống trường này" data-fv-trigger="blur"
+                                                           class="form-control" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label>Huyện </label><span class="font-red">*</span>
+                                                    <input id="ddlHuyen"
+                                                           style="width: 100%"
+                                                           name="ddlHuyen"
+                                                           kendo-drop-down-list
+                                                           ng-model="vm.dataForm.huyenId"
+                                                           k-options="vm.huyenOptions"
+                                                           k-cascade-from-field="'parentId'"
+                                                           k-cascade-from="'ddlTinh'"
+                                                           data-fv-notempty="true" data-fv-notempty-message="Không được để trống trường này" data-fv-trigger="blur"
+                                                           class="form-control" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label>Xã </label><span class="font-red">*</span>
+                                                    <select id="ddlXa"
+                                                            name="ddlXa"
+                                                            style="width: 100%"
+                                                            kendo-drop-down-list
+                                                            ng-model="vm.dataForm.xaId"
+                                                            k-options="vm.xaOptions"
+                                                            k-cascade-from-field="'parentId'"
+                                                            k-cascade-from="'ddlHuyen'"
+                                                            data-fv-notempty="true" data-fv-notempty-message="Không được để trống trường này" data-fv-trigger="blur"
+                                                            class="form-control"></select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label>Địa chỉ chi tiết</label><span class="font-red">*</span>
+                                                    <input class="form-control" name="diaChiChiTiet" placeholder="Địa chỉ chi tiết" type="text" ng-model="vm.dataForm.diaChi" data-fv-notempty="true" data-fv-notempty-message="Không được để trống trường này" data-fv-trigger="blur">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label>Điện thoại <span class="font-red">*</span></label>
+                                                    <input class="form-control" placeholder="Điện thoại" type="text" ng-model="vm.dataForm.soDienThoai" data-fv-notempty="true" data-fv-notempty-message="Không được để trống trường này" data-fv-trigger="blur">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label>Fax</label>
+                                                    <input class="form-control" placeholder="Fax" type="text" ng-model="vm.dataForm.fax">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label>Email doanh nghiệp <span class="font-red">*</span></label>
+                                                    <input class="form-control" placeholder="Email quản lý" name="emaildoanhnghiep" type="text" ng-model="vm.dataForm.emailDoanhNghiep" data-fv-notempty="true" data-fv-notempty-message="Không được để trống trường này" data-fv-trigger="blur">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label>Website</label>
+                                                    <input class="form-control"
+                                                           id="website"
+                                                           name="website"
+                                                           placeholder="Website"
+                                                           type="text"
+                                                           data-fv-regexp="true"
+                                                           data-fv-regexp-regexp="^(https?:\/\/)*[a-z0-9-]+(\.[a-z0-9-]+)+(\/[a-z0-9-]+)*\/?$"
+                                                           data-fv-regexp-message="Không đúng định dạng đường dẫn trang mạng."
+                                                           ng-model="vm.dataForm.website">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="portlet box green-meadow ">
+                                    <div class="portlet-title">
+                                        <div class="caption">
+                                            Người đại diện
+                                        </div>
+                                    </div>
+                                    <div class="portlet-body">
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label>Họ và tên <span class="font-red">*</span></label>
+                                                    <input class="form-control" placeholder="Họ và tên"
+                                                           name="tenNguoiDaiDien"
+                                                           type="text"
+                                                           ng-model="vm.dataForm.tenNguoiDaiDien"
+                                                           data-fv-regexp="true"
+                                                           data-fv-regexp-regexp="^(?:[a-zA-Z\s]|[\u0391Z\s]|[\u4E00-\uFFE5]|[\u0e00\u9FFF]|[\u0E00-\u0e7e]|[\u00c0\u0E7F]|[\u00c0-\u1ef9])*$"
+                                                           data-fv-regexp-message="Không được nhập các ký tự đặc biệt"
+                                                           data-fv-notempty="true"
+                                                           data-fv-notempty-message="Không được để trống trường này">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label>Email xác nhận</label>
+                                                    <input class="form-control" placeholder="Email" type="text" ng-model="vm.dataForm.emailXacNhan">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label>Chức vụ</label>
+                                                    <input style="width: 100%"
+                                                           kendo-drop-down-list
+                                                           ng-model="vm.dataForm.chucVuNguoiDaiDienID"
+                                                           k-options="vm.chucVuOptions"
+                                                           class="form-control" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label>Số di động <span class="font-red">*</span></label>
+                                                    <input class="form-control" placeholder="Số di động" type="text" ng-model="vm.dataForm.dienThoaiNguoiDaiDien" data-fv-notempty="true" data-fv-notempty-message="Không được để trống trường này" data-fv-trigger="blur">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-actions text-right">
+                                <button button-busy="vm.saving" class="btn green-meadow" ng-click="vm.submitUpdate()"> <i class="fa fa-save"></i>Lưu</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </uib-tab>
+        </uib-tabset>
+    </div>
+</div>

@@ -1,0 +1,77 @@
+﻿<style type="text/css">
+    .tooltip-inner {
+        max-width: 500px;
+    }
+    .theme-panel {
+        min-width: 770px;
+    }
+    .see-hoso {
+        color: #156c37;
+    }
+</style>
+<div class="row form-group">
+    <div class="col-lg-6 col-md-6 col-xs-12">
+        <div class="input-group">
+            <input type="text" class="form-control" name="Keyword" ng-model="vm.filter.Filter" enter-key="vm.refreshGridDoanhNghiep()"
+                   placeholder="Nhập tên doanh nghiệp, mã số doanh nghiệp, tên người đại diện. Ấn Enter để tìm">
+            <div id="frmSearch" class="input-group-btn" uib-dropdown auto-close="disabled">
+                <button tabindex="-1" class="btn green-meadow" type="button" ng-click="vm.refreshGridDoanhNghiep()"><i class="fa fa-search"></i></button>
+                <button id="button1" type="button" class="btn green-meadow dropdown-toggle" uib-dropdown-toggle><i class="fa fa-angle-down"></i></button>
+                <div class="dropdown-menu theme-panel pull-right dropdown-custom" uib-dropdown-menu role="menu" aria-labelledby="button1">
+                    <div class="col-md-12">
+                        <field>
+                            <div class="row form-group">
+                                <div class="col-md-4">
+                                    <label>Loại hình doanh nghiệp</label>
+                                    <select id="ddlLoaiHinh"
+                                            style="width: 100%"
+                                            kendo-drop-down-list
+                                            k-ng-model="vm.filter.LoaiHinhDoanhNghiepId"
+                                            k-options="vm.loaiHinhOptions"
+                                            class="form-control"></select>
+                                </div>
+                                <div class="col-md-4">
+                                    <label>Tỉnh / Thành phố</label>
+                                    <select id="ddlTinh"
+                                            style="width: 100%"
+                                            kendo-drop-down-list
+                                            k-ng-model="vm.filter.TinhId"
+                                            k-options="vm.tinhOptions"
+                                            class="form-control"></select>
+                                </div>
+                                <div class="col-md-4">
+                                    <label>Kích Hoạt</label><br />
+                                    <input bs-switch
+                                           ng-model="vm.filter.IsActive"
+                                           type="checkbox"
+                                           switch-on-text="<i class='fa fa-check' aria-hidden='true'></i>"
+                                           switch-off-text="<i class='fa fa-times' aria-hidden='true'></i>"
+                                           switch-on-color="success"
+                                           ng-true-value=true
+                                           ng-false-value=false>
+                                </div>
+                            </div>
+                            <div class="form-actions text-right">
+                                <button class="btn green-meadow btn-sm" type="button" ng-click="vm.refreshGridDoanhNghiep()"><i class="fa fa-search"></i> Tìm kiếm</button>
+                                <button class="btn default btn-sm" type="button" ng-click="vm.refreshDoanhNghiep()">Đặt lại</button>
+                            </div> @*Button search*@
+                        </field>
+                    </div>
+                </div>
+                <button class="btn default" type="button" ng-click="vm.refreshDoanhNghiep()"><i class="fa fa-repeat"></i></button>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6 col-md-6">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div class="mt-radio-inline">
+                    <label ng-repeat="item in vm.listFormCase" title="{{ vm.classCssFormCase + $index }}" class="mt-radio {{ vm.classCssFormCase + $index }}">
+                        <input name="optionsRadios" ng-change="vm.formCaseOnChange()" ng-model="vm.filter.formCase" value="{{ item.id }}" type="radio"> {{ item.name }}
+                        <span></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 

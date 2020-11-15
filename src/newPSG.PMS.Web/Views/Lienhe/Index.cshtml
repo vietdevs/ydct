@@ -1,0 +1,67 @@
+﻿@using newPSG.PMS.Web.Navigation
+@{
+    ViewBag.CurrentPageName = PageNames.Frontend.Lienhe;
+}
+<!-- BEGIN SIDEBAR & CONTENT -->
+<section class="wf100 subheader">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                @*<h3 class="stitle text-center" style="margin: 0; color: #fff">
+                        Liên hệ
+                    </h3>*@
+                <ul>
+                    <li> <a href="#">Home</a> </li>
+                    <li> <a href="Lienhe"> Liên hệ </a> </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="main-content">
+    <!--Contact Us Start-->
+    <div class="contact-details-two graybg p80">
+        <div class="container">
+            @Html.Raw(newPSG.PMS.Web.Helpers.SystemConfigHelper.GetSettingValue("ThongTinLienHe"))
+        </div>
+    </div>
+    <!--Contact Us Start-->
+    <!-- Google Map with Contact Form -->
+    <div class="map-form p80">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-sm-5">
+                    <h3 class="stitle">Gửi tin liên hệ</h3>
+                    <div class="contact-form">
+                        <form>
+                            <ul>
+                                <li>
+                                    <input type="text" placeholder="Họ và tên" required="">
+                                </li>
+                                <li>
+                                    <input type="text" placeholder="Email" required="">
+                                </li>
+                                <li>
+                                    <input type="text" placeholder="Lời nhắn">
+                                </li>
+                                <li>
+                                    <textarea placeholder=""></textarea>
+                                </li>
+                                <li>
+                                    <input type="submit" value="Gửi đi">
+                                </li>
+                            </ul>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-8 col-sm-7">
+                    <div class="map">
+                        @Html.Raw(newPSG.PMS.Web.Helpers.SystemConfigHelper.GetSettingValue("Map"))
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Google Map with Contact Form End -->
+</div>

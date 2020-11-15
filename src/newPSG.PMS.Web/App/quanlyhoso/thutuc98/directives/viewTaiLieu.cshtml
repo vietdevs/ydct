@@ -1,0 +1,35 @@
+﻿@using newPSG.PMS.Localization
+<uib-tabset class="tab-container tabbable-line" active="vm.activeIndex">
+    <uib-tab tabindex="0" index="1" heading="Đơn đề nghị">
+        <div class="frameTaiLieu" style="height: 730px">
+            <iframe title="Xem bản công bố" style="width: 100%; height: 100%;border:0" ng-src="{{vm.trustSrc(vm.dangKyUrl)}}"></iframe>
+        </div>
+        <div class="text-center padding-tb-10"><a href="{{vm.trustSrc(vm.dangKyUrl)}}" target="_blank">Xem tài liệu bằng tab khác</a></div>
+    </uib-tab>
+    <uib-tab heading="Tài liệu đính kèm">
+        <div class="right" style="padding-top: 10px;">
+            <button type="button" ng-class="taiLieu.active == true ? 'blue-steel' : ''"
+                    class="btn btn-xs btn-default" ng-click="vm.xemTaiLieu(taiLieu)"
+                    ng-repeat="taiLieu in vm.lstTaiLieu">
+                {{taiLieu.moTaTep}}
+            </button>
+        </div>
+        <div class="frameTaiLieu">
+            <div class="portlet light bordered text-center font-grey-salsa" style="height: 700px" ng-if="vm.taiLieuDinhKemUrl == null || vm.taiLieuDinhKemUrl == ''">
+                <span class="k-icon k-i-warning" style="margin-top: 200px; font-size: 30px;"></span><br><br>
+                Không tìm thấy tệp đính kèm!
+            </div>
+            <iframe ng-if="vm.taiLieuDinhKemUrl != null || vm.taiLieuDinhKemUrl != ''" title="Xem tài liệu" style="width: 100%; height: 100%;border:0" ng-src="{{vm.trustSrc(vm.taiLieuDinhKemUrl)}}"></iframe>
+        </div>
+        <div class="text-center padding-tb-10"><a href="{{vm.trustSrc(vm.taiLieuDinhKemUrl)}}" target="_blank">Xem tài liệu bằng tab khác</a></div>
+    </uib-tab>
+    <uib-tab tabindex="1" index="0" heading="Công văn" ng-show="vm.lstCongVan.length > 0">
+        <div class=" right" style="padding-top: 10px;">
+            <button ng-repeat="congvan in vm.lstCongVan" type="button" class="btn btn-xs btn-default" ng-class="congvan.active == true ? 'blue-steel' : ''" ng-click="vm.xemCongVanBoSung(congvan)">{{congvan.displayText}}</button>
+        </div>
+        <div class="frameTaiLieu" style="height: 730px">
+            <iframe title="Xem công văn, thông báo" style="width: 100%; height: 100%;border:0" ng-src="{{vm.trustSrc(vm.congVanUrl)}}"></iframe>
+        </div>
+        <div class="text-center padding-tb-10"><a href="{{vm.trustSrc(vm.congVanUrl)}}" target="_blank">Xem tài liệu bằng tab khác</a></div>
+    </uib-tab>
+</uib-tabset>

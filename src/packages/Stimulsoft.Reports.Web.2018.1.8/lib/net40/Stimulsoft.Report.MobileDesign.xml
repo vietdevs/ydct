@@ -1,0 +1,1459 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Stimulsoft.Report.MobileDesign</name>
+    </assembly>
+    <members>
+        <member name="T:Stimulsoft.Report.MobileDesign.StiGroup">
+            <summary>
+            This class describes groups of components.
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiGroup.Clone">
+            <summary>
+            Creates a new object that is a copy of the current instance.
+            </summary>
+            <returns>A new object that is a copy of this instance.</returns>
+        </member>
+        <member name="T:Stimulsoft.Report.MobileDesign.StiInsertionComponents">
+            <summary>
+            This class helps with insertion components to current report page.
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.HtmlLexicalAnalyzer.SkipWhiteSpace">
+            <summary>
+            skips whitespace in the input string
+            leaves the first non-whitespace character available in the NextCharacter property
+            this may be the end-of-file character, it performs no checking 
+            </summary>
+        </member>
+        <member name="F:Stimulsoft.Report.MobileDesign.StiDesignerPermissions.None">
+            <summary>
+            Deny all.
+            </summary>
+        </member>
+        <member name="F:Stimulsoft.Report.MobileDesign.StiDesignerPermissions.Create">
+            <summary>
+            Allows to create an item.
+            </summary>
+        </member>
+        <member name="F:Stimulsoft.Report.MobileDesign.StiDesignerPermissions.Delete">
+            <summary>
+            Allows to delete an item.
+            </summary>
+        </member>
+        <member name="F:Stimulsoft.Report.MobileDesign.StiDesignerPermissions.Modify">
+            <summary>
+            Allows to modify an item.
+            </summary>
+        </member>
+        <member name="F:Stimulsoft.Report.MobileDesign.StiDesignerPermissions.View">
+            <summary>
+            Allows to view an item.
+            </summary>
+        </member>
+        <member name="F:Stimulsoft.Report.MobileDesign.StiDesignerPermissions.ModifyView">
+            <summary>
+            Allows modify and view an item.
+            </summary>
+        </member>
+        <member name="F:Stimulsoft.Report.MobileDesign.StiDesignerPermissions.All">
+            <summary>
+            Allow any action with an item.
+            </summary>
+        </member>
+        <member name="T:Stimulsoft.Report.MobileDesign.JSON">
+             <summary>
+             This class encodes and decodes JSON strings.
+             http://www.json.org/
+            
+             JSON uses Arrays and Objects. These correspond here to the datatypes ArrayList and Hashtable.
+             All numbers are parsed to doubles.
+             </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.JSON.Decode(System.String)">
+            <summary>
+            Parses the string json into a value
+            </summary>
+            <param name="json">A JSON string.</param>
+            <returns>An ArrayList, a Hashtable, a double, a string, null, true, or false</returns>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.JSON.Decode(System.String,System.Boolean@)">
+            <summary>
+            Parses the string json into a value; and fills 'success' with the successfullness of the parse.
+            </summary>
+            <param name="json">A JSON string.</param>
+            <param name="success">Successful parse?</param>
+            <returns>An ArrayList, a Hashtable, a double, a string, null, true, or false</returns>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.JSON.Encode(System.Object)">
+            <summary>
+            Converts a Hashtable / ArrayList object into a JSON string
+            </summary>
+            <param name="json">A Hashtable / ArrayList</param>
+            <returns>A JSON encoded string, or null if object 'json' is not serializable</returns>
+        </member>
+        <member name="E:Stimulsoft.Report.MobileDesign.StiMobileDesigner.SaveReport">
+            <summary>
+            Fires when the user saves the report.
+            </summary>
+        </member>
+        <member name="E:Stimulsoft.Report.MobileDesign.StiMobileDesigner.SaveAsReport">
+            <summary>
+            Fires when the user saves the report.
+            </summary>
+        </member>
+        <member name="E:Stimulsoft.Report.MobileDesign.StiMobileDesigner.GetReport">
+            <summary>
+            Fires when the designer requires the report.
+            </summary>
+        </member>
+        <member name="E:Stimulsoft.Report.MobileDesign.StiMobileDesigner.CreateReport">
+            <summary>
+            Fires when the user creates a new report.
+            </summary>
+        </member>
+        <member name="E:Stimulsoft.Report.MobileDesign.StiMobileDesigner.PreviewReport">
+            <summary>
+            Fires when the user previews the report.
+            </summary>
+        </member>
+        <member name="E:Stimulsoft.Report.MobileDesign.StiMobileDesigner.Exit">
+            <summary>
+            Fires when the user pressed Exit in the main menu.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.CloudMode">
+            <summary>
+            Internal use only.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.ScrollbiMode">
+            <summary>
+            Internal use only.
+            </summary>
+        </member>
+        <member name="F:Stimulsoft.Report.MobileDesign.StiMobileDesigner.scrollbiParameters">
+            <summary>
+            Internal use only.
+            </summary>
+        </member>
+        <member name="F:Stimulsoft.Report.MobileDesign.StiMobileDesigner.componentsIntoInsertTab">
+            <summary>
+            Internal use only.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.CacheHelper">
+            <summary>
+            This property to override methods of caching. 
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.CacheHelperForViewer">
+            <summary>
+            This property to override methods of caching for viewer. 
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.Theme">
+            <summary>
+            Gets or sets the current visual theme which is used for drawing visual elements of the mobile designer.
+            </summary>        
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.WebImageHost">
+            <summary>
+            Gets or sets the StiWebImageHost object which converts images to urls.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.ServerTimeout">
+            <summary>
+            Gets or sets a value which indicates how much time do the report rendering result will be stored in the server cache.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.AllowAutoUpdateCache">
+            <summary>
+            Allows the designer to update the cache automatically.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.ReportGuid">
+            <summary>
+            Internal use only.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.Report">
+            <summary>
+            Gets or sets a report object which is shown in the Mobile Designer.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.ReportForPreview">
+            <summary>
+            Internal use only.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.ClipboardId">
+            <summary>
+            Internal use only.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.Clipboard">
+            <summary>
+            Internal use only.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.UndoArrayId">
+            <summary>
+            Internal use only.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.UndoArray">
+            <summary>
+            Internal use only.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.ComponentCloneId">
+            <summary>
+            Internal use only.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.ComponentClone">
+            <summary>
+            Internal use only.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.ReportCheckersId">
+            <summary>
+            Internal use only.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.ReportCheckers">
+            <summary>
+            Internal use only.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.ImagesPath">
+            <summary>
+            Gets or sets a path to the folder with images which is used for showing the Mobile Designer.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.ImageFormat">
+            <summary>
+            Gets or sets an image format.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.CacheMode">
+            <summary>
+            Gets or sets the mode of the report caching.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.UseRelativeUrls">
+            <summary>
+            Gets or sets a value which indicates that the mobile designer will use relative or absolute URLs for getting images.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.GlobalizationFile">
+            <summary>
+            Gets or sets a path to the globalization file for the mobile designer.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.ShowAnimation">
+            <summary>
+            Gets or sets a value which indicates that animation is enabled.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.DefaultUnit">
+            <summary>
+            Gets or sets a default value of unit in the mobile designer.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.FocusingX">
+            <summary>
+            Focusing on the x axis. Required if the lines are displayed double.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.FocusingY">
+            <summary>
+            Focusing on the y axis. Required if the lines are displayed double.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.DemoMode">
+            <summary>
+            Internal use only.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.ShowSaveDialog">
+            <summary>
+            Gets or sets a visibility of the save dialog of the mobile designer.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.ShowTooltips">
+            <summary>
+            Gets or sets a value which indicates that show or hide tooltips.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.ShowTooltipsHelp">
+            <summary>
+            Gets or sets a value which indicates that show or hide tooltips help icon.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.ShowDialogHelp">
+            <summary>
+            Gets or sets a value which indicates that show or hide help icon in dialogs.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.PassQueryParametersForResources">
+            <summary>
+            Gets or sets a value which enables or disables the transfer of URL parameters when requesting the scripts and styles of the mobile viewer.
+            </summary>  
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.InterfaceType">
+            <summary>
+            Gets or sets the interface type of the mobile designer.
+            </summary>        
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.CustomCss">
+            <summary>
+            Gets or sets a path to the custom css file for the mobile designer.
+            </summary>        
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.DatePickerFirstDayOfWeek">
+            <summary>
+            Gets or sets the first day of week in the date picker.
+            </summary>        
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.AllowChangeWindowTitle">
+            <summary>
+            Allow the designer to change the window title.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.ShowSetupToolboxButton">
+            <summary>
+            Gets or sets a visibility of the setup toolbox button in the mobile designer.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.ShowInsertButton">
+            <summary>
+            Gets or sets a visibility of the insert button in the toolbar of the mobile designer.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.ShowLayoutButton">
+            <summary>
+            Gets or sets a visibility of the layout button in the toolbar of the mobile designer.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.ShowPageButton">
+            <summary>
+            Gets or sets a visibility of the page button in the toolbar of the mobile designer.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.ShowPreviewButton">
+            <summary>
+            Gets or sets a visibility of the preview button in the toolbar of the mobile designer.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.ShowSaveButton">
+            <summary>
+            Gets or sets a visibility of the save button in the toolbar of the mobile designer.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.ShowAboutButton">
+            <summary>
+            Gets or sets a visibility of the about button in the toolbar of the mobile designer.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.ShowFileMenu">
+            <summary>
+            Gets or sets a visibility of the file menu of the mobile designer.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.ShowFileMenuNew">
+            <summary>
+            Gets or sets a visibility of the item New in the file menu.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.ShowFileMenuOpen">
+            <summary>
+            Gets or sets a visibility of the item Open in the file menu.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.ShowFileMenuSave">
+            <summary>
+            Gets or sets a visibility of the item Save in the file menu.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.ShowFileMenuSaveAs">
+            <summary>
+            Gets or sets a visibility of the item Save As in the file menu.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.ShowFileMenuClose">
+            <summary>
+            Gets or sets a visibility of the item Close in the file menu.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.ShowFileMenuExit">
+            <summary>
+            Gets or sets a visibility of the item Exit in the file menu.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.ShowFileMenuReportSetup">
+            <summary>
+            Gets or sets a visibility of the item Report Setup in the file menu.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.ShowFileMenuOptions">
+            <summary>
+            Gets or sets a visibility of the item Options in the file menu.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.ShowFileMenuInfo">
+            <summary>
+            Gets or sets a visibility of the item Info in the file menu.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.ShowFileMenuAbout">
+            <summary>
+            Gets or sets a visibility of the item About in the file menu.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.ShowFileMenuHelp">
+            <summary>
+            Gets or sets a visibility of the item Help in the file menu.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.ShowReportTitleBand">
+            <summary>
+            Gets or sets a visibility of the ReportTitleBand item in the bands menu of the mobile designer.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.ShowReportSummaryBand">
+            <summary>
+            Gets or sets a visibility of the ReportSummaryBand item in the bands menu of the mobile designer.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.ShowPageHeaderBand">
+            <summary>
+            Gets or sets a visibility of the PageHeaderBand item in the bands menu of the mobile designer.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.ShowPageFooterBand">
+            <summary>
+            Gets or sets a visibility of the PageFooterBand item in the bands menu of the mobile designer.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.ShowGroupHeaderBand">
+            <summary>
+            Gets or sets a visibility of the GroupHeaderBand item in the bands menu of the mobile designer.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.ShowGroupFooterBand">
+            <summary>
+            Gets or sets a visibility of the GroupFooterBand item in the bands menu of the mobile designer.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.ShowHeaderBand">
+            <summary>
+            Gets or sets a visibility of the HeaderBand item in the bands menu of the mobile designer.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.ShowFooterBand">
+            <summary>
+            Gets or sets a visibility of the FooterBand item in the bands menu of the mobile designer.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.ShowColumnHeaderBand">
+            <summary>
+            Gets or sets a visibility of the ColumnHeaderBand item in the bands menu of the mobile designer.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.ShowColumnFooterBand">
+            <summary>
+            Gets or sets a visibility of the ColumnFooterBand item in the bands menu of the mobile designer.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.ShowDataBand">
+            <summary>
+            Gets or sets a visibility of the DataBand item in the bands menu of the mobile designer.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.ShowHierarchicalBand">
+            <summary>
+            Gets or sets a visibility of the HierarchicalBand item in the bands menu of the mobile designer.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.ShowChildBand">
+            <summary>
+            Gets or sets a visibility of the ChildBand item in the bands menu of the mobile designer.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.ShowEmptyBand">
+            <summary>
+            Gets or sets a visibility of the EmptyBand item in the bands menu of the mobile designer.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.ShowOverlayBand">
+            <summary>
+            Gets or sets a visibility of the OverlayBand item in the bands menu of the mobile designer.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.ShowTable">
+            <summary>
+            Gets or sets a visibility of the Table item in the bands menu of the mobile designer.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.ShowCrossTab">
+            <summary>
+            Gets or sets a visibility of the CrossTab item in the crossbands menu of the mobile designer.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.ShowCrossGroupHeaderBand">
+            <summary>
+            Gets or sets a visibility of the CrossGroupHeaderBand item in the crossbands menu of the mobile designer.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.ShowCrossGroupFooterBand">
+            <summary>
+            Gets or sets a visibility of the CrossGroupFooterBand item in the crossbands menu of the mobile designer.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.ShowCrossHeaderBand">
+            <summary>
+            Gets or sets a visibility of the CrossHeaderBand item in the crossbands menu of the mobile designer.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.ShowCrossFooterBand">
+            <summary>
+            Gets or sets a visibility of the CrossFooterBand item in the crossbands menu of the mobile designer.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.ShowCrossDataBand">
+            <summary>
+            Gets or sets a visibility of the CrossDataBand item in the crossbands menu of the mobile designer.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.ShowText">
+            <summary>
+            Gets or sets a visibility of the Text item in the components menu of the mobile designer.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.ShowTextInCells">
+            <summary>
+            Gets or sets a visibility of the TextInCells item in the components menu of the mobile designer.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.ShowRichText">
+            <summary>
+            Gets or sets a visibility of the RichText item in the components menu of the mobile designer.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.ShowImage">
+            <summary>
+            Gets or sets a visibility of the Image item in the components menu of the mobile designer.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.ShowBarCode">
+            <summary>
+            Gets or sets a visibility of the BarCode item in the components menu of the mobile designer.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.ShowShape">
+            <summary>
+            Gets or sets a visibility of the Shape item in the components menu of the mobile designer.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.ShowHorizontalLinePrimitive">
+            <summary>
+            Gets or sets a visibility of the Horizontal Line Primitive item in the components menu of the mobile designer.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.ShowVerticalLinePrimitive">
+            <summary>
+            Gets or sets a visibility of the Vertical Line Primitive item in the components menu of the mobile designer.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.ShowRectanglePrimitive">
+            <summary>
+            Gets or sets a visibility of the Rectangle Primitive item in the components menu of the mobile designer.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.ShowRoundedRectanglePrimitive">
+            <summary>
+            Gets or sets a visibility of the Rounded Rectangle Primitive item in the components menu of the mobile designer.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.ShowPanel">
+            <summary>
+            Gets or sets a visibility of the Panel item in the components menu of the mobile designer.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.ShowClone">
+            <summary>
+            Gets or sets a visibility of the Clone item in the components menu of the mobile designer.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.ShowCheckBox">
+            <summary>
+            Gets or sets a visibility of the CheckBox item in the components menu of the mobile designer.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.ShowSubReport">
+            <summary>
+            Gets or sets a visibility of the SubReport item in the components menu of the mobile designer.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.ShowZipCode">
+            <summary>
+            Gets or sets a visibility of the ZipCode item in the components menu of the mobile designer.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.ShowChart">
+            <summary>
+            Gets or sets a visibility of the Chart item in the components menu of the mobile designer.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.ShowMap">
+            <summary>
+            Gets or sets a visibility of the Map item in the components menu of the mobile designer.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.ShowGauge">
+            <summary>
+            Gets or sets a visibility of the Gauge item in the components menu of the mobile designer.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.ShowPropertiesGrid">
+            <summary>
+            Gets or sets a visibility of the properties grid in the mobile designer.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.PropertiesGridWidth">
+            <summary>
+            Gets or sets a width of the properties grid in the mobile designer.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.PropertiesGridLabelWidth">
+            <summary>
+            Gets or sets a width of the property label in properties grid in the mobile designer.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.ShowDictionary">
+            <summary>
+            Gets or sets a visibility of the dictionary in the mobile designer.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.ShowReportTree">
+            <summary>
+            Gets or sets a visibility of the report tree in the mobile designer.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.PermissionDataSources">
+            <summary>
+            Gets or sets a value of permissions for datasources in the mobile designer.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.PermissionDataConnections">
+            <summary>
+            Gets or sets a value of permissions for connections in the mobile designer.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.PermissionDataColumns">
+            <summary>
+            Gets or sets a value of permissions for columns in the mobile designer.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.PermissionDataRelations">
+            <summary>
+            Gets or sets a value of permissions for relations in the mobile designer.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.PermissionBusinessObjects">
+            <summary>
+            Gets or sets a value of permissions for business objects in the mobile designer.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.PermissionVariables">
+            <summary>
+            Gets or sets a value of permissions for variables in the mobile designer.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.PermissionResources">
+            <summary>
+            Gets or sets a value of permissions for resources in the mobile designer.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.PermissionSqlParameters">
+            <summary>
+            Gets or sets a value of permissions for sql parameters in the mobile designer.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.MobileDesign.StiMobileDesigner.ReportDisplayMode">
+            <summary>
+            Gets or sets a method how will show a report in the preview mode.
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiMobileDesigner.IsPackedFile(System.IO.Stream)">
+            <summary>
+            Returns true if specified stream contains packed report.
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiMobileDesigner.IsJsonFile(System.IO.Stream)">
+            <summary>
+            Returns true if specified stream contains packed report.
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiMobileDesigner.IsEncryptedFile(System.IO.Stream)">
+            <summary>
+            Returns true if specified stream contains encrypted report.
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsDocument(System.Web.UI.Page,Stimulsoft.Report.StiReport,System.String,System.String)">
+            <summary>
+            Exports report to MDC format and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsPdf(System.Web.UI.Page,Stimulsoft.Report.StiReport)">
+            <summary>
+            Exports report to PDF document and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsPdf(System.Web.UI.Page,Stimulsoft.Report.StiReport,Stimulsoft.Report.StiPagesRange)">
+            <summary>
+            Exports report to PDF document and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+            <param name="pageRange">Describes pages range for the export.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsPdf(System.Web.UI.Page,Stimulsoft.Report.StiReport,System.Boolean)">
+            <summary>
+            Exports report to PDF document and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+            <param name="openDialog">If openDialog is true then the Open Dialog Box will be displayed. If openDialog is false then the result of the export will be displayed in the browser window.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsPdf(System.Web.UI.Page,Stimulsoft.Report.StiReport,Stimulsoft.Report.StiPagesRange,System.Single,System.Single,System.Boolean,System.Boolean)">
+            <summary>
+            Exports report to PDF document and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+            <param name="pageRange">Describes pages range for the export.</param>
+            <param name="imageQuality">A float value that sets the quality of exporting images. Default value is 1.</param>
+            <param name="imageResolution">A float value that sets the resolution of exporting images. Default value is 100.</param>
+            <param name="embeddedFonts">If embeddedFont is true then, when exporting, fonts of the report will be included in the resulting document.</param>
+            <param name="standardPdfFonts">If standardPdfFont is true then, when exporting, non-standard fonts of the report will be replaced by the standard fonts in resulting document.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsPdf(System.Web.UI.Page,Stimulsoft.Report.StiReport,Stimulsoft.Report.StiPagesRange,System.Single,System.Single,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Exports report to PDF document and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+            <param name="pageRange">Describes pages range for the export.</param>
+            <param name="imageQuality">A float value that sets the quality of exporting images. Default value is 1.</param>
+            <param name="imageResolution">A float value that sets the resolution of exporting images. Default value is 100.</param>
+            <param name="embeddedFonts">If embeddedFont is true then, when exporting, fonts of the report will be included in the resulting document.</param>
+            <param name="standardPdfFonts">If standardPdfFont is true then, when exporting, non-standard fonts of the report will be replaced by the standard fonts in resulting document.</param>
+            <param name="openDialog">If openDialog is true then the Open Dialog Box will be displayed. If openDialog is false then the result of the export will be displayed in the browser window.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsPdf(System.Web.UI.Page,Stimulsoft.Report.StiReport,Stimulsoft.Report.StiPagesRange,System.Single,System.Single,System.Boolean,System.Boolean,System.Boolean,System.String,System.String,Stimulsoft.Report.Export.StiUserAccessPrivileges)">
+            <summary>
+            Exports report to PDF document and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+            <param name="pageRange">Describes pages range for the export.</param>
+            <param name="imageQuality">A float value that sets the quality of exporting images. Default value is 1.</param>
+            <param name="imageResolution">A float value that sets the resolution of exporting images. Default value is 100.</param>
+            <param name="embeddedFonts">If embeddedFonts is true then, when exporting, fonts of the report will be included in the resulting document.</param>
+            <param name="standardPdfFonts">If standardPdfFont is true then, when exporting, non-standard fonts of the report will be replaced by the standard fonts in resulting document.</param>
+            <param name="openDialog">If openDialog is true then the Open Dialog Box will be displayed. If openDialog is false then the result of the export will be displayed in the browser window.</param>
+            <param name="passwordUser">The user password that manage the exported document access.</param>
+            <param name="passwordOwner">The owner password that manage ability to modify exported document.</param>
+            <param name="userAccessPrivileges">Defines user access privileges to the document exported.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsPdf(System.Web.UI.Page,Stimulsoft.Report.StiReport,Stimulsoft.Report.StiPagesRange,System.Single,System.Single,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.String,System.String,Stimulsoft.Report.Export.StiUserAccessPrivileges,Stimulsoft.Report.Export.StiPdfEncryptionKeyLength)">
+            <summary>
+            Exports report to PDF document and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+            <param name="pageRange">Describes pages range for the export.</param>
+            <param name="imageQuality">A float value that sets the quality of exporting images. Default value is 1.</param>
+            <param name="imageResolution">A float value that sets the resolution of exporting images. Default value is 100.</param>
+            <param name="embeddedFonts">If embeddedFonts is true then, when exporting, fonts of the report will be included in the resulting document.</param>
+            <param name="standardPdfFonts">If standardPdfFont is true then, when exporting, non-standard fonts of the report will be replaced by the standard fonts in resulting document.</param>
+            <param name="openDialog">If openDialog is true then the Open Dialog Box will be displayed. If openDialog is false then the result of the export will be displayed in the browser window.</param>
+            <param name="passwordUser">The user password that manage the exported document access.</param>
+            <param name="passwordOwner">The owner password that manage ability to modify exported document.</param>
+            <param name="userAccessPrivileges">Defines user access privileges to the document exported.</param>
+            <param name="keyLength">Defines the encryption key length to protect the document access after export.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsPdf(System.Web.UI.Page,Stimulsoft.Report.StiReport,Stimulsoft.Report.StiPagesRange,System.Single,System.Single,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.String,System.String,Stimulsoft.Report.Export.StiUserAccessPrivileges,Stimulsoft.Report.Export.StiPdfEncryptionKeyLength,System.Boolean)">
+            <summary>
+            Exports report to PDF document and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+            <param name="pageRange">Describes pages range for the export.</param>
+            <param name="imageQuality">A float value that sets the quality of exporting images. Default value is 1.</param>
+            <param name="imageResolution">A float value that sets the resolution of exporting images. Default value is 100.</param>
+            <param name="embeddedFonts">If embeddedFonts is true then, when exporting, fonts of the report will be included in the resulting document.</param>
+            <param name="standardPdfFonts">If standardPdfFont is true then, when exporting, non-standard fonts of the report will be replaced by the standard fonts in resulting document.</param>
+            <param name="openDialog">If openDialog is true then the Open Dialog Box will be displayed. If openDialog is false then the result of the export will be displayed in the browser window.</param>
+            <param name="passwordUser">The user password that manage the exported document access.</param>
+            <param name="passwordOwner">The owner password that manage ability to modify exported document.</param>
+            <param name="userAccessPrivileges">Defines user access privileges to the document exported.</param>
+            <param name="keyLength">Defines the encryption key length to protect the document access after export.</param>
+            <param name="useUnicode">If useUnicode is true then in pdf files unicode is used.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsPdf(System.Web.UI.Page,Stimulsoft.Report.StiReport,System.Boolean,Stimulsoft.Report.Export.StiPdfExportSettings)">
+            <summary>
+            Exports report to PDF document and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+            <param name="openDialog">If openDialog is true then the Open Dialog Box will be displayed. If openDialog is false then the result of the export will be displayed in the browser window.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsXps(System.Web.UI.Page,Stimulsoft.Report.StiReport)">
+            <summary>
+            Exports report to XPS document and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsXps(System.Web.UI.Page,Stimulsoft.Report.StiReport,Stimulsoft.Report.StiPagesRange)">
+            <summary>
+            Exports report to XPS document and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+            <param name="pageRange">Describes pages range for the export.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsXps(System.Web.UI.Page,Stimulsoft.Report.StiReport,System.Boolean,Stimulsoft.Report.Export.StiXpsExportSettings)">
+            <summary>
+            Exports report to XPS document and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+            <param name="openDialog">If openDialog is true then the Open Dialog Box will be displayed. If openDialog is false then the result of the export will be displayed in the browser window.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsPpt(System.Web.UI.Page,Stimulsoft.Report.StiReport)">
+            <summary>
+            Exports report to PPT format and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsPpt(System.Web.UI.Page,Stimulsoft.Report.StiReport,Stimulsoft.Report.StiPagesRange)">
+            <summary>
+            Exports report to PPT format and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+            <param name="pageRange">Describes pages range for the export.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsPpt(System.Web.UI.Page,Stimulsoft.Report.StiReport,System.Boolean,Stimulsoft.Report.Export.StiPpt2007ExportSettings)">
+            <summary>
+            Exports report to PPT format and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsHtml(System.Web.UI.Page,Stimulsoft.Report.StiReport,Stimulsoft.Report.StiPagesRange,System.Drawing.Imaging.ImageFormat)">
+            <summary>
+            Exports report to HTML format and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+            <param name="pageRange">Describes pages range for the export.</param>
+            <param name="imageFormat">Format of images for the export.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsHtml(System.Web.UI.Page,Stimulsoft.Report.StiReport,Stimulsoft.Report.StiPagesRange,System.Drawing.Imaging.ImageFormat,Stimulsoft.Report.Export.StiHtmlImageHost)">
+            <summary>
+            Exports report to HTML format and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+            <param name="pageRange">Describes pages range for the export.</param>
+            <param name="imageFormat">Format of images for the export.</param>
+            <param name="htmlImageHost">Class that controls placement of images when exporting.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsHtml(System.Web.UI.Page,Stimulsoft.Report.StiReport,Stimulsoft.Report.Export.StiHtmlImageHost,System.Boolean)">
+            <summary>
+            Exports report to HTML format and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+            <param name="htmlImageHost">Class that controls placement of images when exporting.</param>
+            <param name="openDialog">If openDialog is true then the Open Dialog Box will be displayed. If openDialog is false then the result of the export will be displayed in the browser window.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsHtml(System.Web.UI.Page,Stimulsoft.Report.StiReport,Stimulsoft.Report.StiPagesRange,System.Drawing.Imaging.ImageFormat,Stimulsoft.Report.Export.StiHtmlImageHost,System.Boolean)">
+            <summary>
+            Exports report to HTML format and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+            <param name="pageRange">Describes pages range for the export.</param>
+            <param name="imageFormat">Format of images for the export.</param>
+            <param name="htmlImageHost">Class that controls placement of images when exporting.</param>
+            <param name="openDialog">If openDialog is true then the Open Dialog Box will be displayed. If openDialog is false then the result of the export will be displayed in the browser window.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsHtml(System.Web.UI.Page,Stimulsoft.Report.StiReport,Stimulsoft.Report.StiPagesRange,System.Drawing.Imaging.ImageFormat,Stimulsoft.Report.Export.StiHtmlImageHost,System.Text.Encoding,System.Boolean)">
+            <summary>
+            Exports report to HTML format and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+            <param name="pageRange">Describes pages range for the export.</param>
+            <param name="imageFormat">Format of images for the export.</param>
+            <param name="htmlImageHost">Class that controls placement of images when exporting.</param>
+            <param name="encoding">Sets the code page of the resulting HTML.</param>
+            <param name="openDialog">If openDialog is true then the Open Dialog Box will be displayed. If openDialog is false then the result of the export will be displayed in the browser window.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsHtml(System.Web.UI.Page,Stimulsoft.Report.StiReport,Stimulsoft.Report.StiPagesRange,System.Drawing.Imaging.ImageFormat,Stimulsoft.Report.Export.StiHtmlImageHost,Stimulsoft.Report.Export.StiHtmlExportMode,System.Text.Encoding,System.Boolean)">
+            <summary>
+            Exports report to HTML format and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+            <param name="pageRange">Describes pages range for the export.</param>
+            <param name="imageFormat">Format of images for the export.</param>
+            <param name="htmlImageHost">Class that controls placement of images when exporting.</param>
+            <param name="exportMode">Sets the mode of report export.</param>
+            <param name="encoding">Resulting Html page encoding.</param>
+            <param name="openDialog">If openDialog is true then the Open Dialog Box will be displayed. If openDialog is false then the result of the export will be displayed in the browser window.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsHtml(System.Web.UI.Page,Stimulsoft.Report.StiReport,Stimulsoft.Report.StiPagesRange)">
+            <summary>
+            Exports report to HTML format and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+            <param name="pageRange">Describes pages range for the export.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsHtml(System.Web.UI.Page,Stimulsoft.Report.StiReport)">
+            <summary>
+            Exports report to HTML format and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsHtml(System.Web.UI.Page,Stimulsoft.Report.StiReport,Stimulsoft.Report.StiPagesRange,System.Drawing.Imaging.ImageFormat,Stimulsoft.Report.Export.StiHtmlImageHost,Stimulsoft.Report.Export.StiHtmlExportMode,Stimulsoft.Report.Export.StiHtmlExportQuality,System.Text.Encoding,System.Boolean)">
+            <summary>
+            Exports report to HTML format and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+            <param name="pageRange">Describes pages range for the export.</param>
+            <param name="imageFormat">Format of images for the export.</param>
+            <param name="htmlImageHost">Class that controls placement of images during the export.</param>
+            <param name="exportMode">Sets the mode of report export.</param>
+            <param name="exportQuality">This parameter always is to be StiHtmlExportQuality.High.</param>
+            <param name="encoding">Resulting Html page encoding.</param>
+            <param name="openDialog">If openDialog is true then the Open Dialog Box will be displayed. If openDialog is false then the result of the export will be displayed in the browser window.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsHtml(System.Web.UI.Page,Stimulsoft.Report.StiReport,System.Boolean,Stimulsoft.Report.Export.StiHtmlExportSettings,Stimulsoft.Report.Export.StiHtmlImageHost)">
+            <summary>
+            Exports report to HTML format and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+            <param name="openDialog">If openDialog is true then the Open Dialog Box will be displayed. If openDialog is false then the result of the export will be displayed in the browser window.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsMht(System.Web.UI.Page,Stimulsoft.Report.StiReport,System.Boolean)">
+            <summary>
+            Exports report to Mht format and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+            <param name="openDialog">If openDialog is true then the Open Dialog Box will be displayed. If openDialog is false then the result of the export will be displayed in the browser window.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsMht(System.Web.UI.Page,Stimulsoft.Report.StiReport,System.Text.Encoding,System.Boolean)">
+            <summary>
+            Exports report to Mht format and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+            <param name="encoding">Sets the code page of the resulting Mht document.</param>
+            <param name="openDialog">If openDialog is true then the Open Dialog Box will be displayed. If openDialog is false then the result of the export will be displayed in the browser window.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsMht(System.Web.UI.Page,Stimulsoft.Report.StiReport,Stimulsoft.Report.StiPagesRange,System.Drawing.Imaging.ImageFormat,System.Text.Encoding,System.Boolean)">
+            <summary>
+            Exports report to Mht format and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+            <param name="pageRange">Describes pages range for the export.</param>
+            <param name="imageFormat">Format of images for the export.</param>
+            <param name="encoding">Sets the code page of the resulting Mht document.</param>
+            <param name="openDialog">If openDialog is true then the Open Dialog Box will be displayed. If openDialog is false then the result of the export will be displayed in the browser window.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsMht(System.Web.UI.Page,Stimulsoft.Report.StiReport,Stimulsoft.Report.StiPagesRange,System.Drawing.Imaging.ImageFormat,Stimulsoft.Report.Export.StiHtmlExportMode,System.Text.Encoding,System.Boolean)">
+            <summary>
+            Exports report to Mht format and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+            <param name="pageRange">Describes pages range for the export.</param>
+            <param name="imageFormat">Format of images for the export.</param>
+            <param name="exportMode">This parameter always is to be StiHtmlExportQuality.High.</param>
+            <param name="encoding">Sets the code page of the resulting Mht document.</param>
+            <param name="openDialog">If openDialog is true then the Open Dialog Box will be displayed. If openDialog is false then the result of the export will be displayed in the browser window.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsMht(System.Web.UI.Page,Stimulsoft.Report.StiReport,System.Boolean,Stimulsoft.Report.Export.StiMhtExportSettings)">
+            <summary>
+            Exports report to Mht format and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+            <param name="openDialog">If openDialog is true then the Open Dialog Box will be displayed. If openDialog is false then the result of the export will be displayed in the browser window.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsText(System.Web.UI.Page,Stimulsoft.Report.StiReport)">
+            <summary>
+            Exports report to Text format and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsText(System.Web.UI.Page,Stimulsoft.Report.StiReport,Stimulsoft.Report.StiPagesRange)">
+            <summary>
+            Exports report to Text format and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+            <param name="pageRange">Describes pages range for the export.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsText(System.Web.UI.Page,Stimulsoft.Report.StiReport,Stimulsoft.Report.Export.StiTxtExportSettings)">
+            <summary>
+            Exports report to Text format and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsRtf(System.Web.UI.Page,Stimulsoft.Report.StiReport,Stimulsoft.Report.StiPagesRange)">
+            <summary>
+            Exports report to RTF format and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+            <param name="pageRange">Describes pages range for the export.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsRtf(System.Web.UI.Page,Stimulsoft.Report.StiReport)">
+            <summary>
+            Exports report to RTF format and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsRtf(System.Web.UI.Page,Stimulsoft.Report.StiReport,Stimulsoft.Report.StiPagesRange,Stimulsoft.Report.Export.StiRtfExportMode)">
+            <summary>
+            Exports report to RTF format and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+            <param name="pageRange">Describes pages range for the export.</param>
+            <param name="exportMode">Sets the mode of report exporting.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsRtf(System.Web.UI.Page,Stimulsoft.Report.StiReport,Stimulsoft.Report.StiPagesRange,System.Boolean,Stimulsoft.Report.Export.StiRtfExportMode)">
+            <summary>
+            Exports report to RTF format and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+            <param name="pageRange">Describes pages range for the export.</param>
+            <param name="exportMode">Sets the mode of report exporting.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsRtf(System.Web.UI.Page,Stimulsoft.Report.StiReport,System.Boolean,Stimulsoft.Report.Export.StiRtfExportSettings)">
+            <summary>
+            Exports report to RTF format and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+            <param name="pageRange">Describes pages range for the export.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsWord2007(System.Web.UI.Page,Stimulsoft.Report.StiReport)">
+            <summary>
+            Exports report to Word2007 format and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsWord2007(System.Web.UI.Page,Stimulsoft.Report.StiReport,Stimulsoft.Report.StiPagesRange)">
+            <summary>
+            Exports report to Word2007 format and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+            <param name="pageRange">Describes pages range for the export.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsWord2007(System.Web.UI.Page,Stimulsoft.Report.StiReport,Stimulsoft.Report.Export.StiWord2007ExportSettings)">
+            <summary>
+            Exports report to Word2007 format and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsOdt(System.Web.UI.Page,Stimulsoft.Report.StiReport)">
+            <summary>
+            Exports report to OpenDocument Writer format and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsOdt(System.Web.UI.Page,Stimulsoft.Report.StiReport,Stimulsoft.Report.StiPagesRange)">
+            <summary>
+            Exports report to OpenDocument Writer format and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+            <param name="pageRange">Describes pages range for the export.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsOdt(System.Web.UI.Page,Stimulsoft.Report.StiReport,Stimulsoft.Report.Export.StiOdtExportSettings)">
+            <summary>
+            Exports report to OpenDocument Writer format and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsXls(System.Web.UI.Page,Stimulsoft.Report.StiReport)">
+            <summary>
+            Exports report to Xls format and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsXls(System.Web.UI.Page,Stimulsoft.Report.StiReport,Stimulsoft.Report.StiPagesRange)">
+            <summary>
+            Exports report to Xls format and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+            <param name="pageRange">Describes pages range for the export.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsXls(System.Web.UI.Page,Stimulsoft.Report.StiReport,Stimulsoft.Report.Export.StiExcelExportSettings)">
+            <summary>
+            Exports report to Xls format and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsXlsXml(System.Web.UI.Page,Stimulsoft.Report.StiReport)">
+            <summary>
+            Exports report to XlsXML format and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsXlsXml(System.Web.UI.Page,Stimulsoft.Report.StiReport,Stimulsoft.Report.StiPagesRange)">
+            <summary>
+            Exports report to XlsXML format and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+            <param name="pageRange">Describes pages range for the export.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsXlsXml(System.Web.UI.Page,Stimulsoft.Report.StiReport,Stimulsoft.Report.Export.StiExcelXmlExportSettings)">
+            <summary>
+            Exports report to XlsXML format and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsExcel2007(System.Web.UI.Page,Stimulsoft.Report.StiReport)">
+            <summary>
+            Exports report to Excel2007 format and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsExcel2007(System.Web.UI.Page,Stimulsoft.Report.StiReport,Stimulsoft.Report.StiPagesRange)">
+            <summary>
+            Exports report to Excel2007 format and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+            <param name="pageRange">Describes pages range for the export.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsExcel2007(System.Web.UI.Page,Stimulsoft.Report.StiReport,Stimulsoft.Report.Export.StiExcel2007ExportSettings)">
+            <summary>
+            Exports report to Excel2007 format and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsOds(System.Web.UI.Page,Stimulsoft.Report.StiReport)">
+            <summary>
+            Exports report to OpenDocument Calc format and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsOds(System.Web.UI.Page,Stimulsoft.Report.StiReport,Stimulsoft.Report.StiPagesRange)">
+            <summary>
+            Exports report to OpenDocument Calc format and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+            <param name="pageRange">Describes pages range for the export.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsOds(System.Web.UI.Page,Stimulsoft.Report.StiReport,Stimulsoft.Report.Export.StiOdsExportSettings)">
+            <summary>
+            Exports report to OpenDocument Calc format and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsCsv(System.Web.UI.Page,Stimulsoft.Report.StiReport)">
+            <summary>
+            Exports report to CSV format and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsCsv(System.Web.UI.Page,Stimulsoft.Report.StiReport,Stimulsoft.Report.StiPagesRange)">
+            <summary>
+            Exports report to CSV format and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+            <param name="pageRange">Describes pages range for the export.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsCsv(System.Web.UI.Page,Stimulsoft.Report.StiReport,Stimulsoft.Report.StiPagesRange,System.String,System.Text.Encoding)">
+            <summary>
+            Exports report to CSV format and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+            <param name="pageRange">Describes pages range for the export.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsCsv(System.Web.UI.Page,Stimulsoft.Report.StiReport,Stimulsoft.Report.Export.StiCsvExportSettings)">
+            <summary>
+            Exports report to CSV format and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsXml(System.Web.UI.Page,Stimulsoft.Report.StiReport)">
+            <summary>
+            Exports report to xml format and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsDbf(System.Web.UI.Page,Stimulsoft.Report.StiReport,Stimulsoft.Report.Export.StiDbfCodePages,System.Boolean)">
+            <summary>
+            Exports report to Dbase format and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+            <param name="codePage">Sets the code page of the exported document.</param>
+            <param name="openDialog">If openDialog is true then the Open Dialog Box will be displayed. If openDialog is false then the result of the export will be displayed in the browser window.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsDbf(System.Web.UI.Page,Stimulsoft.Report.StiReport,Stimulsoft.Report.StiPagesRange,Stimulsoft.Report.Export.StiDbfCodePages,System.Boolean)">
+            <summary>
+            Exports report to Dbase format and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+            <param name="pageRange">Describes pages range for the export.</param>
+            <param name="codePage">Sets the code page of the exported document.</param>
+            <param name="openDialog">If openDialog is true then the Open Dialog Box will be displayed. If openDialog is false then the result of the export will be displayed in the browser window.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsDbf(System.Web.UI.Page,Stimulsoft.Report.StiReport,System.Boolean,Stimulsoft.Report.Export.StiDbfExportSettings)">
+            <summary>
+            Exports report to Dbase format and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsDif(System.Web.UI.Page,Stimulsoft.Report.StiReport)">
+            <summary>
+            Exports report to DIF format and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsDif(System.Web.UI.Page,Stimulsoft.Report.StiReport,Stimulsoft.Report.StiPagesRange)">
+            <summary>
+            Exports report to DIF format and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+            <param name="pageRange">Describes pages range for the export.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsDif(System.Web.UI.Page,Stimulsoft.Report.StiReport,System.Boolean,Stimulsoft.Report.Export.StiDifExportSettings)">
+            <summary>
+            Exports report to DIF format and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsSylk(System.Web.UI.Page,Stimulsoft.Report.StiReport)">
+            <summary>
+            Exports report to SYLK format and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsSylk(System.Web.UI.Page,Stimulsoft.Report.StiReport,Stimulsoft.Report.StiPagesRange)">
+            <summary>
+            Exports report to SYLK format and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+            <param name="pageRange">Describes pages range for the export.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsSylk(System.Web.UI.Page,Stimulsoft.Report.StiReport,System.Boolean,Stimulsoft.Report.Export.StiSylkExportSettings)">
+            <summary>
+            Exports report to SYLK format and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsBmp(System.Web.UI.Page,Stimulsoft.Report.StiReport)">
+            <summary>
+            Exports report to bmp format and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsBmp(System.Web.UI.Page,Stimulsoft.Report.StiReport,Stimulsoft.Report.Export.StiBmpExportSettings)">
+            <summary>
+            Exports report to bmp format and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsGif(System.Web.UI.Page,Stimulsoft.Report.StiReport)">
+            <summary>
+            Exports report to gif format and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsGif(System.Web.UI.Page,Stimulsoft.Report.StiReport,Stimulsoft.Report.Export.StiGifExportSettings)">
+            <summary>
+            Exports report to gif format and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsJpeg(System.Web.UI.Page,Stimulsoft.Report.StiReport)">
+            <summary>
+            Exports report to jpeg format and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsJpeg(System.Web.UI.Page,Stimulsoft.Report.StiReport,Stimulsoft.Report.Export.StiJpegExportSettings)">
+            <summary>
+            Exports report to jpeg format and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsPng(System.Web.UI.Page,Stimulsoft.Report.StiReport)">
+            <summary>
+            Exports report to png format and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsPng(System.Web.UI.Page,Stimulsoft.Report.StiReport,Stimulsoft.Report.Export.StiPngExportSettings)">
+            <summary>
+            Exports report to png format and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsPcx(System.Web.UI.Page,Stimulsoft.Report.StiReport)">
+            <summary>
+            Exports report to pcx format and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsPcx(System.Web.UI.Page,Stimulsoft.Report.StiReport,Stimulsoft.Report.Export.StiPcxExportSettings)">
+            <summary>
+            Exports report to pcx format and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsTiff(System.Web.UI.Page,Stimulsoft.Report.StiReport)">
+            <summary>
+            Exports report to tiff format and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsTiff(System.Web.UI.Page,Stimulsoft.Report.StiReport,Stimulsoft.Report.Export.StiTiffExportSettings)">
+            <summary>
+            Exports report to tiff format and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsMetafile(System.Web.UI.Page,Stimulsoft.Report.StiReport)">
+            <summary>
+            Exports report to emf format and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsMetafile(System.Web.UI.Page,Stimulsoft.Report.StiReport,Stimulsoft.Report.Export.StiEmfExportSettings)">
+            <summary>
+            Exports report to metafile format and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsSvg(System.Web.UI.Page,Stimulsoft.Report.StiReport)">
+            <summary>
+            Exports report to SVG format and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsSvg(System.Web.UI.Page,Stimulsoft.Report.StiReport,Stimulsoft.Report.StiPagesRange)">
+            <summary>
+            Exports report to SVG format and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+            <param name="pageRange">Describes pages range for the export.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsSvg(System.Web.UI.Page,Stimulsoft.Report.StiReport,System.Boolean,Stimulsoft.Report.Export.StiSvgExportSettings)">
+            <summary>
+            Exports report to SVG format and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsSvgz(System.Web.UI.Page,Stimulsoft.Report.StiReport)">
+            <summary>
+            Exports report to SVGZ format and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsSvgz(System.Web.UI.Page,Stimulsoft.Report.StiReport,Stimulsoft.Report.StiPagesRange)">
+            <summary>
+            Exports report to SVGZ format and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+            <param name="pageRange">Describes pages range for the export.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.MobileDesign.StiReportResponse.ResponseAsSvgz(System.Web.UI.Page,Stimulsoft.Report.StiReport,System.Boolean,Stimulsoft.Report.Export.StiSvgzExportSettings)">
+            <summary>
+            Exports report to SVGZ format and saves this document to the webpage response.
+            </summary>
+            <param name="page">Webpage to save exported report.</param>
+            <param name="report">Report, which is to be exported.</param>
+        </member>
+    </members>
+</doc>

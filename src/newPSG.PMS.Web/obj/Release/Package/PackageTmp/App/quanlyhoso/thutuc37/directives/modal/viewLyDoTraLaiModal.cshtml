@@ -1,0 +1,26 @@
+﻿@using Abp.Authorization.Users
+<div>
+    <div class="modal-header">
+        <h4 class="modal-title text-center text-uppercase">
+            Lý do trả lại
+            <button type="button" class="close" ng-click="vm.cancel()" aria-hidden="true"></button>
+        </h4>
+    </div>
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-md-12">
+                <p>
+                    {{vm.dataItem.lyDo}}
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button ng-disabled="vm.saving" type="button" class="btn red" ng-click="vm.cancel()"><em class="glyphicon glyphicon-remove"></em>@L("Cancel")</button>
+    </div>
+    <style>
+        .modal-header{
+        background-color: #4c87b9;
+    }
+    </style>
+</div>

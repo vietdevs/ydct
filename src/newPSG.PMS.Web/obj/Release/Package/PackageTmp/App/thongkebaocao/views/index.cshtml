@@ -1,0 +1,291 @@
+﻿<div class="danhsach ng-scope" ng-controller="thongke.dangkycongbo.views.thongketheoyeucau.index as vm">
+    <div class="portlet light bordered ng-isolate-scope">
+        <div class="portlet-title">
+            <div class="caption font-green-meadow">
+                <i class="icon-list font-green-meadow"></i>
+                <span class="caption-subject bold uppercase">Thống kê theo yêu cầu</span>
+            </div>
+        </div>
+        <div class="portlet-body">
+            <div class="row form-group">
+                <div class="col-md-12">
+                    <div class="portlet box green-meadow">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                Thông tin thống kê
+                            </div>
+                            <div class="tools">
+                                <a href="javascript:;" class="collapse" title="Thu lại"></a>
+                            </div>
+                        </div>
+                        <div class="portlet-body form">
+                            <div class="container">
+                                <div class="row form-group" style="margin-top: 20px;">
+                                    <div class="col-md-4">
+                                        <label class="mt-checkbox text-right">
+                                            <input ng-model="vm.filter.HasMaHoSo" type="checkbox">
+                                            <span></span>
+                                        </label>
+                                        <label class="text-bold">Mã hồ sơ</label>
+                                        <input ng-model="vm.filter.MaHoSo" placeholder="Mã hồ sơ" class="form-control" />
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="mt-checkbox text-right">
+                                            <input ng-model="vm.filter.HasTenSanPham" type="checkbox">
+                                            <span></span>
+                                        </label>
+                                        <label class="text-bold">Tên sản phẩm</label>
+                                        <input ng-model="vm.filter.TenSanPham" placeholder="Tên sản phẩm" class="form-control" />
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="mt-checkbox text-right">
+                                            <input ng-model="vm.filter.HasNhomSanPham" type="checkbox">
+                                            <span></span>
+                                        </label>
+                                        <label class="text-bold">Nhóm sản phẩm</label>
+                                        <select id="ddlNhomSanPham"
+                                                style="width: 100%"
+                                                kendo-drop-down-list
+                                                k-ng-model="vm.filter.NhomSanPhamId"
+                                                k-options="vm.nhomSanPhamOptions"
+                                                class="form-control"></select>
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col-md-4">
+                                        <label class="mt-checkbox text-right">
+                                            <input ng-model="vm.filter.HasMaSoThue" type="checkbox">
+                                            <span></span>
+                                        </label>
+                                        <label class="text-bold">Mã số thuế</label>
+                                        <input ng-model="vm.filter.MaSoThue" placeholder="Mã số thuế" class="form-control" />
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="mt-checkbox text-right">
+                                            <input ng-model="vm.filter.HasTenDoanhNghiep" type="checkbox">
+                                            <span></span>
+                                        </label>
+                                        <label class="text-bold">Tên doanh nghiệp</label>
+                                        <input ng-model="vm.filter.TenDoanhNghiep" placeholder="Tên doanh nghiệp" class="form-control" />
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="mt-checkbox text-right">
+                                            <input ng-model="vm.filter.HasDiachi" type="checkbox">
+                                            <span></span>
+                                        </label>
+                                        <label class="text-bold">Địa chỉ</label>
+                                        <input ng-model="vm.filter.DiaChi" placeholder="Địa chỉ doanh nghiệp" class="form-control" />
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col-md-4">
+                                        <label class="mt-checkbox text-right">
+                                            <input ng-model="vm.filter.HasTenVaDiaChiNhaSanXuat" type="checkbox">
+                                            <span></span>
+                                        </label>
+                                        <label class="text-bold">Tên và địa chỉ nhà sản xuất</label>
+                                        <input ng-model="vm.filter.TenVaDiaChiNhaSanXuat" placeholder="Tên và địa chỉ nhà sản xuất" class="form-control" />
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="mt-checkbox text-right">
+                                            <input ng-model="vm.filter.HasTinh" type="checkbox">
+                                            <span></span>
+                                        </label>
+                                        <label class="text-bold">Tỉnh/thành phố</label>
+                                        <select id="ddlTinh"
+                                                style="width: 100%"
+                                                kendo-drop-down-list
+                                                k-ng-model="vm.filter.TinhId"
+                                                k-options="vm.tinhOptions"
+                                                class="form-control"></select>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="mt-checkbox text-right">
+                                            <input ng-model="vm.filter.HasTrangThai" type="checkbox">
+                                            <span></span>
+                                        </label>
+                                        <label class="text-bold">Trạng thái</label>
+                                        <select id="ddlTrangThaiTraCuu"
+                                                style="width: 100%"
+                                                kendo-drop-down-list
+                                                k-ng-model="vm.filter.TrangThai"
+                                                k-options="vm.trangThaiTraCuuOptions"
+                                                class="form-control"></select>
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col-md-4">
+                                        <label class="mt-checkbox text-right">
+                                            <input ng-model="vm.filter.HasNgayNop" type="checkbox">
+                                            <span></span>
+                                        </label>
+                                        <label class="text-bold">Ngày nộp</label>
+                                        <input date-range-picker
+                                               type="text"
+                                               options="vm.ngayNopOptions"
+                                               min="vm.ngayNopOptions.min"
+                                               max="vm.ngayNopOptions.max"
+                                               class="form-control date-picker"
+                                               ng-model="vm.NgayNopModel" />
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="mt-checkbox text-right">
+                                            <input ng-model="vm.filter.HasNgayTraKetQua" type="checkbox">
+                                            <span></span>
+                                        </label>
+                                        <label class="text-bold">Ngày trả giấy tiếp nhận</label>
+                                        <input date-range-picker
+                                               type="text"
+                                               options="vm.ngayTraKetQuaOptions"
+                                               min="vm.ngayTraKetQuaOptions.min"
+                                               max="vm.ngayTraKetQuaOptions.max"
+                                               class="form-control date-picker"
+                                               ng-model="vm.NgayTraKetQuaModel" />
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="mt-checkbox text-right">
+                                            <input ng-model="vm.filter.HasCv1Id" type="checkbox">
+                                            <span></span>
+                                        </label>
+                                        <label class="text-bold">Chuyên viên thẩm xét chính</label>
+                                        <select id="ddlChuyenVienChinh"
+                                                style="width: 100%"
+                                                kendo-drop-down-list
+                                                k-ng-model="vm.filter.Cv1Id"
+                                                k-options="vm.chuyenVienChinhOptions"
+                                                class="form-control"></select>
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col-md-4">
+                                        <label class="mt-checkbox text-right">
+                                            <input ng-model="vm.filter.HasLanhDaoCucId" type="checkbox">
+                                            <span></span>
+                                        </label>
+                                        <label class="text-bold">Lãnh đạo đã duyệt</label>
+                                        <select id="ddlLanhDaoCuc"
+                                                style="width: 100%"
+                                                kendo-drop-down-list
+                                                k-ng-model="vm.filter.LanhDaoCucId"
+                                                k-options="vm.lanhDaoCucOptions"
+                                                class="form-control"></select>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="mt-checkbox text-right">
+                                            <input ng-model="vm.filter.HasTruongPhongId" type="checkbox">
+                                            <span></span>
+                                        </label>
+                                        <label class="text-bold">Trưởng phòng đã duyệt</label>
+                                        <select id="ddlTruongPhong"
+                                                style="width: 100%"
+                                                kendo-drop-down-list
+                                                k-ng-model="vm.filter.TruongPhongId"
+                                                k-options="vm.truongPhongOptions"
+                                                class="form-control"></select>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="mt-checkbox text-right">
+                                            <input ng-model="vm.filter.HasPhoPhongId" type="checkbox">
+                                            <span></span>
+                                        </label>
+                                        <label class="text-bold">Phó phòng đã duyệt</label>
+                                        <select id="ddlPhoPhong"
+                                                style="width: 100%"
+                                                kendo-drop-down-list
+                                                k-ng-model="vm.filter.PhoPhongId"
+                                                k-options="vm.phoPhongOptions"
+                                                class="form-control"></select>
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col-md-4">
+                                        <label class="mt-checkbox text-right">
+                                            <input ng-model="vm.filter.HasIsQuanLyGia" type="checkbox">
+                                            <span></span>
+                                        </label>
+                                        <label class="text-bold">Thuộc diện quản lý giá</label><br />
+                                        <input bs-switch
+                                               ng-model="vm.filter.IsQuanLyGia"
+                                               type="checkbox"
+                                               switch-on-text="<i class='fa fa-check' aria-hidden='true'></i>"
+                                               switch-on-color="success"
+                                               switch-off-text="<i class='fa fa-times' aria-hidden='true'></i>"
+                                               ng-true-value=true
+                                               ng-false-value=false>
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="text-center">
+                                        <button class="btn btn-sm bg-green-meadow bg-font-green-meadow" button-busy="vm.loading == true" busy-text="Đang tải..." ng-click="vm.thongKe()"><i class="fa fa-search"></i> Thống kê</button>
+                                        <button class="btn btn-sm btn-default" ng-click="vm.datLai()"><i class="fa fa-repeat"></i> Đặt lại</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" ng-show="vm.isShowThongke == true" busy-if="vm.loading == true">
+                <div class="col-xs-6">
+                    <div class="page-head">
+                        <div class="page-title">
+                            <h4 class="caption-subject bold uppercase">Kết quả thống kê</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6 text-right">
+                    <button class="btn btn-sm bg-green-soft bg-font-green-soft" ng-click="vm.exportToExcel('fixTable')"><i class="fa fa-file-excel-o"></i> Xuất ra excel</button>
+                </div>
+                <div class="col-md-12">
+                    <script type='text/javascript'> $('#fixTable').tableHeadFixer({'z-index': 999 });</script>
+                    <div style ='max-height:500px'>
+                        <table id="fixTable" class="table table-striped table-hover table-bordered " style="margin-top: -1px !important;">
+                            <thead>
+                                <tr>
+                                    <th class="bg-green-seagreen bg-font-green-seagreen">STT</th>
+                                    <th class="bg-green-seagreen bg-font-green-seagreen" ng-if="vm.tieuChi.hasMaHoSo == true" style='min-width: 300px;'>Mã hồ sơ</th>
+                                    <th class="bg-green-seagreen bg-font-green-seagreen" ng-if="vm.tieuChi.hasTenSanPham == true" style='min-width: 200px;'>Tên sản phẩm</th>
+                                    <th class="bg-green-seagreen bg-font-green-seagreen" ng-if="vm.tieuChi.hasNhomSanPham == true" style='min-width: 200px;'>Nhóm sản phẩm</th>
+                                    <th class="bg-green-seagreen bg-font-green-seagreen" ng-if="vm.tieuChi.hasMaSoThue == true">Mã số thuế</th>
+                                    <th class="bg-green-seagreen bg-font-green-seagreen" ng-if="vm.tieuChi.hasTenDoanhNghiep == true" style='min-width: 180px;'>Tên doanh nghiệp</th>
+                                    <th class="bg-green-seagreen bg-font-green-seagreen" ng-if="vm.tieuChi.hasDiaChi == true" style='min-width: 250px;'>Địa chỉ</th>
+                                    <th class="bg-green-seagreen bg-font-green-seagreen" ng-if="vm.tieuChi.hasTenVaDiaChiNhaSanXuat == true" style='min-width: 250px;'>Tên và địa chỉ nhà sản xuất</th>
+                                    <th class="bg-green-seagreen bg-font-green-seagreen" ng-if="vm.tieuChi.hasTinh == true" style='min-width: 150px;'>Tỉnh/thành phố</th>
+                                    <th class="bg-green-seagreen bg-font-green-seagreen" ng-if="vm.tieuChi.hasTrangThai == true" style='min-width: 200px;'>Trạng thái</th>
+                                    <th class="bg-green-seagreen bg-font-green-seagreen" ng-if="vm.tieuChi.hasCv1Id == true" style='min-width: 150px;'>Chuyên viên chính</th>
+                                    <th class="bg-green-seagreen bg-font-green-seagreen" ng-if="vm.tieuChi.hasPhoPhongId == true" style='min-width: 150px;'>Phó phòng duyệt</th>
+                                    <th class="bg-green-seagreen bg-font-green-seagreen" ng-if="vm.tieuChi.hasTruongPhongId == true" style='min-width: 150px;'>Trưởng phòng duyệt</th>
+                                    <th class="bg-green-seagreen bg-font-green-seagreen" ng-if="vm.tieuChi.hasLanhDaoCucId == true" style='min-width: 150px;'>Lãnh đạo duyệt</th>
+                                    <th class="bg-green-seagreen bg-font-green-seagreen" ng-if="vm.tieuChi.hasNgayNop == true" style='min-width: 70px;'>Ngày nộp</th>
+                                    <th class="bg-green-seagreen bg-font-green-seagreen" ng-if="vm.tieuChi.hasNgayTraKetQua == true" style='min-width: 70px;'>Ngày trả kết quả</th>
+                                    <th class="bg-green-seagreen bg-font-green-seagreen" ng-if="vm.tieuChi.hasQuanLyGia == true" style='min-width: 70px;'>Quản lý giá</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="thongKe in vm.listThongKe">
+                                    <td>{{thongKe.sTT}}</td>
+                                    <td ng-if="vm.tieuChi.hasMaHoSo == true">{{thongKe.maHoSo}}</td>
+                                    <td ng-if="vm.tieuChi.hasTenSanPham == true">{{thongKe.tenSanPham}}</td>
+                                    <td ng-if="vm.tieuChi.hasNhomSanPham == true">{{thongKe.strNhomSanPham}}</td>
+                                    <td ng-if="vm.tieuChi.hasMaSoThue == true">{{thongKe.maSoThue}}</td>
+                                    <td ng-if="vm.tieuChi.hasTenDoanhNghiep == true">{{thongKe.tenDoanhNghiep}}</td>
+                                    <td ng-if="vm.tieuChi.hasDiaChi == true">{{thongKe.diaChi}}</td>
+                                    <td ng-if="vm.tieuChi.hasTenVaDiaChiNhaSanXuat == true">{{thongKe.tenVaDiaChiNhaSanXuat}}</td>
+                                    <td ng-if="vm.tieuChi.hasTinh == true">{{thongKe.tinh}}</td>
+                                    <td ng-if="vm.tieuChi.hasTrangThai == true">{{thongKe.strTrangThai}}</td>
+                                    <td ng-if="vm.tieuChi.hasCv1Id == true">{{thongKe.cv1Name}}</td>
+                                    <td ng-if="vm.tieuChi.hasPhoPhongId == true">{{thongKe.phoPhongName}}</td>
+                                    <td ng-if="vm.tieuChi.hasTruongPhongId == true">{{thongKe.truongPhongName}}</td>
+                                    <td ng-if="vm.tieuChi.hasLanhDaoCucId == true">{{thongKe.lanhDaoCucName}}</td>
+                                    <td ng-if="vm.tieuChi.hasNgayNop == true">{{thongKe.ngayNop | date:'dd/MM/yyyy'}}</td>
+                                    <td ng-if="vm.tieuChi.hasNgayTraKetQua == true">{{thongKe.ngayTraKetQua | date:'dd/MM/yyyy'}}</td>
+                                    <td ng-if="vm.tieuChi.hasIsQuanLyGia == true"><i ng-if="thongKe.isQuanLyGia == true" class="fa fa-check fa-3 font-green-meadow" aria-hidden="true"></i> <i ng-if="thongKe.isQuanLyGia == false" class="fa fa-times fa-3 font-red" aria-hidden="true"></i> </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,237 @@
+﻿@using newPSG.PMS.Localization
+@using newPSG.PMS.Web.Navigation
+@{
+    ViewBag.CurrentPageName = PageNames.Frontend.Home;
+}
+
+@section Styles
+{
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+
+    @*<link href="~/libs/owlcarousel/assets/owl.carousel.css" rel="stylesheet" />*@
+    <link href="~/libs/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+
+}
+@section Scripts
+{
+    <script src="~/libs/owlcarousel/owl.carousel.min.js"></script>
+    @*<script src="~/libs/excanvas/canvasjs.min.js"></script>*@
+    <script>
+        if ($('#h3testimonials').length) {
+            $('#h3testimonials').owlCarousel({
+                loop: true,
+                margin: 30,
+                responsiveClass: true,
+                autoHeight: true,
+                autoplay: true,
+                responsive: {
+                    0: {
+                        items: 1,
+                    },
+                    600: {
+                        items: 2,
+                    },
+                    1000: {
+                        items: 3,
+                        loop: true,
+                    }
+                }
+            })
+        }
+    </script>
+}
+
+<section class="hcc-kcb-bg  section-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="kcb-content ">
+                    <h1 class="kcb-title">
+                        BỘ Y TẾ<br>
+                        CỤC QUẢN LÝ Y, DƯỢC CỔ TRUYỀN
+                    </h1>
+                    <a class="btn_one" href="">Đăng nhập </a>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="kcb-image"><img class="img-fluid" src="/Content/Uploads/images/headers.svg"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section service-three-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="title text-center ">
+                    <h3 class=" text-dark header-title mt-40 ">Thủ tục hành chính</h3>
+                    @*<p class="text-muted">Thủ tục hành chính của cục quản lý khám chữa bệnh</p>*@
+                </div>
+            </div>
+
+        </div>
+
+        @*<div class="row">
+            @Html.Action("_ThuTucTrangChu", "ThuTucHanhChinh", new { number = 6 })
+        </div>*@
+        <div class="row">
+            <div class="col-md-4 col-sm-6">
+                <div class="single-service text-center">
+                    <div class="service-icon">
+                        <a href="#">
+                            <img src="~/libs/assets/images/thutuc/prescription.png">
+                        </a>
+                    </div>
+                    <div class="service-title">
+                        <h3><a href="javascript:void(0)">Cấp phép nhập khẩu dược chất </a></h3>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="single-service text-center">
+                    <div class="service-icon">
+                        <a href="#">
+                            <img src="~/libs/assets/images/thutuc/regiter.png">
+                        </a>
+                    </div>
+                    <div class="service-title">
+                        <h3><a href="javascript:void(0)">Giấy chứng nhận đủ điều kiện kinh doanh dược </a></h3>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="single-service text-center">
+                    <div class="service-icon">
+                        <a href="#">
+                            <img src="~/libs/assets/images/thutuc/pharmacist.png">
+                        </a>
+                    </div>
+                    <div class="service-title">
+                        <h3><a href="javascript:void(0)">Chứng chỉ hành nghề dược</a></h3>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-sm-6">
+                <div class="single-service text-center">
+                    <div class="service-icon">
+                        <a href="#">
+                            <img src="~/libs/assets/images/thutuc/computer.png">
+                        </a>
+
+                    </div>
+                    <div class="service-title">
+                        <h3><a href="javascript:void(0)">Nội dung quảng cáo</a></h3>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="single-service text-center">
+                    <div class="service-icon">
+                        <a href="#">
+                            <img src="~/libs/assets/images/thutuc/book.png">
+                        </a>
+                    </div>
+                    <div class="service-title">
+                        <h3><a href="javascript:void(0)">Giấy chứng nhận là lương y</a></h3>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="single-service text-center">
+                    <div class="service-icon">
+                        <a href="#">
+                            <img src="~/libs/assets/images/thutuc/medicine.png">
+                        </a>
+                    </div>
+                    <div class="service-title">
+                        <h3><a href="javascript:void(0)">Giấy phép hoạt động</a></h3>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <a href="@Url.Action("", "ThuTucHanhChinh")" class="btn-viewdetail ">Xem thêm</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--Local Boards & Services End-->
+<section class="sections city-team" style="padding-top: 60px; padding-bottom: 60px;">
+    <div class="container">
+        <div class="row">
+            <div class="title-style-2 wf100">
+                <div class="col-md-12 col-sm-12">
+                    <h3 class="text-dark text-center header-title mt-40 ">Tình hình xử lý hồ sơ theo tháng </h3>
+                </div>
+                @*<div class="col-md-6 col-sm-6">
+                </div>*@
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div id="h3testimonials" class="tinhhinhxuly-slider owl-carousel owl-theme owl-loaded owl-drag">
+                        <!--Department Box Start-->
+                        <div class="item">
+                            <div class="department-box mb30 c1">
+                                <h6>Tháng 8/2019</h6>
+                                <ul>
+                                    <li><a href="#"><i class="fas fa-circle"></i> Đã tiếp nhận <span>4.952</span> hồ sơ</a></li>
+                                    <li><a href="#"><i class="fas fa-circle"></i> Đã hoàn thành <span>4.585</span></a></li>
+                                    <li><a href="#"><i class="fas fa-circle"></i> Trả đúng hạn <span>4.585</span></a></li>
+                                    <li><a href="#"><i class="fas fa-circle"></i> Quá hạn <span>4.585</span></a></li>
+                                    <li><a href="#"><i class="fas fa-circle"></i> Tháng 8/2019:<span> 90%</span> đúng hạn</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!--Department Box End-->
+                        <!--Department Box Start-->
+                        <div class="item">
+                            <div class="department-box mb30 c2">
+                                <h6>Tháng 9/2019</h6>
+                                <ul>
+                                    <li><a href="#"><i class="fas fa-circle"></i> Đã tiếp nhận <span>4.952</span> hồ sơ</a></li>
+                                    <li><a href="#"><i class="fas fa-circle"></i> Đã hoàn thành <span>4.585</span></a></li>
+                                    <li><a href="#"><i class="fas fa-circle"></i> Trả đúng hạn <span>4.585</span></a></li>
+                                    <li><a href="#"><i class="fas fa-circle"></i> Quá hạn <span>4.585</span></a></li>
+                                    <li><a href="#"><i class="fas fa-circle"></i> Tháng 9/2019:<span> 90%</span> đúng hạn</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!--Department Box End-->
+                        <!--Department Box Start-->
+                        <div class="item">
+                            <div class="department-box mb30 c3">
+                                <h6>Tháng 10/2019</h6>
+                                <ul>
+                                    <li><a href="#"><i class="fas fa-circle"></i> Đã tiếp nhận <span>4.952</span> hồ sơ</a></li>
+                                    <li><a href="#"><i class="fas fa-circle"></i> Đã hoàn thành <span>4.585</span></a></li>
+                                    <li><a href="#"><i class="fas fa-circle"></i> Trả đúng hạn <span>4.585</span></a></li>
+                                    <li><a href="#"><i class="fas fa-circle"></i> Quá hạn <span>4.585</span></a></li>
+                                    <li><a href="#"><i class="fas fa-circle"></i> Tháng 10/2019:<span> 90%</span> đúng hạn</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!--Department Box End-->
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Govt. Services & Informations  End-->

@@ -1,0 +1,147 @@
+﻿@using newPSG.PMS.Localization
+
+
+    <div class="danhsach" ng-controller="quanlyhoso.thutuc37.views.truongphongduyetthamdinh.index as vm">
+        <div class="portlet light bordered" ng-show="vm.show_mode==null">
+            <div class="portlet-title">
+                <div class="caption font-blue-soft">
+                    <em class="icon-list font-blue-soft"></em>
+                    <span class="caption-subject bold uppercase">Danh sách hồ sơ trưởng phòng cần xử lý</span>
+                </div>
+
+            </div>
+            <div class="portlet-body">
+                <quanlyhoso.thutuc37.directives.gridhoso form="vm.form"
+                                                         filterobj="vm.filter"
+                                                         truongphongduyetthamdinh="vm.openTruongPhongDuyetThamDinh" />
+            </div>
+        </div>
+
+        <div class="portlet light" ng-show="vm.show_mode == 'truong_phong_duyet'">
+            <div class="portlet-title">
+                <div class="caption font-green-sharp uppercase">
+                    <em class="fa fa-pencil font-green-sharp"></em>Hồ sơ - {{vm.dataItem.tenSanPham}} [ {{vm.dataItem.soDangKy}} ]
+                    <quanlyhoso.thutuc37.directives.util.boxngayquahan dataitem="vm.dataItem" ng-if="vm.show_mode=='truong_phong_duyet'" />
+                </div>
+                <div class="tools">
+                    <div class="input-group" style="float: left;margin-right: 10px;">
+                        <div class="" uib-dropdown auto-close="disabled" is-open="vm.dropdownSearchIsOpen">
+                            <button id="button1" type="button" class="btn btn-sm btn-success dropdown-toggle" uib-dropdown-toggle>Xem lịch sử <em class="fa fa-sm fa-angle-down" style="font-size: 15px;font-weight: bolder; margin-left: 6px;"></em></button>
+                            <div class="dropdown-menu theme-panel pull-right dropdown-custom advance-history" uib-dropdown-menu role="menu" aria-labelledby="button1">
+                                <div class="col-md-12">
+                                    <quanlyhoso.thutuc37.directives.viewhistorydrop hosoid="vm.dataItem.id" />
+                                </div>
+                            </div>
+                            <a ng-click="vm.closeModal()"><em class="glyphicon glyphicon-remove font-blue-soft"></em></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="portlet-body form">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div ng-if="vm.show_mode == 'truong_phong_duyet'">
+                            <quanlyhoso.thutuc37.directives.viewtailieu hoso="vm.dataItem" />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div ng-if="vm.show_mode == 'truong_phong_duyet'">
+                            <div class="portlet box blue-soft">
+                                <div class="portlet-title">
+                                    <div class="caption">
+                                        <i class="fa fa-gift"></i>Duyệt hồ sơ
+                                    </div>
+                                    <div class="tools">
+                                        <a href="javascript:;" class="collapse" data-original-title="" title=""> </a>
+                                    </div>
+                                </div>
+                                <div class="portlet-body portlet-collapsed" style="display: block;">
+
+                                    <uib-tabset class="tab-container tabbable-line" active="vm.currentTab">
+                                        <uib-tab index="0" heading="Nội dung công văn">
+                                            <div class="text-right margin-top-10">
+                                                <a class="btn btn-xs btn-default" ng-click="vm.xemTruocCongVanBoSung()">
+                                                    <em class="fa fa-eye-slash"></em>
+                                                    <text>Xem trước công văn bổ sung</text>
+                                                </a>
+                                            </div>
+                                            @*<div class="row">
+                                                <div class="col-md-6 form-group">
+                                                    <label class="text-bold">Số phiếu</label><span class="font-red">*</span>
+                                                    <input type="text" name="soCongVan" ng-model="vm.duyetHoSo.soCongVan" class="form-control" />
+                                                    <check-validate-empty datacheck="vm.duyetHoSo.soCongVan"></check-validate-empty>
+                                                </div>
+                                                <div class="col-md-6 form-group">
+                                                    <label class="text-bold">Ngày yêu cầu bổ xung</label><span class="font-red">*</span>
+                                                    <input kendo-date-picker
+                                                           masked-date-picker
+                                                           name="ngayYeuCauBoSung"
+                                                           k-ng-model="vm.duyetHoSo.ngayYeuCauBoSung"
+                                                           k-format="'dd/MM/yyyy'"
+                                                           style="width:100%" />
+                                                    <check-validate-empty datacheck="vm.duyetHoSo.ngayYeuCauBoSung"></check-validate-empty>
+                                                </div>
+                                            </div>*@
+
+                                            @*<div class="form-group">
+                                                <label class="text-bold">Nội dung yêu cầu giải quyết</label><span class="font-red">*</span>
+                                                <input type="text" name="noidungyeucaugiaiquyet" ng-model="vm.duyetHoSo.noiDungYeuCauGiaiQuyet" class="form-control" />
+                                                <check-validate-empty datacheck="vm.duyetHoSo.noiDungYeuCauGiaiQuyet"></check-validate-empty>
+                                            </div>*@
+                                            <div class="form-group">
+                                                <p class="text-bold">Nội dung yêu cầu hoàn thiện hồ sơ<span class="font-red">*</span></p>
+                                                <summernote id="summernote_congvan_3" config="vm.summernote_options" height="200" ng-model="vm.duyetHoSo.noiDungCV"></summernote>
+                                                <check-validate-empty html=true datacheck="vm.duyetHoSo.noiDungCV"></check-validate-empty>
+                                            </div>
+                                            @*<div class="form-group">
+                                                <label class="text-bold">Lý do</label><span class="font-red">*</span>
+                                                <input type="text" name="lydo" ng-model="vm.duyetHoSo.lyDo" class="form-control" />
+                                                <check-validate-empty datacheck="vm.duyetHoSo.lyDo"></check-validate-empty>
+                                            </div>*@
+                                        </uib-tab>
+                                        <uib-tab index="1" heading="Duyệt công văn">
+                                            <div style="margin-top:10px;">
+                                                <label class="mt-checkbox">
+                                                    <input ng-model="vm.duyetHoSo.isTraLaiChuyenVien" type="checkbox"> <strong>Trả lại chuyên viên</strong>
+                                                    <span></span>
+                                                </label>
+                                            </div>
+
+                                            <div class="form-group margin-top-10" ng-if="vm.duyetHoSo.isTraLaiChuyenVien == true">
+                                                <label class="text-bold">Nội dung ý kiến</label><span class="font-red">*</span>
+                                                <textarea class="form-control" ng-model="vm.duyetHoSo.noiDungYKien" style="resize:vertical" rows="5"></textarea>
+                                                <check-validate-empty html=true datacheck="vm.duyetHoSo.noiDungYKien"></check-validate-empty>
+                                            </div>
+                                            <p class="text-right margin-top-20">
+                                                <button type="button" button-busy="vm.saving" busy-text="Đang lưu..." class="btn btn-primary btn-sm blue"
+                                                        ng-disabled="vm.duyetHoSo.isTraLaiChuyenVien"
+                                                        ng-click="vm.duyetHoSoThamDinh()">
+                                                    <i class="fa fa-send"></i> <span>Trình lãnh đạo cục</span>
+                                                </button>
+                                                <button type="button" button-busy="vm.saving" busy-text="Đang lưu..." class="btn btn-danger btn-sm"
+                                                        ng-disabled="!vm.duyetHoSo.isTraLaiChuyenVien"
+                                                        ng-click="vm.duyetHoSoThamDinh()">
+                                                    <i class="fa fa-mail-reply"></i> <span>Trả lại chuyên viên</span>
+                                                </button>
+                                                <button type="button" class="btn btn-sm btn-default" ng-click="vm.closeModal()"><i class="fa fa-close"></i> Đóng</button>
+                                            </p>
+                                        </uib-tab>
+                                    </uib-tabset>
+                                        
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <style>
+            .note-editor .note-style, .note-editor .note-color, .note-editor .note-table, .note-editor .note-insert, .note-editor .note-fontname {
+                display: inline-block;
+            }
+
+            .note-view .btn:last-child {
+                display: inline-block;
+            }
+        </style>
+    </div>

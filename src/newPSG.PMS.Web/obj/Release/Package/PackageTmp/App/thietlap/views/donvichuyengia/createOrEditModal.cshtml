@@ -1,0 +1,74 @@
+﻿<div>
+    <div id="createOrEditForm">
+        <div class="modal-header">
+            <div class="modal-title">
+                <h4 style="display: inline-block; margin:0;">
+                    <span ng-if="!vm.dataId">Tạo mới</span>
+                    <span ng-if="vm.dataId">Sửa</span>
+                </h4>
+            </div>
+        </div>
+        <div class="modal-body">
+            <form autocomplete="off">
+                <div class="form-group">
+                    <div class="form-group">
+                        <label>Tên đơn vị</label><span><span class="font-red">*</span></span>
+                        <input class="form-control"
+                               type="text"
+                               name="name"
+                               ng-model="vm.dataModal.name"
+                               data-fv-notempty="true"
+                               data-fv-notempty-message="Không được để trống trường này"
+                               data-fv-trigger="blur" />
+                        <check-validate-empty datacheck="vm.dataModal.name"></check-validate-empty>
+                        @*<div class="col-md-4">
+                                <md-switch ng-model="vm.dataModal.isTrongCuc" aria-label="Kích hoạt">
+                                    Là đơn vị trong cục
+                                </md-switch>
+                            </div>*@
+                    </div>
+                    <div class="form-group">
+                        <label>Tỉnh/Thành phố </label>
+                        <input id="ddlTinh"
+                               name="ddlTinh"
+                               style="width: 100%"
+                               kendo-drop-down-list
+                               k-ng-model="vm.dataModal.tinhId"
+                               k-options="vm.tinhOptions"
+                               class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label>Huyện </label><span class="font-red">*</span>
+                        <input id="ddlHuyen"
+                               style="width: 100%"
+                               name="ddlHuyen"
+                               ng-disabled="vm.disableHuyen"
+                               kendo-drop-down-list
+                               k-ng-model="vm.dataModal.huyenId"
+                               k-options="vm.huyenOptions"
+                               k-cascade-from-field="'parentId'"
+                               k-cascade-from="'ddlTinh'"
+                               class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label>Xã </label><span class="font-red">*</span>
+                        <select id="ddlXa"
+                                name="ddlXa"
+                                ng-disabled="vm.disableXa"
+                                style="width: 100%"
+                                kendo-drop-down-list
+                                k-ng-model="vm.dataModal.xaId"
+                                k-options="vm.xaOptions"
+                                k-cascade-from-field="'parentId'"
+                                k-cascade-from="'ddlHuyen'"
+                                class="form-control"></select>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button type="button" button-busy="vm.saving" busy-text="@L("SavingWithThreeDot")" class="btn green-jungle" ng-click="vm.save()"><em class="fa fa-save"></em> <span>@L("Save")</span></button>
+            <button ng-disabled="vm.saving" type="button" class="btn btn-default" ng-click="vm.cancel()">@L("Cancel")</button>
+        </div>
+    </div>
+</div>

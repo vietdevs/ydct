@@ -1,0 +1,146 @@
+﻿@using newPSG.PMS.Localization
+<style>
+    .frame-container {
+        position: relative;
+    }
+
+    .iframe-button {
+        position: absolute;
+        top: 13px;
+        right: 0px;
+        background-color: #e7ecf1;
+        width: 30px;
+        height: 30px;
+        border: none;
+    }
+</style>
+<div class="danhsach" ng-controller="quanlyhoso.thutuc99.views.lanhdaocucduyet.index as vm">
+    <div class="portlet light bordered" ng-show="vm.show_mode==null">
+        <div class="portlet-title">
+            <div class="caption font-green-soft">
+                <em class="icon-list font-green-soft"></em>
+                <span class="caption-subject bold uppercase">Danh sách hồ sơ cần lãnh đạo cục duyệt</span>
+            </div>
+        </div>
+        <div class="portlet-body">
+            <quanlyhoso.thutuc99.directives.gridhoso form="vm.form"
+                                                     filterobj="vm.filter"
+                                                     lanhdaocucduyet="vm.openLanhDaoDuyet"
+                                                     loadcheckall="vm.updateArrCheckbox" />
+        </div>
+    </div>
+
+    <div class="portlet light" ng-show="vm.show_mode == 'lanh_dao_cuc_duyet'">
+        <div class="portlet-title">
+            <div class="caption font-green-sharp uppercase">
+                <em class="fa fa-pencil font-green-sharp"></em>Lãnh đạo cục duyệt hồ sơ - [ {{vm.dataItem.soDangKy}} ]
+                <quanlyhoso.thutuc99.directives.util.boxngayquahan dataitem="vm.dataItem" ng-if="vm.show_mode=='lanh_dao_cuc_duyet'" />
+            </div>
+            <div class="tools">
+                <div class="input-group" style="float: left;margin-right: 10px;">
+                    <div class="" uib-dropdown auto-close="disabled" is-open="vm.dropdownSearchIsOpen">
+                        <button id="button1" type="button" class="btn btn-sm btn-success dropdown-toggle" uib-dropdown-toggle>Xem lịch sử <em class="fa fa-sm fa-angle-down" style="font-size: 15px;font-weight: bolder; margin-left: 6px;"></em></button>
+                        <div class="dropdown-menu theme-panel pull-right dropdown-custom advance-history" uib-dropdown-menu role="menu" aria-labelledby="button1">
+                            <div class="col-md-12">
+                                <quanlyhoso.thutuc99.directives.viewhistorydrop hosoid="vm.dataItem.id" />
+                            </div>
+                        </div>
+                        <a ng-click="vm.closeModal()"><em class="glyphicon glyphicon-remove font-green-meadow"></em></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="portlet-body form">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="portlet box green-soft">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                Thông tin người gửi
+                            </div>
+                            <div class="tools">
+                                <a href="javascript:;" class="collapse"></a>
+                            </div>
+                        </div>
+                        <div class="portlet-body form" style="min-height: 165px;">
+                            <div class="container-fluid">
+                                <div class="row margin-top-10">
+                                    <div class="col-md-7">
+                                        <div class="form-group">
+                                            <label class="control-label"><strong>Doanh nghiệp:</strong> </label>
+                                            <text>{{vm.dataItem.tenDoanhNghiep}}</text>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label"><strong>Số đơn hàng:</strong> </label>
+                                            <text> [ {{vm.dataItem.soDangKy}} ]</text>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <div class="form-group">
+                                            <label class="control-label"><strong>Lãnh đạo phòng:</strong> </label>
+                                            <text>{{vm.yKienTruongPhong.tenTruongPhong}}</text>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div ng-if="vm.show_mode == 'lanh_dao_cuc_duyet'">
+                        <quanlyhoso.thutuc99.directives.viewtailieu hoso="vm.dataItem" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="portlet box green-soft">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                Lãnh đạo duyệt và ký hồ sơ - Hạn trả hồ sơ: <strong>{{vm.hoSoXuLy.ngayHenTra | date: "dd/MM/yyyy"}}</strong>
+                            </div>
+                            <div class="tools">
+                                <a href="javascript:;" class="collapse"></a>
+                            </div>
+                        </div>
+                        <div class="portlet-body form">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div>
+                                            <div class="mt-radio-inline">
+                                                <label class="mt-radio">
+                                                    <input name="donViKeTiep" ng-model="vm.duyetHoSo.donViKeTiep" data-ng-value="vm.DON_VI_XU_LY.VAN_THU" type="radio" ng-change="vm.setKyKien()"> <text>Ký và chuyển văn thư</text>
+                                                    <span></span>
+                                                </label>
+                                                <label class="mt-radio">
+                                                    <input name="donViKeTiep" ng-model="vm.duyetHoSo.donViKeTiep" data-ng-value="vm.DON_VI_XU_LY.TRUONG_PHONG" type="radio" ng-change="vm.setKyKien()"> <text>Chuyển phòng QLKD Dược xem lại</text>
+                                                    <span></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Lãnh đạo cục cho ý kiến </label> <span class="font-red" ng-if="vm.duyetHoSo.donViKeTiep == vm.DON_VI_XU_LY.TRUONG_PHONG">*</span>
+                                            <textarea class="form-control" rows="1" ng-model="vm.duyetHoSo.noiDungYKien"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-right" style="padding-bottom: 10px;">
+                                    <button type="button" class="btn green" ng-disabled="!(vm.duyetHoSo.donViKeTiep == vm.DON_VI_XU_LY.VAN_THU)" ng-click="vm.kyVaChuyenVanThu()" button-busy="vm.saving" busy-text="@L("SavingWithThreeDot")"><em class="fa fa-arrow-up"></em> Ký và chuyển văn thư</button>
+                                    <button type="button" class="btn blue" ng-disabled="!(vm.duyetHoSo.donViKeTiep == vm.DON_VI_XU_LY.TRUONG_PHONG)" ng-click="vm.chuyenLaiTruongPhong()" button-busy="vm.saving" busy-text="@L("SavingWithThreeDot")"><em class="fa fa-arrow-left"></em> Chuyển lại phòng QLKD Dược</button>
+                                    <button type="button" class="btn red" ng-click="vm.closeModal()"><em class="fa fa-close"></em> Đóng</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <uib-tabset class="tab-container tabbable-line  frame-container" id="mainTab">
+                            <button title="Xem trên cửa sổ mới" class="fa fa-clone iframe-button" style="float:right" ng-click="vm.xemTaiLieuFull('mainTab');"></button>
+                            <uib-tab heading="{{vm.hoSoXuLy.hoSoIsDat ? 'Giấy xác nhận' : 'Công văn'}}">
+                                <div class="portlet light bordered" style="height: 630px">
+                                    <iframe title="Đơn hàng chờ duyệt" style="width: 100%; height: 100%;border:0" ng-src="{{vm.trustSrc(vm.pathGiayTiepNhan)}}"  ></iframe>
+                                </div>
+                            </uib-tab>
+                        </uib-tabset>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

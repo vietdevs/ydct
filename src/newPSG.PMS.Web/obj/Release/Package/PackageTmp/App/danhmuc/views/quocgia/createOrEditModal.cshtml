@@ -1,0 +1,67 @@
+﻿<div id="quocgiaCreateOrEditForm">
+    <div class="modal-header">
+        <h4 class="modal-title">
+            <span ng-if="!vm.quocgia.id">Tạo Quốc Gia Mới</span>
+            <span ng-if="vm.quocgia.id">Sửa Quốc Gia</span>
+            <button type="button" class="close" ng-click="vm.cancel()" aria-hidden="true"></button>
+        </h4>
+    </div>
+    <div class="modal-body">
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-9">
+                    <label>Tên Quốc Gia</label><span><span class="font-red">*</span></span>
+                    <input class="form-control"
+                           type="text"
+                           name="TenQuocGia"
+                           ng-model="vm.quocgia.tenQuocGia"
+                           data-fv-notempty="true"
+                           data-fv-notempty-message="Không được để trống trường này"
+                           data-fv-trigger="blur" />
+                </div>
+
+                <div class="col-md-2">
+                    <label>Kích Hoạt</label><br />
+                    <input bs-switch
+                           ng-model="vm.quocgia.isActive"
+                           type="checkbox"
+                           switch-on-text="<i class='fa fa-check' aria-hidden='true'></i>"
+                           switch-on-color="success"
+                           switch-off-text="<i class='fa fa-times' aria-hidden='true'></i>"
+                           ng-true-value=true
+                           ng-false-value=false>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Mã Quốc Gia</label><span><span class="font-red">*</span></span>
+            <input class="form-control"
+                   type="text"
+                   name="MaQuocGia"
+                   ng-model="vm.quocgia.maQuocGia"
+                   data-fv-notempty="true"
+                   data-fv-notempty-message="Không được để trống trường này"
+                   data-fv-trigger="blur" />
+        </div>
+        <div class="form-group">
+            <label>Mã kết nối cục ATTP</label>
+            <input class="form-control"
+                   type="text"
+                   name="MaKetNoi"
+                   ng-model="vm.quocgia.niisId"
+                   ui-number-mask="0" />
+        </div>
+        <div class="form-group">
+            <label>Mô Tả</label>
+            <textarea class="form-control"
+                      name="MoTa"
+                      ng-model="vm.quocgia.moTa"
+                      rows="5"></textarea>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" button-busy="vm.saving" busy-text="@L("SavingWithThreeDot")" class="btn green-meadow" ng-click="vm.save()"><i class="fa fa-save"></i> <span>@L("Save")</span></button>
+        <button ng-disabled="vm.saving" type="button" class="btn red" ng-click="vm.cancel()"><i class="glyphicon glyphicon-remove"></i>@L("Cancel")</button>
+    </div>
+</div>

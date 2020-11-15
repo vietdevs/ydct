@@ -1,0 +1,72 @@
+﻿<style>
+    .table > thead > tr > th {
+        vertical-align: middle;
+    }
+</style>
+
+<div class="table-scrollable">
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr class="bg-blue-soft font-white">
+                <th class="text-center" width="60"> STT </th>
+                <th>
+                    <div class="input-group" style="display:inline-block; margin-bottom: -13px; width:200px;">
+                        <input type="text" placeholder="Mã, tên thủ tục ..." class="form-control" ng-model="vm.filterText" ng-change="vm.filterthutuc()" />
+                    </div>
+                    <select class="form-control" style="width:200px; display:inline-block;"
+                            ng-model="vm.filter.trangThaiQuaHan"
+                            ng-if="vm.roleLv != vm.ROLE_LEVEL.DOANH_NGHIEP">
+                        <option data-ng-value="0">Tất cả</option>
+                        <option data-ng-value="1">Hồ sơ quá hạn</option>
+                        <option data-ng-value="2">Hồ sơ gần tới hạn</option>
+                    </select>
+                    <a class="btn btn-small btn-default" ng-click="vm.loadThuTuc()"
+                       button-busy="vm.loading" busy-text="Lưu...">
+                        Lọc hồ sơ
+                    </a>
+                    <span style="line-height:30px; font-size:17px;">
+                        <text ng-if="!vm.isAdmin">Tổng số hồ sơ cần xử lý: </text>
+                        <text ng-if="vm.isAdmin">Tổng số hồ sơ: </text>
+                        <b>{{vm.tongHoSoCanXuLy()}}</b>
+                    </span>
+                </th>
+                <th width="300" ng-if="vm.showActive == true">Hồ sơ cần xử lý</th>
+                <th width="200" class="text-center">
+                    <a class="btn btn-small btn-warning" ng-click="vm.toggleShowAll()">
+                        <text ng-show="vm.showAll==true">
+                            Chỉ Hiện Xử Lý
+                        </text>
+                        <text ng-show="vm.showAll==false">
+                            Hiện Tất cả
+                        </text>
+                    </a>
+                </th>
+            </tr>
+        </thead>
+        <tbody busy-if="vm.loading">
+            <tr ng-repeat="thutuc in vm.arrThuTuc" ng-show="vm.showAll || (vm.showAll == false && thutuc.totalXuLy>0)">
+                <td class="text-center bold font-blue vertical-align-middle">{{$index + 1}}</td>
+                <td>
+                    <b style="display: block;">
+                        {{thutuc.maThuTuc}}
+                        <span class="badge badge-danger" ng-if="thutuc.totalXuLy>0"> {{thutuc.totalXuLy}} hồ sơ cần xử lý </span>
+                    </b>
+                    <hr style="margin-top:5px; margin-bottom:10px; width: 100%;" />
+                    <span>{{thutuc.tenThuTuc}}</span> <br />
+                    <em><small>{{thutuc.moTa}}</small></em>
+                </td>
+                <td ng-if="vm.showActive == true">
+                    <b style="display:block;color:#ff3547 !important">Hồ sơ mới: <span>{{vm.hoSoMoiCount}}</span></b>
+                    <b style="display:block;color:#ff3547 !important">Hồ sơ sắp tới hạn: <span>{{vm.hoSoToiHan}}</span></b>
+                    <b style="display:block;color:#ff3547 !important">Hồ sơ quá hạn: <span>{{  vm.hoSoQuaHan}}</span></b>
+                </td>
+                <td class="action-btn">
+                    <a ng-repeat="thaotac in thutuc.thaotacthutuc" ng-click="vm.gourl(thaotac.url,thutuc)" class="btn btn-block btn-default blue-soft">
+                        {{thaotac.displayName}}
+                        <span class="badge badge-danger" ng-if="thaotac.total > 0"> {{thaotac.total}} </span>
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

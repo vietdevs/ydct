@@ -1,0 +1,66 @@
+﻿<style type="text/css">
+    .demo-2 {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        max-width: 350px;
+    }
+
+    .btn-block {
+        position: relative;
+        overflow: visible !important;
+        margin-left: 0 !important;
+        margin-bottom: 10px;
+    }
+
+        .btn-block .badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: #E7505A !important;
+            color: #fff !important;
+        }
+
+    .vertical-align-middle {
+        vertical-align: middle !important;
+    }
+
+    .block {
+        display: block;
+    }
+
+    .action-btn .btn-block:last-child {
+        margin-bottom: 0 !important;
+    }
+    .label-menu-tab {
+        margin-right: 40px;
+    }
+
+    .md-tab.md-active {
+        color: #4c87b9 !important;
+    }
+
+    .md-tab.md-active > a {
+        color: #4c87b9 !important;
+    }
+</style>
+<div ng-controller="tenant.views.dashboard.index as vm" ng-cloak>
+    <md-content>
+        <md-tabs md-selected="selectedIndex" md-border-bottom md-autoselect md-swipe-content>
+            <md-tab ng-repeat="tab in tabs" ng-click="vm.changeTabMenu($index)">
+                <md-tab-label>
+                    <span ng-bind-html="tab.title" class="label-menu-tab"></span>
+                    <a href="javascript:void(0)" title="Đóng" ng-click="removeTab(tab)"><i class="glyphicon glyphicon-remove" ng-if="$index>0"></i></a>
+                </md-tab-label>
+                <md-tab-body>
+                </md-tab-body>
+            </md-tab>
+        </md-tabs>
+    </md-content>
+    <div>
+        <div compile="tabs[0].content" ng-if="vm.tabCurrent==0"></div>
+        <div ng-repeat="tab in tabs">
+            <div compile="tab.content" ng-show="vm.tabCurrent==$index" ng-if="$index > 0"></div>
+        </div>
+    </div>
+</div>

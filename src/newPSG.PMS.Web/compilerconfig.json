@@ -1,0 +1,22 @@
+﻿[
+  {
+    "outputFile": "metronic/assets/admin/layout/css/custom.css",
+    "inputFile": "metronic/assets/admin/layout/css/custom.scss"
+  },
+  {
+    "outputFile": "metronic/assets/frontend/layout/css/custom.css",
+    "inputFile": "metronic/assets/frontend/layout/css/custom.scss"
+  },
+  {
+    "outputFile": "App/host/views/maintenance/index.css",
+    "inputFile": "App/host/views/maintenance/index.less"
+  },
+  {
+    "outputFile": "Common/Styles/core.css",
+    "inputFile": "Common/Styles/core.less"
+  },
+  {
+    "outputFile": "libs/assets/css/attp-main.css",
+    "inputFile": "libs/assets/css/attp-main.scss"
+  }
+]

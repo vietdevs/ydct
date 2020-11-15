@@ -1,0 +1,51 @@
+﻿
+<style>
+    .table > tbody > tr > td {
+        vertical-align: middle;
+    }
+
+    .table > thead > tr > th {
+        vertical-align: middle;
+    }
+</style>
+<div class="portlet light bordered" id="FrmThongTinHoSo" name="FrmThongTinHoSo">
+    <div class="row">
+        <div class="col-md-12">
+            <h5 class="font-blue bold uppercase "> THÔNG TIN HỒ SƠ TT-99 </h5>
+        </div>
+        <div class="col-md-12">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="text-bold">Tên cơ sở</label><span class="font-red">*</span>
+                    <input id="tenCoSoNhapKhau"
+                           type="text"
+                           onfocus="onFocusElei(this)"
+                           name="tenCoSoNhapKhau"
+                           class="form-control"
+                           ng-model="vm.hoso.tenCoSo"
+                           placeholder="Tên cơ sở"
+                           data-fv-notempty="true"
+                           data-fv-trigger="blur"
+                           data-fv-notempty-message="Không được để trống trường này"
+                           maxlength="500">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="text-bold">Địa chỉ</label><span class="font-red">*</span>
+                    <input id="diaChiCoSo"
+                           type="text"
+                           onfocus="onFocusElei(this)"
+                           name="diaChiCoSo"
+                           class="form-control"
+                           ng-model="vm.hoso.diaChiCoSo"
+                           placeholder="Địa chỉ cơ sở"
+                           data-fv-notempty="true"
+                           data-fv-trigger="blur"
+                           data-fv-notempty-message="Không được để trống trường này"
+                           maxlength="500">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
